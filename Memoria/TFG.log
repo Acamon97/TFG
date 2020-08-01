@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.18)  30 JUL 2020 22:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.18)  1 AUG 2020 22:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -192,6 +192,7 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count194
 \pdfmajorversion=\count195
+Package hyperref Info: Option `final' set `true' on input line 4421.
 Package hyperref Info: Hyper figures OFF on input line 4547.
 Package hyperref Info: Link nesting OFF on input line 4552.
 Package hyperref Info: Hyper index ON on input line 4555.
@@ -258,8 +259,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip53
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 13.
-Package hyperref Info: Option `colorlinks' set `true' on input line 13.
+Package hyperref Info: Option `breaklinks' set `true' on input line 12.
+Package hyperref Info: Option `colorlinks' set `true' on input line 12.
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
@@ -390,30 +391,30 @@ Overfull \hbox (2.22221pt too wide) has occurred while \output is active
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
 []\OT1/cmr/m/n/8 https://journal.emwa.org/statistics/history-of-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
 []\OT1/cmr/m/n/10 https://normas-apa.org/referencias/citar-
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 86.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 95.
 [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 86.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 95.
  (./TFG.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 86.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 86.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 95.
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: 362EA99ADD38B59A9975B394BC0401D5;183.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 86.
+(rerunfilecheck)             Checksum: 45769FFA130021E6C902628AB7E8D3CB;143.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
  ) 
 Here is how much of TeX's memory you used:
- 6538 strings out of 481239
- 98094 string characters out of 5920377
- 374932 words of memory out of 5000000
- 21694 multiletter control sequences out of 15000+600000
+ 6535 strings out of 481239
+ 98064 string characters out of 5920377
+ 374944 words of memory out of 5000000
+ 21693 multiletter control sequences out of 15000+600000
  535933 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,7n,34p,946b,351s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -426,10 +427,10 @@ ts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt8.pfb>
-Output written on TFG.pdf (2 pages, 116654 bytes).
+Output written on TFG.pdf (2 pages, 116448 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 PDF objects out of 1000 (max. 8388607)
+ 62 compressed objects within 1 object stream
+ 10 named destinations out of 1000 (max. 500000)
+ 25 words of extra memory for PDF output out of 10000 (max. 10000000)
 

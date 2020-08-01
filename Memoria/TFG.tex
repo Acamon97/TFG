@@ -1,53 +1,80 @@
+% Configuración a 2 columnas
 \documentclass[3p,twocolumn]{elsarticle}
+% Paquete con el tipo de codificación del lenguaje
 \usepackage[utf8]{inputenc}
+% Paquete para mostrar el número de líneas
 \usepackage[modulo]{lineno}
 \linenumbers
+% Paquete para resaltar enlaces y referencias
 \usepackage{hyperref}
-
+% Configuración del paquete
 \hypersetup{
-  breaklinks=true,  % so long urls are correctly broken across lines
+  breaklinks=true,  
   colorlinks=true,
   urlcolor=urlcolor,
   linkcolor=linkcolor,
   citecolor=citecolor,
 }
-
+% Modifica el pie de la primera página para poner el número de la misma
+\makeatletter
+\def\ps@pprintTitle{%
+   \let\@oddhead\@empty
+   \let\@evenhead\@empty
+   \def\@oddfoot{\reset@font\hfil\thepage\hfil}
+   \let\@evenfoot\@oddfoot
+}
+\makeatother
+% Inicio del documento
 \begin{document}
-\title{TFG}
-\author[1]{Aarón Casado Monge}
-\ead{aaron.casado@edu.uah.es}
-\author[2]{Juan José Cuadrado Gallego}
-\ead{jcg@uah.es}
+\title{TFG} % Título del TFG
+\author[1]{Aarón Casado Monge} % Autor del TFG
+\ead{aaron.casado@edu.uah.es} % Correo del alumno
 
+\author[2]{Juan José Cuadrado Gallego} % Tutor del TFG
+\ead{jcg@uah.es} % Correo del profesor
+
+% Dirección de la Escuela Politécnica Superior de UAH
 \address{University of Alcala, Polytechnic School, Computer Science Department, Scientific and Technological Campus, Politechnic Building. Office: O243, 28805, Alcala de Henares, Madrid, Spain}
 
+% Abstracto del TFG
 \begin{abstract}
 Esto es un abstracto.
 \end{abstract}
 
+% Palabras clave del TFG
 \begin{keyword}
 BigData, Statistics, Bioestatistics, Data Science, Clustering
 \end{keyword}
 
-\maketitle
-
+\maketitle % Creación del Título, autores, abstracto...
+ 
+% Introducción del TFG
 \section{Introducción}
 
-\section{Data Science}
+\section{Data Science} 
+
+Antes profundizar en Data Science, hablemos un poco de su precursor, la \textbf{estadística}.
+
 Los métodos estadísticos han sido empleados desde épocas antiguas por civilizaciones como la griega o la egipcia para la realización de censos o solucionar problemas en construcciones, y con el paso de los siglos han ido surgiendo nuevas fórmulas y métodos matemáticos dentro de este campo que han ayudado a la evolución de la civilización, hasta que esta rama de la ciencia se ha convertido en parte esencial del mundo moderno.
 
-Aunque la intención original del sustantivo \textit{statistik}, usado como tal por primera vez por el alemán Godofredo Achenwall en 1749, solo contemplaba el análisis de datos sobre el estado usado por los gobiernos y cuerpos administrativos, este término acabó expandiéndose para adquirir el significado de colección y clasificación de datos a principios del siglo XIX \cite{cita1} \cite{cita2}. Y actualmente la Real Academia Española (RAE) ofrece varias definiciones de la misma palabra tales como ``Estudio de los datos cuantitativos de la población, de los recursos naturales e industriales, del tráfico o cualquier otra manifestación de las sociedades humanas'' (Real Academia Española, s.f., definición 3) y ``Rama de la matemática que utiliza grandes conjuntos de datos numéricos para obtener inferencias basadas en el cálculo de probabilidades'' (Real Academia Española, s.f., definición 5).
+Y aunque la intención original del sustantivo \textit{statistik}, usado como tal por primera vez por el alemán Godofredo Achenwall en 1749, solo contemplaba el análisis de datos sobre el estado usado por los gobiernos y cuerpos administrativos, este término acabó expandiéndose para adquirir el significado de colección y clasificación de datos a principios del siglo XIX \cite{cita1} \cite{cita2}. Actualmente la Real Academia Española (RAE) ofrece varias definiciones de la misma palabra tales como ``Estudio de los datos cuantitativos de la población, de los recursos naturales e industriales, del tráfico o cualquier otra manifestación de las sociedades humanas'' (Real Academia Española, s.f., definición 3) y ``Rama de la matemática que utiliza grandes conjuntos de datos numéricos para obtener inferencias basadas en el cálculo de probabilidades'' (Real Academia Española, s.f., definición 5).
 
-Pero la estadística moderna tal y como la conocemos es el resultado de la unión de dos displinas originalmente distintas: la primera de ellas fundamentalmente descriptiva, relacionada con la recolección de datos; y la otra, esencialmente analítica, asociada con los conceptos de posibilidad y probabilidad \cite{cita3}. Gracias a esta unificación, la estadística ha podido aplicarse en diversos campos y ciencias ayudando en la recolección de datos, análisis de los mismos y presentación de los resultados, permitiendo descubrir nuevos hallazgos, tomar decisiones e incluso realizar predicciones.
+Pero a parte de sus definiciones, la estadística moderna tal y como la conocemos es el resultado de la unión de dos displinas originalmente distintas: la primera de ellas fundamentalmente descriptiva, relacionada con la recolección de datos; y la otra, esencialmente analítica, asociada con los conceptos de posibilidad y probabilidad \cite{cita3}. Y es gracias a esta unificación, que la estadística ha podido aplicarse en diversos campos y ciencias ayudando en la recolección de datos, análisis de los mismos y presentación de los resultados, permitiendo descubrir nuevos hallazgos, tomar decisiones e incluso realizar predicciones.
 
-Y ahora,  en plena era de la información, este mismo concepto de la estadística, junto a la Inteligencia Artificial y la programación se ha aplicado al grán volumen de datos que se genera cada día en casi todas las ciencias y se almacenan en bases de datos, (\textbf{BigData}) permitiendo extraer conocimiento a partir de ellos, dando lugar a una nueva rama de la ciencia que todavía está en formación: \textbf{Data Science} (\textbf{La Ciencia de los Datos}) \cite{cita4}. Dentro de la misma, se han desarrollado tres áreas nuevas (Data Warehousing, Data Mining y Visualización), y una de ellas, \textbf{Data Mining} se centra precisamente en el análisis de los datos y obtención de conocimiento mediante la búsqueda de patrones dentro de ellos.
+Y ahora, en plena era de la información, este mismo concepto de la estadística, junto a la Inteligencia Artificial y la Programación, dos ciencias en completo auge; se ha aplicado al grán volumen de datos que se genera cada día en casi todas las ciencias y se almacenan en bases de datos, (\textbf{BigData}) permitiendo extraer conocimiento a partir de ellos, dando lugar a esta nueva rama de la ciencia que todavía está en formación: \textbf{Data Science} (\textbf{La Ciencia de los Datos}) \cite{cita4}. 
+
+Esta ciencia se ha posicionado rápidamente como una de las más influyentes en el mundo contemporáneo pudiendo aplicarse en tantos campos que es casi imposible nombrar todos aquellos en los que desempeñan un papel fundamental, siendo algunos de los más importantes la analítica de negocios (Busisness Intelligence), motores de búsquedas web (Web Search Engines), ingeniería del software (Software Engineering) y Bioinformática (Bioinformatics).
+
+Asimismo, dentro de esta reciente ciencia, se han dessarrollado tres áreas nuevas: Data Warehousing, Data Mining y Visualización, orientadas a la organización y agrupación de los datos, el análisis de los datos y la presentación de los mismos, respectivamente. Y aunque las tres son cruciales dentro de la Ciencia de los datos, \textbf{Data Mining} 
+
+
+y una de ellas, \textbf{Data Mining} se centra precisamente en el análisis de los datos y obtención de conocimiento mediante la búsqueda de patrones dentro de ellos.
  
-Estas ciencias, al igual que la estadística, son interdisciplinares, es decir, pueden aplicarse en diversos campos; tantos, que es casi imposible nombrar todos aquellos en los que desempeñan un papel fundamental, pero algunos de los más importantes son la analítica de negocios (Busisness Intelligence), motores de búsquedas web (Web Search Engines), ingeniería del software (Software Engineering) y bioinformática (Bioinformatics).k
-
 
 \newpage
 
 \section{Referencias}
+\renewcommand{\section}[2]{}%
 \begin{thebibliography}{X}
 
 \bibitem{cita1} Ostasiewicz, W. (2014). The Emergence of Statistical Science.
