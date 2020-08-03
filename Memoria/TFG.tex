@@ -24,11 +24,17 @@
    \let\@evenfoot\@oddfoot
 }
 \makeatother
+% Paquete para cambiar color texto
+\usepackage[dvipsnames]{xcolor}
+
+
 % Inicio del documento
 \begin{document}
+
 \title{TFG} % Título del TFG
+
 \author[1]{Aarón Casado Monge} % Autor del TFG
-\ead{aaron.casado@edu.uah.es} % Correo del alumno
+\ead{aaron.casado@uah.es} % Correo del alumno
 
 \author[2]{Juan José Cuadrado Gallego} % Tutor del TFG
 \ead{jcg@uah.es} % Correo del profesor
@@ -38,7 +44,7 @@
 
 % Abstracto del TFG
 \begin{abstract}
-Esto es un abstracto.
+Clusterización (qué es y para qué sirve) - Técnicas (para qué sirven) - Paquetes 
 \end{abstract}
 
 % Palabras clave del TFG
@@ -51,24 +57,23 @@ BigData, Statistics, Bioestatistics, Data Science, Clustering
 % Introducción del TFG
 \section{Introducción}
 
-\section{Data Science} 
 
-Antes profundizar en Data Science, hablemos un poco de su precursor, la \textbf{estadística}.
+\section{Clustering} 
 
-Los métodos estadísticos han sido empleados desde épocas antiguas por civilizaciones como la griega o la egipcia para la realización de censos o solucionar problemas en construcciones, y con el paso de los siglos han ido surgiendo nuevas fórmulas y métodos matemáticos dentro de este campo que han ayudado a la evolución de la civilización, hasta que esta rama de la ciencia se ha convertido en parte esencial del mundo moderno.
+\textbf{Clustering} es uno de los muchos métodos que ofrece \textbf{Data Mining}, una rama de \textbf{Data Science} (Ciencia de los Datos), que se ha posicionado rápidamente como una de las disciplinas más influyentes en plena era de la información, donde el volumen de datos generado diariamente y que se almacenan en bases de datos es inmenso, pero para poder darle uso, es necesario organizarlos y agruparlos de manera adecuada (Data Warehousing), analizarlos para obtener información y conocimiento de los mismos (Data Mining) y presentar los resultados de manera apropiada (Visualización). 
 
-Y aunque la intención original del sustantivo \textit{statistik}, usado como tal por primera vez por el alemán Godofredo Achenwall en 1749, solo contemplaba el análisis de datos sobre el estado usado por los gobiernos y cuerpos administrativos, este término acabó expandiéndose para adquirir el significado de colección y clasificación de datos a principios del siglo XIX \cite{cita1} \cite{cita2}. Actualmente la Real Academia Española (RAE) ofrece varias definiciones de la misma palabra tales como ``Estudio de los datos cuantitativos de la población, de los recursos naturales e industriales, del tráfico o cualquier otra manifestación de las sociedades humanas'' (Real Academia Española, s.f., definición 3) y ``Rama de la matemática que utiliza grandes conjuntos de datos numéricos para obtener inferencias basadas en el cálculo de probabilidades'' (Real Academia Española, s.f., definición 5).
+Aunque Data Science es todavía joven y carece de una definición oficial, podríamos definirla como la unión de la Estadística, la Inteligencia Artificial y la Programación aplicados a ese grán volumen de datos (Big Data \footnote{Definir Big Data}) permitiendo extraer conocimiento a partir de ellos \cite{cita4}.
 
-Pero a parte de sus definiciones, la estadística moderna tal y como la conocemos es el resultado de la unión de dos displinas originalmente distintas: la primera de ellas fundamentalmente descriptiva, relacionada con la recolección de datos; y la otra, esencialmente analítica, asociada con los conceptos de posibilidad y probabilidad \cite{cita3}. Y es gracias a esta unificación, que la estadística ha podido aplicarse en diversos campos y ciencias ayudando en la recolección de datos, análisis de los mismos y presentación de los resultados, permitiendo descubrir nuevos hallazgos, tomar decisiones e incluso realizar predicciones.
-
-Y ahora, en plena era de la información, este mismo concepto de la estadística, junto a la Inteligencia Artificial y la Programación, dos ciencias en completo auge; se ha aplicado al grán volumen de datos que se genera cada día en casi todas las ciencias y se almacenan en bases de datos, (\textbf{BigData}) permitiendo extraer conocimiento a partir de ellos, dando lugar a esta nueva rama de la ciencia que todavía está en formación: \textbf{Data Science} (\textbf{La Ciencia de los Datos}) \cite{cita4}. 
-
-Esta ciencia se ha posicionado rápidamente como una de las más influyentes en el mundo contemporáneo pudiendo aplicarse en tantos campos que es casi imposible nombrar todos aquellos en los que desempeñan un papel fundamental, siendo algunos de los más importantes la analítica de negocios (Busisness Intelligence), motores de búsquedas web (Web Search Engines), ingeniería del software (Software Engineering) y Bioinformática (Bioinformatics).
-
-Asimismo, dentro de esta reciente ciencia, se han dessarrollado tres áreas nuevas: Data Warehousing, Data Mining y Visualización, orientadas a la organización y agrupación de los datos, el análisis de los datos y la presentación de los mismos, respectivamente. Y aunque las tres son cruciales dentro de la Ciencia de los datos, \textbf{Data Mining} 
+Clustering o Cluster Analysis, adaptado al español como \textbf{Clusterización}, Agrupamiento o Análisis de Grupos es un método de clasificación no supervisada perteneciente a Data Mining, que busca definir, para una característica determinada o Suceso Elemental (SE) \footnote{Definir suceso elemental}, un conjunto de grupos de observaciones (suceso) \footnote{Definir Suceso} con valores cercanos. Estos grupos son los denominados clusters o grupos y permiten a partir de los diferentes sucesos elementales que configuran dicho suceso, asignar dicho SE al mismo. Clustering nos permite definir los valores de cada cluster durante el proceso de clasificación \cite{cita5}.
 
 
-y una de ellas, \textbf{Data Mining} se centra precisamente en el análisis de los datos y obtención de conocimiento mediante la búsqueda de patrones dentro de ellos.
+
+
+
+
+
+
+
  
 
 \newpage
@@ -84,7 +89,9 @@ Silesian Statistical Review / Slaski Przeglad Statystyczny, 12, 75--81.
 
 \bibitem{cita3} Everyman's Science
 
-\bibitem{cita4} Apuntes JJ
+\bibitem{cita4} Apuntes JJ Data Science
+
+\bibitem{cita5} Apuntes JJ clustering
 
 https://doi.org/10.15611/sps.2014.12.04
 
