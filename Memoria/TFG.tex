@@ -1,10 +1,16 @@
 % Configuración a 2 columnas
+
+%\documentclass[3p]{elsarticle}
 \documentclass[3p,twocolumn]{elsarticle}
+
 % Paquete con el tipo de codificación del lenguaje
 \usepackage[utf8]{inputenc}
 % Paquete para mostrar el número de líneas
 \usepackage[modulo]{lineno}
 \linenumbers
+% Paquete para mostrar imágenes
+\usepackage{graphicx}
+\graphicspath{ {/home/acamon/TFG/GitHub/TFG/Recursos/Fotos/} }
 % Paquete para resaltar enlaces y referencias
 \usepackage{hyperref}
 % Configuración del paquete
@@ -26,6 +32,10 @@
 \makeatother
 % Paquete para cambiar color texto
 \usepackage[dvipsnames]{xcolor}
+
+
+%====================================================================================================================================================%
+%====================================================================================================================================================%
 
 
 % Inicio del documento
@@ -54,19 +64,35 @@ BigData, Statistics, Bioestatistics, Data Science, Clustering
 
 \maketitle % Creación del Título, autores, abstracto...
  
+ 
+%====================================================================================================================================================%
+%====================================================================================================================================================%
+ 
+ 
 % Introducción del TFG
 \section{Introducción}
 
+% Intento de poner una foto
+%\includegraphics[width=\linewidth]{19_domo_data-never-sleeps-7}
+
+Desde finales del sigo \textsc{xx} se ha considerado que vivimos en la ``era de la información", una etapa caracterizada por el incremento, desarrollo y propagación de emergentes tecnologías de la información y comunicación que han permitido al ser humano romper las barreras de la distancia, el tiempo y el lugar a la hora de comunicarse y compartir información; actividades que han sido decisivas en nuestra historia \cite{cita1}. Sin embargo, la era en la que realmente vivimos es la ``era de los datos"; cada día se generan más de dos mil quinientos millones de petabytes\footnote {Un Petabyte es una unidad de información o almacienamiento de datos equivalente a un cuadrillon de bytes, mil terabytes o un millón de gigabytes. En este caso, es el equivalente a 2.5 quintillones de bytes.} de datos provenientes de comercios, ciencias, Internet y casi cualquier actividad del día a día \cite{cita2} que acaban volcados en redes de ordenadores, sitios web, bases de datos y otros medios de almacenaje. 
+
+Esta explosión de datos, a la que se ha denominado Big Data, se debe al alto grado de computarización de la sociedad y el avance de herramientas de recolección y almacenamiento de datos. Negocios en todo el mundo generan grandes cantidades de datos derivados de transacciones, stock de productos,  platillas de empleados, etc. Las ramas de la ciencia producen datos de manera constante frutos de experimentos, observaciones, recogida de muestras, etc. Y más recientemente, Internet y las redes sociales han sido las principales responsables del aumento excesivo de datos, siendo usadas por millones de personas simultáneamente.
+
+Y, aunque esto ha supuesto una considerable mejora para la humanidad pues la información nunca había sido tan accesible, tammbíen ha traido consecuencías negativas y problemas, como el almacenamiento y organización de los datos, datos no estructurados que entorpecen su acceso y procesamiento, dificultades a la hora de analizar los datos apropiadamente pudiendo generar desinformación y complicaciones para mostrar los resultados de forma apropiada y aplicarlos de manera eficiente y útil en el mundo real \cite{cita3}.
+
+Como resultado, ha surgido una nueva ciencia que se ha posicionado rápidamente como una de las disciplinas más influyentes de esta era: Data Science (Ciencia de los Datos), que debido a su reciente aparición, carece de una definición consensuada, pero podríamos concretarla como ``\textit{Ciencia que usa Estadística, Inteligencia Artificial (IA), Programación y Bases de Datos para posibilitar la extracción de conocimiento a partir de datos}" \cite{cita4}. A su vez, dentro de esta cienca se han desarrollado otras tres ramas: Data Warehousing, Data Mining y Visualization; cada una de ellas enfocada a resolver o afrontar uno o varios de los problemas mencionados previamente: organización y agrupación de datos, análisis de los datos y presentación de los resultados, respectivamente.
+
+% Como introduzco Clustering????
+
+
+
+
 % Era de la información, gran volumen de datos, necesidad de analizarlos, aparición Big Data, Data Science y Data mining. Clustering como método especial para analizar los datos y agruparlos sin saber la respuesta.
 
-Desde finales del sigo \textsc{xx} se ha considerado que vivimos en la ``era de la información", una etapa caracterizada por el incremento, desarrollo y propagación de emergenetes tecnologías de la información y comunicación que han permitido al ser humano romper las barreras de la distancia, el tiempo y el lugar a la hora de comunicarse y compartir información; actividades que han sido decisivas en nuestra historia \cite{cita1}. Sin embargo, la era en la que realmente vivimos es la ``era de los datos"; cada día se generan más de dos mil quinientos millones de petabytes \footnote {Un Petabyte es una unidad de información o almacienamiento de datos equivalente a un cuadrillon de bytes, mil terabytes o un millón de gigabytes. En este caso, es el equivalente a 2.5 quintillones de bytes.} de datos provenientes de negocios, ciencias, Internet y casi cualquier actividad del día a día \cite{cita2} que acaban volcados en redes de ordenadores, sitios web, bases de datos y otros medios de almacenaje. 
+ 
+%====================================================================================================================================================%
 
-Esta gran cantidad de datos proviene de lo computerizada que está la sociedad. Continuar con el libro.
-
-
-%\textbf{Clustering} es uno de los diversos métodos que ofrece \textbf{Data Mining}, una rama de \textbf{Data Science} (Ciencia de los Datos), que se ha posicionado rápidamente como una de las disciplinas más influyentes en plena era de la información, donde el volumen de datos generado diariamente y que se almacenan en bases de datos es inmenso, pero para poder darle uso, es necesario organizarlos y agruparlos de manera adecuada (Data Warehousing), analizarlos para obtener información y conocimiento de los mismos (Data Mining) y presentar los resultados de manera apropiada (Visualización). 
-
-%Aunque Data Science es todavía joven y carece de una definición oficial, podríamos definirla como la unión de la Estadística, la Inteligencia Artificial y la Programación aplicados a ese grán volumen de datos (Big Data \footnote{Definir Big Data}) permitiendo extraer conocimiento a partir de ellos \cite{cita4}.
 
 \clearpage
 \section{Clustering} 
@@ -75,6 +101,10 @@ Esta gran cantidad de datos proviene de lo computerizada que está la sociedad. 
 
 
 Clustering o Cluster Analysis, adaptado al español como \textbf{Clusterización}, Agrupamiento o Análisis de Grupos es un método de clasificación no supervisada perteneciente a Data Mining, que busca definir, para una característica determinada o Suceso Elemental (SE) \footnote{Definir suceso elemental}, un conjunto de grupos de observaciones (suceso) \footnote{Definir Suceso} con valores cercanos. Estos grupos son los denominados clusters o grupos y permiten a partir de los diferentes sucesos elementales que configuran dicho suceso, asignar dicho SE al mismo. Clustering nos permite definir los valores de cada cluster durante el proceso de clasificación \cite{cita5}.
+
+
+%====================================================================================================================================================%
+%====================================================================================================================================================%
 
 
 \newpage
@@ -87,9 +117,9 @@ Clustering o Cluster Analysis, adaptado al español como \textbf{Clusterización
 
 \bibitem{cita2} Becoming A Data-Driven CEO | Domo. (2018). Data never sleeps 6.0 \href{https://www.domo.com/solution/data-never-sleeps-6} {https://www.domo.com/solution/data-never-sleeps-6}
 
-\bibitem{cita3} Everyman's Science
+\bibitem{cita3} Xu, Z., \& Shi, Y. (2015). \href {https://link.springer.com/content/pdf/10.1007/s40745-015-0063-7.pdf} {Exploring big data analysis: fundamental scientific problems}´. Annals of Data Science, 2(4), 363-372.
 
-\bibitem{cita4} Apuntes JJ Data Science
+\bibitem{cita4} Definición Data Science apuntes FCD
 
 \bibitem{cita5} Apuntes JJ clustering
 
