@@ -21,6 +21,10 @@
   linkcolor=linkcolor,
   citecolor=citecolor,
 }
+
+% Modifica el formato de las referencias
+\biboptions{sort&compress}
+
 % Modifica el pie de la primera página para poner el número de la misma
 \makeatletter
 \def\ps@pprintTitle{%
@@ -61,7 +65,7 @@ Clusterización (qué es y para qué sirve) - Técnicas (para qué sirven) - Paq
 
 % Palabras clave del TFG
 \begin{keyword}
-BigData, Statistics, Bioestatistics, Data Science, Clustering
+Data Mining, Clustering, R
 \end{keyword}
 
 \maketitle % Creación del Título, autores, abstracto...
@@ -77,21 +81,21 @@ BigData, Statistics, Bioestatistics, Data Science, Clustering
 % Intento de poner una foto
 %\includegraphics[width=\linewidth]{19_domo_data-never-sleeps-7}
 
-Desde finales del sigo \textsc{xx} se ha considerado que vivimos en la ``era de la información", una etapa caracterizada por el incremento, desarrollo y propagación de emergentes tecnologías de la información y comunicación que han permitido al ser humano romper las barreras de la distancia, el tiempo y el lugar a la hora de comunicarse y compartir información; actividades que han sido decisivas en nuestra historia \cite{cita1}. Sin embargo, la era en la que realmente vivimos es la ``era de los datos", donde cada día se generan más de dos mil quinientos millones de petabytes\footnote {Un Petabyte es una unidad de información o almacienamiento de datos equivalente a un cuadrillon de bytes, mil terabytes o un millón de gigabytes. En este caso, es el equivalente a 2.5 quintillones de bytes.} de datos provenientes de comercios, ciencias, Internet y casi cualquier actividad del día a día \cite{cita2} que acaban volcados en redes de ordenadores, sitios web, bases de datos y otros medios de almacenaje. 
+\textcolor{Red} {Desde finales del sigo \textsc{xx} se ha considerado que vivimos en la ``era de la información", una etapa caracterizada por el incremento, desarrollo y propagación de emergentes tecnologías de la información y comunicación que han permitido al ser humano romper las barreras de la distancia, el tiempo y el lugar a la hora de comunicarse y compartir información; actividades que han sido decisivas en nuestra historia \cite{1}. Sin embargo, la era en la que realmente vivimos es la ``era de los datos", donde cada día se generan más de dos mil quinientos millones de petabytes\footnote {Un Petabyte es una unidad de información o almacienamiento de datos equivalente a un cuadrillon de bytes, mil terabytes o un millón de gigabytes. En este caso, es el equivalente a 2.5 quintillones de bytes.} de datos provenientes de comercios, ciencias, Internet y casi cualquier actividad del día a día \cite{2} que acaban volcados en redes de ordenadores, sitios web, bases de datos y otros medios de almacenaje. }
 
 Esta explosión de datos, a la que se ha denominado \textbf{Big Data}, se debe al alto grado de computarización de la sociedad y el avance de herramientas de recolección y almacenamiento de datos. Negocios en todo el mundo generan grandes cantidades de datos derivados de transacciones, stock de productos,  platillas de empleados, etc. Las ramas de la ciencia producen datos de manera constante frutos de experimentos, observaciones, recogida de muestras, etc. Y más recientemente, Internet y las redes sociales han sido las principales responsables del aumento excesivo de datos, siendo usadas por millones de personas simultáneamente.
 
-Y, aunque esto ha supuesto una considerable mejora para la humanidad pues la información nunca había sido tan accesible, también ha traido consecuencias negativas y problemas como el almacenamiento y organización de los datos, datos no estructurados que entorpecen su acceso y procesamiento, dificultades a la hora de analizar los datos apropiadamente pudiendo generar desinformación y complicaciones para mostrar los resultados de forma apropiada y aplicarlos de manera eficiente y útil en el mundo real \cite{cita3}.
+Y, aunque esto ha supuesto una considerable mejora para la humanidad pues la información nunca había sido tan accesible, también ha traido consecuencias negativas y problemas como el almacenamiento y organización de los datos, datos no estructurados que entorpecen su acceso y procesamiento, dificultades a la hora de analizar los datos apropiadamente pudiendo generar desinformación y complicaciones para mostrar los resultados de forma apropiada y aplicarlos de manera eficiente y útil en el mundo real \cite{3}.
 
-Como resultado, ha surgido una nueva ciencia que se ha posicionado rápidamente como una de las disciplinas más influyentes de la actualidad: \textbf{Data Science} (Ciencia de los Datos), que debido a su reciente aparición, carece de una definición consensuada, pero podríamos concretarla como ``\textit{Ciencia que usa Estadística, Inteligencia Artificial, Programación y Bases de Datos para posibilitar la extracción de conocimiento a partir de datos}" \cite{cita4}. A su vez, dentro de esta ciencia se han desarrollado otras tres ramas: Data Warehousing, Data Mining y Visualization; cada una de ellas enfocada a resolver o afrontar uno o varios de los problemas mencionados previamente: organización y agrupación de datos, análisis de los mismos y presentación de los resultados, respectivamente.
+Como resultado, ha surgido una nueva ciencia que se ha posicionado rápidamente como una de las disciplinas más influyentes de la actualidad: \textbf{Data Science} (Ciencia de los Datos), que debido a su reciente aparición, carece de una definición consensuada, pero podríamos concretarla como ``\textit{Ciencia que usa Estadística, Inteligencia Artificial, Programación y Bases de Datos para posibilitar la extracción de conocimiento a partir de datos}" \cite{4}. A su vez, dentro de esta ciencia se han desarrollado otras tres ramas: Data Warehousing, Data Mining y Visualization; cada una de ellas enfocada a resolver o afrontar uno o varios de los problemas mencionados previamente: organización y agrupación de datos, análisis de los mismos y presentación de los resultados, respectivamente.
 
-De entre estas nuevas disciplinas, \textbf{Data Mining} es la que se centra en el procesamiento de los datos, procedimiento por el cual se obtiene la información, y se podría definir como ''\textit{Proceso de descubrimiento de patrones interesantes y conocimiento a partir de grandes volúmenes de datos}" \cite{cita5}, donde dentro de la misma podemos encontrar diferentes técnicas para encontrar patrones y relaciones, y dependiendo de cuál se aplique se puede obtener un resultado totalmente diferente incluso con el mismo conjunto de datos, por lo que es fundamental emplear la técnica apropiada en función del del objetivo a conseguir, los datos con los que se pretende trabajar y el ámbito de aplicación.
+De entre estas nuevas disciplinas, \textbf{Data Mining} es la que se centra en el procesamiento de los datos, procedimiento por el cual se obtiene la información, y se podría definir como ''\textit{Proceso de descubrimiento de patrones interesantes y conocimiento a partir de grandes volúmenes de datos}" \cite{5}, donde dentro de la misma podemos encontrar diferentes técnicas para encontrar patrones y relaciones, y dependiendo de cuál se aplique se puede obtener un resultado totalmente diferente incluso con el mismo conjunto de datos, por lo que es fundamental emplear la técnica apropiada en función del del objetivo a conseguir, los datos con los que se pretende trabajar y el ámbito de aplicación.
 
 Y en algunos de los campos más importantes del mundo moderno como la analítica de negocios, el reconocimiento de imágenes, las búsquedas web, seguridad, biología y ciencias de la salud; existen dificultades a la hora de clasificar o agrupar ciertos datos porque estos no disponen de una etiqueta o valor conocido por el que se pueda hacerlo, pues este no existe o no ha sido definido. Para poder afrontar este problema se utiliza la técnica de \textbf{Clustering}, que permite exactamente generar valores y etiquetas para un conjunto de datos realizando agrupaciones denominadas \textit{clusters} o grupos, donde los datos de un mismo cluster sean muy similares entre ellos y a su vez tengan diferencias claras con datos de otros clusters, permitiendo que cada grupo resultante puede ser etiquetado y tratado como una clase propia.
 
 De esta manera, el objetivo de este Trabajo de Fin de Grado (TFG) es realizar un estudio sobre Clustering, exponiendo de manera teórica qué es este método y qué tipo de utilidades tiene, así como el desarrollo de las diferentes técnicas que existen y las aplicaciones que estas ofrecen. Posteriormente se explorará este método dentro de Bioinformática, un campo centrado en desarrollar técnicas y programas software para analizar datos biológicos, viendo qué aporta a dicha disciplina y cuáles de las técnicas expuestas previamente se emplean y por qué. 
 
-Una vez realizado el marco teórico previo, se pretende hacer una parte práctica los diferentes paquetes que ofrecen técnicas de Clustering tanto de carácter general como dentro de Bioinformática para el lenguaje de programación R \cite{cita6}, uno de los más relevantes dentro de Data Science.
+Una vez realizado el marco teórico previo, se pretende hacer una parte práctica los diferentes paquetes que ofrecen técnicas de Clustering tanto de carácter general como dentro de Bioinformática para el lenguaje de programación R \cite{6}, uno de los más relevantes dentro de Data Science.
 
 
 %====================================================================================================================================================%
@@ -99,14 +103,23 @@ Una vez realizado el marco teórico previo, se pretende hacer una parte práctic
 
 \section{Clustering} 
 
-\textbf{Clustering} o Cluster Analysis, adaptado al español como \textbf{Clusterización}, Agrupamiento o Análisis de Grupos, es un método de Data Mining que se basa en el Aprendizaje Automático (Machine Learning), una rama de la Inteligencia Artificial (Artificial Intelligence) que pretende desarrollar sistemas que resuelvan problemas basándose en los resultados de experiencias previas, aprendiendo de sus errores. Concretamente, se fundamenta en uno de los métodos de aprendizaje explorados en esta disciplina: Aprendizaje No Supervisado, enfocado en el desarrollo y descubirmiento de nuevos conocimientos. Este, a diferencia de otros métodos de aprendizaje, no dispone de conocimiento previo sobre lo que poder aprender, por lo que su objetivo principal es discernir patrones y relaciones entre los datos para poder separarlos \cite{cita7}.
+\textbf{Clustering} o Cluster Analysis, adaptado al español como \textbf{Clusterización}, Agrupamiento o Análisis de Grupos, es un método de Data Mining que se basa en el Aprendizaje Automático (Machine Learning), una rama de la Inteligencia Artificial (Artificial Intelligence) que pretende desarrollar sistemas que resuelvan problemas basándose en los resultados de experiencias previas, aprendiendo de sus errores. Concretamente, se fundamenta en uno de los métodos de aprendizaje explorados en esta disciplina: Aprendizaje No Supervisado, enfocado en el desarrollo y descubirmiento de nuevos conocimientos. Este, a diferencia de otros métodos de aprendizaje, no dispone de conocimiento previo sobre lo que poder aprender, por lo que su objetivo principal es discernir patrones y relaciones entre los datos para poder separarlos \cite{7}.
 
 En esencia, el proceso de Clustering es el mismo, hasta el punto en que básicamente podríamos considerarirlos sinónimos, puesto que Clusterización se aplica principalmente sobre conjuntos de datos que se desean oganizar en diferentes grupos pero los valores que delimitan cada cluster son desconocidos y por lo tanto se definen en el propio proceso de clasificación.
 
-\textcolor{Red} {De una manera más técnica, podríamos decir que Clustering busca definir para una determinada característica\footnote{Dicho de una cualidad que da carácter o sirve para distinguir a algo o alguien de sus semejante.} o Suceso Elemental\footnote{Cada uno de los resultados más simples que se pueen obtener de la realización de un experimento. Obtener el número 3 al tirar un dado.} (SE), un conjunto de grupos de observaciones (suceso) \footnote{Se denomina así al subconjunto total de resultados posibles al realizar un experimento. Obtener un 3 o sacar par al tirar un dado.} con valores cercanos; donde los clusters permiten, dados los diferentes sucesos elementales que configuran un suceso, asignar cada SE al mismo cluster \cite{cita8}.}
+\textcolor{Red} {De una manera más técnica, podríamos decir que Clustering busca definir para una determinada característica\footnote{Dicho de una cualidad que da carácter o sirve para distinguir a algo o alguien de sus semejante.} o Suceso Elemental\footnote{Cada uno de los resultados más simples que se pueen obtener de la realización de un experimento. Obtener el número 3 al tirar un dado.} (SE), un conjunto de grupos de observaciones (suceso) \footnote{Se denomina así al subconjunto total de resultados posibles al realizar un experimento. Obtener un 3 o sacar par al tirar un dado.} con valores cercanos; donde los clusters permiten, dados los diferentes sucesos elementales que configuran un suceso, asignar cada SE al mismo cluster \cite{8}.}
 
-Para determinar la similaridad entre cada dato, se suele usar
+Para poder decidir si dos datos deben ser agrupados en el mismo cluster o por el contrario, separados, es necesario introducir los conceptos de similaridad y disparidad; cuanto más similares sean los datos, más tendrán en común y por lo tanto es más probable que terminen bajo el mismo cluster, y por otra parte, si los datos son diferentes entre sí, serán separados en clusters diferentes. Este criterio se basa en la proximidad de dichos objetos. Si midiéramos la similitud entre dos objetos \textit{i} y \textit{j}, esta devolvería 0 si ambos fueran totalmente distintos, y cuanto más elevado fuera el valor, más semejantes serían, siendo 1 el valor más alto, indicando que ambos datos son idénticos. De la misma manera, medir la disparidad entre los objetos daría resultados opuestos, con un 0 indicando que son idénticos y con un 1 que no tienen nada en común. 
 
+Esta forma de calcular la proximidad no solo ayuda a la hora de agrupar los datos en clusters y formar subconjuntos a partir de los resultados, sino que con este proceso también somos capaces de detectar outliers, datos anómalos que pueden ser datos eróneos procedentes de errores de medida o fallos que deben ser eliminados o, datos correctos sumamente importantes que son diferentes al esto y deben ser analizados detenídamente. A la hora de agrupar los datos, puede que queden varios objetos sueltos sin pertenecer a ningún cluster, esos son los datos anómalos.
+
+Además, Clustering también sirve como primera aproximación a la hora de procesar los datos, porque aunque de por sí, este proceso puede aportar información útil agrupando datos similares y clasificandolos, permitiendo un análisis de los resultados que puede dar lugar al descubrimiento de nuevos conocimientos, también se usa como método de preprocesamiento de datos para otros algoritmos de Data Mining que trabajarán sobre las clusters generados y los atributos seleccionados como criterio a la hora de crearlos, pues estos se pueden considerar clases nuevas de objetos.
+
+Es gracias a estas características que Clusterización es empleada en muchos ámbitos del mundo actual, siendo la técnica de Aprendizaje No Supervisado más extendida. Campos como la analítica de negocios, el reconocimiento de imágenes, las búsquedas web, seguridad, biología y ciencias de la salud hacen uso habitual de esta técnica para clasificar tipos de consumidores que comparten preferencias, aunar bajo un mismo subconjunto muchas formas diferentes de escribir el mismo caracter para facilitar el reconocimiento de textos escritos a mano, agrupar resultados similares de una consulta en internet y mostrar los más relevantes dentro de cada grupo o el estudio de la taxonomía\footnote{Ciencia que trata de los principios, métodos y fines de la clasificación. Se aplica en particular, dentro de la biología, para la ordenación jerarquizada y sistemática, con sus nombres, de los grupos de animales y de vegetales.} de las especies. Tambíen es usada en otros entornos como la seguridad, donde puede hacer uso de la capacidad de detectar datos anómalos para revelar posibles fraudes o transacciones sospechosas, incluso ayudar en la disminución de crímenes analizando los resultados obtenidos clusterizando los datos; o aplicada a datos geofísicos\footnote{La Geofísica es la ciencia que estudia la Tierra desde el punto de vista de la física.} para interpretarlos y obtener resultados significativos. Asimismo, se le puede dar uso a la hora de comparar comunidades en redes sociales permitiendo recomendar a los usuarios contenido de su agrado, permitiendo la identificación y control de diversos tipos de enfermedades e incluso ayudando en la gestión de edificios públicos como bibliotecas agrupando las preferencias de los lectores \cite{9,10,11,12,13}.
+
+%Ejemplos aplicaciones
+%Tipos tecnicas
+%Fotografías
 
 %====================================================================================================================================================%
 %====================================================================================================================================================%
@@ -118,25 +131,35 @@ Para determinar la similaridad entre cada dato, se suele usar
 \renewcommand{\section}[2]{}
 \begin{thebibliography}{X}
 
-\bibitem{cita1} Alberts, D. S., \& Papp, D. S. (1997). \href{http://www.dodccrp.org/files/Alberts_Anthology_I.pdf} {The information age: An anthology on its impact and consequences}. Office of the Assistant Secretary of Defense Washington DC Command and Control Research Program (CCRP).
+\bibitem{1} Alberts, D. S., \& Papp, D. S. (1997). \href{http://www.dodccrp.org/files/Alberts_Anthology_I.pdf} {The information age: An anthology on its impact and consequences}. Office of the Assistant Secretary of Defense Washington DC Command and Control Research Program (CCRP).
 
-\bibitem{cita2} Becoming A Data-Driven CEO | Domo. (2018). Data never sleeps 6.0 \href{https://www.domo.com/solution/data-never-sleeps-6} {https://www.domo.com/solution/data-never-sleeps-6}
+\bibitem{2} Becoming A Data-Driven CEO | Domo. (2018). Data never sleeps 6.0 \href{https://www.domo.com/solution/data-never-sleeps-6} {https://www.domo.com/solution/data-never-sleeps-6}
 
-\bibitem{cita3} Xu, Z., \& Shi, Y. (2015). \href {https://link.springer.com/content/pdf/10.1007/s40745-015-0063-7.pdf} {Exploring big data analysis: fundamental scientific problems}´. Annals of Data Science, 2(4), 363-372.
+\bibitem{3} Xu, Z., \& Shi, Y. (2015). \href {https://link.springer.com/content/pdf/10.1007/s40745-015-0063-7.pdf} {Exploring big data analysis: fundamental scientific problems}´. Annals of Data Science, 2(4), 363-372.
 
-\bibitem{cita4} Definición Data Science apuntes FCD
+\bibitem{4} Definición Data Science apuntes FCD
 
-\bibitem{cita5} Definición Data Mining libro cita100
+\bibitem{5} Definición Data Mining libro 100
 
-\bibitem{cita6} The R Project for Statistical Computing. (n.d.). Retrieved from \href{https://www.r-project.org/} {https://www.r-project.org/}
+\bibitem{6} The R Project for Statistical Computing. (n.d.). Retrieved from \href{https://www.r-project.org/} {https://www.r-project.org/}
 
-\bibitem{cita7} Moreno, A. (1994). \href{https://upcommons.upc.edu/bitstream/handle/2099.3/36157/9788483019962.pdf?sequence=1&isAllowed=y} {Aprendizaje automático.} Llibre, Edicions UPC.
+\bibitem{7} Moreno, A. (1994). \href{https://upcommons.upc.edu/bitstream/handle/2099.3/36157/9788483019962.pdf?sequence=1&isAllowed=y} {Aprendizaje automático.} Llibre, Edicions UPC.
 
-\bibitem{cita8} Apuntes JJ clustering
+\bibitem{8} Apuntes JJ clustering
+
+\bibitem{9} Alkhaibari, A. A., \& Chung, P. (2017). \href{https://ieeexplore.ieee.org/document/8001983} {Cluster analysis for reducing city crime rates}. 2017 IEEE Long Island Systems, Applications and Technology Conference (LISAT). doi:10.1109/lisat.2017.8001983
+
+\bibitem{10} Song, Y., Meng, H., \& Zhang, Y. (2010). \href{https://ieeexplore.ieee.org/document/5602787} {Clustering analysis and its applications}. 2010 Second IITA International Conference on Geoscience and Remote Sensing. doi:10.1109/iita-grs.2010.5602787
+
+\bibitem{11} Prabhu, J., Sudharshan, M., Saravanan, M., \& Prasad, G. (2010). \href{https://ieeexplore.ieee.org/document/5563072} {Augmenting Rapid Clustering Method for Social Network Analysis}. 2010 International Conference on Advances in Social Networks Analysis and Mining. doi:10.1109/asonam.2010.55
+
+\bibitem{12} Baron, J. N., Aznar, M. N., Monterubbianesi, M., \& Martínez-López, B. (2020). \href{https://search.ebscohost.com/login.aspx?direct=true&db=aph&AN=143827917&lang=es&site=ehost-live&scope=site} {Application of network analysis and cluster analysis for better prevention and control of swine diseases in Argentina}. PLoS ONE, 15(6), 1–26. https://doi.org/10.1371/journal.pone.0234489
+
+\bibitem{13} Li, J., \& Chen, P. (2008). \href{https://ieeexplore.ieee.org/document/4810639} {The application of Cluster analysis in Library system}. 2008 IEEE International Symposium on Knowledge Acquisition and Modeling Workshop. doi:10.1109/kamw.2008.4810639
 
 
 
-\bibitem{cita100}Han, J., Kamber, M., \& Pei, J. (2012). Data Mining: Concepts and Techniques (3rd ed., p.~740). 225 Wyman Street, Waltham, MA 02451, USA: Morgan Kaufmann Publishers, Elsevier.
+\bibitem{100}Han, J., Kamber, M., \& Pei, J. (2012). Data Mining: Concepts and Techniques (3rd ed., p.~740). 225 Wyman Street, Waltham, MA 02451, USA: Morgan Kaufmann Publishers, Elsevier.
 
 \end{thebibliography}
 
