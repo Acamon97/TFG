@@ -41,13 +41,16 @@
 
 % Paquete para las ecuaciones
 \usepackage{amsmath}
+\usepackage{lmodern}
 
 % Paquete para escribir algoritmos y pseudocodigo
 \usepackage[spanish,onelanguage,ruled,vlined]{algorithm2e} 
 
 % Paquetes para la tabla
-\usepackage{graphicx}
+\usepackage{graphicx, caption}
 \usepackage{booktabs}
+\usepackage{threeparttable}
+
 
 %====================================================================================================================================================%
 %====================================================================================================================================================%
@@ -91,7 +94,7 @@ Data Mining, Clustering, R
 % Intento de poner una foto
 %\includegraphics[width=\linewidth]{19_domo_data-never-sleeps-7}
 
-Desde finales del sigo \textsc{xx} se ha considerado que vivimos en la ``era de la información'', una etapa caracterizada por el incremento, desarrollo y propagación de emergentes tecnologías de la información y comunicación que han permitido al ser humano romper las barreras de la distancia, el tiempo y el lugar a la hora de comunicarse y compartir información; actividades que han sido decisivas en nuestra historia \cite{1}. Sin embargo, la era en la que realmente vivimos es la ``era de los datos'', donde \textcolor{Red} {cada día se generan más de dos mil quinientos millones de petabytes\footnote {Un Petabyte es una unidad de información o almacienamiento de datos equivalente a un cuadrillon de bytes, mil terabytes o un millón de gigabytes. En este caso, es el equivalente a 2.5 quintillones de bytes.} de datos} provenientes de comercios, ciencias, Internet y casi cualquier actividad del día a día \cite{2} que acaban volcados en redes de ordenadores, sitios web, bases de datos y otros medios de almacenaje. 
+Desde finales del sigo \textsc{xx} se ha considerado que vivimos en la ``era de la información'', una etapa caracterizada por el incremento, desarrollo y propagación de emergentes tecnologías de la información y comunicación que han permitido al ser humano romper las barreras de la distancia, el tiempo y el lugar a la hora de comunicarse y compartir información; actividades que han sido decisivas en nuestra historia \cite{1}. Sin embargo, la era en la que realmente vivimos es la ``era de los datos'', donde \textcolor{Red} {cada día se generan más de dos mil quinientos billones de petabytes\footnote {Un Petabyte es una unidad de información o almacienamiento de datos equivalente a un cuadrillon de bytes, mil terabytes o un millón de gigabytes. En este caso, es el equivalente a 2.5 quintillones de bytes.} de datos} provenientes de comercios, ciencias, Internet y casi cualquier actividad del día a día \cite{2} que acaban volcados en redes de ordenadores, sitios web, bases de datos y otros medios de almacenaje. 
 
 Esta explosión de datos, a la que se ha denominado Big Data, se debe al alto grado de computarización de la sociedad y el avance de herramientas de recolección y almacenamiento de datos. Negocios en todo el mundo generan grandes cantidades de datos derivados de transacciones, stock de productos,  platillas de empleados, etc. Las ramas de la ciencia producen datos de manera constante frutos de experimentos, observaciones, recogida de muestras, etc. Y más recientemente, Internet y las redes sociales han sido las principales responsables del aumento excesivo de datos, siendo usadas por millones de personas simultáneamente.
 
@@ -204,20 +207,20 @@ A continuación, se exponen los requisitos típicos que se exigen dentro de Data
 
 \subsection{\textbf{Clasificación general de técnicas}} \label{subsec:Clasificación general de técnicas}
 
-\cite{16} Una vez que hemos visto los requisitos de los algoritmos de Clustering y los criterios para compararlos entre sí, podemos agrupar la mayor parte de las técnicas bajo cuatro grandes grupos basados principalmente en el cálculo de la similaridad y el criterio de división. Hablaremos brevemente sobre estos a continuación y posteriormente, precisaremos de manera individualm sobre cada uno de ellos en las secciones \ref{sec:Métodos basados en particiones}, \ref{sec:Métodos jerárquicos}, \ref{sec:Métodos basados en densidad} y \ref{sec:Métodos basados en rejilla}, señalando los principales algoritmos dentro de cada una de ellos.
+\cite{16} Una vez que hemos visto los requisitos de los algoritmos de Clustering y los criterios para compararlos entre sí, podemos agrupar la mayor parte de las técnicas bajo cuatro grandes grupos basados principalmente en el cálculo de la similaridad y el criterio de división. Hablaremos brevemente sobre estos a continuación y posteriormente, precisaremos de manera individual sobre cada uno de ellos en las secciones \ref{sec:Métodos basados en particiones}, \ref{sec:Métodos jerárquicos}, \ref{sec:Métodos basados en densidad} y \ref{sec:Métodos basados en rejilla}, señalando los principales algoritmos dentro de cada una de ellos.
 
 \begin{itemize}
   \item \textbf{Métodos basados en particiones}: Este tipo de métodos dividen todos los objetos de un conjunto de datos en clusters en los que debe haber al menos un objeto; o dicho de una forma más técnica, teniendo $n$ objetos, se generarán $k$ particiones siendo $k \leq n$. 
   
-  Normalmente las técnicas de este grupo generan clusters exclusivos, donde un datos solo puede pertenecer a un cluster, pero cada vez se desarrollan más algoritmos de tipo fuzzy que relajan la agrupación. Asimismo, muchos de estos métodos calculan la distancia entre los objetos como medida de similaridad y generan de manera inicial $k$ particiones para posteriormente, de forma iterativa, tratar de reagrupar los datos y clusters para mejorar la clasificación, basándose en que los datos dentro del mismo cluster esténn realmente cerca entre sí, y que con los datos de otros clusters se encuentren lejos. 
+  Normalmente las técnicas de este grupo generan clusters exclusivos, donde un datos solo puede pertenecer a un cluster, pero cada vez se desarrollan más algoritmos de tipo fuzzy que relajan la agrupación. Asimismo, muchos de estos métodos calculan la distancia entre los objetos como medida de similaridad y generan de manera inicial $k$ particiones para posteriormente, de forma iterativa, tratar de reagrupar los datos y clusters para mejorar la clasificación, basándose en que los datos dentro del mismo cluster estén realmente cerca entre sí, y que con los datos de otros clusters se encuentren lejos. 
   
-  Estos métodos irven tanto para búsquedas en todo el espacio, como Clusterización de espacios reducidos, pero cuando la cantidad de atributos es muy alta, es preferible aplicarlos en subconjuntos, pues es complicado optimizar computacionalmente este tipo de algoritmos a la hora de generar las particiones iniciales, y para lidiar con este inconveniente, se suelen usar métodos heurísticos como \textit{$k$-means} que mejoran la calidad de Clustering progresivamente. Sin embargo, como se ha mencionado previamente, esta aproximación de Clustering genera grupos con formas esféricas y circulares, por lo que uno de los principales focos de mejora de estos algoritmos es evitar ese tipo de comportamiento cuando se trabaja con grandes conjuntos de datos.
+  Estos métodos sirven tanto para búsquedas en todo el espacio, como Clusterización de espacios reducidos, pero cuando la cantidad de atributos es muy alta, es preferible aplicarlos en subconjuntos, pues es complicado optimizar computacionalmente este tipo de algoritmos a la hora de generar las particiones iniciales, y para lidiar con este inconveniente, se suelen usar métodos heurísticos como \textit{$k$-means} que mejoran la calidad de Clustering progresivamente. Sin embargo, como se ha mencionado previamente, esta aproximación de Clustering genera grupos con formas esféricas y circulares, por lo que uno de los principales focos de mejora de estos algoritmos es evitar ese tipo de comportamiento cuando se trabaja con grandes conjuntos de datos.
   
-  \item \textbf{Métodos jerárquicos}: Las técnicas de este grupo crean, coo su propio nombre indica, una separación jerárquica de los datos. De forma diferente a los métodos basados en particiones donde todos los datos están en el mismo nivel, aquí se busca generar varios rangos para la Clusterización. 
+  \item \textbf{Métodos jerárquicos}: Las técnicas de este grupo crean, como su propio nombre indica, una separación jerárquica de los datos. De forma diferente a los métodos basados en particiones donde todos los datos están en el mismo nivel, aquí se busca generar varios rangos para la Clusterización. 
   
   Existen dos enfoques principales dependiendo de cómo se generen los clusters: \textit{aglomerativo} y \textit{divisivo}. Las técnicas aglomerativas parten de la separación de todos los objetos en clusters individuales y progresivamente los va uniendo hasta que solo queda uno; mientras que las técnicas divisivas parten de un solo cluster inicial en el que se encuentran todos los objetos y va formando clusters más pequeños hasta que cada objeto es en sí un cluster. Es por eso que también se les conoce por métodos de ``abajo a arriba'' y de ``arriba a abajo'' respectivamente.
   
-  Esta técnicas pueden utilizar distancia, densidad y continuidad como medida de clacular la similaridad entre los datos y son útiles tanto en búsquedas de espacios completos como de subconjuntos.
+  Esta técnicas pueden utilizar distancia, densidad y continuidad como medida de calcular la similaridad entre los datos y son útiles tanto en búsquedas de espacios completos como de subconjuntos.
   
   \item \textbf{Métodos basados en densidad}: Este tipo de métodos surgieron como solución a los métodos basados en particiones y su tendencia a encontrar únicamente clusters con formas esféricas o circulares, puesto que las técnicas que utilizan la densidad del espacio a la hora de formar clusters permiten descubrir clusters con formas más arbitrarias. 
   
@@ -225,9 +228,9 @@ A continuación, se exponen los requisitos típicos que se exigen dentro de Data
   
   El concepto general es que para cada objeto dentro de un cluster, en su vecindario de radio $r$ de distancia debe haber un mínimo de $x$ objetos. Este tipo de aproximación resulta muy conveniente a la hora de detectar datos anómalos.
   
-  Los métodos basados en densidad pueden clasificar los datos en clusters exclusivos o de manera jerárquica, y aunque normalmente consideran que un objeto solo puede pertenecer a un cluster, también existen técnicas fuzzy Clsutering. Asimismo, se pueden aplicar tanto en espacios completos como en regiones puntuales.
+  Los métodos basados en densidad pueden clasificar los datos en clusters exclusivos o de manera jerárquica, y aunque normalmente consideran que un objeto solo puede pertenecer a un cluster, también existen técnicas fuzzy Clustering. Asimismo, se pueden aplicar tanto en espacios completos como en regiones puntuales.
   
-  \item \textbf{Métodos basados en cuadrícula o rejilla}: Estos métodos dividen el espacio de objetos en una cantidad determinada de celdas que forman una estructura de cuadrículo o rejilla, de ahí su nombre. Todas las operaciones con los datos se realizan dentro de la rejilla, que permite un procesamiento mucho más rápido, pues no depende de la cantidad de datos, sino de la de celdas existentes.
+  \item \textbf{Métodos basados en cuadrícula o rejilla}: Estos métodos dividen el espacio de objetos en una cantidad determinada de celdas que forman una estructura de cuadrícula o rejilla, de ahí su nombre. Todas las operaciones con los datos se realizan dentro de la rejilla, que permite un procesamiento mucho más rápido, pues no depende de la cantidad de datos, sino de la de celdas existentes.
   
   Esto permite que puedan ser integrados con otros métodos de clustering de otros grupos como jerárquicos y basados en densidad para mejorar su eficiencia.
 \end{itemize}
@@ -237,7 +240,7 @@ En la tabla \ref{Tab:Tabla 1} se han resumido estos grupos y las principales car
 A continuación, exploraremos todos estos grupos y las principales técnicas empleadas en cada uno de ellos.
 
 
-\begin{table}[ht]
+\begin{table*}[ht]
   \centering
   \caption{Resumen de métodos de Clusterización}
   \label{Tab:Tabla 1}
@@ -247,11 +250,11 @@ A continuación, exploraremos todos estos grupos y las principales técnicas emp
     \textbf{Método} & \textbf{Características generales} \\ \hline
     \begin{tabular}[c]{@{}l@{}}Basados en \\ particiones\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Encuentran clusters de forma esférica mutuamente exclusivos\\ - Utilizan distancia/proximidad\\ - Usan la media o medoid para representar el centro del cluster\\ - Efectivos en conjuntos de datos pequeños y medianos\end{tabular} \\ \hline
     Jerárquicos & \begin{tabular}[c]{@{}l@{}}- Clasifican en múltiples niveles\\ - No pueden deshacer agrupaciones o divisiones erróneas\\ - Pueden incorporar otras técnicas como microclustering y tener en cuenta vínculos entre los objetos\end{tabular} \\ \hline
-    \begin{tabular}[c]{@{}l@{}}Basados en \\ densidad\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Pueden encontrar clusters con formas arbitrarias\\ - Los clusters son regiones con gran densidad de objetos separados por zonas con poca densidad\\ - La densidad queda definida por un mínimo de objetos cercanos dentro del vencindario\\ - Sirve para detectar datos anómalos\end{tabular} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Basados en \\ densidad\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Pueden encontrar clusters con formas arbitrarias\\ - Los clusters son regiones con gran densidad de objetos separados por zonas con poca densidad\\ - La densidad queda definida por un mínimo de objetos cercanos dentro del vecindario\\ - Sirve para detectar datos anómalos\end{tabular} \\ \hline
     \begin{tabular}[c]{@{}l@{}}Basados \\ en rejilla\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Utiliza una estructura de rejilla o cuadrícula\\ - La velocidad de procesamiento es alta, pues no influye el número de objetos\end{tabular} \\ \hline
     \end{tabular}%
   }
-\end{table}
+\end{table*}
 
 
 %====================================================================================================================================================%
@@ -273,15 +276,15 @@ A continuación se exponen los dos algoritmos más utilizados de este grupo y de
 %====================================================================================================================================================%
 
 
-\subsection{\textbf{\textit{k}-Means}} \label{subsec:k-Media}
+\subsection{\textbf{\textit{k}-Means}} \label{subsec:k-means}
 
 El objetivo de los algoritmos basados en particiones es, dado un conjunto de datos $D$ con $n$ objetos en un espacio Euclídeo\footnote{Espacio geométrico donde se satisfacen los axiomas de Euclides.}, formar $k$ clusters, $C_{1}, ..., C_{k}$, donde cada cluster es un subconjunto del conjunto de datos $C_{i} \subset D$ y la intersección entre clusters es nula $C_{i} \cap C_{j} = \emptyset$ para $i \leq j$ y $j \leq k$. Sin embargo, estos requieren de una gran capacidad computacional, y es por ello que algoritmos como $k$-Means son tan utilizados.
 
 $k$-Means representa cada cluster con su ``centroide'', que es básicamente el punto central del cluster, y se calcula como la media de los puntos que lo forman. Para un conjunto de datos con dos atributos cuantitativos, la fórmula para calcular el centroide $c_{i}$ es la siguiente: \begin{equation} c_{i} = \left( \frac{\sum _{i=1}^n x_{i}}{n}; \frac{\sum _{j=1}^m y_{j}}{m} \right). \end{equation} 
 
-Asimismo, otro de los métodos más comunes para medir la distancia entre puntos y clusters, y que también utiliza $k$-Means, es la distancia Euclídea. La fórmula de la distancia Euclídea entre dos puntos cualesquiera $dist(p, q)$ de un espacio euclídeo $p$ y $q$, con coordenadas cartesianas\footnote{Tipo de coordenadas ortogonales usadas en espacios Euclídeos que tienen como referencia los ejes ortogonales.} $(x_{1}, y_{1})$ y $(x_{2}, y_{2})$ es como sigue: \begin{equation}  d\left( p,q\right) =  \sqrt{ \left(x_1-x_2 \right)^2 + \left(y_1 - y_2 \right)^2}. \end{equation} 
+Asimismo, otro de los métodos más comunes para medir la distancia entre puntos y clusters, y que también utiliza $k$-Means, es la distancia Euclídea. La fórmula de la distancia Euclídea entre dos puntos cualesquiera $dist(p, q)$ de un espacio Euclídeo $p$ y $q$, con coordenadas cartesianas\footnote{Tipo de coordenadas ortogonales usadas en espacios Euclídeos que tienen como referencia los ejes ortogonales.} $(x_{1}, y_{1})$ y $(x_{2}, y_{2})$ es como sigue: \begin{equation}  dist\left( p,q\right) =  \sqrt{ \left(x_1-x_2 \right)^2 + \left(y_1 - y_2 \right)^2}. \end{equation} 
 
-Y para comprobar la calidad de un cluster, y garantizar que los objetos del un mismo sean similares entre ellos, pero diferentes con objetos de otros clusters, los métodos basados en particiones suelen utilizar la \textit{varianza} dentro del cluster, que es la suma del error cuadrático\footnote{Técnica para calcular la diferencia entre el estimador y lo que se estima.} entre todos los objetos del cluster $C_i$ y el centroide $c_i$, definida como: \begin{equation} E =  \sum_{i=1}^{k}  \sum_{p \in C_i} dist(p, c_i)^2 , \end{equation} donde $E$ es la suma del error cuadrátivo de todos los objetos pertenecientes al cluster $p_i \in C_i$. La finalidad de esta operación es asegurar que los $k$ cluster resultantes sean lo más compactos y distantes posible.
+Y para comprobar la calidad de un cluster, y garantizar que los objetos del un mismo sean similares entre ellos, pero diferentes con objetos de otros clusters, los métodos basados en particiones suelen utilizar la \textit{varianza} dentro del cluster, que es la suma del error cuadrático\footnote{Técnica para calcular la diferencia entre el estimador y lo que se estima.} entre todos los objetos del cluster $C_i$ y el centroide $c_i$, definida como: \begin{equation} E =  \sum_{i=1}^{k}  \sum_{p \in C_i} dist(p, c_i)^2 , \end{equation} donde $E$ es la suma del error cuadrático de todos los objetos pertenecientes al cluster $p_i \in C_i$. La finalidad de esta operación es asegurar que los $k$ cluster resultantes sean lo más compactos y distantes posible.
 
 \textcolor{Red}{Es aquí, en el cálculo de la varianza donde la optimización de este método se vuelve computacionalmente complicada, pues en el peor de los casos, el total de posibles clasificaciones depende del número total de clusters de manera exponencial y posteriormente habría que comprobar los valores de la varianza dentro de cada cluster, siendo un problema de complexión NP-complejo\footnote{No se definir esto bien}.} Para resolverlo, se utilizan algoritmos voraces\footnote{Estrategia de búsqueda en la que se sigue una heurística que consiste en escoger la opción más optima en cada paso de manera local, esperando llegar a una solución general óptima.} como $k$-Means, que es simple y usado habitualmente.
 
@@ -304,19 +307,19 @@ El pseudocódigo de $k$-Means queda resumido en el algoritmo \ref{alg:Algoritmo 
       actualizar los centroides de los clusters con los nuevos objetos añadidos\;
     }
   }
-  \caption{$k$-Means}
+  \caption{$k$-Means, basado en la media}
   \label{alg:Algoritmo k-means}
 \end{algorithm}
 
 Sin embargo, este método no garantiza converger hacia un máximo global, sino que muchas veces termina en un máximo local. El resultado depende de la selección de clusters iniciales sobre los que se trabaja, por lo que es es común realizar varias pruebas del algoritmo con diferentes clusters iniciales hasta encontrar un resultado óptimo. 
 
-Por otro lado, la complejidad temporal de $k$-means es considerablemente baja  $O(nkt)$, pues depende del número de objetos $n$, del de clusters $k$ y de la cantidad de iteraciones $t$ y nromalmente encontramos que $k \ll n$ y $t \ll n$. Lo cual sugiere que escalar este algoritmo a grandes conjuntos de datos es asequible.
+Por otro lado, la complejidad temporal de $k$-means es considerablemente baja  $O(nkt)$, pues depende del número de objetos $n$, del de clusters $k$ y de la cantidad de iteraciones $t$ y normalmente encontramos que $k \ll n$ y $t \ll n$. Lo cual sugiere que escalar este algoritmo a grandes conjuntos de datos es asequible.
 
-Asimismo, este algoritmo solo puede ser utilizado cuando podemos calcular la media de varios objetos para encontrar el centroide, por lo que en casos donde los datos tengan atributos nominales, no se puede aplicar. Pero existen modificaciones y versiones de $k$-means que solucionan algunos de estos problemas, como $k$-modas, que en vez d utilizaer la media para calcular el centroide, utiliza la moda, el atributo que más se repite para una característica, y si permite trabajar con datos nominales.
+Asimismo, este algoritmo solo puede ser utilizado cuando podemos calcular la media de varios objetos para encontrar el centroide, por lo que en casos donde los datos tengan atributos nominales, no se puede aplicar. Pero existen modificaciones y versiones de $k$-means que solucionan algunos de estos problemas, como $k$-modas, que en vez d utilizar la media para calcular el centroide, utiliza la moda, el atributo que más se repite para una característica, y si permite trabajar con datos nominales.
 
 Otra de las desventajas que presenta y que comentábamos al inicio de la sección, es el hecho de que no cumple uno de los requisitos de los métodos de clustering, y es que $k$-means pide al usuario el número $k$ de clusters a generar como dato de entrada indispensable. Si bien es cierto que se han propuesto estudios para solventar este problema intentando encontrar el mejor valor para $k$ ejecutando varias veces el algoritmo con distintas unidades, pero supone un alto coste computacional. 
 
-Además, recordemos que este algoritmo flaquea a la hora de encontrar clusters con formas poco convencionales y de tamaños dispares, siendo realemente sensible a datos anómalos e impurezas, que pueden alterar los cálculos de los centroides.
+Además, recordemos que este algoritmo flaquea a la hora de encontrar clusters con formas poco convencionales y de tamaños dispares, siendo realmente sensible a datos anómalos e impurezas, que pueden alterar los cálculos de los centroides.
 
 
 %====================================================================================================================================================%
@@ -324,8 +327,59 @@ Además, recordemos que este algoritmo flaquea a la hora de encontrar clusters c
 
 \subsection{\textbf{\textit{k}-Medoids}} \label{subsec:k-Medoids}
 
+Como se ha mencionado en el apartado previo \ref{subsec:k-means}, $k$-means es realmente susceptible a datos anómalos e impurezas, pues como estos objetos se suelen encontrar alejados de todos los datos, cuando se asignan a un cluster y se recalcula el valor del centroide, este valor se ve altamente alterado, lo cual tambíen afecta a la formación del resto de clusters.
+
+Con el objetivo de ser menos sensible con estos datos, $k$-medoids utiliza uno de los objetos del cluster en vez de su centroide como representante del mismo, y el resto de objetos se añaden al cluster cuyo objeto representativo sea más similar. Por lo que el método para comprobar la calidad del cluster ya no es la varianza, sino el error absoluto, cuya fórmula es la siguiente: \begin{equation} \label{eq:k-medoids} E =  \sum_{i=1}^{k}  \sum_{ \in C_i} dist(p, o_i)^2 , \end{equation}, siendo $E$ la suma del error absoluto para todos los puntos $p_i$ pertenecientes al cluster $C_i$ $\left(p_i \in C_i \right)$ con respecto al objeto representativo de dicho cluster $o_i$. De esta manera, $k$-medoids agrupa $n$ objetos en $k$ clusters minimizando el error absoluto.
+
+Los algoritmos más conocidos que utilizan esta aproximación para formar clusters son Partioning Around Medoids(PAM) y Clustering LARge Applications (CLARA), cada uno con sus propias características, que veremos a continuación.
+
+%====================================================================================================================================================%
+
+\subsubsection{\textbf{PAM}}
+
+Este algoritmo, que podría traducirse al español como Particionamiento Sobre Medoids, es una de las aplicaciones más extendidas del método $k$-medoids, y tiene un funcionamiento similar a $k$-means en el sentido de que utiliza también una heurística voraz de forma iterativa para la formación de clusters y disminuir la complejidad computacional. 
+
+Y de la misma forma, el paso inicial también es seleccionar de manera aleatoria $k$ objetos para formar los clusters iniciales, denominados ``semillas'', y asignar los objetos restantes al cluster cuyo objeto representativo (medoid) es el más similar. Posteriormente, con los nuevos clusters, se comprueba si cambiando el objeto representativo del cluster actual $o_i$ por otro objeto cualquiera dentro del cluster $o_{cualquiera}$ se mejora la calidad del cluster, y en caso de que sea así, se intercambia uno con otro. Esta comprobación se realiza para todos los objetos dentro del cluster que no son el representativo $o_{cualquiera} \neq o_i$ y para todos los clusters, hasta que no se puede mejorar la situación actual. Una vez ha terminado este proceso, se vuelve a calcular la similaridad entre todos los objetos y los representantes de los clusters y se reagrupan si es necesario. El algoritmo termina cuando los clusters resultantes de la iteración actual son idénticos a los de la previa. 
+
+Para determinar la calidad del cluster y decidir si un representante de un cluster debe ser cambiado por otro se calcula la distancia entre todos los puntos de un cluster y su objeto representante actual $o_i$ mediante la fórmula \ref{eq:k-medoids}, cuyo resultado es almacenado. Luego, de forma iterativa cada objeto perteneciente al cluster se convierte en su representante $o_j$ temporal y se vuelve a calcular la distancia entre el resto de puntos y el representante temporal, y su resultado también se almacena, de forma que, una vez todos los puntos han sido representantes, se escoge como representante aquel cuyo resultado ha sido el más bajo, es decir, el más cercano a la mayoría de puntos del cluster, y si este nuevo punto es distinto al representante actual $o_i \neq o_j$, $o_j$ se convierte en el nuevo representante del cluster. 
+
+Cuando un intercambio de representante ocurre en un cluster, se debe comprobar si es necesario reestructurar los clusters y el coste que esto conlleva, pues puede haber puntos cuyo cluster más cercano haya variado. Por lo que para cada punto del espacio de objetos se calcula la distancia a los nuevos representantes y se selecciona el que esté más cerca, pudiendo ser un nuevo cluster o el mismo en el que se encontraba pero con el nuevo representante. Una vez seleccionado el cluster más cercano para cada objeto, se calcula el coste con la misma función \ref{eq:k-medoids}, y si el resultado de esta reestructuración es negativo, es decir, si en la nueva situación los clusters representan mejor a los objetos porque el representante está más cerca de los puntos, se acepta este cambio y se considera que ha aumentado la calidad de los clusters.
+
+\begin{algorithm}[ht]
+\SetAlgoLined
+  \LinesNumbered
+  \SetKwRepeat{Do}{repetir}{hasta}
+  \DontPrintSemicolon
+  \KwIn{$k$: número de clusters, \\ $D$: conjunto de datos con $n$ objetos.}
+  \KwOut{Un conjunto de $k$ clusters.}
+  \Begin{
+    selección arbitraria de $k$ objetos de $D$ como representantes $o_i$ de los clusters iniciales\;
+    \Do{no hay cambios}{
+      calcular la distancia de cada objeto al representante de cada cluster\;
+      (re)asignar cada objeto al cluster con el que es más similar en función de la distancia obtenida\;
+      seleccionar un objeto cualquiera del cluster que no sea el represente actual $o_{cualquiera}$\;
+      calcular el coste $T$ de intercambiar el representante del cluster $o_i$ con $o_{cualquiera}$\;
+      
+      \If{T$<$0}{ intercambiar $o_i$ con $o_{cualquiera}$ como representante del cluster}´
+    }
+  }
+  \caption{PAM, basado en representantes}
+  \label{alg:Algoritmo PAM}
+\end{algorithm}
+
+Este procedimiento, que queda resumido en el algoritmo de PAM \ref{alg:Algoritmo PAM}, es más robusto que $k$-means al ser más tolerante a datos anómalos e impurezas, porque el medoid está menos influenciado por estos que la media. Sin embargo, esta aproximación es mucho más compleja computacionalmente para cada iteración y sigue solicitando el número de clusters $k$, por lo que para gŕandes volúmenes de datos resulta ineficiente, dando origen a otra versión enfocada precisamente a este tipo de trabajo: CLARA.
 
 
+%====================================================================================================================================================%
+
+
+\subsubsection{\textbf{CLARA}}
+
+CLARA es una variación de PAM y que también aplica $k$-medoids a la hora de formar clusters, pero que en lugar de tener en cuenta todos los datos $n$ del conjunto de datos $D$, este algoritmo escoge una muestra aleatoria $m$ de datos y posteriormente aplica PAM para calcular los mejores representantes de la muestra, que idealemente, representa de una manera precisa a $D$ siempre y cuando cada objeto $p_i$ tenga las mismas posibilidades de ser escogido para la muestra. De esta manera y tras varias iteraciones seleccionando muestras arbitrarias, CLARA devuelve la mejor clusterización obtenida de todas ellas.
+
+Esto permite que la complejidad computacional disminuya, pues la comprobación de la calidad de los clusters y el intercambio de representantes que tanto costaba en PAM es reducido de manera drástica con este enfoque, permitiendo de esta manera que pueda trabajar con grándes volúmenes de datos.
+
+Sin embargo, este algoritmo depende totalmente de las muestras escogidas y la probabilidad de que el mejor representante de cada cluster se encuentre en ella, puesto que si tan solo uno de ellos no aparece en alguna de las muestras, CLARA nunca encontrará la mejor clusterización posible. 
 
 
 %====================================================================================================================================================%
@@ -335,11 +389,83 @@ Además, recordemos que este algoritmo flaquea a la hora de encontrar clusters c
 
 \section{Métodos jerárquicos} \label{sec:Métodos jerárquicos}
 
+Mientras que los métodos basados en particiones cumplen con el requisito básico de agrupar los datos en clusters exclusivos, hay ocasiones en las que clasificar los datos en diferentes niveles, es decir, de forma jerárquica, puede proporcionar grandes ventajas. De esta manera, los métodos jerárquicos organizan los datos en una jerarquía o árbol de clusters. 
+
+Útil en escenarios donde los datos tengan de por sí cierta estructura jerárquica (estructura de empleados) o en aquellos en los que se pretenda descrubir si existe una oculta(teroría de la evolución), estos métodos se clasifican a su vez en dos grupos: aglomerativos y divisivos. 
+
+\begin{itemize}
+  \item \textbf{Métodos jerárquicos aglomerativos}: Estos métodos utilizan una estrategia de ``abajo a arriba'', partiendo de que cada objeto compone su propio cluster y de forma iterativa los va uniendo en clusters más grandes hasta que solo queda un único cluster, que se conoce como ``raiz''. En cada iteración se mergen los dos clusters más cercanos entre sí para formar uno solo.
+
+  \item \textbf{Métodos jerárquicos divisivos}: Este tipo de métodos utilizan una estrategia de ``arriba a abajo'', donde situa a todos los objetos en un cluster inicial, la raiz, y de manera progresiva divide la raiz en subclusters más pequeños sucesivamente hasta que cada cluster queda formado únicamente por un objeto o los objetos de cada cluster son prácticamente idénticos entre sí.
+\end{itemize}
+
+Como se puede ver, son métodos opuestos pero que operan bajo el mismo principio. Sin embargo, es mucho más complicado dividir los datos que juntarlos, pues hay muchas más posibilidades y por lo tanto más comprobaciones que realizar; dando lugar a que los métodos aglomerativos sean más comunes y los divisivos dependan de métodos heurísticos que pueden dar resultados inexáctos.
+
+Los métodos jerarquicos pueden sufrir dificultades a la hora de dividir o juntar clusters, una parte crítica en su procedimiento, puesto que, a diferencia de los métodos basados en particiones donde en cada iteración se reagrupaban los puntos hacia el cluster más cercano, si un método jerárquico divide o junta dos clusters, no hay vuelta atrás y los siguiente pasos trabajarán con el resultado obtenido sin poder cambiarlo. Por lo que decidir cómo y por qué motivo se genera un cluster es una tarea complicada, que de no ser correcta, puede ocasionar resultados pobres. Y la otra desventaja principal de este enfoque es que no escalan bien hacia grandes volúmenes de datos, puesto que deben realizar muchas comprobaciones cuando se queieren unir o separar clusters.
+
+Para lidiar con estos problemas se han desarrollado técnicas como BIRCH y Chameleon de las que se habla en la \textcolor{Red}{sección X}, que incorporan métodos jerárquicos con otros métodos, resultando en otros tipos de clustering conocidos como multi fase y microclustering.
+
+Antes de explicar algunos de los algoritmos más utilizados dentro de este grupo, analicemos brevemente las diferentes maneras que existen en los métodos jerárquicos para medir distancias.
+
+
+%====================================================================================================================================================%
+
+
+\subsection{Medidas de distancia} \label{Medidas de distancia}
+
+Independiéntemente del tipo de método que se utilice, aglomerativo o divisivo, se necesita una forma de medir la distancia entre dos clusters, puesto que aquí no se escoge un representante del cluster para realizar este tipo de cálculos. 
+
+Existen tres formas diferentes de realizar este cálculo. \\
+
+\begin{itemize}
+  \item \textbf{Distancia mínima}: Esta define la proximidad entre dos clusters como la distancia entre los puntos más cercanos entre ambos, también conocida como ``single link''.
+\begin{equation} dist_{min}(C_i, C_j) =  \min_{p \in C_i, p' \in C_j} \left\{|p - p'|\right\} \end{equation}
+
+  \item \textbf{Distancia maxima}: Define la proximidad entre dos clusters como la distancia entre los puntos más alejados entre ellos, también conodida como ``complete link''.
+\begin{equation} dist_{max}(C_i, C_j) =  \max_{p \in C_i, p' \in C_j} \left\{|p - p'|\right\} \end{equation}
+
+\textbf{Distancia media}: Define la proximidad entre dos clusters como la distancia media entre todos los puntos de ambos clusters.
+\begin{equation} dist_{avg}(C_i, C_j) = \frac{1}{n_i \cdot n_j} \sum_{p \in C_i, p' \in C_j} |p - p'|  \end{equation}
+\end{itemize}
+
+Las dos primeras son medidas que se van a los extremos y son susceptibles a datos anómalos e impurezas, por lo que el uso de la media es un compromiso entre ambas para solventar este problema.
+
+
+%====================================================================================================================================================%
+
+
+\subsection{AGNES} \label{subsec:AGNES}
+
+
+%====================================================================================================================================================%
+
+
+\subsection{DIANA} \label{subsec:DIANA}
+
+
+%====================================================================================================================================================%
+
+
+\subsection{BIRCH} \label{subsec:BIRCH}
+
+
+%====================================================================================================================================================%
+
+
+\subsection{Chameleon} \label{subsec:Chameleon}
+
+
+%====================================================================================================================================================%
+
+
+\subsection{Métodos jerárquicos probabilísticos} \label{subsec:Métodos jerárquicos probabilísticos}
+
 
 %====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
 
+\clearpage
 
 \section{Métodos basados en densidad} \label{sec:Métodos basados en densidad}
 
@@ -381,13 +507,16 @@ Además, recordemos que este algoritmo flaquea a la hora de encontrar clusters c
 
 \clearpage
 
+\renewcommand{\contentsname}{\section{Índice}}
+\tableofcontents
+
 \renewcommand{\listalgorithmcfname}{\section{Algoritmos}}
 \listofalgorithms
 
 \renewcommand{\listtablename}{\section{Tablas}}
 \listoftables
 
-\renewcommand{\listfigurename}{\section{Imágenes}}
+\renewcommand{\listfigurename}{\section{Imágenes y figuras}}
 \listoffigures
 
 \section{Referencias}
