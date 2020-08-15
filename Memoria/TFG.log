@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.18)  15 AUG 2020 07:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.18)  15 AUG 2020 23:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -429,44 +429,25 @@ Package: relsize 2013/03/29 ver 4.1
 \algocf@algoframe=\box60
 \algocf@algobox=\box61
 )
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2020/01/03 v3.4h Customizing captions (AR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen175
-\captionmargin@=\dimen176
-\captionwidth=\dimen177
-\caption@tempdima=\dimen178
-\caption@indent=\dimen179
-\caption@parindent=\dimen180
-\caption@hangindent=\dimen181
-Package caption Info: elsarticle document class detected.
-)
-\c@caption@flags=\count286
-\c@continuedfloat=\count287
-Package caption Info: hyperref package is loaded.
-)
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen182
-\lightrulewidth=\dimen183
-\cmidrulewidth=\dimen184
-\belowrulesep=\dimen185
-\belowbottomsep=\dimen186
-\aboverulesep=\dimen187
-\abovetopsep=\dimen188
-\cmidrulesep=\dimen189
-\cmidrulekern=\dimen190
-\defaultaddspace=\dimen191
-\@cmidla=\count288
-\@cmidlb=\count289
-\@aboverulesep=\dimen192
-\@belowrulesep=\dimen193
-\@thisruleclass=\count290
-\@lastruleclass=\count291
-\@thisrulewidth=\dimen194
+\heavyrulewidth=\dimen175
+\lightrulewidth=\dimen176
+\cmidrulewidth=\dimen177
+\belowrulesep=\dimen178
+\belowbottomsep=\dimen179
+\aboverulesep=\dimen180
+\abovetopsep=\dimen181
+\cmidrulesep=\dimen182
+\cmidrulekern=\dimen183
+\defaultaddspace=\dimen184
+\@cmidla=\count286
+\@cmidlb=\count287
+\@aboverulesep=\dimen185
+\@belowrulesep=\dimen186
+\@thisruleclass=\count288
+\@lastruleclass=\count289
+\@thisrulewidth=\dimen187
 )
 (/usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
@@ -474,10 +455,10 @@ Package: threeparttable 2003/06/13  v 3.0
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count292
+\l__kernel_color_stack_int=\count290
 \l__pdf_internal_box=\box63
 )
-(./TFG.aux)
+No file TFG.aux.
 \openout1 = `TFG.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
@@ -498,21 +479,21 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
 LaTeX Font Info:    ... okay on input line 60.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
 0.
- (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count293
-\scratchdimen=\dimen195
+\scratchcounter=\count291
+\scratchdimen=\dimen188
 \scratchbox=\box64
-\nofMPsegments=\count294
-\nofMParguments=\count295
+\nofMPsegments=\count292
+\nofMParguments=\count293
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count296
-\MPscratchDim=\dimen196
-\MPnumerator=\count297
-\makeMPintoPDFobject=\count298
+\MPscratchCnt=\count294
+\MPscratchDim=\dimen189
+\MPnumerator=\count295
+\makeMPintoPDFobject=\count296
 \everyMPtoPDFconversion=\toks27
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -570,142 +551,304 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count299
+\c@section@level=\count297
 )
 LaTeX Info: Redefining \ref on input line 60.
 LaTeX Info: Redefining \pageref on input line 60.
 LaTeX Info: Redefining \nameref on input line 60.
-
-(./TFG.out) (./TFG.out)
 \@outlinefile=\write4
 \openout4 = `TFG.out'.
 
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: threeparttable package is loaded.
-Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 8
-4.
- (/usr/share/texmf/tex/latex/lm/omllmm.fd
+2.
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-84.
+82.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-84.
+82.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 84.
+(Font)              <10> on input line 82.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 84.
+(Font)              <7> on input line 82.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 84.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 84.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 84.
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-84.
-
-(/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
+(Font)              <5> on input line 82.
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-92.
+90.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+)
+
+Package natbib Warning: Citation `1' on page 1 undefined on input line 95.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 95.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 95.
+
+Package natbib Warning: Citation `2' on page 1 undefined on input line 95.
 
 
-] [2] [3]
+Package natbib Warning: Citation `3' on page 1 undefined on input line 99.
+
+
+Package natbib Warning: Citation `4' on page 1 undefined on input line 101.
+
+
+Package natbib Warning: Citation `5' on page 1 undefined on input line 103.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+
+Package natbib Warning: Citation `6' on page 2 undefined on input line 109.
+
+
+Package natbib Warning: Citation `7' on page 2 undefined on input line 119.
+
+
+Package natbib Warning: Citation `8' on page 2 undefined on input line 123.
+
+[2]
+
+Package natbib Warning: Citation `9' on page 3 undefined on input line 131.
+
+
+Package natbib Warning: Citation `10' on page 3 undefined on input line 131.
+
+
+Package natbib Warning: Citation `11' on page 3 undefined on input line 131.
+
+
+Package natbib Warning: Citation `12' on page 3 undefined on input line 131.
+
+
+Package natbib Warning: Citation `13' on page 3 undefined on input line 131.
+
+
+Package natbib Warning: Citation `14' on page 3 undefined on input line 133.
+
+
+Package natbib Warning: Citation `15' on page 3 undefined on input line 135.
+
+[3]
+
+Package natbib Warning: Citation `16' on page 4 undefined on input line 160.
+
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-67.
- (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+65.
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [4]
-[5] [6] [7] [8] [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 418--419
+Underfull \hbox (badness 1184) in paragraph at lines 175--176
+\OT1/lmr/m/n/10 aplica clus-ter-ing en en-tornos en con-stante
+ []
+
+
+Package natbib Warning: Citation `16' on page 5 undefined on input line 190.
+
+
+Package natbib Warning: Citation `17' on page 5 undefined on input line 195.
+
+[5]
+
+Package natbib Warning: Citation `16' on page 6 undefined on input line 208.
+
+
+LaTeX Warning: Reference `sec:Métodos basados en particiones' on page 6 undefi
+ned on input line 208.
+
+
+LaTeX Warning: Reference `sec:Métodos jerárquicos' on page 6 undefined on inp
+ut line 208.
+
+
+LaTeX Warning: Reference `sec:Métodos basados en densidad' on page 6 undefined
+ on input line 208.
+
+
+LaTeX Warning: Reference `sec:Métodos basados en rejilla' on page 6 undefined 
+on input line 208.
+
+[6]
+
+LaTeX Warning: Reference `Tab:Tabla 1' on page 7 undefined on input line 236.
+
+
+LaTeX Warning: Reference `subsec:Requisitos de un algoritmo de clustering' on p
+age 7 undefined on input line 265.
+
+[7] [8]
+
+LaTeX Warning: Reference `alg:Algoritmo k-means' on page 9 undefined on input l
+ine 291.
+
+
+LaTeX Warning: Reference `subsec:k-means' on page 9 undefined on input line 328
+.
+
+[9]
+
+LaTeX Warning: Reference `eq:k-medoids' on page 10 undefined on input line 342.
+
+
+
+LaTeX Warning: Reference `eq:k-medoids' on page 10 undefined on input line 344.
+
+
+
+LaTeX Warning: Reference `alg:Algoritmo PAM' on page 10 undefined on input line
+ 368.
+
+[10]
+Underfull \vbox (badness 2027) has occurred while \output is active []
+
+ [11]
+Underfull \hbox (badness 10000) in paragraph at lines 416--417
 
  []
 
-[12
 
-] [13
+LaTeX Warning: Reference `subsec:Medidas de distancia' on page 12 undefined on 
+input line 437.
 
 
-] (./TFG.toc)
+Package natbib Warning: Citation `18' on page 12 undefined on input line 437.
+
+</home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dendograma.png, id=148, 1097.09875p
+t x 551.05875pt>
+File: /home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dendograma.png Graphic file (t
+ype png)
+<use /home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dendograma.png>
+Package pdftex.def Info: /home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dendograma.
+png  used on input line 442.
+(pdftex.def)             Requested size: 222.0pt x 111.5047pt.
+LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 4
+44.
+(/usr/share/texmf/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 444.
+
+
+Package natbib Warning: Citation `16' on page 12 undefined on input line 444.
+
+
+Package natbib Warning: Citation `16' on page 12 undefined on input line 444.
+
+
+LaTeX Warning: Reference `fig:dendograma' on page 12 undefined on input line 45
+6.
+
+[12 </home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dendograma.png>] [13
+
+
+]
+
+Package hyperref Warning: old toc file detected, not used; run LaTeX again.
+
 \tf@toc=\write5
 \openout5 = `TFG.toc'.
 
- (./TFG.loa)
+
+Package hyperref Warning: old loa file detected, not used; run LaTeX again.
+
 \tf@loa=\write6
 \openout6 = `TFG.loa'.
 
- (./TFG.lot)
+
+Package hyperref Warning: old lot file detected, not used; run LaTeX again.
+
 \tf@lot=\write7
 \openout7 = `TFG.lot'.
 
- (./TFG.lof)
+
+Package hyperref Warning: old lof file detected, not used; run LaTeX again.
+
 \tf@lof=\write8
 \openout8 = `TFG.lof'.
 
 
-Underfull \hbox (badness 2680) in paragraph at lines 552--553
+Underfull \hbox (badness 2680) in paragraph at lines 574--575
 \OT1/lmr/m/n/8 pu-ta-tional Sci-ence and Its Ap-pli-ca-tions (ICCSA).
  []
 
+
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 587.
 [14
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 563.
- [15
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 587.
+ (./TFG.aux
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 563.
- (./TFG.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 563.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 563.
-Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: 3EE4F9A15FCFADE62BFFAC444C8051A4;1538.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 563.
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 587.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 587.
+
+
+Package rerunfilecheck Warning: File `TFG.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `TFG.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  C4EF9D062DC693FA7F6CFC4D7C08CADF;1538.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 587.
  ) 
 Here is how much of TeX's memory you used:
- 10426 strings out of 481239
- 158485 string characters out of 5920377
- 465874 words of memory out of 5000000
- 25366 multiletter control sequences out of 15000+600000
- 583459 words of font info for 58 fonts, out of 8000000 for 9000
+ 9313 strings out of 481239
+ 138531 string characters out of 5920377
+ 444547 words of memory out of 5000000
+ 24271 multiletter control sequences out of 15000+600000
+ 586089 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,18n,42p,1914b,621s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,18n,37p,1914b,604s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
-vips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/shar
-e/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/l
-m-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf
-/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmbx7.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb>
-</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/
-share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/te
-xmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7
-.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy5.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm
-/lmtt8.pfb>
-Output written on TFG.pdf (15 pages, 385533 bytes).
+vips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/shar
+e/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/l
+m-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf
+/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx7
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/
+type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr
+7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/
+type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy5.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmsy8.pfb>
+Output written on TFG.pdf (14 pages, 425011 bytes).
 PDF statistics:
- 470 PDF objects out of 1000 (max. 8388607)
- 428 compressed objects within 5 object streams
- 118 named destinations out of 1000 (max. 500000)
- 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 337 PDF objects out of 1000 (max. 8388607)
+ 295 compressed objects within 3 object streams
+ 117 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

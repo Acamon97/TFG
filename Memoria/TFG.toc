@@ -1,11 +1,11 @@
 \contentsline {section}{\numberline {1}Introducción}{1}{section.1}%
 \contentsline {section}{\numberline {2}Clustering}{2}{section.2}%
-\contentsline {section}{\numberline {3}Técnicas de Clustering}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}\textbf {Requisitos de un algoritmo de Clustering}}{4}{subsection.3.1}%
+\contentsline {section}{\numberline {3}Técnicas de clustering}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}\textbf {Requisitos de un algoritmo de clustering}}{4}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}\textbf {Criterios de comparación}}{5}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}\textbf {Clasificación general de técnicas}}{6}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Métodos basados en particiones}{7}{section.4}%
-\contentsline {subsection}{\numberline {4.1}\textbf {\textit {k}-Means}}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.1}\textbf {\textit {k}-Means}}{7}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}\textbf {\textit {k}-Medoids}}{9}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}\textbf {PAM}}{10}{subsubsection.4.2.1}%
 \contentsline {subsubsection}{\numberline {4.2.2}\textbf {CLARA}}{11}{subsubsection.4.2.2}%

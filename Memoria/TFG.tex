@@ -47,7 +47,7 @@
 \usepackage[spanish,onelanguage,ruled,vlined]{algorithm2e} 
 
 % Paquetes para la tabla
-\usepackage{graphicx, caption}
+\usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{threeparttable}
 
@@ -58,8 +58,6 @@
 
 % Inicio del documento
 \begin{document}
-
-\title{TFG} % Título del TFG
 
 \author[1]{Aarón Casado Monge} % Autor del TFG
 \ead{aaron.casado@uah.es} % Correo del alumno
@@ -104,11 +102,11 @@ Como resultado, ha surgido una nueva ciencia que se ha posicionado rápidamente 
 
 De entre estas nuevas disciplinas, Data Mining es la que se centra en el procesamiento de los datos, procedimiento por el cual se obtiene la información, y se podría definir como ''\textit{Proceso de descubrimiento de patrones interesantes y conocimiento a partir de grandes volúmenes de datos}'' \cite{5}, donde dentro de la misma podemos encontrar diferentes técnicas para encontrar patrones y relaciones, y dependiendo de cuál se aplique se puede obtener un resultado totalmente diferente incluso con el mismo conjunto de datos, por lo que es fundamental emplear la técnica apropiada en función del del objetivo a conseguir, los datos con los que se pretende trabajar y el ámbito de aplicación.
 
-Y en algunos de los campos más importantes del mundo moderno como la analítica de negocios, el reconocimiento de imágenes, las búsquedas web, seguridad, biología y ciencias de la salud; existen dificultades a la hora de clasificar o agrupar ciertos datos porque estos no disponen de una etiqueta o valor conocido por el que se pueda hacerlo, pues este no existe o no ha sido definido. Para poder afrontar este problema se utiliza la técnica de Clustering, que permite exactamente generar valores y etiquetas para un conjunto de datos realizando agrupaciones denominadas \textit{clusters} o grupos, donde los datos de un mismo cluster sean muy similares entre ellos y a su vez tengan diferencias claras con datos de otros clusters, permitiendo que cada grupo resultante puede ser etiquetado y tratado como una clase propia.
+Y en algunos de los campos más importantes del mundo moderno como la analítica de negocios, el reconocimiento de imágenes, las búsquedas web, seguridad, biología y ciencias de la salud; existen dificultades a la hora de clasificar o agrupar ciertos datos porque estos no disponen de una etiqueta o valor conocido por el que se pueda hacerlo, pues este no existe o no ha sido definido. Para poder afrontar este problema se utiliza la técnica de clustering, que permite exactamente generar valores y etiquetas para un conjunto de datos realizando agrupaciones denominadas \textit{clusters} o grupos, donde los datos de un mismo cluster sean muy similares entre ellos y a su vez tengan diferencias claras con datos de otros clusters, permitiendo que cada grupo resultante puede ser etiquetado y tratado como una clase propia.
 
-De esta manera, el objetivo de este Trabajo de Fin de Grado (TFG) es realizar un estudio sobre Clustering, exponiendo de manera teórica qué es este método y qué tipo de utilidades tiene, así como el desarrollo de las diferentes técnicas que existen y las aplicaciones que estas ofrecen. Posteriormente se explorará este método dentro de Bioinformática, un campo centrado en desarrollar técnicas y programas software para analizar datos biológicos, viendo qué aporta a dicha disciplina y cuáles de las técnicas expuestas previamente se emplean y por qué. 
+De esta manera, el objetivo de este Trabajo de Fin de Grado (TFG) es realizar un estudio sobre clustering, exponiendo de manera teórica qué es este método y qué tipo de utilidades tiene, así como el desarrollo de las diferentes técnicas que existen y las aplicaciones que estas ofrecen. Posteriormente se explorará este método dentro de Bioinformática, un campo centrado en desarrollar técnicas y programas software para analizar datos biológicos, viendo qué aporta a dicha disciplina y cuáles de las técnicas expuestas previamente se emplean y por qué. 
 
-Una vez realizado el marco teórico previo, se pretende hacer una parte práctica los diferentes paquetes que ofrecen técnicas de Clustering tanto de carácter general como dentro de Bioinformática para el lenguaje de programación R \cite{6}, uno de los más relevantes dentro de Data Science.
+Una vez realizado el marco teórico previo, se pretende hacer una parte práctica los diferentes paquetes que ofrecen técnicas de clustering tanto de carácter general como dentro de Bioinformática para el lenguaje de programación R \cite{6}, uno de los más relevantes dentro de Data Science.
 
 
 %====================================================================================================================================================%
@@ -118,67 +116,67 @@ Una vez realizado el marco teórico previo, se pretende hacer una parte práctic
 
 \section{Clustering} 
 
-Clustering o Cluster Analysis, en español Agrupamiento o Análisis de Grupos y adaptado al término Clusterización, es un método de Data Mining que se basa en el Aprendizaje Automático (Machine Learning), una rama de la Inteligencia Artificial (Artificial Intelligence) que pretende desarrollar sistemas que resuelvan problemas basándose en los resultados de experiencias previas, aprendiendo de sus errores. Concretamente, se fundamenta en uno de los métodos de aprendizaje explorados en esta disciplina: Aprendizaje No Supervisado, enfocado en el desarrollo y descubrimiento de nuevos conocimientos. Este, a diferencia de otros métodos de aprendizaje, no dispone de conocimiento previo sobre lo que poder aprender, por lo que su objetivo principal es discernir patrones y relaciones entre los datos para poder separarlos \cite{7}.
+Clustering o cluster analysis, en español agrupamiento o análisis de grupos y adaptado al término clusterización, es un método de Data Mining que se basa en el Aprendizaje Automático (Machine Learning), una rama de la Inteligencia Artificial (Artificial Intelligence) que pretende desarrollar sistemas que resuelvan problemas basándose en los resultados de experiencias previas, aprendiendo de sus errores. Concretamente, se fundamenta en uno de los métodos de aprendizaje explorados en esta disciplina: Aprendizaje No Supervisado, enfocado en el desarrollo y descubrimiento de nuevos conocimientos. Este, a diferencia de otros métodos de aprendizaje, no dispone de conocimiento previo sobre lo que poder aprender, por lo que su objetivo principal es discernir patrones y relaciones entre los datos para poder separarlos \cite{7}.
 
-En esencia, el proceso de Clustering es el mismo, hasta el punto en que básicamente podríamos considerarlos sinónimos, puesto que Clusterización se aplica principalmente sobre conjuntos de datos que se desean organizar en diferentes grupos pero los valores que delimitan cada cluster son desconocidos y por lo tanto se definen en el propio proceso de clasificación.
+En esencia, el proceso de clustering es el mismo, hasta el punto en que básicamente podríamos considerarlos sinónimos, puesto que clusterización se aplica principalmente sobre conjuntos de datos que se desean organizar en diferentes grupos pero los valores que delimitan cada cluster son desconocidos y por lo tanto se definen en el propio proceso de clasificación.
 
-\textcolor{Red} {De una manera más técnica, podríamos decir que Clustering busca definir para una determinada característica\footnote{Dicho de una cualidad que da carácter o sirve para distinguir a algo o alguien de sus semejante.} o Suceso Elemental\footnote{Cada uno de los resultados más simples que se pueen obtener de la realización de un experimento. Obtener el número 3 al tirar un dado.} (SE), un conjunto de grupos de observaciones (suceso) \footnote{Se denomina así al subconjunto total de resultados posibles al realizar un experimento. Obtener un 3 o sacar par al tirar un dado.} con valores cercanos; donde los clusters permiten, dados los diferentes sucesos elementales que configuran un suceso, asignar cada SE al mismo cluster \cite{8}.}
+\textcolor{Red} {De una manera más técnica, podríamos decir que clustering busca definir para una determinada característica\footnote{Dicho de una cualidad que da carácter o sirve para distinguir a algo o alguien de sus semejante.} o Suceso Elemental\footnote{Cada uno de los resultados más simples que se pueen obtener de la realización de un experimento. Obtener el número 3 al tirar un dado.} (SE), un conjunto de grupos de observaciones (suceso) \footnote{Se denomina así al subconjunto total de resultados posibles al realizar un experimento. Obtener un 3 o sacar par al tirar un dado.} con valores cercanos; donde los clusters permiten, dados los diferentes sucesos elementales que configuran un suceso, asignar cada SE al mismo cluster \cite{8}.}
 
 Para poder decidir si dos datos deben ser agrupados en el mismo cluster o por el contrario, separados, es necesario introducir los conceptos de similaridad y disparidad; cuanto más similares sean los datos, más tendrán en común y por lo tanto es más probable que terminen bajo el mismo cluster, y por otra parte, si los datos son diferentes entre sí, serán separados en clusters diferentes. Este criterio se basa en la proximidad de dichos objetos. Si midiéramos la similitud entre dos objetos \textit{i} y \textit{j}, esta devolvería 0 si ambos fueran totalmente distintos, y cuanto más elevado fuera el valor, más semejantes serían, siendo 1 el valor más alto, indicando que ambos datos son idénticos. De la misma manera, medir la disparidad entre los objetos daría resultados opuestos, con un 0 indicando que son idénticos y con un 1 que no tienen nada en común. 
 
 Esta forma de calcular la proximidad no solo ayuda a la hora de agrupar los datos en clusters y formar subconjuntos a partir de los resultados, sino que con este proceso también somos capaces de detectar outliers, datos anómalos que pueden ser datos erróneos procedentes de errores de medida o fallos que deben ser eliminados o, datos correctos sumamente importantes que son diferentes al esto y deben ser analizados detenidamente. A la hora de agrupar los datos, puede que queden varios objetos sueltos sin pertenecer a ningún cluster, esos son los datos anómalos.
 
-Además, Clustering también sirve como primera aproximación a la hora de procesar los datos, porque aunque de por sí, este proceso puede aportar información útil agrupando datos similares y clasificándolos, permitiendo un análisis de los resultados que puede dar lugar al descubrimiento de nuevos conocimientos, también se usa como método de preprocesamiento de datos para otros algoritmos de Data Mining que trabajarán sobre las clusters generados y los atributos seleccionados como criterio a la hora de crearlos, pues estos se pueden considerar clases nuevas de objetos.
+Además, clustering también sirve como primera aproximación a la hora de procesar los datos, porque aunque de por sí, este proceso puede aportar información útil agrupando datos similares y clasificándolos, permitiendo un análisis de los resultados que puede dar lugar al descubrimiento de nuevos conocimientos, también se usa como método de preprocesamiento de datos para otros algoritmos de Data Mining que trabajarán sobre las clusters generados y los atributos seleccionados como criterio a la hora de crearlos, pues estos se pueden considerar clases nuevas de objetos.
 
-Es gracias a estas características que Clusterización es empleada en muchos ámbitos del mundo actual, siendo la técnica de Aprendizaje No Supervisado más extendida. Campos como la analítica de negocios, el reconocimiento de imágenes, las búsquedas web, seguridad, biología y ciencias de la salud hacen uso habitual de esta técnica para clasificar tipos de consumidores que comparten preferencias, aunar bajo un mismo subconjunto muchas formas diferentes de escribir el mismo caracter para facilitar el reconocimiento de textos escritos a mano, agrupar resultados similares de una consulta en internet y mostrar los más relevantes dentro de cada grupo o el estudio de la taxonomía\footnote{Ciencia que trata de los principios, métodos y fines de la clasificación. Se aplica en particular, dentro de la biología, para la ordenación jerarquizada y sistemática, con sus nombres, de los grupos de animales y de vegetales.} de las especies. También se puede hacer uso de su capacidad para detectar datos anómalos con la finalidad de revelar posibles fraudes o transacciones  financieras sospechosas, incluso ayudar en la disminución de crímenes analizando los resultados obtenidos tras clusterizar datos de detenciones y delitos; incluso aplicada a datos geofísicos\footnote{La Geofísica es la ciencia que estudia la Tierra desde el punto de vista de la física.} para interpretarlos y obtener resultados significativos. Asimismo, se utiliza a la hora de comparar comunidades en redes sociales permitiendo recomendar a los usuarios contenido de su agrado, o dentro del mundo sanitario, ayudando en la identificación y control de diversos tipos de enfermedades e incluso puede usarse como apoyo en la gestión de edificios públicos como bibliotecas, agrupando a los lectores por sus preferencias de manera similar a los consumidores de un negocio \cite{9,10,11,12,13}.
+Es gracias a estas características que clusterización es empleada en muchos ámbitos del mundo actual, siendo la técnica de Aprendizaje No Supervisado más extendida. Campos como la analítica de negocios, el reconocimiento de imágenes, las búsquedas web, seguridad, biología y ciencias de la salud hacen uso habitual de esta técnica para clasificar tipos de consumidores que comparten preferencias, aunar bajo un mismo subconjunto muchas formas diferentes de escribir el mismo caracter para facilitar el reconocimiento de textos escritos a mano, agrupar resultados similares de una consulta en internet y mostrar los más relevantes dentro de cada grupo o el estudio de la taxonomía\footnote{Ciencia que trata de los principios, métodos y fines de la clasificación. Se aplica en particular, dentro de la biología, para la ordenación jerarquizada y sistemática, con sus nombres, de los grupos de animales y de vegetales.} de las especies. También se puede hacer uso de su capacidad para detectar datos anómalos con la finalidad de revelar posibles fraudes o transacciones  financieras sospechosas, incluso ayudar en la disminución de crímenes analizando los resultados obtenidos tras clusterizar datos de detenciones y delitos; incluso aplicada a datos geofísicos\footnote{La Geofísica es la ciencia que estudia la Tierra desde el punto de vista de la física.} para interpretarlos y obtener resultados significativos. Asimismo, se utiliza a la hora de comparar comunidades en redes sociales permitiendo recomendar a los usuarios contenido de su agrado, o dentro del mundo sanitario, ayudando en la identificación y control de diversos tipos de enfermedades e incluso puede usarse como apoyo en la gestión de edificios públicos como bibliotecas, agrupando a los lectores por sus preferencias de manera similar a los consumidores de un negocio \cite{9,10,11,12,13}.
 
-Comprimiendo toda esta información, podemos concretar los tres principales motivos por los que Clustering es empleado: clasificación natural tanto de individuos, como de objetos, etc.;, compresión de información para mayor facilidad a la hora de mostrar resultados y generación de una estructura base para el posterior tratamiento de los datos \cite{14}.
+Comprimiendo toda esta información, podemos concretar los tres principales motivos por los que clustering es empleado: clasificación natural tanto de individuos, como de objetos, etc.;, compresión de información para mayor facilidad a la hora de mostrar resultados y generación de una estructura base para el posterior tratamiento de los datos \cite{14}.
 
-La utilidad de este método y la flexibilidad que ofrece con las diversas técnicas y formas de aplicarlo de las que dispone e es también parte fundamental de que sea tan comúnmente utilizado y con objetivos tan dispares en gran parte de las áreas del conocimiento. Sin embargo, también es un método frágil, pues depende en gran medida de los datos con los que se trabaje y el criterio escogido para determinar si dos objetos deben agruparse bajo el mismo cluster o separarlos, Por lo que es necesario seguir una serie de pasos a la hora de realizar un Análisis de Grupos de manera correcta \cite{15}:
+La utilidad de este método y la flexibilidad que ofrece con las diversas técnicas y formas de aplicarlo de las que dispone e es también parte fundamental de que sea tan comúnmente utilizado y con objetivos tan dispares en gran parte de las áreas del conocimiento. Sin embargo, también es un método frágil, pues depende en gran medida de los datos con los que se trabaje y el criterio escogido para determinar si dos objetos deben agruparse bajo el mismo cluster o separarlos, Por lo que es necesario seguir una serie de pasos a la hora de realizar un análisis de grupos de manera correcta \cite{15}:
 
 \begin{enumerate}
   \item Primero, hay que seleccionar cuidadosamente los datos con los que se va a trabajar, puesto que tanto el tipo de dato como la cantidad de los mismos influyen directamente en los resultados. Si se utilizan demasiados datos el procesamiento puede tener un coste computacional alto y es difícil ofrecer una visualización elegante de los resultados. Pero si se escogen pocos datos se pierde información útil y puede dar lugar a equivocaciones. Es por ello que este paso suele realizarlo un experto en el sector o con su ayuda. 
-  \item Segundo, se debe elegir la forma en la que se va a calcular la similaridad entre los diferentes datos, que analizaremos más adelante cuando analicemos las diferentes técnicas de Clustering.
+  \item Segundo, se debe elegir la forma en la que se va a calcular la similaridad entre los diferentes datos, que analizaremos más adelante cuando analicemos las diferentes técnicas de clustering.
   \item Tercero, debe definirse el criterio con el que se va a tomar la decisión de agrupar en el mismo cluster dos datos. Es decir, escoger el umbral de similaridad a partir del cual dos datos pasan a formar parte del mismo cluster y qué característica o conjunto de ellas van a ser utilizadas para medir la similitud. La elección del umbral suele ser complicada, y es necesaria mucha experiencia o varias iteraciones de ensayo y error para encontrar un valor correcto.
-  \item Cuarto, hay que optar por uno de los diversos algoritmos de Clusterización que existen, pues los resultados pueden cambiar considerablemente al variar la estrategia con la que se realiza la agrupación. Estos se verán a continuación.
+  \item Cuarto, hay que optar por uno de los diversos algoritmos de clusterización que existen, pues los resultados pueden cambiar considerablemente al variar la estrategia con la que se realiza la agrupación. Estos se verán a continuación.
   \item Por último, una vez obtenidos los resultados hay que validarlos e interpretarlos. La resolución de este paso depende del objetivo inicial por el que se haya decidido realizar el análisis.
 \end{enumerate}
 
 Como puede verse, tanto el paso inicial como el último requieren de la ayuda de personas cualificadas si pretenden realizarse correctamente, y es en los pasos intermedios donde la intervención de computadoras y programas informáticos son más útiles y están más desarrollados, pues permiten aligerar considerablemente la carga de trabajo y como consecuencia, se puede analizar una mayor cantidad de datos. Pero no deja de ser una tarea complicada que ha ocasionado una gran demanda de expertos en Data Mining y Data Science en diversas áreas de trabajo durante los últimos años.
 
-La utilidad que aporta Clustering permitiendo crear grupos con datos similares entre sí y dispares con respecto a otros grupos con el fin de clasificarlos y las ventajas que esto presenta queda reflejada en la cantidad de usos que recibe, por lo que vamos a profundizar en las diferentes técnicas que son empleadas para la generación de los clusters y su funcionamiento que lo hacen tan importante.
+La utilidad que aporta clustering permitiendo crear grupos con datos similares entre sí y dispares con respecto a otros grupos con el fin de clasificarlos y las ventajas que esto presenta queda reflejada en la cantidad de usos que recibe, por lo que vamos a profundizar en las diferentes técnicas que son empleadas para la generación de los clusters y su funcionamiento que lo hacen tan importante.
 
 
 %====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
 
-\section{Técnicas de Clustering} \label{sec:Técnicas de Clustering}
+\section{Técnicas de clustering} \label{sec:Técnicas de clustering}
 
-Existe una gran variedad de técnicas de Clustering que cumplen con el propósito de clasificar un conjunto de datos, pero no todas son iguales. Existen una serie de requisitos típicos que debe cumplir un algoritmo de Clusterización para satisfacer las expectativas y realizar un buen análisis. Sin embargo, cumplir todos estos requerimientos de forma simultánea es una tarea casi imposible, por lo que analizar cuáles ofrece cada algoritmo nos ayuda a identificar sus puntos fuertes y débiles y por ende, facilitar la elección del algoritmo apropiado para cada ocasión. Veamos cuáles son dichos requisitos y cómo podemos comparar algoritmos.
+Existe una gran variedad de técnicas de clustering que cumplen con el propósito de clasificar un conjunto de datos, pero no todas son iguales. Existen una serie de requisitos típicos que debe cumplir un algoritmo de clusterización para satisfacer las expectativas y realizar un buen análisis. Sin embargo, cumplir todos estos requerimientos de forma simultánea es una tarea casi imposible, por lo que analizar cuáles ofrece cada algoritmo nos ayuda a identificar sus puntos fuertes y débiles y por ende, facilitar la elección del algoritmo apropiado para cada ocasión. Veamos cuáles son dichos requisitos y cómo podemos comparar algoritmos.
 
-\subsection{\textbf{Requisitos de un algoritmo de Clustering}} \label{subsec:Requisitos de un algoritmo de Clustering}
+\subsection{\textbf{Requisitos de un algoritmo de clustering}} \label{subsec:Requisitos de un algoritmo de clustering}
 
-\cite{16} Sobre el papel, analizar datos no debería suponer un problema; pero la realidad es que existen trabas que complican este procedimiento tales como la cantidad de datos a analizar o el tipo de datos. Algunos de los algoritmos de Clustering iniciales no tenían en cuenta este tipo de problemas, porque no existían en su momento, pero ahora es necesario afrontarlos para que el análisis de los datos sea eficiente y produzca resultados completos y veraces.
+\cite{16} Sobre el papel, analizar datos no debería suponer un problema; pero la realidad es que existen trabas que complican este procedimiento tales como la cantidad de datos a analizar o el tipo de datos. Algunos de los algoritmos de clustering iniciales no tenían en cuenta este tipo de problemas, porque no existían en su momento, pero ahora es necesario afrontarlos para que el análisis de los datos sea eficiente y produzca resultados completos y veraces.
 
-A continuación, se exponen los requisitos típicos que se exigen dentro de Data Mining a un algoritmo de Clustering, así como debilidades que presentan algunos de los existentes.
+A continuación, se exponen los requisitos típicos que se exigen dentro de Data Mining a un algoritmo de clustering, así como debilidades que presentan algunos de los existentes.
 
 \begin{itemize}
-  \item \textbf{Escalabilidad}: Muchos algoritmos de Clusterización trabajan bien con conjuntos de datos pequeños que contienen solo unos cuantos cientos de objetos; sin embargo, la gran mayoría de bases de datos contienen millones y miles de millones de datos. Analizar solo un pequeño porcentaje de esos datos puede resultar en conocimiento parcial, siendo necesario que sean escalables para resultados óptimos.
+  \item \textbf{Escalabilidad}: Muchos algoritmos de clusterización trabajan bien con conjuntos de datos pequeños que contienen solo unos cuantos cientos de objetos; sin embargo, la gran mayoría de bases de datos contienen millones y miles de millones de datos. Analizar solo un pequeño porcentaje de esos datos puede resultar en conocimiento parcial, siendo necesario que sean escalables para resultados óptimos.
   
-  \item \textbf{Habilidad para lidiar con diferentes tipos de atributos}\footnote{Dicho de una característica cualitativa de un individuo o dato usada para distinguirlo de una variable o característica cuantitativa.}: Coloquialmente se suele entiende por atributo un dato\footnote{Valor obtenido para una característica en una observación.} cuantitativo, es decir, un número. Sin embargo, existen otros tipos de datos: nominales\footnote{Dicho de un dato cualitativo que proporciona suficiente información para nombrar a una característica y poder diferenciarla de otra.}, binarios\footnote{Datos que solo pueden tomar los valores cero y uno (0, 1).}, ordinales\footnote{Datos cualitativos que proporcionan suficiente información para ordenar las observaciones.}, imágenes, gráficos, documentos y mezclas de varios de estos tipos. Por lo que un algoritmo de Clustering debe estar preparado para lidiar con todos o la gran mayoría de ellos.
+  \item \textbf{Habilidad para lidiar con diferentes tipos de atributos}\footnote{Dicho de una característica cualitativa de un individuo o dato usada para distinguirlo de una variable o característica cuantitativa.}: Coloquialmente se suele entiende por atributo un dato\footnote{Valor obtenido para una característica en una observación.} cuantitativo, es decir, un número. Sin embargo, existen otros tipos de datos: nominales\footnote{Dicho de un dato cualitativo que proporciona suficiente información para nombrar a una característica y poder diferenciarla de otra.}, binarios\footnote{Datos que solo pueden tomar los valores cero y uno (0, 1).}, ordinales\footnote{Datos cualitativos que proporcionan suficiente información para ordenar las observaciones.}, imágenes, gráficos, documentos y mezclas de varios de estos tipos. Por lo que un algoritmo de clustering debe estar preparado para lidiar con todos o la gran mayoría de ellos.
   
   \item \textbf{Descubrimiento de clusters con formas arbitrarias}: Gran parte de los algoritmos utilizan formas de calcular la similaridad entre los datos basadas en la distancia entre los mismos, lo que suele dar lugar a clusters con formas redondas o esféricas. En determinadas ocasiones esto puede resultar contraproducente y erróneo, por lo que también es preciso que los algoritmos sean capaces de identificar diferentes formas de clusters, no solamente formas circulares o geométricas.
   
-  \item \textbf{Requirir información al usuario}: En algunos algoritmos de Clustering es común pedir cierto tipo de información al usuario a la hora de trabajar con los datos, como el número de clusters que se quieren generar. Este tipo de práctica puede ocasionar problemas dada la complejidad de esta decisión, sobre todo en escenarios en los que los datos cuentan con múltiples atributos. Por lo que es recomendable que los algoritmos eviten este comportamiento tanto para aliviar a los usuarios como para no comprometer la calidad a la hora de formar clusters, pues el algoritmo se adaptaría al valor introducido por el usuario, aunque fuese erróneo, generando también, un resultado errado.
+  \item \textbf{Requirir información al usuario}: En algunos algoritmos de clustering es común pedir cierto tipo de información al usuario a la hora de trabajar con los datos, como el número de clusters que se quieren generar. Este tipo de práctica puede ocasionar problemas dada la complejidad de esta decisión, sobre todo en escenarios en los que los datos cuentan con múltiples atributos. Por lo que es recomendable que los algoritmos eviten este comportamiento tanto para aliviar a los usuarios como para no comprometer la calidad a la hora de formar clusters, pues el algoritmo se adaptaría al valor introducido por el usuario, aunque fuese erróneo, generando también, un resultado errado.
   
   \item \textbf{Capacidad para trabajar con ruido en los datos}: Aunque es común tratar de antemano los datos para eliminar cualquier tipo de dato no deseado, recordemos que esta técnica también se aplica como método de preprocesamiento para otros algoritmos de Data Mining, por lo que es necesario que no sean sensibles hacia estas impurezas, puesto que podría resultar en una clasificación pobre.
   
-  \item \textbf{Clusterización incremental e insensibilidad al orden de entrada}: Cuando se aplica Clustering en entornos en constante movimiento como el de los negocios, es común que se introduzcan datos nuevos junto a los ya existentes. Ciertos algoritmos no son compatibles con este incremento de información, y es necesario volver a iniciar un nuevo proceso de Clusterización. Mientras que otros que sí toleran este cambio, resulta que son sensibles respecto al orden con el que se han introducido los datos y pueden generar agrupaciones erróneas. Estos problemas han dado lugar a la necesidad de algoritmos que puedan lidiar con la incorporación de nuevos datos y que no se vean afectados por el orden en el que estos son introducidos.
+  \item \textbf{Clusterización incremental e insensibilidad al orden de entrada}: Cuando se aplica clustering en entornos en constante movimiento como el de los negocios, es común que se introduzcan datos nuevos junto a los ya existentes. Ciertos algoritmos no son compatibles con este incremento de información, y es necesario volver a iniciar un nuevo proceso de clusterización. Mientras que otros que sí toleran este cambio, resulta que son sensibles respecto al orden con el que se han introducido los datos y pueden generar agrupaciones erróneas. Estos problemas han dado lugar a la necesidad de algoritmos que puedan lidiar con la incorporación de nuevos datos y que no se vean afectados por el orden en el que estos son introducidos.
   
   \item \textbf{Capacidad de Clusterizar datos con muchos atributos}: Aunque de manera común se suele trabajar con datos que no contienen mucho más que una decena de atributos, hay ciertos tipos de datos como documentos, en los que cada palabra clave puede ser considerada un atributo, dando lugar a cientos de atributos por cada dato, haciendo complicado trabajar con ellos y también clasificarlos, por lo que se precisa de algoritmos que puedan lograr un buen resultado con este tipo de datos.
   
-  \item \textbf{Clustering basado en restricciones}: En el mundo real podemos encontrar ciertas barreras a la hora de aplicar un algoritmo de Clustering, en los que, por ejemplo, sí se tenga que tener en cuenta un límite a la cantidad de cluster que se pueden generar o de decidir si dos datos o clusters deban unirse. Aunque es complicado realizar este tipo de agrupaciones, es indispensable que los algoritmos obtengan resultados decentes dadas estas limitaciones.
+  \item \textbf{Clustering basado en restricciones}: En el mundo real podemos encontrar ciertas barreras a la hora de aplicar un algoritmo de clustering, en los que, por ejemplo, sí se tenga que tener en cuenta un límite a la cantidad de cluster que se pueden generar o de decidir si dos datos o clusters deban unirse. Aunque es complicado realizar este tipo de agrupaciones, es indispensable que los algoritmos obtengan resultados decentes dadas estas limitaciones.
   
   \item \textbf{Interpretabilidad y usabilidad}: De nada sirve clasificar los datos y cumplir con los requisitos previos si no se puede interpretar el resultado. Los algoritmos, por lo tanto, deben ofrecer conclusiones comprensibles, coherentes y que puedan usarse, sometiéndose a ciertas limitaciones semánticas y visuales con la finalidad de acomodar el resultado al objetivo inicial por el que se ha llevado a cabo la clusterización.
 \end{itemize}
@@ -198,7 +196,7 @@ A continuación, se exponen los requisitos típicos que se exigen dentro de Data
   
   \item \textbf{Cálculo de similaridad}: Una de las pautas que más determina un algoritmo de clusterización es la forma en la que calculan la similaridad entre los datos, y que exploraremos detalladamente más adelante. Gran parte de los algoritmos utilizan la distancia que hay entre dos objetos para calcular su similaridad aplicando métodos como la distancia Euclídea o espacios vectoriales. Esta tipo de cálculo se ve beneficiado de métodos de optimización, pero suele generar clusters con formas esférica o cilíndricas, por lo que cada vez más se utilizan algoritmos que miden la similaridad entre objetos mediante la densidad o contigüidad del espacio para formar clusters, lo cual permite descubrir grupos con formas arbitrarias.  
   
-  \item \textbf{Espacio de Clusterización}: Muchos algoritmos de Clustering observan todo el espacio de datos para buscar grupos, que es un método totalmente factible y válido para datos con pocos atributos. Sin embargo, cuando se tratan de procesar datos con gran cantidad de atributos, es mejor centrarse en pequeñas partes del total, en subconjuntos de espacio y buscar clusters dentro de ellos de forma que se pueda obtener información valiosa a un menor coste computacional.
+  \item \textbf{Espacio de clusterización}: Muchos algoritmos de clustering observan todo el espacio de datos para buscar grupos, que es un método totalmente factible y válido para datos con pocos atributos. Sin embargo, cuando se tratan de procesar datos con gran cantidad de atributos, es mejor centrarse en pequeñas partes del total, en subconjuntos de espacio y buscar clusters dentro de ellos de forma que se pueda obtener información valiosa a un menor coste computacional.
 \end{itemize}
 
 
@@ -207,16 +205,16 @@ A continuación, se exponen los requisitos típicos que se exigen dentro de Data
 
 \subsection{\textbf{Clasificación general de técnicas}} \label{subsec:Clasificación general de técnicas}
 
-\cite{16} Una vez que hemos visto los requisitos de los algoritmos de Clustering y los criterios para compararlos entre sí, podemos agrupar la mayor parte de las técnicas bajo cuatro grandes grupos basados principalmente en el cálculo de la similaridad y el criterio de división. Hablaremos brevemente sobre estos a continuación y posteriormente, precisaremos de manera individual sobre cada uno de ellos en las secciones \ref{sec:Métodos basados en particiones}, \ref{sec:Métodos jerárquicos}, \ref{sec:Métodos basados en densidad} y \ref{sec:Métodos basados en rejilla}, señalando los principales algoritmos dentro de cada una de ellos.
+\cite{16} Una vez que hemos visto los requisitos de los algoritmos de clustering y los criterios para compararlos entre sí, podemos agrupar la mayor parte de las técnicas bajo cuatro grandes grupos basados principalmente en el cálculo de la similaridad y el criterio de división. Hablaremos brevemente sobre estos a continuación y posteriormente, precisaremos de manera individual sobre cada uno de ellos en las secciones \ref{sec:Métodos basados en particiones}, \ref{sec:Métodos jerárquicos}, \ref{sec:Métodos basados en densidad} y \ref{sec:Métodos basados en rejilla}, señalando los principales algoritmos dentro de cada una de ellos.
 
 \begin{itemize}
   \item \textbf{Métodos basados en particiones}: Este tipo de métodos dividen todos los objetos de un conjunto de datos en clusters en los que debe haber al menos un objeto; o dicho de una forma más técnica, teniendo $n$ objetos, se generarán $k$ particiones siendo $k \leq n$. 
   
   Normalmente las técnicas de este grupo generan clusters exclusivos, donde un datos solo puede pertenecer a un cluster, pero cada vez se desarrollan más algoritmos de tipo fuzzy que relajan la agrupación. Asimismo, muchos de estos métodos calculan la distancia entre los objetos como medida de similaridad y generan de manera inicial $k$ particiones para posteriormente, de forma iterativa, tratar de reagrupar los datos y clusters para mejorar la clasificación, basándose en que los datos dentro del mismo cluster estén realmente cerca entre sí, y que con los datos de otros clusters se encuentren lejos. 
   
-  Estos métodos sirven tanto para búsquedas en todo el espacio, como Clusterización de espacios reducidos, pero cuando la cantidad de atributos es muy alta, es preferible aplicarlos en subconjuntos, pues es complicado optimizar computacionalmente este tipo de algoritmos a la hora de generar las particiones iniciales, y para lidiar con este inconveniente, se suelen usar métodos heurísticos como \textit{$k$-means} que mejoran la calidad de Clustering progresivamente. Sin embargo, como se ha mencionado previamente, esta aproximación de Clustering genera grupos con formas esféricas y circulares, por lo que uno de los principales focos de mejora de estos algoritmos es evitar ese tipo de comportamiento cuando se trabaja con grandes conjuntos de datos.
+  Estos métodos sirven tanto para búsquedas en todo el espacio, como clusterización de espacios reducidos, pero cuando la cantidad de atributos es muy alta, es preferible aplicarlos en subconjuntos, pues es complicado optimizar computacionalmente este tipo de algoritmos a la hora de generar las particiones iniciales, y para lidiar con este inconveniente, se suelen usar métodos heurísticos como \textit{$k$-means} que mejoran la calidad de clustering progresivamente. Sin embargo, como se ha mencionado previamente, esta aproximación de clustering genera grupos con formas esféricas y circulares, por lo que uno de los principales focos de mejora de estos algoritmos es evitar ese tipo de comportamiento cuando se trabaja con grandes conjuntos de datos.
   
-  \item \textbf{Métodos jerárquicos}: Las técnicas de este grupo crean, como su propio nombre indica, una separación jerárquica de los datos. De forma diferente a los métodos basados en particiones donde todos los datos están en el mismo nivel, aquí se busca generar varios rangos para la Clusterización. 
+  \item \textbf{Métodos jerárquicos}: Las técnicas de este grupo crean, como su propio nombre indica, una separación jerárquica de los datos. De forma diferente a los métodos basados en particiones donde todos los datos están en el mismo nivel, aquí se busca generar varios rangos para la clusterización. 
   
   Existen dos enfoques principales dependiendo de cómo se generen los clusters: \textit{aglomerativo} y \textit{divisivo}. Las técnicas aglomerativas parten de la separación de todos los objetos en clusters individuales y progresivamente los va uniendo hasta que solo queda uno; mientras que las técnicas divisivas parten de un solo cluster inicial en el que se encuentran todos los objetos y va formando clusters más pequeños hasta que cada objeto es en sí un cluster. Es por eso que también se les conoce por métodos de ``abajo a arriba'' y de ``arriba a abajo'' respectivamente.
   
@@ -228,7 +226,7 @@ A continuación, se exponen los requisitos típicos que se exigen dentro de Data
   
   El concepto general es que para cada objeto dentro de un cluster, en su vecindario de radio $r$ de distancia debe haber un mínimo de $x$ objetos. Este tipo de aproximación resulta muy conveniente a la hora de detectar datos anómalos.
   
-  Los métodos basados en densidad pueden clasificar los datos en clusters exclusivos o de manera jerárquica, y aunque normalmente consideran que un objeto solo puede pertenecer a un cluster, también existen técnicas fuzzy Clustering. Asimismo, se pueden aplicar tanto en espacios completos como en regiones puntuales.
+  Los métodos basados en densidad pueden clasificar los datos en clusters exclusivos o de manera jerárquica, y aunque normalmente consideran que un objeto solo puede pertenecer a un cluster, también existen técnicas fuzzy clustering. Asimismo, se pueden aplicar tanto en espacios completos como en regiones puntuales.
   
   \item \textbf{Métodos basados en cuadrícula o rejilla}: Estos métodos dividen el espacio de objetos en una cantidad determinada de celdas que forman una estructura de cuadrícula o rejilla, de ahí su nombre. Todas las operaciones con los datos se realizan dentro de la rejilla, que permite un procesamiento mucho más rápido, pues no depende de la cantidad de datos, sino de la de celdas existentes.
   
@@ -242,8 +240,6 @@ A continuación, exploraremos todos estos grupos y las principales técnicas emp
 
 \begin{table*}[ht]
   \centering
-  \caption{Resumen de métodos de Clusterización}
-  \label{Tab:Tabla 1}
   \resizebox{\linewidth}{!}{%
   \begin{tabular}{|l|l|}
     \hline
@@ -254,6 +250,8 @@ A continuación, exploraremos todos estos grupos y las principales técnicas emp
     \begin{tabular}[c]{@{}l@{}}Basados \\ en rejilla\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Utiliza una estructura de rejilla o cuadrícula\\ - La velocidad de procesamiento es alta, pues no influye el número de objetos\end{tabular} \\ \hline
     \end{tabular}%
   }
+  \caption{Resumen de métodos de clusterización}
+  \label{Tab:Tabla 1}
 \end{table*}
 
 
@@ -264,7 +262,7 @@ A continuación, exploraremos todos estos grupos y las principales técnicas emp
 
 \section{Métodos basados en particiones} \label{sec:Métodos basados en particiones}
 
-Los métodos pertenecientes a este grupo son quizás los más simples y básicos de Clustering. Estos organizan los datos de un conjunto en diversos clusters exclusivos, y es común que soliciten al usuario el número de grupos o clusters finales que debe haber, pues sirve como punto de partida para estos métodos. Esto permite simplificar su funcionamiento, pero a su vez, supone el incumplimiento de uno de los requisitos de los que se ha hablado previamente en la sección \ref{subsec:Requisitos de un algoritmo de Clustering}.
+Los métodos pertenecientes a este grupo son quizás los más simples y básicos de clustering. Estos organizan los datos de un conjunto en diversos clusters exclusivos, y es común que soliciten al usuario el número de grupos o clusters finales que debe haber, pues sirve como punto de partida para estos métodos. Esto permite simplificar su funcionamiento, pero a su vez, supone el incumplimiento de uno de los requisitos de los que se ha hablado previamente en la sección \ref{subsec:Requisitos de un algoritmo de clustering}.
 
 De forma técnica, dado un conjunto de datos $D$ con $n$ objetos y siendo $k$ el número de clusters a formar, un algoritmo basado en particiones organizará los objetos en $k$ divisiones, con $k \leq n$, donde cada una de ellas representa un cluster. 
 
@@ -411,11 +409,11 @@ Antes de explicar algunos de los algoritmos más utilizados dentro de este grupo
 %====================================================================================================================================================%
 
 
-\subsection{Medidas de distancia} \label{Medidas de distancia}
+\subsection{Medidas de distancia} \label{subsec:Medidas de distancia}
 
-Independiéntemente del tipo de método que se utilice, aglomerativo o divisivo, se necesita una forma de medir la distancia entre dos clusters, puesto que aquí no se escoge un representante del cluster para realizar este tipo de cálculos. 
+Independiéntemente del tipo de método que se utilice, aglomerativo o divisivo, se necesita una forma de medir la distancia entre dos clusters.
 
-Existen tres formas diferentes de realizar este cálculo. \\
+Hay principalmente tres formas diferentes de realizar este cálculo, aunque existen otras variaciones en las que, por ejemplo, se consideran los centroides, etc.\\
 
 \begin{itemize}
   \item \textbf{Distancia mínima}: Esta define la proximidad entre dos clusters como la distancia entre los puntos más cercanos entre ambos, también conocida como ``single link''.
@@ -436,17 +434,36 @@ Las dos primeras son medidas que se van a los extremos y son susceptibles a dato
 
 \subsection{AGNES} \label{subsec:AGNES}
 
+AGglomerative NESting (AGNES) es quizás el algoritmo jerárquico aglomerativo más básico y extendido, pues aplica de forma exácta el concepto mencionado previamente. Parte de una separación de todos los objetos, cada uno formando un único cluster y compara la proximidad entre todos ellos utilizando el método que más convenga de los mencionados en la sección previa \ref{subsec:Medidas de distancia}. Selecciona aquellos dos con el resultado más pequeño, es decir, los dos más cercanos y los fusiona en un solo cluster, y se vuelven a calcular la similaridad entre todos los clusters, así sucesivamente hasta que todos los datos quedan agrupados en la raiz \cite{18}.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{dendograma}
+\label{fig:dendograma}
+\caption{Clusterización jerárquica algomerativa (AGNES) y divisiva (DIANA) sobre el conjunto de datos \{$a$,$b$,$c$,$d$,$e$\} \cite{16}.}
+\end{figure}
+
+
 
 %====================================================================================================================================================%
 
 
 \subsection{DIANA} \label{subsec:DIANA}
 
+El algoritmo DIvisive ANAlysis (DIANA) es la contraparte a AGNES, siendo también el método jerárquico divisivo más simple y utilizado. En este caso, al ser divisivo, parte de un solo cluster en el que se encuentran todos los datos y que de forma iterativa los va dividiendo en función de un criterio preestablecido, como por ejemplo la distancia Euclididana mínima entre los objetos más cercanos del vencidario.
+
+Tanto AGNES como DIANA generan una estructura denominada dendograma que se puede ver en la figura \ref{fig:dendograma}, donde se compara el proceso de estos dos algoritmos.
+
 
 %====================================================================================================================================================%
 
 
 \subsection{BIRCH} \label{subsec:BIRCH}
+
+El algoritmo BIRCH, proveniente del nombre Balanced Iterative Reducing and Clustering using Hierarchies, es uno de los que mencionábamos previamente que combina el método jerárquico con otros métodos para solucionar los problemas de escalabilidad e imposibilidad de deshacer las divisiones o fusiones de clusters.
+
+La característica que permite a BIRCH esto es utilizar un concepto denominado \textit{}
 
 
 %====================================================================================================================================================%
@@ -556,6 +573,8 @@ Las dos primeras son medidas que se van a los extremos y son susceptibles a dato
 \bibitem{16}Han, J., Kamber, M., \& Pei, J. (2012). Data Mining: Concepts and Techniques (3rd ed., p.~740). 225 Wyman Street, Waltham, MA 02451, USA: Morgan Kaufmann Publishers, Elsevier.
 
 \bibitem{17} Höppner, F., Klawonn, F., Kruse, R., \& Runkler, T. (1999). Fuzzy cluster analysis: methods for classification, data analysis and image recognition. John Wiley \& Sons.
+
+\bibitem{18} Sano, A. V., Imanuel, T. D., Calista, M. I., Nindito, H., \& Condrobimo, A. R. (2018). The Application of AGNES Algorithm to Optimize Knowledge Base for Tourism Chatbot. 2018 International Conference on Information Management and Technology (ICIMTech). doi:10.1109/icimtech.2018.8528174
 
 
 \end{thebibliography}
