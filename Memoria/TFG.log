@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.18)  17 AUG 2020 05:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.18)  17 AUG 2020 21:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -606,15 +606,12 @@ Underfull \hbox (badness 1184) in paragraph at lines 175--176
 \OT1/lmr/m/n/10 aplica clus-ter-ing en en-tornos en con-stante
  []
 
-[5] [6] [7] [8] [9] [10]
-Underfull \vbox (badness 2027) has occurred while \output is active []
-
- [11]
+[5] [6] [7] [8] [9] [10] [11]
 Underfull \hbox (badness 10000) in paragraph at lines 416--417
 
  []
 
-</home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dendograma.png, id=281, 1097.09875p
+</home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dendograma.png, id=300, 1097.09875p
 t x 551.05875pt>
 File: /home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dendograma.png Graphic file (t
 ype png)
@@ -630,7 +627,7 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 444.
  [12 </home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dendograma.png>]
-</home/acamon/TFG/GitHub/TFG/Recursos/Fotos/chameleon.png, id=305, 1037.8775pt 
+</home/acamon/TFG/GitHub/TFG/Recursos/Fotos/chameleon.png, id=323, 1037.8775pt 
 x 240.9pt>
 File: /home/acamon/TFG/GitHub/TFG/Recursos/Fotos/chameleon.png Graphic file (ty
 pe png)
@@ -638,22 +635,17 @@ pe png)
 Package pdftex.def Info: /home/acamon/TFG/GitHub/TFG/Recursos/Fotos/chameleon.p
 ng  used on input line 511.
 (pdftex.def)             Requested size: 222.0pt x 51.52782pt.
- [13]
-Underfull \hbox (badness 10000) in paragraph at lines 532--533
-[]\OT1/lmr/m/n/10 La mayor^^S^^Pa de esos m^^Setodos uti-lizan
+ [13] [14 </home/acamon/TFG/GitHub/TFG/Recursos/Fotos/chameleon.png>] (./TFG.to
+c
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+ [][] [][][]\OT1/lmr/bx/n/10 M[]etodos jer[]arquicos prob-a- 
  []
 
-
-Underfull \hbox (badness 1377) in paragraph at lines 532--533
-\OT1/lmr/m/n/10 fu-sio-n-ando o sep-a-rando clus-ters, pu-di-endo
- []
-
-[14 </home/acamon/TFG/GitHub/TFG/Recursos/Fotos/chameleon.png>] (./TFG.toc)
+)
 \tf@toc=\write5
 \openout5 = `TFG.toc'.
 
-
-(./TFG.loa)
+ (./TFG.loa)
 \tf@loa=\write6
 \openout6 = `TFG.loa'.
 
@@ -679,30 +671,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--2
 \openout8 = `TFG.lof'.
 
 
-Underfull \hbox (badness 2680) in paragraph at lines 629--630
+Underfull \hbox (badness 2680) in paragraph at lines 661--662
 \OT1/lmr/m/n/8 pu-ta-tional Sci-ence and Its Ap-pli-ca-tions (ICCSA).
  []
 
 [15
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 646.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 678.
  [16
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 646.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 678.
  (./TFG.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 646.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 646.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 678.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 678.
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: C4EF9D062DC693FA7F6CFC4D7C08CADF;1538.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 646.
+(rerunfilecheck)             Checksum: 91F1BCC51AE447FBC124045C5487A815;1707.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 678.
  ) 
 Here is how much of TeX's memory you used:
- 9385 strings out of 481239
- 139593 string characters out of 5920377
- 442129 words of memory out of 5000000
- 24321 multiletter control sequences out of 15000+600000
+ 9394 strings out of 481239
+ 139729 string characters out of 5920377
+ 443274 words of memory out of 5000000
+ 24327 multiletter control sequences out of 15000+600000
  580739 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,18n,37p,1914b,596s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -724,10 +716,10 @@ sr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/p
 ublic/lm/lmsy5.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm
 /lmtt8.pfb>
-Output written on TFG.pdf (16 pages, 467987 bytes).
+Output written on TFG.pdf (16 pages, 473553 bytes).
 PDF statistics:
- 499 PDF objects out of 1000 (max. 8388607)
- 450 compressed objects within 5 object streams
- 126 named destinations out of 1000 (max. 500000)
- 211 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 525 PDF objects out of 1000 (max. 8388607)
+ 476 compressed objects within 5 object streams
+ 129 named destinations out of 1000 (max. 500000)
+ 235 words of extra memory for PDF output out of 10000 (max. 10000000)
 

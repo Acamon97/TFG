@@ -268,7 +268,7 @@ De forma técnica, dado un conjunto de datos $D$ con $n$ objetos y siendo $k$ el
 
 Los clusters son generados intentando optimizar el criterio de similaridad, siendo uno de los más utilizados el del cálculo de proximidad, donde se intentan agrupar bajo el mismo clusters aquellos objetos que estén cerca en el espacio de datos y que a su vez, hacen que todos los datos de un cluster estén alejados de los objetos de otro cluster, asegurando de esta manera un alto grado de semejanza entre los del mismo cluster y diferencia con los de otros clusters.
 
-A continuación se exponen los dos algoritmos más utilizados de este grupo y de los más conocidos: $k$-media ($k$-means) y $k$-medoids.
+A continuación se exponen los dos algoritmos más utilizados de este grupo y de los más conocidos: $k$-media ($k$-means) \ref{subsec:k-means} y $k$-medoids \ref{subsec:k-medoids}.
 
 
 %====================================================================================================================================================%
@@ -323,7 +323,7 @@ Además, recordemos que este algoritmo flaquea a la hora de encontrar clusters c
 %====================================================================================================================================================%
 
 
-\subsection{\textbf{\textit{k}-Medoids}} \label{subsec:k-Medoids}
+\subsection{\textbf{\textit{k}-Medoids}} \label{subsec:k-medoids}
 
 Como se ha mencionado en el apartado previo \ref{subsec:k-means}, $k$-means es realmente susceptible a datos anómalos e impurezas, pues como estos objetos se suelen encontrar alejados de todos los datos, cuando se asignan a un cluster y se recalcula el valor del centroide, este valor se ve altamente alterado, lo cual tambíen afecta a la formación del resto de clusters.
 
@@ -403,13 +403,13 @@ Los métodos jerarquicos pueden sufrir dificultades a la hora de dividir o junta
 
 Para lidiar con estos problemas se han desarrollado técnicas como BIRCH y Chameleon de las que se habla en las secciomes \ref{subsec:BIRCH} y \ref{subsec:Chameleon}, que incorporan métodos jerárquicos con otros métodos, resultando en otros tipos de clustering conocidos como multi fase y microclustering.
 
-Antes de explicar algunos de los algoritmos más utilizados dentro de este grupo, analicemos brevemente las diferentes maneras que existen en los métodos jerárquicos para medir distancias.
+Antes de explicar algunos de los algoritmos más utilizados dentro de este grupo, AGNES \ref{subsec:AGNES}, DIANA \ref{subsec:DIANA}, BIRCH \ref{subsec:BIRCH} y Chameleon \ref{subsec:Chameleon}, analizaremosmos brevemente las diferentes maneras que existen en los métodos jerárquicos para medir distancias.
 
 
 %====================================================================================================================================================%
 
 
-\subsection{Medidas de distancia} \label{subsec:Medidas de distancia}
+\subsection{\textbf{Medidas de distancia}} \label{subsec:Medidas de distancia}
 
 Independiéntemente del tipo de método que se utilice, aglomerativo o divisivo, se necesita una forma de medir la distancia entre dos clusters.
 
@@ -432,7 +432,7 @@ Las dos primeras son medidas que se van a los extremos y son susceptibles a dato
 %====================================================================================================================================================%
 
 
-\subsection{AGNES} \label{subsec:AGNES}
+\subsection{\textbf{AGNES}} \label{subsec:AGNES}
 
 AGglomerative NESting (AGNES) es quizás el algoritmo jerárquico aglomerativo más básico y extendido, pues aplica de forma exácta el concepto mencionado previamente. Parte de una separación de todos los objetos, cada uno formando un único cluster y compara la proximidad entre todos ellos utilizando el método que más convenga de los mencionados en la sección previa \ref{subsec:Medidas de distancia}. Selecciona aquellos dos con el resultado más pequeño, es decir, los dos más cercanos y los fusiona en un solo cluster, y se vuelven a calcular la similaridad entre todos los clusters, así sucesivamente hasta que todos los datos quedan agrupados en la raiz \cite{18}.
 
@@ -449,7 +449,7 @@ AGglomerative NESting (AGNES) es quizás el algoritmo jerárquico aglomerativo m
 %====================================================================================================================================================%
 
 
-\subsection{DIANA} \label{subsec:DIANA}
+\subsection{\textbf{DIANA}} \label{subsec:DIANA}
 
 El algoritmo DIvisive ANAlysis (DIANA) es la contraparte a AGNES, siendo también el método jerárquico divisivo más simple y utilizado. En este caso, al ser divisivo, parte de un solo cluster en el que se encuentran todos los datos y que de forma iterativa los va dividiendo en función de un criterio preestablecido, como por ejemplo la distancia Euclididana mínima entre los objetos más cercanos del vencidario.
 
@@ -459,7 +459,7 @@ Tanto AGNES como DIANA generan una estructura denominada dendograma que se puede
 %====================================================================================================================================================%
 
 
-\subsection{BIRCH} \label{subsec:BIRCH}
+\subsection{\textbf{BIRCH}} \label{subsec:BIRCH}
 
 \cite{LIBRO, BIRCH, BIRCH 2} El algoritmo BIRCH, proveniente del nombre Balanced Iterative Reducing and Clustering using Hierarchies, es uno de los que mencionábamos previamente que combina el método jerárquico con otros métodos para solucionar los problemas de escalabilidad e imposibilidad de deshacer las divisiones o fusiones de clusters.
 
@@ -501,7 +501,7 @@ Esta aproximación de clusterización ha probado ser rápida, escalable y fiable
 %====================================================================================================================================================%
 
 
-\subsection{Chameleon} \label{subsec:Chameleon}
+\subsection{\textbf{Chameleon}} \label{subsec:Chameleon}
 
 
 Chameleon es un algoritmo jerárquico que utiliza un modelado dinámico para calcular la similaridad entre pares de clusters. Esto es determinado por cómo de bien conectados estén los objetos dentro del cluster y la proximidad entre clusters; es decir, dos clusters se fusionarán si su interconectividad es alta y están muy cerca. Una de las principales ventajas de esta aproximación es que puede adaptarse a los clusters y sus diferentes formas para cualquier tipo de dato, siempre que se pueda aplicar una función para calcular la similaridad.
@@ -522,14 +522,14 @@ Este algoritmo ha demostrado se capaz de identificar clusters con formas arbitra
 %====================================================================================================================================================%
 
 
-\subsection{Métodos jerárquicos probabilísticos} \label{subsec:Métodos jerárquicos probabilísticos}
+\subsection{\textbf{Métodos jerárquicos probabilísticos}} \label{subsec:Métodos jerárquicos probabilísticos}
 
 Todos los métodos jerárquicos vistos hasta ahora utilizan algoritmos y medidas de proximidad para clusterizar, lo cual hace que sean fáciles de entender y eficientes en muchos ámbitos. Sin embargo, tienen varios problemas con los que todavía se intenta lidiar:
 
 \begin{itemize}
   \item Establecer una distancia de proximidad para los métodos jerárquicos es complicado en la gran mayoría de los casos.
   \item Para aplicar un algoritmo, es necesario que los objetos tengan todos los datos si se desea obtener un resultado de alta calidad.
-  \item La mayoría de esos métodos utilizan heurísticas que buscan optimizaciones locales fusionando o separando clusters, pudiendo resultar en un resultado inexacto global.
+  \item Muchos de estos métodos utilizan heurísticas que buscan optimizaciones locales fusionando o separando clusters, pudiendo resultar en un resultado gobal inexacto.
 \end{itemize}
 
 Para ello, los métodos jerárquicos probabilísticos pretenden solventar algunos de estos problemas utilizando modelos probabilísticos para calcular la proximidad entre clusters.
@@ -545,6 +545,40 @@ Normalmente se asume que estos modelos generativos siguen funciones de distribuc
 
 
 \section{Métodos basados en densidad} \label{sec:Métodos basados en densidad}
+
+
+Los métodos jerárquicos y basados en particiones son muy útiles y eficaces encontrando clusters con formas esféricas y circulares, y aunque algunos de ellos sí puedan detectar en cierta medidad otras formas, sigue siendo insuficiente, y en conjuntos de datos con datos anómalos e impurezas es muy probable que no sean capaces de generar clusters de calidad.
+
+Una solución a este problema es modelar los clusters como regiones densas de objetos separadas por regiones de tenue densidad, la estrategia principal de los algoritmos basados en densidad. 
+
+A continuación explraremos los tres algoritmos más populares dentro de este grupo, DBSCAN \ref{subsec:dbscan}, OPTICS \ref{subsec:optics} y DENCLUE \ref{subsec:denclue}.
+
+%====================================================================================================================================================%
+
+
+\subsection{\textbf{DBSCAN}} \label{subsec:dbscan}
+
+
+El algoritmo DBSCAN (Density-Based Spatial Clustering of Applications with Noise) se basa fundamentalmente en encontrar objetos cuyos alrededores sean densos y conectarlos con objetos de iguales características para formar clusters.
+
+Este algoritmo solicita dos valores al usuario, el primero $\epsilon > 0$ delimita el radio del vecindario de todos los objetos, y el segundo \textit{MinPts} es utilizado para deteminar la densidad del vecindario de un objeto $o$. Cuando el vecindario de un objeto $o$ contiene más de \textit{MinPts} objetos, $o$ se considera un objeto central o núcleo, que es el centro o pilar de un cluster. Y lo primero que hace DBSCAN es encontrar todos los núcleos existentes en un conjunto de datos $D$.
+
+
+
+
+
+
+
+%====================================================================================================================================================%
+
+
+\subsection{\textbf{OPTICS}} \label{subsec:optics}
+
+
+%====================================================================================================================================================%
+
+
+\subsection{\textbf{DENCLUE}} \label{subsec:denclue}
 
 
 %====================================================================================================================================================%
