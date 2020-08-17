@@ -7,7 +7,7 @@
 \usepackage[utf8]{inputenc}
 % Paquete para mostrar el número de líneas
 \usepackage[modulo]{lineno}
-\linenumbers
+%\linenumbers
 % Paquete para mostrar imágenes
 \usepackage{graphicx}
 \graphicspath{ {/home/acamon/TFG/GitHub/TFG/Recursos/Fotos/} }
@@ -92,7 +92,7 @@ Data Mining, Clustering, R
 % Intento de poner una foto
 %\includegraphics[width=\linewidth]{19_domo_data-never-sleeps-7}
 
-Desde finales del sigo \textsc{xx} se ha considerado que vivimos en la ``era de la información'', una etapa caracterizada por el incremento, desarrollo y propagación de emergentes tecnologías de la información y comunicación que han permitido al ser humano romper las barreras de la distancia, el tiempo y el lugar a la hora de comunicarse y compartir información; actividades que han sido decisivas en nuestra historia \cite{1}. Sin embargo, la era en la que realmente vivimos es la ``era de los datos'', donde \textcolor{Red} {cada día se generan más de dos mil quinientos billones de petabytes\footnote {Un Petabyte es una unidad de información o almacienamiento de datos equivalente a un cuadrillon de bytes, mil terabytes o un millón de gigabytes. En este caso, es el equivalente a 2.5 quintillones de bytes.} de datos} provenientes de comercios, ciencias, Internet y casi cualquier actividad del día a día \cite{2} que acaban volcados en redes de ordenadores, sitios web, bases de datos y otros medios de almacenaje. 
+Desde finales del sigo \textsc{xx} se ha considerado que vivimos en la ``era de la información'', una etapa caracterizada por el incremento, desarrollo y propagación de emergentes tecnologías de la información y comunicación que han permitido al ser humano romper las barreras de la distancia, el tiempo y el lugar a la hora de comunicarse y compartir información; actividades que han sido decisivas en nuestra historia \cite{INTRODUCCION}. Sin embargo, la era en la que realmente vivimos es la ``era de los datos'', donde \textcolor{Red} {cada día se generan más de dos mil quinientos billones de petabytes\footnote {Un Petabyte es una unidad de información o almacienamiento de datos equivalente a un cuadrillon de bytes, mil terabytes o un millón de gigabytes. En este caso, es el equivalente a 2.5 quintillones de bytes.} de datos} provenientes de comercios, ciencias, Internet y casi cualquier actividad del día a día \cite{DATA NEVER SLEEP} que acaban volcados en redes de ordenadores, sitios web, bases de datos y otros medios de almacenaje. 
 
 Esta explosión de datos, a la que se ha denominado Big Data, se debe al alto grado de computarización de la sociedad y el avance de herramientas de recolección y almacenamiento de datos. Negocios en todo el mundo generan grandes cantidades de datos derivados de transacciones, stock de productos,  platillas de empleados, etc. Las ramas de la ciencia producen datos de manera constante frutos de experimentos, observaciones, recogida de muestras, etc. Y más recientemente, Internet y las redes sociales han sido las principales responsables del aumento excesivo de datos, siendo usadas por millones de personas simultáneamente.
 
@@ -157,7 +157,7 @@ Existe una gran variedad de técnicas de clustering que cumplen con el propósit
 
 \subsection{\textbf{Requisitos de un algoritmo de clustering}} \label{subsec:Requisitos de un algoritmo de clustering}
 
-\cite{16} Sobre el papel, analizar datos no debería suponer un problema; pero la realidad es que existen trabas que complican este procedimiento tales como la cantidad de datos a analizar o el tipo de datos. Algunos de los algoritmos de clustering iniciales no tenían en cuenta este tipo de problemas, porque no existían en su momento, pero ahora es necesario afrontarlos para que el análisis de los datos sea eficiente y produzca resultados completos y veraces.
+\cite{LIBRO} Sobre el papel, analizar datos no debería suponer un problema; pero la realidad es que existen trabas que complican este procedimiento tales como la cantidad de datos a analizar o el tipo de datos. Algunos de los algoritmos de clustering iniciales no tenían en cuenta este tipo de problemas, porque no existían en su momento, pero ahora es necesario afrontarlos para que el análisis de los datos sea eficiente y produzca resultados completos y veraces.
 
 A continuación, se exponen los requisitos típicos que se exigen dentro de Data Mining a un algoritmo de clustering, así como debilidades que presentan algunos de los existentes.
 
@@ -187,7 +187,7 @@ A continuación, se exponen los requisitos típicos que se exigen dentro de Data
 
 \subsection{\textbf{Criterios de comparación}} \label{subsec:Criterios de comparación}
 
-\cite{16} Cada algoritmo opera de forma distinta en diferentes aspectos como el criterio de división, la separación de clusters, el cálculo de la similaridad y el espacio de clusterización. Observando los pasos a seguir y la toma de decisiones de un algoritmo, podemos compararlo con otro y escoger cuál es más adecuado para el problema a afrontar. 
+\cite{LIBRO} Cada algoritmo opera de forma distinta en diferentes aspectos como el criterio de división, la separación de clusters, el cálculo de la similaridad y el espacio de clusterización. Observando los pasos a seguir y la toma de decisiones de un algoritmo, podemos compararlo con otro y escoger cuál es más adecuado para el problema a afrontar. 
 
 \begin{itemize}
   \item \textbf{Criterio de división}: Principalmente existen dos tipos de métodos respecto a este criterio, aquellos que fraccionan todos los datos para que no exista ningún tipo de orden o diferencia de nivel entre ellos, y los que, por el lado opuesto, dividen los datos de manera jerárquica, permitiendo formar clusters en diferentes niveles semánticos. Cada uno aporta una utilidad distinta, con el primer tipo de criterio podemos abordar problemas como la clasificación de clientes o lectores, conjuntos de datos en los todos reciben el mismo trato; mientras que con criterio de partición jerárquico podemos organizar documentos en varios campos como ``deportes'', ``política'' o ``comida'', y dentro de cada campo tener subconjuntos como ``postres'', ``pasta'' o ``carne''.
@@ -205,7 +205,7 @@ A continuación, se exponen los requisitos típicos que se exigen dentro de Data
 
 \subsection{\textbf{Clasificación general de técnicas}} \label{subsec:Clasificación general de técnicas}
 
-\cite{16} Una vez que hemos visto los requisitos de los algoritmos de clustering y los criterios para compararlos entre sí, podemos agrupar la mayor parte de las técnicas bajo cuatro grandes grupos basados principalmente en el cálculo de la similaridad y el criterio de división. Hablaremos brevemente sobre estos a continuación y posteriormente, precisaremos de manera individual sobre cada uno de ellos en las secciones \ref{sec:Métodos basados en particiones}, \ref{sec:Métodos jerárquicos}, \ref{sec:Métodos basados en densidad} y \ref{sec:Métodos basados en rejilla}, señalando los principales algoritmos dentro de cada una de ellos.
+\cite{LIBRO} Una vez que hemos visto los requisitos de los algoritmos de clustering y los criterios para compararlos entre sí, podemos agrupar la mayor parte de las técnicas bajo cuatro grandes grupos basados principalmente en el cálculo de la similaridad y el criterio de división. Hablaremos brevemente sobre estos a continuación y posteriormente, precisaremos de manera individual sobre cada uno de ellos en las secciones \ref{sec:Métodos basados en particiones}, \ref{sec:Métodos jerárquicos}, \ref{sec:Métodos basados en densidad} y \ref{sec:Métodos basados en rejilla}, señalando los principales algoritmos dentro de cada una de ellos.
 
 \begin{itemize}
   \item \textbf{Métodos basados en particiones}: Este tipo de métodos dividen todos los objetos de un conjunto de datos en clusters en los que debe haber al menos un objeto; o dicho de una forma más técnica, teniendo $n$ objetos, se generarán $k$ particiones siendo $k \leq n$. 
@@ -401,7 +401,7 @@ Como se puede ver, son métodos opuestos pero que operan bajo el mismo principio
 
 Los métodos jerarquicos pueden sufrir dificultades a la hora de dividir o juntar clusters, una parte crítica en su procedimiento, puesto que, a diferencia de los métodos basados en particiones donde en cada iteración se reagrupaban los puntos hacia el cluster más cercano, si un método jerárquico divide o junta dos clusters, no hay vuelta atrás y los siguiente pasos trabajarán con el resultado obtenido sin poder cambiarlo. Por lo que decidir cómo y por qué motivo se genera un cluster es una tarea complicada, que de no ser correcta, puede ocasionar resultados pobres. Y la otra desventaja principal de este enfoque es que no escalan bien hacia grandes volúmenes de datos, puesto que deben realizar muchas comprobaciones cuando se queieren unir o separar clusters.
 
-Para lidiar con estos problemas se han desarrollado técnicas como BIRCH y Chameleon de las que se habla en la \textcolor{Red}{sección X}, que incorporan métodos jerárquicos con otros métodos, resultando en otros tipos de clustering conocidos como multi fase y microclustering.
+Para lidiar con estos problemas se han desarrollado técnicas como BIRCH y Chameleon de las que se habla en las secciomes \ref{subsec:BIRCH} y \ref{subsec:Chameleon}, que incorporan métodos jerárquicos con otros métodos, resultando en otros tipos de clustering conocidos como multi fase y microclustering.
 
 Antes de explicar algunos de los algoritmos más utilizados dentro de este grupo, analicemos brevemente las diferentes maneras que existen en los métodos jerárquicos para medir distancias.
 
@@ -441,7 +441,7 @@ AGglomerative NESting (AGNES) es quizás el algoritmo jerárquico aglomerativo m
 \centering
 \includegraphics[width=\linewidth]{dendograma}
 \label{fig:dendograma}
-\caption{Clusterización jerárquica algomerativa (AGNES) y divisiva (DIANA) sobre el conjunto de datos \{$a$,$b$,$c$,$d$,$e$\} \cite{16}.}
+\caption{Clusterización jerárquica algomerativa (AGNES) y divisiva (DIANA) sobre el conjunto de datos \{$a$,$b$,$c$,$d$,$e$\} \cite{LIBRO}.}
 \end{figure}
 
 
@@ -461,9 +461,41 @@ Tanto AGNES como DIANA generan una estructura denominada dendograma que se puede
 
 \subsection{BIRCH} \label{subsec:BIRCH}
 
-El algoritmo BIRCH, proveniente del nombre Balanced Iterative Reducing and Clustering using Hierarchies, es uno de los que mencionábamos previamente que combina el método jerárquico con otros métodos para solucionar los problemas de escalabilidad e imposibilidad de deshacer las divisiones o fusiones de clusters.
+\cite{LIBRO, BIRCH, BIRCH 2} El algoritmo BIRCH, proveniente del nombre Balanced Iterative Reducing and Clustering using Hierarchies, es uno de los que mencionábamos previamente que combina el método jerárquico con otros métodos para solucionar los problemas de escalabilidad e imposibilidad de deshacer las divisiones o fusiones de clusters.
 
-La característica que permite a BIRCH esto es utilizar un concepto denominado \textit{}
+Lo que permite a BIRCH esto es utilizar un concepto denominado \textit{característica de agrupamiento}, en inglés clustering feature (CF), que sirve para resumir un cluster, y otro llamado \textit{árbol de características de agrupamiento}, en inglés clustering feature tree (CF-tree), para representar la jerarquía de clusters. Estos dos atributos ayudan en la escalabilidad y rapidez del algoritmo y hacen posible utilizarlo en conjuntos de datos en los que se añaden nuevos datos. Veamos brevemente cómo funciona.
+
+Consideremos un cluster $C_i$ con $n$ objetos en él, CF es un vector de tres dimensiones que pretende resumir la información estadística del cluster de la siguiente manera \begin{equation} CF = \left(n, LS, SS \right ) \end{equation}, donde $LS$ es la suma de los $n$ objetos y $SS$ es la suma de los $n$ objetos elevados al cuadrado. Esto permite obtener datos como el centroide $c_i$, el radio $R$ y diámetro $D$ del mismo, donde estos dos últimos representan lo ajustado que está el cluster alrededor del centroide. 
+
+Usando esto, no hace falta guardar todos los datos del cluster, sino únicamente esta variable. Y a la hora de fusionar dos clusters $C_i$ y $C_j$, sus CF respectivos se suman tal que \begin{equation}CF_i + CF_j = \left (n_i + n_j, LS_i + LS_j, SS_i + SS_j \right )\end{equation}.
+
+Por ejemplo, suponiendo que tenemos un cluster $C_i$ con los puntos (2,5), (3,2) y (4,3), $CF_i$ se calcula de la siguiente forma: 
+\begin{align*}
+n_i &= \left (3 \right), \\
+LS_i &= \left (2 + 3 + 4, 5 + 2 + 3 \right) =  \left (9, 10 \right), \\
+SS_i &= \left (2^2 + 3^2 + 4^2 , 5^2 + 2^2 + 3^2 \right) = \left (29, 38 \right), \\
+CF_i &=  \left(n_i, LS_i, SS_i \right )= \left (3, \left (9, 10 \right), \left (29, 38 \right) \right).  
+\end{align*}
+
+Y ahora, consideremos que hay que fusionar $C_i$ con $C_j$ para formar otro cluster nuevo $C_z$, siendo $CF_j = \left(3, \left(6,7 \right), \left(36,49 \right) \right)$,
+
+\begin{align*}
+&CF_z = CF_i + CF_j = \\
+&= \left(3, \left (9, 10 \right), \left (29, 38 \right) \right) +\left(3, \left(6,7 \right), \left(36,49 \right) \right)= \\
+&= \left(6, \left(15,17 \right), \left(65,87 \right) \right).
+\end{align*}
+
+Y el otro concepto, CF-tree tiene una estructura en forma de árbol que contiene el CF de cada cluster. Una estructura de árbol está formada por raíces y hojas. Un nodo raíz debe tener al menos un descendiente u hoja, mientras que las hojas son nodos terminales. Las hojas  almacenan el CF de un cluster, y su nodo padre o la raíz de dicha hoja almacena la suma de los CF de todos sus hijos. Este utiliza dos parámetros para controlar el desarrollo del árbol: el factor de ramificación $B$, y el umbral $T$; estos indican cuántos hijos u hojas puede tener un nodo y cuántos nodos puede tener un cluster, respectivamente. El tamaño del umbral determina el tamaño del árbol y su elección supone cierta dificultad.
+
+BIRCH es un método que consiste de dos fases principales:
+
+\begin{enumerate}
+  \item BIRCH escanea todo el conjunto de datos con la intención de formar un CF-tree inicial para comprimir todos los datos intentando mantener la estructura inherente de los datos. Esta fase es dinámica y el CF-tree es generado conforme se van insertando más datos, que se van insertando en las hojas siempre y cuando estas no superen ya el umbral $T$ de objetos permitidos, en cuyo caso, el cluster se divide en dos. Si llegase un punto en que tantos nodos no cupiesen en la memoria disponible, se aumenta el valor de T, permitiendo que los nodos alberguen más objetos y haya menos información que almacenar, provocando una reconstrucción de CF-tree.
+  \item Posteriormente, se aplica un algoritmo de clusterización a las hojas del CF-tree que elimina clusters con poca calidad o pocos datos, que suelen ser datos anómalos y fusiona grupos de datos densos en clusters aún más grandes. Típicamente son algoritmos basados en particiones.
+\end{enumerate}
+
+Esta aproximación de clusterización ha probado ser rápida, escalable y fiable con los resultados generados, sin embargo sigue teniendo problemas, puesto que el umbral $T$ determina en gran medida la formación de clusters y puede que se generen grupos que no son precisamente ``naturales'' y por otro lado, como utiliza el radio como criterio para definir clusters tiene peor resultados si los clusters no son esféricos o circulares.
+
 
 
 %====================================================================================================================================================%
@@ -472,17 +504,45 @@ La característica que permite a BIRCH esto es utilizar un concepto denominado \
 \subsection{Chameleon} \label{subsec:Chameleon}
 
 
+Chameleon es un algoritmo jerárquico que utiliza un modelado dinámico para calcular la similaridad entre pares de clusters. Esto es determinado por cómo de bien conectados estén los objetos dentro del cluster y la proximidad entre clusters; es decir, dos clusters se fusionarán si su interconectividad es alta y están muy cerca. Una de las principales ventajas de esta aproximación es que puede adaptarse a los clusters y sus diferentes formas para cualquier tipo de dato, siempre que se pueda aplicar una función para calcular la similaridad.
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{chameleon}
+\label{fig:chameleon}
+\caption{Chameleon: clusterización jerárquica basada en k-vecinos y modelado dinámico \cite{LIBRO}.}
+\end{figure}
+
+En la imagen \ref{fig:chameleon} podemos observar el funcionamiento de este algoritmo. Primero utiliza $k$-vecinos para construir un grafo disperso, donde cada vértice representa un objeto y estos están conectados mediante aristas si se encuentran dentro del rango de $k$-vecinos y son similares. Las aristas, además, están ponderadas en función de la similaridad de los objetos. 
+
+Posteriormente, se aplica un algoritmo basado en particiones para dividir el grafo generado por $k$-vecinos en clusters, eliminando aquellas aristas con menos peso, es decir, las que unen clusters menos similares. Y una ver termina este proceso, se vuelve a aplica un algoritmo jerárquico aglomerativo que itera sobre los clusters generados y los fusiona basándose en la \textit{interconectividad relativa} y la \textit{cercanía relativa} de los clusters.
+
+Este algoritmo ha demostrado se capaz de identificar clusters con formas arbitrarias de mejor manera que otros algoritmos, pero su coste computacional sigue siendo elevado cuando se trabaja con conjuntos de datos con muchos atributos.
+
 %====================================================================================================================================================%
 
 
 \subsection{Métodos jerárquicos probabilísticos} \label{subsec:Métodos jerárquicos probabilísticos}
+
+Todos los métodos jerárquicos vistos hasta ahora utilizan algoritmos y medidas de proximidad para clusterizar, lo cual hace que sean fáciles de entender y eficientes en muchos ámbitos. Sin embargo, tienen varios problemas con los que todavía se intenta lidiar:
+
+\begin{itemize}
+  \item Establecer una distancia de proximidad para los métodos jerárquicos es complicado en la gran mayoría de los casos.
+  \item Para aplicar un algoritmo, es necesario que los objetos tengan todos los datos si se desea obtener un resultado de alta calidad.
+  \item La mayoría de esos métodos utilizan heurísticas que buscan optimizaciones locales fusionando o separando clusters, pudiendo resultar en un resultado inexacto global.
+\end{itemize}
+
+Para ello, los métodos jerárquicos probabilísticos pretenden solventar algunos de estos problemas utilizando modelos probabilísticos para calcular la proximidad entre clusters.
+
+Estos métodos tratan de ver el conjunto de datos como una muestra de un mecanismo subyacente que ha generado los datos, denominado \textit{moldeo generativo}, y lo que pretende esta forma de clustering es intentar estimar de la manera más precisa el modelo generativo mediante los datos que se van a procesar. 
+
+Normalmente se asume que estos modelos generativos siguen funciones de distribución como la de Bernoulli o la Gausiana, por lo que se reduce mucho el campo de trabajo y solo queda probar valores hasta dar con los que más se ajustan a los objetos del conjunto de datos. 
 
 
 %====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
 
-\clearpage
 
 \section{Métodos basados en densidad} \label{sec:Métodos basados en densidad}
 
@@ -540,9 +600,9 @@ La característica que permite a BIRCH esto es utilizar un concepto denominado \
 \renewcommand{\section}[2]{}
 \begin{thebibliography}{X}
 
-\bibitem{1} Alberts, D. S., \& Papp, D. S. (1997). \href{http://www.dodccrp.org/files/Alberts_Anthology_I.pdf} {The information age: An anthology on its impact and consequences}. Office of the Assistant Secretary of Defense Washington DC Command and Control Research Program (CCRP).
+\bibitem{INTRODUCCION} Alberts, D. S., \& Papp, D. S. (1997). \href{http://www.dodccrp.org/files/Alberts_Anthology_I.pdf} {The information age: An anthology on its impact and consequences}. Office of the Assistant Secretary of Defense Washington DC Command and Control Research Program (CCRP).
 
-\bibitem{2} Becoming A Data-Driven CEO | Domo. (2018). Data never sleeps 6.0 \href{https://www.domo.com/solution/data-never-sleeps-6} {https://www.domo.com/solution/data-never-sleeps-6}
+\bibitem{DATA NEVER SLEEP} Becoming A Data-Driven CEO | Domo. (2018). Data never sleeps 6.0 \href{https://www.domo.com/solution/data-never-sleeps-6} {https://www.domo.com/solution/data-never-sleeps-6}
 
 \bibitem{3} Xu, Z., \& Shi, Y. (2015). \href {https://link.springer.com/content/pdf/10.1007/s40745-015-0063-7.pdf} {Exploring big data analysis: fundamental scientific problems}´. Annals of Data Science, 2(4), 363-372.
 
@@ -570,11 +630,15 @@ La característica que permite a BIRCH esto es utilizar un concepto denominado \
 
 \bibitem{15} Carugo, O., \& Eisenhaber, F. (2010). Data Mining Techniques for the Life Sciences. Humana Press.
              
-\bibitem{16}Han, J., Kamber, M., \& Pei, J. (2012). Data Mining: Concepts and Techniques (3rd ed., p.~740). 225 Wyman Street, Waltham, MA 02451, USA: Morgan Kaufmann Publishers, Elsevier.
+\bibitem{LIBRO}Han, J., Kamber, M., \& Pei, J. (2012). Data Mining: Concepts and Techniques (3rd ed., p.~740). 225 Wyman Street, Waltham, MA 02451, USA: Morgan Kaufmann Publishers, Elsevier.
 
 \bibitem{17} Höppner, F., Klawonn, F., Kruse, R., \& Runkler, T. (1999). Fuzzy cluster analysis: methods for classification, data analysis and image recognition. John Wiley \& Sons.
 
 \bibitem{18} Sano, A. V., Imanuel, T. D., Calista, M. I., Nindito, H., \& Condrobimo, A. R. (2018). The Application of AGNES Algorithm to Optimize Knowledge Base for Tourism Chatbot. 2018 International Conference on Information Management and Technology (ICIMTech). doi:10.1109/icimtech.2018.8528174
+
+\bibitem{BIRCH} T. Zhang. (n.d.). BIRCH: An efficient data clustering method for very large databases. Proc. ACM SIGMOD Conf. Management of Data, 103-114.
+
+\bibitem{BIRCH 2} Lorbeer, B., Kosareva, A., Deva, B., Softić, D., Ruppel, P., \& Küpper, A. (2018). Variations on the Clustering Algorithm BIRCH. Big Data Research, 11, 44-53. doi: 10.1016/j.bdr.2017.09.002
 
 
 \end{thebibliography}
