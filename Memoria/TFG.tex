@@ -92,7 +92,7 @@ Data Mining, Clustering, R
 % Intento de poner una foto
 %\includegraphics[width=\linewidth]{19_domo_data-never-sleeps-7}
 
-Desde finales del sigo \textsc{xx} se ha considerado que vivimos en la ``era de la información'', una etapa caracterizada por el incremento, desarrollo y propagación de emergentes tecnologías de la información y comunicación que han permitido al ser humano romper las barreras de la distancia, el tiempo y el lugar a la hora de comunicarse y compartir información; actividades que han sido decisivas en nuestra historia \cite{INTRODUCCION}. Sin embargo, la era en la que realmente vivimos es la ``era de los datos'', donde \textcolor{Red} {cada día se generan más de dos mil quinientos billones de petabytes\footnote {Un Petabyte es una unidad de información o almacienamiento de datos equivalente a un cuadrillon de bytes, mil terabytes o un millón de gigabytes. En este caso, es el equivalente a 2.5 quintillones de bytes.} de datos} provenientes de comercios, ciencias, Internet y casi cualquier actividad del día a día \cite{DATA NEVER SLEEP} que acaban volcados en redes de ordenadores, sitios web, bases de datos y otros medios de almacenaje. 
+Desde finales del sigo \textsc{xx} se ha considerado que vivimos en la ``era de la información'', una etapa caracterizada por el incremento, desarrollo y propagación de emergentes tecnologías de la información y comunicación que han permitido al ser humano romper las barreras de la distancia, el tiempo y el lugar a la hora de comunicarse y compartir información; actividades que han sido decisivas en nuestra historia \cite{INTRODUCCION}. Sin embargo, la era en la que realmente vivimos es la ``era de los datos'', donde cada día se generan más de veiticinco mil petabytes\footnote {Un Petabyte es una unidad de información o almacienamiento de datos equivalente a un cuadrillon de bytes, mil terabytes o un millón de gigabytes. En este caso, es el equivalente a 2.5 trillones de bytes.} de datos provenientes de comercios, ciencias, Internet y casi cualquier actividad del día a día \cite{DATA NEVER SLEEP} que acaban volcados en redes de ordenadores, sitios web, bases de datos y otros medios de almacenaje. 
 
 Esta explosión de datos, a la que se ha denominado Big Data, se debe al alto grado de computarización de la sociedad y el avance de herramientas de recolección y almacenamiento de datos. Negocios en todo el mundo generan grandes cantidades de datos derivados de transacciones, stock de productos,  platillas de empleados, etc. Las ramas de la ciencia producen datos de manera constante frutos de experimentos, observaciones, recogida de muestras, etc. Y más recientemente, Internet y las redes sociales han sido las principales responsables del aumento excesivo de datos, siendo usadas por millones de personas simultáneamente.
 
@@ -172,7 +172,7 @@ A continuación, se exponen los requisitos típicos que se exigen dentro de Data
   
   \item \textbf{Capacidad para trabajar con ruido en los datos}: Aunque es común tratar de antemano los datos para eliminar cualquier tipo de dato no deseado, recordemos que esta técnica también se aplica como método de preprocesamiento para otros algoritmos de Data Mining, por lo que es necesario que no sean sensibles hacia estas impurezas, puesto que podría resultar en una clasificación pobre.
   
-  \item \textbf{Clusterización incremental e insensibilidad al orden de entrada}: Cuando se aplica clustering en entornos en constante movimiento como el de los negocios, es común que se introduzcan datos nuevos junto a los ya existentes. Ciertos algoritmos no son compatibles con este incremento de información, y es necesario volver a iniciar un nuevo proceso de clusterización. Mientras que otros que sí toleran este cambio, resulta que son sensibles respecto al orden con el que se han introducido los datos y pueden generar agrupaciones erróneas. Estos problemas han dado lugar a la necesidad de algoritmos que puedan lidiar con la incorporación de nuevos datos y que no se vean afectados por el orden en el que estos son introducidos.
+  \item \textbf{Clusterización incremental e insensibilidad al orden de entrada}: Cuando se aplica clustering en entornos en movimiento constante como el de los negocios, es común que se introduzcan datos nuevos junto a los ya existentes. Ciertos algoritmos no son compatibles con este incremento de información, y es necesario volver a iniciar un nuevo proceso de clusterización. Mientras que otros que sí toleran este cambio, resulta que son sensibles respecto al orden con el que se han introducido los datos y pueden generar agrupaciones erróneas. Estos problemas han dado lugar a la necesidad de algoritmos que puedan lidiar con la incorporación de nuevos datos y que no se vean afectados por el orden en el que estos son introducidos.
   
   \item \textbf{Capacidad de Clusterizar datos con muchos atributos}: Aunque de manera común se suele trabajar con datos que no contienen mucho más que una decena de atributos, hay ciertos tipos de datos como documentos, en los que cada palabra clave puede ser considerada un atributo, dando lugar a cientos de atributos por cada dato, haciendo complicado trabajar con ellos y también clasificarlos, por lo que se precisa de algoritmos que puedan lograr un buen resultado con este tipo de datos.
   
@@ -358,7 +358,7 @@ Cuando un intercambio de representante ocurre en un cluster, se debe comprobar s
       seleccionar un objeto cualquiera del cluster que no sea el represente actual $o_{cualquiera}$\;
       calcular el coste $T$ de intercambiar el representante del cluster $o_i$ con $o_{cualquiera}$\;
       
-      \If{T$<$0}{ intercambiar $o_i$ con $o_{cualquiera}$ como representante del cluster}´
+      \uIf{T$<$0}{ intercambiar $o_i$ con $o_{cualquiera}$ como representante del cluster}
     }
   }
   \caption{PAM, basado en representantes}
@@ -422,7 +422,7 @@ Hay principalmente tres formas diferentes de realizar este cálculo, aunque exis
   \item \textbf{Distancia maxima}: Define la proximidad entre dos clusters como la distancia entre los puntos más alejados entre ellos, también conodida como ``complete link''.
 \begin{equation} dist_{max}(C_i, C_j) =  \max_{p \in C_i, p' \in C_j} \left\{|p - p'|\right\} \end{equation}
 
-\textbf{Distancia media}: Define la proximidad entre dos clusters como la distancia media entre todos los puntos de ambos clusters.
+  \item \textbf{Distancia media}: Define la proximidad entre dos clusters como la distancia media entre todos los puntos de ambos clusters.
 \begin{equation} dist_{avg}(C_i, C_j) = \frac{1}{n_i \cdot n_j} \sum_{p \in C_i, p' \in C_j} |p - p'|  \end{equation}
 \end{itemize}
 
@@ -506,7 +506,7 @@ Esta aproximación de clusterización ha probado ser rápida, escalable y fiable
 
 Chameleon es un algoritmo jerárquico que utiliza un modelado dinámico para calcular la similaridad entre pares de clusters. Esto es determinado por cómo de bien conectados estén los objetos dentro del cluster y la proximidad entre clusters; es decir, dos clusters se fusionarán si su interconectividad es alta y están muy cerca. Una de las principales ventajas de esta aproximación es que puede adaptarse a los clusters y sus diferentes formas para cualquier tipo de dato, siempre que se pueda aplicar una función para calcular la similaridad.
 
-\begin{figure}
+\begin{figure}[ht]
 \centering
 \includegraphics[width=\linewidth]{chameleon}
 \label{fig:chameleon}
@@ -559,14 +559,72 @@ A continuación explraremos los tres algoritmos más populares dentro de este gr
 \subsection{\textbf{DBSCAN}} \label{subsec:dbscan}
 
 
-El algoritmo DBSCAN (Density-Based Spatial Clustering of Applications with Noise) se basa fundamentalmente en encontrar objetos cuyos alrededores sean densos y conectarlos con objetos de iguales características para formar clusters.
+El algoritmo DBSCAN (Density-Based Spatial Clustering of Applications with Noise), propuesto por Martin Ester, Hans-Peter Kriegel, Jorg Sander y Xiaowei Xu en 1996 \cite{DBSCAN}, se basa fundamentalmente en encontrar objetos en cuyos alrededores haya más objetos y conectarlos con objetos de iguales características para formar clusters, dejándo como separación entre ellos áreas con pocos datos.
 
-Este algoritmo solicita dos valores al usuario, el primero $\epsilon > 0$ delimita el radio del vecindario de todos los objetos, y el segundo \textit{MinPts} es utilizado para deteminar la densidad del vecindario de un objeto $o$. Cuando el vecindario de un objeto $o$ contiene más de \textit{MinPts} objetos, $o$ se considera un objeto central o núcleo, que es el centro o pilar de un cluster. Y lo primero que hace DBSCAN es encontrar todos los núcleos existentes en un conjunto de datos $D$.
+Este algoritmo solicita dos valores al usuario, el primero $\epsilon > 0$ delimita el radio del vecindario de todos los objetos, y el segundo \textit{MinPts} es utilizado para deteminar la densidad del vecindario de un objeto $o$. Cuando el vecindario de un objeto $o$, definido como $N_{\epsilon}(o) = \{o \in D | dist(o,q) \leq \epsilon\}$, contiene más de \textit{MinPts} objetos, $o$ se considera un objeto central o núcleo, que es el centro o pilar de un cluster.
 
+Sin embargo, si solo utilizáramos esto para formar los clusters, tendríamos problemas con interferencias y datos anómalos, pues los puntos en los bordes tienen menos objetos a su alrededor y se podría dar una forma de cluster errónea. Para evitar eso, se requiere que, para cada punto $p$ de un cluster $C$, haya otro punto $q$ en $C$ tal que $p$ esté dentro del vecindario de $q$ ($p  \in N_{\epsilon}(q)$) y que en el vecindario de $q$ haya al menos $MinPts$ objetos ($N_{\epsilon}(q) > MinPts$). Si se cumple esta condición, se considera que $p$ es directamente alcanzable por densidad desde $q$.
 
+Esta condición suele ser recíproca entre núcleos, pero no entre núcleos y puntos fronterizos, tal y como se aprecia en la figura \ref{fig:dbsacn1}
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{dbscan1}
+\label{fig:dbsacn1}
+\caption{DBSCAN: diferencia entre núcleos y puntos fronterizos \cite{DBSCAN}.}
+\end{figure}
 
+De esta definición se puede extrapolar otra, y es que un punto $p$ es alcanzable por densidad desde $q$, si hay una cadena de puntos $p_1, \cdots, p_n$ donde el primer punto es $q$ ($p_1 = q$) y $p_i+1$ es directamente alcanzable por densidad desde $p_i$. Al igual que la anterior, no suele ser recíproca con núcleos y puntos fronterizos, pero sí entre núcleos. Sin embargo, puede que existan dos puntos fronterizos del mismo cluster que no sean alcanzables por densidad entre ellos porque no tengan $MinPts$ objetos en su vecindario, pero que si lo sean desde un núcleo del cluster, que da lugar a otra definición.
+ 
+Se dice que un punto $p$ está conectado por densidad a un punto $q$ si hay otro punto $o$ desde el cuál, ambos, $p$ y $q$, son alcanzables por densidad, y esta propiedad si es recíproca siempre.  
 
+Ejemplos de estas tres definiciones pueden observarse en la figura \ref{fig:dbscan2}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{dbscan2}
+\label{fig:dbscan2}
+\caption{DBSCAN: términos \textit{directamente alcanzable por densidad}, \textit{alcanzable por densidad} y \textit{conectado por densidad} \cite{DBSCAN 2}.}
+\end{figure}
+
+Con estos conceptos, DBSCAN es capaz de formar clusters de forma que todos sus objetos estén conectador por densidad y detectando como impurezas y datos anómalos aquellos puntos que no pertenezcan a ninǵun cluster.
+
+Asi pues, el primer paso de este algoritmo es seleccionar un punto cualquiera $p$ del conjunto de datos $D$, y comprueba todos los puntos alcanzables por densidad con respecto a $\epsilon$ y $MinPts$. Si $p$ es un núcleo, se forma un cluster con todos los objetos alcanzables por densidad desde $p$ que no pertenezcan a otro cluster, y si es un punto fronterizo, no hay puntos que sean alcanzables por densidad desde $p$, por lo que es marcado como ruido y selecciona otro objeto. 
+
+Una vez ser forma el cluster, se selecciona otro objeto que no se haya visitado y se repite la operación. Asimismo, DBSCAN puede fusionar dos cluster si se encuentran muy cerca entre sí.
+
+Este procedimiento queda reflejado en el algoritmo \ref{alg:Algoritmo DBSCAN}.
+
+\begin{algorithm}[ht]
+\SetAlgoLined
+  \LinesNumbered
+  \SetKwRepeat{Do}{repetir}{hasta}
+  \DontPrintSemicolon
+  \KwIn{$D$: conjunto de datos con $n$ objetos, \\$\epsilon$: radio del vecindario, \\ $MinPts$: umbral de densidad del vecindario.}
+  \KwOut{Un conjunto de clusters basados en densidad.}
+  \Begin{
+    marcar todos los objetos como no visitados\;
+    \Do{quden objetos por visitar}{
+      seleccionar un objeto $p$ no visitado\;
+      marcar $p$ como visitado\;
+      \uIf{el $\epsilon$ vecindario de $p$ tiene al menos $MinPts$ objetos}{
+          creamos un nuevo cluster $C$ y le añadimos $p$\;
+          sea $N$ el conjunto de objetos en el $\epsilon$ vecindario de $p$\;
+          \ForEach{punto $p' \in N$}{
+            \uIf{$p'$ no ha sido visitado}{
+              marcamos $p'$ como visitado\;
+              \uIf{el vecindario de $p'$ tiene al menos $MinPts$}{añadimos los puntos del vecindario de $p'$ a $N$}
+              \uIf{$p'$ no pertenece a ningún cluster}{añadimos $p'$ a $C$}
+            }
+          }
+          devolvemos $C$\;
+        }
+        \uElse{marcamos $p$ como ruido}
+      }
+  }
+  \caption{DBSCAN, basado en densidad}
+  \label{alg:Algoritmo DBSCAN}
+\end{algorithm}
 
 
 %====================================================================================================================================================%
@@ -574,11 +632,35 @@ Este algoritmo solicita dos valores al usuario, el primero $\epsilon > 0$ delimi
 
 \subsection{\textbf{OPTICS}} \label{subsec:optics}
 
+Sin embargo, DBSACN sigue solicitando al usuario $\epsilon$ y $MinPts$, valores cruciales en la formación de clusters y de dificil elección. Como solución a este problema y sin la necesidad de introducir parámetros de entrada, surgió OPTICS (Ordering Points to Identify the Clustering Structure), que no devuelve una clusterización, sino un orden de clusters (cluster ordering); una lista linea de todos los objetos del conjunto de datos y que representa la estructura de clusterización basada en la densidad de los datos. Aquellos objetos que sean próxímos entre sí estarán más cerca en la lista de ordenación.
+
+Con este proceso podemos extraer la información básica de la clasificación, como los centros de los clusters o grupos con formas raras, una visualización de la clusterización y también se puede derivar la estructura intrínseca de la agrupación.
+
+Para ello, OPTICS necesita obtener dos datos adicionales para cada objeto:
+
+\begin{itemize}
+  \item \textbf{Distancia al núcleo}: La distancia al núcleo de un objeto $p$ es el valor más pequeño para $\epsilon'$ de manera que en el vecindario delimitado por dicho valor haya al menos $MinPts$, y si $p$ cumple con esta condición, se le considera núcleo. En caso de que que haya $MinPts$ en el $\epsilon'$ vecindario, se considera que la distancia al núcleo es indefinida.
+  
+  \item \textbf{Distancia de alcance}: La distancia de alcance hacia un objeto $p$ desde otro objeto $q$ es el radio mínimo que hace que $p$ sea alcanzable por densidad desde $q$ (\ref{subsec:dbscan}), por lo que $q$ debe ser un núcleo y $p$ debe estar en su vecindario. Si $q$ no es un núcleo, se considera que la distancia de alcance de $p$ a $q$ es indefinida. 
+  
+  Es posible que un objeto $p$ tenga más de una distancia de alcance, es decir, que sea alcanzable desde varios puntos. En este caso, la medida que más nos interesa es la distancia de alcance mínima.
+                        
+  Se puede formalizar este concepto como $\max\{distancia \ al \ nucleo(q), dist(p,q)\}$. 
+\end{itemize}
+
+OPTICS almacena para cada objeto del conjunto de datos la distancia al núcleo y una distancia de alcance apta, y en función de la distancia de alcance de cada objeto desde su núcleo más cercano, genera una lista llamada OrdenSemillas (OrderSeeds). 
+
+OPTICS escoge un objeto cualquiera como punto actual $p$, obtiene su $\epsilon$ vecindario, calcula su distancia al núcleo y a priori establece su distancia de alcance como indefinida. Si $p$ no es un núcleo, simplemente pasa al siguente objeto de OrdenSemillas. Si $p$ es un núcleo, actualiza la distancia de alcanza para cada objeto $q$ de su $\epsilon$ vecindario y lo inserta en OrdenSemillas si todavía no está en la lista. Esta iteración continúa hasta que la OrdenSemillas está vacía. 
+
 
 %====================================================================================================================================================%
 
 
 \subsection{\textbf{DENCLUE}} \label{subsec:denclue}
+
+Los dos algoritmos previos, DBSACN y OPTICS (\ref{subsec:dbscan}, \ref{subsec:optics}) presentan un inconveniente, $\epsilon$. Pequueñas variaciones en el radio del vecindario de los objetos puede resultar en clusters totalmente distintos. DENCLUE (DENsity based CLUstEring) pretende solventar este problema utilizando un enfoque de estimación de densidad no paramétrica llamado estimación de densidad nuclear.
+
+
 
 
 %====================================================================================================================================================%
@@ -674,6 +756,9 @@ Este algoritmo solicita dos valores al usuario, el primero $\epsilon > 0$ delimi
 
 \bibitem{BIRCH 2} Lorbeer, B., Kosareva, A., Deva, B., Softić, D., Ruppel, P., \& Küpper, A. (2018). Variations on the Clustering Algorithm BIRCH. Big Data Research, 11, 44-53. doi: 10.1016/j.bdr.2017.09.002
 
+\bibitem{DBSCAN} Ester, M., Kriegel, H. P., Sander, J., \& Xu, X. (1996, August). A density-based algorithm for discovering clusters in large spatial databases with noise. In Kdd (Vol. 96, No. 34, pp. 226-231).
+
+\bibitem{DBSCAN 2} Schlitter, N., Falkowski, T., \& Laessig, J. (2011). DenGraph-HO: Density-based Hierarchical Community Detection for Explorative Visual Network Analysis. Research and Development in Intelligent Systems XXVIII, 283-296. doi:10.1007\/978-1-4471-2318-7\_22
 
 \end{thebibliography}
 
