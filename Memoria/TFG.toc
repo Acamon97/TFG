@@ -20,9 +20,11 @@
 \contentsline {subsection}{\numberline {6.1}\textbf {DBSCAN}}{14}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}\textbf {OPTICS}}{15}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}\textbf {DENCLUE}}{16}{subsection.6.3}%
-\contentsline {section}{\numberline {7}Métodos basados en rejilla}{16}{section.7}%
-\contentsline {section}{\numberline {8}Índice}{17}{section.8}%
-\contentsline {section}{\numberline {9}Algoritmos}{17}{section.9}%
-\contentsline {section}{\numberline {10}Tablas}{17}{section.10}%
-\contentsline {section}{\numberline {11}Imágenes y figuras}{17}{section.11}%
-\contentsline {section}{\numberline {12}Referencias}{17}{section.12}%
+\contentsline {section}{\numberline {7}Métodos basados en rejilla}{17}{section.7}%
+\contentsline {subsection}{\numberline {7.1}\textbf {STING}}{17}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}\textbf {CLIQUE}}{17}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Índice}{19}{section.8}%
+\contentsline {section}{\numberline {9}Algoritmos}{19}{section.9}%
+\contentsline {section}{\numberline {10}Tablas}{19}{section.10}%
+\contentsline {section}{\numberline {11}Imágenes y figuras}{19}{section.11}%
+\contentsline {section}{\numberline {12}Referencias}{19}{section.12}%

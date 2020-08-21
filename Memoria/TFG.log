@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.18)  20 AUG 2020 05:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.18)  21 AUG 2020 09:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -614,7 +614,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 416--417
 
  []
 
-</home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dendograma.png, id=298, 1097.09875p
+</home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dendograma.png, id=306, 1097.09875p
 t x 551.05875pt>
 File: /home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dendograma.png Graphic file (t
 ype png)
@@ -630,7 +630,7 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 444.
  [12 </home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dendograma.png>]
-</home/acamon/TFG/GitHub/TFG/Recursos/Fotos/chameleon.png, id=321, 1037.8775pt 
+</home/acamon/TFG/GitHub/TFG/Recursos/Fotos/chameleon.png, id=329, 1037.8775pt 
 x 240.9pt>
 File: /home/acamon/TFG/GitHub/TFG/Recursos/Fotos/chameleon.png Graphic file (ty
 pe png)
@@ -639,7 +639,7 @@ Package pdftex.def Info: /home/acamon/TFG/GitHub/TFG/Recursos/Fotos/chameleon.p
 ng  used on input line 511.
 (pdftex.def)             Requested size: 222.0pt x 51.52782pt.
  [13] [14 </home/acamon/TFG/GitHub/TFG/Recursos/Fotos/chameleon.png>]
-</home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dbscan1.png, id=346, 453.695pt x 11
+</home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dbscan1.png, id=354, 453.695pt x 11
 1.41624pt>
 File: /home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dbscan1.png Graphic file (type
  png)
@@ -647,7 +647,7 @@ File: /home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dbscan1.png Graphic file (type
 Package pdftex.def Info: /home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dbscan1.png
   used on input line 572.
 (pdftex.def)             Requested size: 222.0pt x 54.51793pt.
-</home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dbscan2.png, id=350, 598.235pt x 26
+</home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dbscan2.png, id=358, 598.235pt x 26
 6.9975pt>
 File: /home/acamon/TFG/GitHub/TFG/Recursos/Fotos/dbscan2.png Graphic file (type
  png)
@@ -666,7 +666,14 @@ Underfull \hbox (badness 3679) in paragraph at lines 648--649
 []\OT1/lmr/m/n/10 Se puede for-malizar este con-cepto como
  []
 
-[16] (./TFG.toc
+[16]
+Underfull \hbox (badness 3189) in paragraph at lines 691--692
+[]\OT1/lmr/m/n/10 La t^^Secnica STING (STa-tis-ti-cal IN-for-ma-tion
+ []
+
+[17] [18
+
+] (./TFG.toc
 Underfull \hbox (badness 10000) in paragraph at lines 18--18
  [][] [][][]\OT1/lmr/bx/n/10 M[]etodos jer[]arquicos prob-a- 
  []
@@ -700,30 +707,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--2
 \tf@lof=\write8
 \openout8 = `TFG.lof'.
 
- [17
+ [19
 
 ]
-Underfull \hbox (badness 2680) in paragraph at lines 743--744
+Underfull \hbox (badness 2680) in paragraph at lines 785--786
 \OT1/lmr/m/n/8 pu-ta-tional Sci-ence and Its Ap-pli-ca-tions (ICCSA).
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 763.
-[18
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 807.
+[20
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 763.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 807.
  (./TFG.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 763.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 763.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 807.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 807.
 Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: 91F1BCC51AE447FBC124045C5487A815;1707.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 763.
+(rerunfilecheck)             Checksum: B36DE64619746E9EBFE8BA9DD6254DD0;1818.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 807.
  ) 
 Here is how much of TeX's memory you used:
- 9446 strings out of 481239
- 140744 string characters out of 5920377
- 442412 words of memory out of 5000000
- 24352 multiletter control sequences out of 15000+600000
+ 9460 strings out of 481239
+ 140928 string characters out of 5920377
+ 442507 words of memory out of 5000000
+ 24359 multiletter control sequences out of 15000+600000
  580739 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,27n,42p,1914b,791s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -745,10 +752,10 @@ sr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/p
 ublic/lm/lmsy5.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm
 /lmtt8.pfb>
-Output written on TFG.pdf (18 pages, 524876 bytes).
+Output written on TFG.pdf (20 pages, 533911 bytes).
 PDF statistics:
- 587 PDF objects out of 1000 (max. 8388607)
- 530 compressed objects within 6 object streams
- 156 named destinations out of 1000 (max. 500000)
- 245 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 617 PDF objects out of 1000 (max. 8388607)
+ 558 compressed objects within 6 object streams
+ 163 named destinations out of 1000 (max. 500000)
+ 261 words of extra memory for PDF output out of 10000 (max. 10000000)
 

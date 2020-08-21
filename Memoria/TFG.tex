@@ -595,7 +595,7 @@ Una vez ser forma el cluster, se selecciona otro objeto que no se haya visitado 
 
 Este procedimiento queda reflejado en el algoritmo \ref{alg:Algoritmo DBSCAN}.
 
-\begin{algorithm}[ht]
+\begin{algorithm}[!ht]
 \SetAlgoLined
   \LinesNumbered
   \SetKwRepeat{Do}{repetir}{hasta}
@@ -632,7 +632,7 @@ Este procedimiento queda reflejado en el algoritmo \ref{alg:Algoritmo DBSCAN}.
 
 \subsection{\textbf{OPTICS}} \label{subsec:optics}
 
-Sin embargo, DBSACN sigue solicitando al usuario $\epsilon$ y $MinPts$, valores cruciales en la formación de clusters y de dificil elección. Como solución a este problema y sin la necesidad de introducir parámetros de entrada, surgió OPTICS (Ordering Points to Identify the Clustering Structure), que no devuelve una clusterización, sino un orden de clusters (cluster ordering); una lista linea de todos los objetos del conjunto de datos y que representa la estructura de clusterización basada en la densidad de los datos. Aquellos objetos que sean próxímos entre sí estarán más cerca en la lista de ordenación.
+Sin embargo, DBSACN sigue solicitando al usuario $\epsilon$ y $MinPts$, valores cruciales en la formación de clusters y de difícil elección. Como solución a este problema y sin la necesidad de introducir parámetros de entrada, surgió OPTICS (Ordering Points to Identify the Clustering Structure), que no devuelve una clusterización, sino un orden de clusters (cluster ordering); una lista linea de todos los objetos del conjunto de datos y que representa la estructura de clusterización basada en la densidad de los datos. Aquellos objetos que sean próximos entre sí estarán más cerca en la lista de ordenación.
 
 Con este proceso podemos extraer la información básica de la clasificación, como los centros de los clusters o grupos con formas raras, una visualización de la clusterización y también se puede derivar la estructura intrínseca de la agrupación.
 
@@ -650,7 +650,7 @@ Para ello, OPTICS necesita obtener dos datos adicionales para cada objeto:
 
 OPTICS almacena para cada objeto del conjunto de datos la distancia al núcleo y una distancia de alcance apta, y en función de la distancia de alcance de cada objeto desde su núcleo más cercano, genera una lista llamada OrdenSemillas (OrderSeeds). 
 
-OPTICS escoge un objeto cualquiera como punto actual $p$, obtiene su $\epsilon$ vecindario, calcula su distancia al núcleo y a priori establece su distancia de alcance como indefinida. Si $p$ no es un núcleo, simplemente pasa al siguente objeto de OrdenSemillas. Si $p$ es un núcleo, actualiza la distancia de alcanza para cada objeto $q$ de su $\epsilon$ vecindario y lo inserta en OrdenSemillas si todavía no está en la lista. Esta iteración continúa hasta que la OrdenSemillas está vacía. 
+OPTICS escoge un objeto cualquiera como punto actual $p$, obtiene su $\epsilon$ vecindario, calcula su distancia al núcleo y a priori establece su distancia de alcance como indefinida. Si $p$ no es un núcleo, simplemente pasa al siguiente objeto de OrdenSemillas. Si $p$ es un núcleo, actualiza la distancia de alcanza para cada objeto $q$ de su $\epsilon$ vecindario y lo inserta en OrdenSemillas si todavía no está en la lista. Esta iteración continúa hasta que la OrdenSemillas está vacía. 
 
 
 %====================================================================================================================================================%
@@ -658,9 +658,15 @@ OPTICS escoge un objeto cualquiera como punto actual $p$, obtiene su $\epsilon$ 
 
 \subsection{\textbf{DENCLUE}} \label{subsec:denclue}
 
-Los dos algoritmos previos, DBSACN y OPTICS (\ref{subsec:dbscan}, \ref{subsec:optics}) presentan un inconveniente, $\epsilon$. Pequueñas variaciones en el radio del vecindario de los objetos puede resultar en clusters totalmente distintos. DENCLUE (DENsity based CLUstEring) pretende solventar este problema utilizando un enfoque de estimación de densidad no paramétrica llamado estimación de densidad nuclear.
+Los dos algoritmos previos, DBSACN y OPTICS (\ref{subsec:dbscan}, \ref{subsec:optics}) presentan un inconveniente, $\epsilon$. Pequeñas variaciones en el radio del vecindario de los objetos puede resultar en clusters totalmente distintos. DENCLUE \cite{DENCLUE} (DENsity based CLUstEring) pretende solventar este problema utilizando un enfoque de estimación de densidad no paramétrica llamado estimación de densidad nuclear.
 
+La idea principal detrás de este algoritmo está basada en la idea de que la influencia de cada punto, es decir, el impacto que este tiene en su vecindario, puede ser modelada formalmente utilizando una función matemática denominada \textit{función de influencia}, con la que podemos obtener la densidad media del espacio de datos, sumando  la función de influencia de todos los puntos.
 
+De esta manera, los clusters pueden ser definidos encontrando los denominados \textit{atractores de densidad}, puntos máximos locales de la función de densidad media. Estos se pueden hallar mediante el algoritmo de Escalada Simple\footnote{Técnica de optimización matemática utilizada para encontrar óptimos locales.} guiado por el gradiente de la propia función. El uso de la función de densidad media también facilita encontrar clusters de formas arbitrarias.
+
+DENCLUE implementa de manera eficaz este planteamiento y lo hace más eficaz, pues no todos los puntos del espacio de datos contribuyen de forma notable en la función de densidad media, por lo que en su lugar, usa una función local de densidad, teniendo en cuenta solo los puntos que influyen en la función. En el primer paso de este algoritmo, se preprocesan los datos, generando un mapa de los objetos relevantes del espacio de datos que sirve para aumentar la velocidad de cálculo de la función de densidad. El segundo paso es el propio clustering, donde el identifica los atractores de densidad y aquellos puntos a los que influye.
+
+Este algoritmo tiene varias ventajas, y es que es tan versátil como otros algoritmos como DBSACN y $k$-means, pero además tolera extremadamente bien datos anómalos e impurezas.
 
 
 %====================================================================================================================================================%
@@ -670,8 +676,42 @@ Los dos algoritmos previos, DBSACN y OPTICS (\ref{subsec:dbscan}, \ref{subsec:op
 
 \section{Métodos basados en rejilla} \label{sec:Métodos basados en rejilla}
 
+Todos los métodos expuestos hasta ahora tienen un enfoque sobre los datos, es decir, se basan en la distribución de los mismos en el espacio de datos para formar clusters. Sin embargo, los métodos basados en rejilla se basan en el espacio; no dividen los datos, sino que distribuyen el espacio de datos en celdas, independientemente de cómo estén repartidos los datos.
+
+Estos métodos dividen el espacio de datos en un número finito de celdas que forman una estructura de rejilla o cuadrícula, donde se realizan las operaciones de clusterización, aumentando considerablemente la velocidad de clustering, hasta el punto que la cantidad de datos es irrelevante, solo depende del número de celdas.
+
+En esta sección veremos dos de los métodos más conocidos dentro de este grupo, STING \ref{subsec:sting} y CLIQUE \ref{subsec:clique}.
 
 
+%====================================================================================================================================================%
+
+
+\subsection{\textbf{STING}} \label{subsec:sting}
+
+La técnica STING (STatistical INformation Grid) es una técnica de clusterización en la que el espacio de datos es dividido en celdas rectangulares, pudiendo descomponerlo de forma jerárquica. Cada capa de celdas forma un nivel distinto, done cada celda de un nivel superior está compuesta por varias celdas del nivel inferior, lo cual permite obtener esa estructura jerárquica de los datos.
+
+De cada celda se calcula de antemano información estadística clave de los datos que esta contiene, tales como la media, máximo, mínimo; esto facilita la obtención de paramentos para celdas superiores: el número de objetos dentro de la celda, la media, desviación típica\footnote{Medida estadística que sirve para cuatificar la dispersión de un conjunto de datos numéricos.}, máximo, mínimo y si los datos siguen algún tipo de distribución (normal, uniforme, exponencial o ninguna). 
+
+STING selecciona una de las capas superiores que se han generado, no necesariamente la primera, sino una con pocas celdas. Examina todas ellas y descarta aquella celdas que tras analizarlas, se considere que tienen poca relevancia con respecto a la clasificación deseada. Posteriormente, desciende un nivel y examina las celdas inferiores de las celdas que han superado la prueba y realiza el mismo proceso de manera iterativa hasta que se alcanza la última capa. Si en esta capa se considera que se cumple con los requisitos de la clusterización, se devuelven las celdas relevantes; por el contrario, se realiza un análisis más en profundidad de las mismas. Asimismo, todas las celdas descartadas son analizadas posteriormente. 
+
+Uno de los principales problemas de STING es que dependiendo del tamaño de las celdas, el resultado puede ser más o menos preciso, pues devuelve el polígono resultante de las celdas finales. Cuanto más pequeñas sean las celdas, menos se notarán las uniones bruscas y rectas entre celdas, y si el tamaño de las mismas fuera de 0, el resultado sería idéntico a DBSCAN \ref{subsec:dbscan}, por lo que a veces se considera STING como un algoritmo basado en densidad.
+
+
+%====================================================================================================================================================%
+
+
+\subsection{\textbf{CLIQUE}} \label{subsec:clique}
+
+En gran cantidad de ocasiones nos encontramos con situaciones en las que algunos de los atributos de los datos no aportan información a la hora de clasificar los datos. Por ejemplo, si tratásemos de clusterizar un conjunto de pacientes de gripe, atributos como ``trabajo'', ``género'' o ``edad'' varían drásticamente entre los pacientes, lo que genera dificultades a la hora de clusterizar todo el conjunto de datos. En estos casos es más conveniente realizar búsquedas en subespacios, donde se seleccionan los datos relevantes para la clasificación. nE el caso de la gripe, podría ser pacientes con síntomas similares en un rango de edad entre los tres y diez años. 
+
+CLIQUE (CLustering In QUEst) es un método simple de clusterización basada en rejilla para encontrar clusters basados en densidad dentro de subespacios. Esta técnica particiona cada atributo de los datos en una dimensión diferente que posteriormente divide en celdas y cataloga como densas o no si la cantidad de objetos dentro de una celda supera cierto umbral. 
+
+El primer paso de este algoritmo consiste precisamente en esto, dividir los datos en diferentes dimensiones, generar las rejillas y encontrar las celdas que superen el umbral. Para encontrar estas celdas, se utilizan los ejes. Se ponen ciertos intervalos a los valores del atributo, y si un intervalo supera el umbral, se seleccionan las celdas de ese intervalo en las que haya objetos. Si hay varios intervalos contiguos que superan el umbral, estos se unen. Este proceso se repite para cada dimensión. Y en el segundo paso, CLIQUE utiliza las celdas densas para formar clusters que pueden tomar formas arbitrarias.
+
+Algunas de las principales ventajas que presenta es que no es sensible al orden de entrada de los datos, escala linealmente con el tamaño del conjunto de datos y automáticamente encuentra aquellos subespacios con tantos atributos (dimensiones) posibles en los que hay clusters de alta densidad.
+
+
+ 
 %====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
@@ -759,6 +799,8 @@ Los dos algoritmos previos, DBSACN y OPTICS (\ref{subsec:dbscan}, \ref{subsec:op
 \bibitem{DBSCAN} Ester, M., Kriegel, H. P., Sander, J., \& Xu, X. (1996, August). A density-based algorithm for discovering clusters in large spatial databases with noise. In Kdd (Vol. 96, No. 34, pp. 226-231).
 
 \bibitem{DBSCAN 2} Schlitter, N., Falkowski, T., \& Laessig, J. (2011). DenGraph-HO: Density-based Hierarchical Community Detection for Explorative Visual Network Analysis. Research and Development in Intelligent Systems XXVIII, 283-296. doi:10.1007\/978-1-4471-2318-7\_22
+
+\bibitem{DENCLUE} Hinneburg, A., \& Keim, D. A. (1998). An efficient approach to clustering in large multimedia databases with noise.
 
 \end{thebibliography}
 
