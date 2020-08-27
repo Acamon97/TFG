@@ -715,6 +715,29 @@ Algunas de las principales ventajas que presenta es que no es sensible al orden 
 %====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
+
+\section{Evaluación del clustering} \label{sec:Evaluación del clustering}
+
+Las técnicas y algoritmos que se han expuesto son tan solo los más populares, una pequeña parte de todos los que existen, pues hay múltiples variaciones, nuevas versiones y combinaciones de cada uno de ellos enfocados en mejorar el rendimiento, cubrir flaquezas y permitir nuevas aplicaciones y funcionalidades.
+
+Sin embargo, ¿cómo sabemos que el resultado de una clusterización es preciso y correcto?  Es necesario evaluar la clasificación final de un proceso de clustering para cerciorarnos de que el método utilizado y los valores asignados a las variables pertinentes son los adecuados. Gracias a esto, se pueden determinar los puntos fuertes de los algoritmos e identificar aquellas condiciones, valores y tipos de datos bajo los que ofrece mejores resultados.
+
+Para valorar el resultado de una clusterización se suelen realizar tres tareas: 
+
+\begin{itemize}
+  \item \textbf{Evaluar la tendencia de la clasificación}: Intentar determinar si existe una estructura no aleatoria en la distribución de los datos, pues aplicar un método de clustering a un conjunto de datos aleatorio no devolverá resultados útiles y con significado, pues los clusters son también aleatorios y no aportan información. Para esto, se suele usar un procedimiento similar al de los métodos jerárquicos probabilísticos \ref{subsec:Métodos jerárquicos probabilísticos} en el que se calcula la probabilidad de que el conjunto de datos haya sido generado por una distribución de datos uniforme. Uno de los procedimientos más comúnes es la Estadística de Hopkins. 
+  
+  \item \textbf{Determinar el número de clusters}: En algunos algoritmos como $k$-means \ref{subsec:k-means} el número final de clusters es solicitado al usuario y por lo tanto debe aproximarse de antemano. Sin embargo, es una buena práctica calcular este valor antes de utilizar cualquier método para contrastar el resultado final. Esta tarea aunque ciertamente complicada, pues los factores de los que depende son muchos (distribución de los datos, número de atributos, cantidad de datos...) y para la que existen numerosas formas de calcularla, puede ser simplificada para un mayor entendimiento o fácil aplicación.  Uno de los métodos más sencillos es aproximar el número de clusters a $\sqrt{\frac{n}{2}}$, donde en cada cluster debería haber $\sqrt{2 \cdotp n}$, para un conjunto de $n$ datos. \textcolor{Red}{Otros métodos son Elbow Method y Validación cruzada}.
+  
+  \item \textbf{Calcular la calidad de la clusterización}: Una vez los datos han sido clasificados, se debe verificar que el resultado es bueno. Para ello se pueden usar principalmente dos aproximaciones: comprobar si los clusters acogen bien los datos (métodos intrínsecos)  o si los clusters se aproximan a una realidad existente (métodos extrínsecos), que suele ser una clasificación ideal realizada por expertos en la materia. 
+  
+  Los métodos extrínsecos intentan puntuar la clusterización obtenida $C$ con una realidad $C_g$ basandose en cuatro conceptos fundamentales: homogeneidad del cluster, la integridad del cluster, la pureza del cluster y la preservación de clusters pequeños. Mientras que los métodos intrínsecos se centran en lo compactos que son los clusters y la separación entre ellos calculando distancias entre objetos.
+\end{itemize}
+
+
+%====================================================================================================================================================%
+                                              %============================================================%
+%====================================================================================================================================================%
 %====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
@@ -740,16 +763,18 @@ Algunas de las principales ventajas que presenta es que no es sensible al orden 
 
 \clearpage
 
-\renewcommand{\contentsname}{\section{Índice}}
+\section{Anexo}
+
+\renewcommand{\contentsname}{\subsection{Índice}}
 \tableofcontents
 
-\renewcommand{\listalgorithmcfname}{\section{Algoritmos}}
+\renewcommand{\listalgorithmcfname}{\subsection{Algoritmos}}
 \listofalgorithms
 
-\renewcommand{\listtablename}{\section{Tablas}}
+\renewcommand{\listtablename}{\subsection{Tablas}}
 \listoftables
 
-\renewcommand{\listfigurename}{\section{Imágenes y figuras}}
+\renewcommand{\listfigurename}{\subsection{Imágenes y figuras}}
 \listoffigures
 
 \section{Referencias}

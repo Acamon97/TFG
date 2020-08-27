@@ -23,8 +23,10 @@
 \contentsline {section}{\numberline {7}Métodos basados en rejilla}{17}{section.7}%
 \contentsline {subsection}{\numberline {7.1}\textbf {STING}}{17}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}\textbf {CLIQUE}}{17}{subsection.7.2}%
-\contentsline {section}{\numberline {8}Índice}{19}{section.8}%
-\contentsline {section}{\numberline {9}Algoritmos}{19}{section.9}%
-\contentsline {section}{\numberline {10}Tablas}{19}{section.10}%
-\contentsline {section}{\numberline {11}Imágenes y figuras}{19}{section.11}%
-\contentsline {section}{\numberline {12}Referencias}{19}{section.12}%
+\contentsline {section}{\numberline {8}Evaluación del clustering}{18}{section.8}%
+\contentsline {section}{\numberline {9}Anexo}{19}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Índice}{19}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Algoritmos}{19}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Tablas}{19}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Imágenes y figuras}{19}{subsection.9.4}%
+\contentsline {section}{\numberline {10}Referencias}{19}{section.10}%
