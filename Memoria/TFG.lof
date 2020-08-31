@@ -1,4 +1,10 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Clusterización jerárquica algomerativa (AGNES) y divisiva (DIANA) sobre el conjunto de datos \{$a$,$b$,$c$,$d$,$e$\} \cite {LIBRO}.}}{12}{figure.1}%
+\babel@toc {spanish}{}
+\babel@toc {spanish}{}
+\babel@toc {english}{}
+\babel@toc {spanish}{}
+\babel@toc {english}{}
+\babel@toc {spanish}{}
+\contentsline {figure}{\numberline {1}{\ignorespaces Clusterización jerárquica algomerativa (AGNES) y divisiva (DIANA) sobre el conjunto de datos \{$a$,$b$,$c$,$d$,$e$\} \cite {LIBRO}.}}{13}{figure.1}%
 \contentsline {figure}{\numberline {2}{\ignorespaces Chameleon: clusterización jerárquica basada en k-vecinos y modelado dinámico \cite {LIBRO}.}}{14}{figure.2}%
 \contentsline {figure}{\numberline {3}{\ignorespaces DBSCAN: diferencia entre núcleos y puntos fronterizos \cite {DBSCAN}.}}{15}{figure.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces DBSCAN: términos \textit {directamente alcanzable por densidad}, \textit {alcanzable por densidad} y \textit {conectado por densidad} \cite {DBSCAN 2}.}}{15}{figure.4}%
+\contentsline {figure}{\numberline {4}{\ignorespaces DBSCAN: términos \textit {directamente alcanzable por densidad}, \textit {alcanzable por densidad} y \textit {conectado por densidad} \cite {DBSCAN 2}.}}{16}{figure.4}%
