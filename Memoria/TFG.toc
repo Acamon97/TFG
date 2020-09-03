@@ -6,33 +6,33 @@
 \babel@toc {spanish}{}
 \contentsline {section}{\numberline {1}Introducción}{1}{section.1}%
 \contentsline {section}{\numberline {2}Clustering}{2}{section.2}%
-\contentsline {section}{\numberline {3}Técnicas de clustering}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}\textbf {Requisitos de un algoritmo de clustering}}{4}{subsection.3.1}%
+\contentsline {section}{\numberline {3}Técnicas de clustering}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}\textbf {Requisitos de un algoritmo de clustering}}{5}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}\textbf {Criterios de comparación}}{6}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}\textbf {Clasificación general de técnicas}}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}\textbf {Clasificación general de técnicas}}{7}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Métodos basados en particiones}{8}{section.4}%
-\contentsline {subsection}{\numberline {4.1}\textbf {\textit {k}-Means}}{8}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}\textbf {\textit {k}-Medoids}}{10}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}\textbf {PAM}}{10}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}\textbf {CLARA}}{11}{subsubsection.4.2.2}%
-\contentsline {section}{\numberline {5}Métodos jerárquicos}{11}{section.5}%
-\contentsline {subsection}{\numberline {5.1}\textbf {Medidas de distancia}}{12}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}\textbf {AGNES}}{12}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}\textbf {DIANA}}{13}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}\textbf {BIRCH}}{13}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}\textbf {Chameleon}}{14}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}\textbf {Métodos jerárquicos probabilísticos}}{14}{subsection.5.6}%
-\contentsline {section}{\numberline {6}Métodos basados en densidad}{15}{section.6}%
-\contentsline {subsection}{\numberline {6.1}\textbf {DBSCAN}}{15}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}\textbf {OPTICS}}{16}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}\textbf {DENCLUE}}{17}{subsection.6.3}%
-\contentsline {section}{\numberline {7}Métodos basados en rejilla}{17}{section.7}%
-\contentsline {subsection}{\numberline {7.1}\textbf {STING}}{17}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}\textbf {CLIQUE}}{18}{subsection.7.2}%
-\contentsline {section}{\numberline {8}Evaluación del clustering}{18}{section.8}%
-\contentsline {section}{\numberline {9}Anexo}{20}{section.9}%
-\contentsline {subsection}{\numberline {9.1}\textbf {Índice}}{20}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}\textbf {Algoritmos}}{20}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}\textbf {Tablas}}{20}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}\textbf {Imágenes y figuras}}{20}{subsection.9.4}%
-\contentsline {section}{\numberline {10}Referencias}{20}{section.10}%
+\contentsline {subsection}{\numberline {4.1}\textbf {\textit {k}-Means}}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}\textbf {\textit {k}-Medoids}}{11}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}\textbf {PAM}}{11}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}\textbf {CLARA}}{12}{subsubsection.4.2.2}%
+\contentsline {section}{\numberline {5}Métodos jerárquicos}{12}{section.5}%
+\contentsline {subsection}{\numberline {5.1}\textbf {Medidas de distancia}}{13}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}\textbf {AGNES}}{13}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}\textbf {DIANA}}{14}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}\textbf {BIRCH}}{14}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}\textbf {Chameleon}}{15}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}\textbf {Métodos jerárquicos probabilísticos}}{16}{subsection.5.6}%
+\contentsline {section}{\numberline {6}Métodos basados en densidad}{16}{section.6}%
+\contentsline {subsection}{\numberline {6.1}\textbf {DBSCAN}}{16}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}\textbf {OPTICS}}{17}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}\textbf {DENCLUE}}{18}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Métodos basados en rejilla}{19}{section.7}%
+\contentsline {subsection}{\numberline {7.1}\textbf {STING}}{19}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}\textbf {CLIQUE}}{20}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Evaluación del clustering}{21}{section.8}%
+\contentsline {section}{\numberline {9}Anexo}{23}{section.9}%
+\contentsline {subsection}{\numberline {9.1}\textbf {Índice}}{23}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}\textbf {Algoritmos}}{23}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}\textbf {Tablas}}{23}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}\textbf {Imágenes y figuras}}{23}{subsection.9.4}%
+\contentsline {section}{\numberline {10}Referencias}{24}{section.10}%

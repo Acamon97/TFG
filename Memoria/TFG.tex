@@ -1,7 +1,8 @@
 % Configuración a 2 columnas
 
-%\documentclass[3p]{elsarticle}
-\documentclass[3p,twocolumn]{elsarticle}
+%\documentclass{elsarticle} % original latex
+%\documentclass[3p]{elsarticle} % una sola columna elsevier
+\documentclass[3p,twocolumn]{elsarticle} % dos columnas elsevier
 
 % Paquete con el tipo de codificación del lenguaje
 \usepackage[utf8]{inputenc}
@@ -124,7 +125,7 @@ Como resultado, ha surgido una nueva ciencia que se ha posicionado rápidamente 
 
 De entre estas nuevas disciplinas, Data Mining es la que se centra en el procesamiento de los datos, procedimiento por el cual se obtiene la información, y que se podría definir como ''\textit{Proceso de descubrimiento de patrones interesantes y conocimiento a partir de grandes volúmenes de datos}'' \cite{5}, donde dentro de la misma podemos encontrar diferentes técnicas para encontrar patrones y relaciones y dependiendo de cuál se aplique se puede obtener un resultado totalmente diferente incluso con el mismo conjunto de datos, por lo que es fundamental emplear la técnica apropiada en función del objetivo a conseguir, los datos con los que se pretende trabajar y el ámbito de aplicación.
 
-Una de las numerosas formas con las que podemos obtener información de los datos consiste en clasificarlos o agruparlos en función de su semejanza, un método comunmente aplicado en algunos de los campos más importantes del mundo moderno como la analítica de negocios, el reconocimiento de imágenes, las búsquedas web, seguridad, biología y ciencias de la salud. Sin embargo, existen dificultades a la hora de agrupar aquellos conjuntos de datos que no dispongan de una etiqueta o valor conocido que sirva como criterio de clasificación, ya sea porque dicho valor no existe o porque todavía no ha sido definido, y que son muy comunes en las disciplinas mencionadas previamente. 
+Una de las numerosas formas con las que podemos obtener información de los datos es mediante la clasificación. Esta es una de las actividades más primitivas del ser humano y que ha sido fundamental en nuestro desarrollo, dado que en pos de entender un nuevo fenómeno o asimilar un nuevo objetos solemos buscar las características principales que lo defininen y compararlo con otros objetos o fenómenos conocidos en función de la similaridad o disparidad que exista entre ellos. Este método comunmente aplicado en algunos de los campos más importantes del mundo moderno como la analítica de negocios, el reconocimiento de imágenes, las búsquedas web, seguridad, biología y ciencias de la salud. Sin embargo, existen dificultades a la hora de agrupar aquellos conjuntos de datos que no dispongan de una etiqueta o valor conocido que sirva como criterio de clasificación, ya sea porque dicho valor no existe o porque todavía no ha sido definido, y que son muy comunes en las disciplinas mencionadas previamente. 
 
 Para poder clasificar este tipo de datos y afrontar este problema, se utiliza la técnica de \textit{clustering}, un método que precisamente permite generar valores y etiquetas para un determinado conjunto de datos realizando agrupaciones denominadas \textit{clusters} o grupos, donde los datos de un mismo cluster sean muy similares entre ellos y a su vez tengan diferencias claras con datos de otros clusters, permitiendo que cada grupo resultante pueda ser etiquetado y tratado como una clase propia, generando una clasificación de los datos que puede ser analizada y de la que se puede obtener conocimiento útil.
 
@@ -152,23 +153,34 @@ Esta forma de calcular la proximidad no solo ayuda a la hora de agrupar los dato
 
 Además, clustering también sirve como primera aproximación a la hora de procesar los datos, porque aunque de por sí, este proceso puede aportar información útil agrupando datos similares y clasificándolos, permitiendo un análisis de los resultados que puede dar lugar al descubrimiento de nuevos conocimientos, también se usa como método de preprocesamiento de datos para otros algoritmos de Data Mining que trabajarán sobre los clusters generados y los atributos seleccionados como criterio a la hora de crearlos, considerando cada grupo resultante como una nueva clase de objetos.
 
-Es gracias a estas características que la clusterización es empleada en muchos ámbitos del mundo actual, siendo la técnica de Aprendizaje No Supervisado más extendida. Campos como la analítica de negocios, el reconocimiento de imágenes, las búsquedas web, seguridad, biología y ciencias de la salud hacen uso habitual de esta técnica para clasificar gran parte de los datos con los que trabajan y de los que se desconoce un atributo concreto por el que agruparlos. Dentro de estos sectores algunos de los ejemplos más comunes de clustering consisten en clasificar tipos de consumidores que comparten preferencias, aunar bajo un mismo subconjunto muchas formas diferentes de escribir el mismo caracter para facilitar el reconocimiento de textos escritos a mano, agrupar resultados similares de una consulta en internet y mostrar los más relevantes dentro de cada grupo o el estudio de la taxonomía\footnote{Ciencia que trata de los principios, métodos y fines de la clasificación. Se aplica en particular, dentro de la biología, para la ordenación jerarquizada y sistemática, con sus nombres, de los grupos de animales y de vegetales.} de las especies. 
+Es gracias a estas características que la clusterización es empleada en muchos ámbitos del mundo actual, siendo la técnica de Aprendizaje No Supervisado más extendida. Campos como ingeniería (aprendizaje automático, inteligencia artificial, reconocimiento de imágenes), ciencias de la salud (genética, biología, microbiología, paleontología, psiquiatría, patología), ciencias sociales (sociología, psicología, educación) o economía (marketing, negocios) \cite{survey} hacen uso habitual de esta técnica para clasificar gran parte de los datos con los que trabajan y de los que se desconoce un atributo concreto por el que agruparlos. Dentro de estos sectores algunos de los ejemplos más comunes de clustering consisten en clasificar tipos de consumidores que comparten preferencias, aunar bajo un mismo subconjunto muchas formas diferentes de escribir el mismo caracter para facilitar el reconocimiento de textos escritos a mano, agrupar resultados similares de una consulta en internet y mostrar los más relevantes dentro de cada grupo o el estudio de la taxonomía\footnote{Ciencia que trata de los principios, métodos y fines de la clasificación. Se aplica en particular, dentro de la biología, para la ordenación jerarquizada y sistemática, con sus nombres, de los grupos de animales y de vegetales.} de las especies. 
 
 También se puede hacer uso de su capacidad para detectar datos anómalos con la finalidad de revelar posibles fraudes o transacciones  financieras sospechosas, incluso ayudar en la disminución de crímenes analizando los resultados obtenidos tras clusterizar datos de detenciones y delitos; incluso aplicada a datos geofísicos\footnote{La Geofísica es la ciencia que estudia la Tierra desde el punto de vista de la física.} para interpretarlos y obtener resultados significativos. Asimismo, se utiliza a la hora de comparar comunidades en redes sociales permitiendo recomendar a los usuarios contenido de su agrado, o dentro del mundo sanitario, ayudando en la identificación y control de diversos tipos de enfermedades, e incluso puede usarse como apoyo en la gestión de edificios públicos como bibliotecas, agrupando a los lectores por sus preferencias de manera similar a los consumidores de un negocio \cite{9,10,11,12,13}.
 
 Comprimiendo toda esta información, podemos concretar los tres principales objetivos por los que clustering es empleado: clasificación natural de individuos, objetos, etc., compresión de información para mayor facilidad a la hora de mostrar resultados y generación de una estructura base para el posterior tratamiento de los datos \cite{14}.
 
-La utilidad de este método y la flexibilidad que ofrece con las diversas técnicas y formas de aplicarlo de las que dispone es también parte fundamental de que sea tan comúnmente utilizado y con objetivos tan dispares en gran parte de las áreas del conocimiento. Sin embargo, también es un método frágil, pues depende en gran medida de los datos con los que se trabaje y el criterio escogido para determinar si dos objetos deben agruparse bajo el mismo cluster o separarlos, siendo necesario seguir una serie de pasos a la hora de realizar un análisis de grupos de manera correcta \cite{15}:
+La utilidad de este método y la flexibilidad que ofrece con las diversas técnicas y formas de aplicarlo de las que dispone es también parte fundamental de que sea tan comúnmente utilizado y con objetivos tan dispares en gran parte de las áreas del conocimiento. Sin embargo, también es un método frágil, pues depende en gran medida de los datos con los que se trabaje y el criterio escogido para determinar si dos objetos deben agruparse bajo el mismo cluster o separarlos, siendo necesario seguir una serie de pasos a la hora de realizar un análisis de grupos de manera correcta \cite{survey,15}:
 
 \begin{enumerate}
   \item Primero, hay que seleccionar cuidadosamente los datos con los que se va a trabajar, puesto que tanto el tipo de dato como la cantidad de los mismos y el número de atributos\footnote{Dicho de una característica cualitativa de un individuo o dato usada para distinguirlo de una variable o característica cuantitativa.} influyen directamente en los resultados. Si se utilizan demasiados datos el procesamiento puede tener un coste computacional alto y es difícil ofrecer una visualización elegante de los resultados. Pero si se escogen pocos datos se pierde información útil y puede dar lugar a equivocaciones. Asimismo, datos con gran cantidad de atributos representan una dificultad añadida, elevando el coste computacional aún más y complicanto la toma de decisiones. Es por ello que este paso suele realizarlo un experto en el sector o con su ayuda. 
-  \item Segundo, se debe elegir el procedimiento con el que se va a calcular la similaridad o proximidad entre los datos y clusters. Existen varias formas de realizar esta operacion y exploraremos algunas de las más utilizadas cuando se expongan los algoritmos de clustering.
-  \item Tercero, debe definirse el criterio con el que se va a tomar la decisión de agrupar en el mismo cluster dos datos. Es decir, escoger el umbral de similaridad a partir del cual dos datos pasan a formar parte del mismo cluster y qué característica o conjunto de ellas van a ser utilizadas para realizar la clasificación. La elección del umbral suele ser complicada, y es necesaria mucha experiencia o varias iteraciones de ensayo y error para encontrar un valor correcto.
-  \item Cuarto, hay que optar por uno de los diversos algoritmos de clusterización que existen, pues los resultados pueden cambiar considerablemente al variar la estrategia con la que se realiza la agrupación. Estos se verán a continuación.
-  \item Por último, una vez obtenidos los resultados hay que validarlos e interpretarlos. La resolución de este paso depende del objetivo inicial por el que se haya decidido realizar el análisis.
+  
+  \item Segundo, hay que optar por uno de los diversos algoritmos de clusterización que existen, pues los resultados pueden cambiar considerablemente al variar la estrategia con la que se realiza la agrupación. Este paso suele venir acompañado por la elección del procedimiento por el que se va a calcular la similaridad entre los datos y clusters, y del criterio en el que se basa la decisión de agrupar en el mismo cluster dos datos. Esta última elección sinifica escoger el umbral de similaridad a partir del cual dos datos pasan a formar parte del mismo cluster y qué característica o conjunto de ellas van a ser utilizadas para realizar la clasificación. La elección del umbral suele ser complicada, y es necesaria mucha experiencia o varias iteraciones de ensayo y error para encontrar un valor correcto. 
+  
+  \item Tercero, una vez generada la clasificación fruto del proceso de clustering es necesario validar el resultado obtenido, pues cualquier técnica de clusterización generará una agrupación de un conjunto de datos independientemente de si la solución aporta o no información útil. Es por ello necesario evaluar que la clusterización cumple con ciertos criterios y estandares para afirmar que el resultado es óptimo.
+  
+  \item Por último, una vez obtenidos los resultados hay que interpretarlos, pues el objetivo final de este proceso es aportar información útil de los datos analizados para resolver el problema inicial que ha llevado a este proceso. Este proceso suele ser realizado por expertos.
 \end{enumerate}
 
-Como puede verse, tanto el paso inicial como el último requieren de la ayuda de personas cualificadas si pretenden realizarse correctamente, y es en los pasos intermedios donde la intervención de computadoras y programas informáticos son más útiles y están más desarrollados, pues permiten aligerar considerablemente la carga de trabajo y como consecuencia, se puede analizar una mayor cantidad de datos. Pero no deja de ser una tarea complicada que ha ocasionado una gran demanda de expertos en Data Mining y Data Science en diversas áreas del conocimiento durante los últimos años.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{flowchart}
+\caption{Procedimiento para el análisis de grupos. Este consta de cuatro pasos fundamenteales con realimentación \cite{survey}.}
+\label{fig:flowchart}
+\end{figure}
+
+Como se puede aprecian el la figura \ref{fig:flowchart}, hay una vía de realimentación, pues la clusterización de los datos precisa de iteraciones de prueba y error, puesto que aunque la validación de la clusterización pueda aportar información acerca de la calidad del resultado, a veces es complicado encontrar el ajuste óptimo.
+
+Asimismo, tanto el paso inicial como el último requieren de la ayuda de personas cualificadas si pretenden realizarse correctamente, y es en los pasos intermedios donde la intervención de computadoras y programas informáticos son más útiles y están más desarrollados, pues permiten aligerar considerablemente la carga de trabajo y como consecuencia, se puede analizar una mayor cantidad de datos. Pero no deja de ser una tarea complicada que ha ocasionado una gran demanda de expertos en Data Mining y Data Science en diversas áreas del conocimiento durante los últimos años.
 
 La utilidad que aporta clustering permitiendo crear grupos con datos similares entre sí y dispares con respecto a otros grupos con el fin de clasificarlos y las ventajas que esto presenta queda reflejada en la cantidad de usos que recibe, por lo que vamos a profundizar en las diferentes técnicas que son empleadas para la generación de clusters que lo hacen tan importante.
 
@@ -183,10 +195,12 @@ Hay una gran variedad de técnicas de clustering que cumplen con el propósito d
 
 \subsection{\textbf{Requisitos de un algoritmo de clustering}} \label{subsec:Requisitos de un algoritmo de clustering}
 
-\cite{LIBRO} Sobre el papel, analizar datos no debería suponer un problema, pero la realidad es que existen trabas que complican este procedimiento tales como la cantidad de datos a analizar o el tipo de datos. Algunos de los algoritmos de clustering iniciales no tenían en cuenta este tipo de problemas, porque no existían en su momento, pero ahora es necesario afrontarlos para que el análisis de los datos sea eficiente y produzca resultados completos y veraces en cualquier circunstancia.
+\cite{LIBRO} El proceso de clustering es ubícuo siendo utilizado en gran cantidad de entornos, motivo por el que se han desarrollado numerosos algoritmos y técnicas orientadas a resolver diversos problemas en campos y disciplinas específicos. Sin embargo, no existe un algoritmo que pueda aplicarse uiversalmente a cualquier conjunto de datos y esperar que el resultado sea inmejorable. 
 
-A continuación, se exponen los requisitos típicos que se exigen dentro de Data Mining a un algoritmo de clustering, así como debilidades que presentan algunos de los existentes.
+Existen trabas que complican este procedimiento tales como la cantidad de datos a analizar o el tipo de datos. Algunos de los algoritmos de clustering iniciales no tenían en cuenta este tipo de problemas, porque no existían en su momento, pero ahora es necesario afrontarlos para que el análisis de los datos sea eficiente y produzca resultados completos y veraces en cualquier circunstancia.
 
+A continuación, se exponen los requisitos típicos que se exigen dentro de Data Mining a un algoritmo de clustering, así como debilidades que presentan algunos de los existentes, pues es imprescindible investigar el problema a tratar y saber escoger el algoritmo más adecuado para resolverlo.
+ 
 \begin{itemize}
   \item \textbf{Escalabilidad}: Muchos algoritmos de clusterización trabajan bien con conjuntos de datos pequeños que contienen solo varios cientos de objetos; sin embargo, la gran mayoría de bases de datos contienen millones y miles de millones de datos. Analizar solo un pequeño porcentaje de esos datos puede resultar en conocimiento parcial. Que los algoritmos sean capaces de procesar pequeños y grándes volúmenes de datos es necesario para obtener resultados óptimos.
    
@@ -194,9 +208,9 @@ A continuación, se exponen los requisitos típicos que se exigen dentro de Data
   
   \item \textbf{Descubrimiento de clusters con formas arbitrarias}: Gran parte de los algoritmos utilizan formas de calcular la similaridad entre los datos basadas en la distancia entre los mismos, lo que suele dar lugar a clusters con formas redondas o esféricas. En determinadas ocasiones esto puede resultar contraproducente y erróneo, por lo que también es preciso que los algoritmos sean capaces de identificar diferentes formas de clusters, no solamente formas circulares o geométricas.
   
-  \item \textbf{Requirir información al usuario}: En algunos algoritmos de clustering es común pedir cierto tipo de información al usuario a la hora de trabajar con los datos, como el número de clusters que se quieren generar. Este tipo de práctica puede ocasionar problemas dada la complejidad de esta decisión, sobre todo en escenarios en los que los datos cuentan con múltiples atributos. Por lo que es recomendable que los algoritmos eviten este comportamiento tanto para aliviar a los usuarios como para no comprometer la calidad a la hora de formar clusters, pues el algoritmo se adaptaría al valor introducido por el usuario, aunque fuese erróneo, generando también, un resultado errado.
+  \item \textbf{Requerir información al usuario}: En algunos algoritmos de clustering es común pedir cierto tipo de información al usuario a la hora de trabajar con los datos, como el número de clusters que se quieren generar. Este tipo de práctica puede ocasionar problemas dada la complejidad de esta decisión, sobre todo en escenarios en los que los datos cuentan con múltiples atributos. Por lo que es recomendable que los algoritmos eviten este comportamiento tanto para aliviar a los usuarios como para no comprometer la calidad a la hora de formar clusters, pues el algoritmo se adaptaría al valor introducido por el usuario, aunque fuese erróneo, generando también, un resultado errado.
   
-  \item \textbf{Capacidad para trabajar con ruido en los datos}: Aunque es común tratar de antemano los datos para eliminar cualquier tipo de dato no deseado, recordemos que esta técnica también se aplica como método de preprocesamiento para otros algoritmos de Data Mining, por lo que es necesario que no sean sensibles hacia estas impurezas, puesto que podría resultar en una clasificación pobre.
+  \item \textbf{Capacidad para trabajar con ruido en los datos}: Aunque es común tratar de antemano los datos para eliminar cualquier tipo de dato no deseado, recordemos que esta técnica también se aplica como método de preprocesamiento para otros algoritmos de Data Mining, por lo que es necesario que no sean sensibles hacia estas impurezas, puesto que podría resultar en una clasificación pobre. Asimismo, es posible que existan datos anómalos dentro de la muestra que pueden ser de gran utilidad y detectarlos es súmamente importante.
   
   \item \textbf{Clusterización incremental e insensibilidad al orden de entrada}: Cuando se aplica clustering en entornos en movimiento constante como el de los negocios, es común que se introduzcan datos nuevos junto a los ya existentes. Ciertos algoritmos no son compatibles con este incremento de información, y es necesario volver a iniciar un nuevo proceso de clusterización. Mientras que otros que sí toleran este cambio resulta que son sensibles al orden con el que se han introducido los datos y pueden generar agrupaciones erróneas. Estos problemas han dado lugar a la necesidad de algoritmos que puedan lidiar con la incorporación de nuevos datos y que no se vean afectados por el orden en el que estos son introducidos.
   
@@ -218,7 +232,14 @@ A continuación, se exponen los requisitos típicos que se exigen dentro de Data
 \begin{itemize}
   \item \textbf{Criterio de división}: Principalmente existen dos tipos de métodos respecto a este criterio, aquellos que fraccionan todos los datos para que no exista ningún tipo de orden o diferencia de nivel entre ellos, y los que, por el lado opuesto, dividen los datos de manera jerárquica permitiendo formar clusters en diferentes niveles semánticos. Cada uno aporta una utilidad distinta, con el primer tipo de criterio podemos abordar problemas como la clasificación de clientes o lectores, conjuntos de datos en los todos reciben el mismo trato; mientras que con criterio de partición jerárquico podemos organizar documentos en varios campos como ``deportes'', ``política'' o ``comida'', y dentro de cada campo tener subconjuntos como ``postres'', ``pasta'' o ``carne''.
   
-  \item \textbf{Separación de clusters}: Otro criterio en el que hay dos enfoques: si un dato forma parte de un cluster, este no puede formar parte de otro a no ser que ambos clusters se unan; o permitir que un dato pueda estar en dos clusters a la vez, un concepto denominado ``Fuzzy clustering''. La primera aproximación ofrece un enfoque más determinista que es quizás el más aplicado entre ambos métodos, pero existen disciplinas en las que permitir que un dato forme parte de más de cluster puede ser realmente útil, por lo que cada vez recibe más usos \cite{17}.  
+  \item \textbf{Separación de clusters}: Otro criterio en el que hay dos enfoques: si un dato forma parte de un cluster, este no puede formar parte de otro a no ser que ambos clusters se unan; o permitir que un dato pueda estar en dos clusters a la vez, un concepto denominado ``Fuzzy clustering''. La primera aproximación ofrece un enfoque más determinista que es quizás el más aplicado entre ambos métodos, pero existen disciplinas en las que permitir que un dato forme parte de más de un cluster, como se aprecia en la Figura \ref{fig:fuzzy}, puede ser realmente útil, por lo que cada vez recibe más usos \cite{17}. 
+  
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{fuzzy}
+\caption{Fuzzy clusterering.}
+\label{fig:fuzzy}
+\end{figure}
   
   \item \textbf{Cálculo de similaridad}: Una de las pautas que más determina un algoritmo de clusterización es la forma en la que calculan la similaridad entre los datos, y que exploraremos detalladamente más adelante. Gran parte de los algoritmos utilizan la distancia que hay entre dos objetos para calcular su similaridad aplicando métodos como la distancia Euclídea o espacios vectoriales. Este tipo de cálculo se ve beneficiado de métodos de optimización, pero suele generar clusters con formas esféricas o cilíndricas, por lo que cada vez más se utilizan algoritmos que miden la similaridad entre objetos mediante la densidad o contigüidad del espacio para formar clusters, lo cual permite descubrir grupos con formas arbitrarias, aunque no son los únicos dos tipos.  
   
@@ -289,7 +310,7 @@ A continuación, exploraremos todos estos grupos y las principales técnicas emp
 
 \section{Métodos basados en particiones} \label{sec:Métodos basados en particiones}
 
-Los métodos pertenecientes a este grupo son quizás los más simples y básicos de clustering. Estos organizan los datos de un conjunto en diversos clusters exclusivos, y es común que soliciten al usuario el número de grupos o clusters finales que debe haber, lo que sirve como punto de partida . Esto permite simplificar su funcionamiento, pero a su vez, supone el incumplimiento de uno de los requisitos de los que se ha hablado previamente en la sección \ref{subsec:Requisitos de un algoritmo de clustering}.
+\cite{LIBRO} Los métodos pertenecientes a este grupo son quizás los más simples y básicos de clustering. Estos organizan los datos de un conjunto en diversos clusters exclusivos, y es común que soliciten al usuario el número de grupos o clusters finales que debe haber, lo que sirve como punto de partida . Esto permite simplificar su funcionamiento, pero a su vez, supone el incumplimiento de uno de los requisitos de los que se ha hablado previamente en la sección \ref{subsec:Requisitos de un algoritmo de clustering}.
 
 De forma técnica, dado un conjunto de datos $D$ con $n$ objetos y siendo $k$ el número de clusters a formar, un algoritmo basado en particiones organizará los objetos en $k$ divisiones siendo $k \leq n$, donde cada una de ellas representa un cluster. 
 
@@ -313,7 +334,7 @@ De esta manera, se utilizan sendas fórmulas para comprobar la calidad de un clu
 
 \textcolor{Red}{Es aquí, en el cálculo de la varianza donde la optimización de este método se vuelve computacionalmente complicada, pues en el peor de los casos, el total de posibles clasificaciones depende de manera exponencial del número total de clusters y posteriormente habría que comprobar los valores de la varianza dentro de cada cluster, siendo un problema de complexión NP-complejo\footnote{No se definir esto bien}.} Para resolverlo, se utilizan algoritmos voraces\footnote{Estrategia de búsqueda en la que se sigue una heurística que consiste en escoger la opción más optima en cada paso de manera local, esperando llegar a una solución general óptima.} como $k$-Means, simples y usados habitualmente.
 
-Este algoritmo sigue una serie de pasos para formar los clusters y evaluar su calidad. Primero, selecciona $n$ objetos dentro del conjunto de datos $D$ para representar los clusters iniciales; y puesto que son los únicos integrantes de ellos, el cálculo del centroide da como resultado el propio objeto. Posteriormente, asigna cada uno de los objetos restantes al cluster con el que es más similar basándose en el cálculo de la distancia Euclidiana entre el objeto y representante del cluster. A partir de aquí, el algoritmo intenta mejorar los resultados de la varianza, volviendo a calcular el centroide de cada cluster con los nuevos objetos añadidos en la iteración previa, y reagrupa los objetos ahora con los representantes de cada cluster actualizados. El proceso continua hasta que los centroides, y por ende, los clusters de la iteración actual sean idénticos a los de la iteración previa. El funcionamiento de $k$-Means queda reflejado en el algoritmo \ref{alg:Algoritmo k-means}. 
+Este algoritmo sigue una serie de pasos para formar los clusters y evaluar su calidad. Primero, selecciona $n$ objetos dentro del conjunto de datos $D$ para representar los clusters iniciales; y puesto que son los únicos integrantes de ellos, el cálculo del centroide da como resultado el propio objeto. Posteriormente, asigna cada uno de los objetos restantes al cluster con el que es más similar basándose en el cálculo de la distancia Euclidiana entre el objeto y representante del cluster. A partir de aquí, el algoritmo intenta mejorar los resultados de la varianza, volviendo a calcular el centroide de cada cluster con los nuevos objetos añadidos en la iteración previa, y reagrupa los objetos ahora con los representantes de cada cluster actualizados. El proceso continua hasta que los centroides, y por ende, los clusters de la iteración actual sean idénticos a los de la iteración previa. El funcionamiento de $k$-Means queda reflejado en el Algoritmo \ref{alg:Algoritmo k-means} y ejemplificado en la Figura \ref{fig:kmeans}.
 
 \begin{algorithm}[ht]
 \SetAlgoLined
@@ -334,6 +355,15 @@ Este algoritmo sigue una serie de pasos para formar los clusters y evaluar su ca
   \label{alg:Algoritmo k-means}
 \end{algorithm}
 
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{kmeans}
+\caption{Ejemplo de $k$-means en dos dimensiones. (a) Los centroides de los clusters se inicializan en posiciones aleatorioas. (b) Primer paso: cada objeto se añade al cluster cuyo centroide es el mas cercano. (c) Segundo paso: Cada centroide se mueve a la media de los puntos que conforman el cluster. (d, e, f) Estos pasos se repiten hasta que el resultado de dos iteraciones sea el mismo. \cite{kmeansfoto}.}
+\label{fig:kmeans}
+\end{figure}
+
+
 Sin embargo, este método no garantiza converger hacia un máximo global, sino que muchas veces termina en un máximo local por la utilización del algoritmo voraz. Esto hace que el resultado dependa de la selección de clusters iniciales sobre los que se trabaja, por lo que es es común realizar varias pruebas con diferentes clusters iniciales hasta encontrar un resultado óptimo. 
 
 Por otro lado, la complejidad temporal de $k$-means es considerablemente baja  $O(nkt)$, pues depende del número de objetos $n$, del de clusters $k$ y de la cantidad de iteraciones $t$ y normalmente encontramos que $k \ll n$ y $t \ll n$. Lo cual sugiere que escalar este algoritmo a grandes conjuntos de datos es asequible.
@@ -352,7 +382,7 @@ Además, recordemos que este algoritmo flaquea a la hora de encontrar clusters c
 
 Como se ha mencionado en el apartado previo \ref{subsec:k-means}, $k$-means es realmente susceptible a datos anómalos e impurezas, pues como estos objetos se suelen encontrar alejados de todos los datos, cuando se asignan a un cluster y se recalcula el valor del centroide, este valor se ve altamente alterado, lo cual también afecta a la formación del resto de clusters.
 
-Con el objetivo de ser menos sensible con estos datos, $k$-medoids utiliza uno de los objetos del cluster en vez de su centroide como representante del mismo, y el resto de objetos se añaden al cluster cuyo objeto representativo sea más similar. Por lo que el método para comprobar la calidad del cluster ya no es la varianza, sino el error absoluto, cuya fórmula es la siguiente: \begin{equation} \label{eq:k-medoids} E =  \sum_{i=1}^{k}  \sum_{ \in C_i} dist(p, o_i)^2 , \end{equation} siendo $E$ la suma del error absoluto de todos los puntos $p_i$ pertenecientes al cluster $C_i$ $\left(p_i \in C_i \right)$ con respecto al objeto representativo de dicho cluster $o_i$. De esta manera, $k$-medoids agrupa $n$ objetos en $k$ clusters minimizando el error absoluto.
+Con el objetivo de ser menos sensible con estos datos, $k$-medoids utiliza uno de los objetos del cluster en vez de su centroide como representante del mismo, y el resto de objetos se añaden al cluster cuyo objeto representativo sea más similar. Por lo que el método para comprobar la calidad del cluster ya no es la varianza, sino el error absoluto, cuya fórmula es la siguiente: \begin{equation} \label{eq:k-medoids} E =  \sum_{i=1}^{k}  \sum_{ \in C_i} dist(p, o_i)^2 , \end{equation} siendo $E$ la suma del error absoluto de todos los puntos $p_i$ pertenecientes al cluster $C_i$ $\left(p_i \in C_i \right)$ con respecto al objeto representativo de dicho cluster $o_i$. De esta manera, $k$-medoids agrupa $n$ objetos en $k$ clusters minimizando el error absoluto. 
 
 Los algoritmos más conocidos que utilizan esta aproximación para formar clusters son Partioning Around Medoids(PAM) y Clustering LARge Applications (CLARA), cada uno con sus propias características, que veremos a continuación.
 
@@ -390,7 +420,7 @@ Cuando un intercambio de representante ocurre en un cluster, se debe comprobar s
   \label{alg:Algoritmo PAM}
 \end{algorithm}
 
-Este procedimiento, que queda reflejado en el algoritmo de PAM \ref{alg:Algoritmo PAM}, es más robusto que $k$-means al ser más tolerante a datos anómalos e impurezas, porque el medoid está menos influenciado por estos que la media. Sin embargo, esta aproximación es mucho más compleja computacionalmente para cada iteración y sigue solicitando el número de clusters $k$, por lo que para grandes volúmenes de datos resulta ineficiente, dando origen a otra versión enfocada precisamente a este tipo de trabajo: CLARA.
+Este procedimiento, que queda reflejado en el algoritmo de PAM \ref{alg:Algoritmo PAM}, es más robusto que $k$-means al ser más tolerante a datos anómalos e impurezas, porque el medoid está menos influenciado por estos que la media. Sin embargo, esta aproximación es mucho más compleja computacionalmente para cada iteración, siendo esta $O \left(k\left(n-k\right)^2\right)$ y además, sigue solicitando el número de clusters $k$, por lo que para grandes volúmenes de datos resulta ineficiente, dando origen a otra versión enfocada precisamente a este tipo de trabajo: CLARA.
 
 
 %====================================================================================================================================================%
@@ -400,7 +430,7 @@ Este procedimiento, que queda reflejado en el algoritmo de PAM \ref{alg:Algoritm
 
 CLARA es una variación de PAM y que también aplica $k$-medoids a la hora de formar clusters, pero que en lugar de tener en cuenta todos los datos $n$ del conjunto de datos $D$, este algoritmo escoge una muestra aleatoria $m$ de datos y posteriormente aplica PAM para calcular los mejores representantes de la muestra. Esta muestra idealmente representa de una manera precisa al conjunto de datos original $D$ siempre y cuando cada objeto $p_i$ tenga las mismas posibilidades de ser escogido para la muestra. De esta manera y tras varias iteraciones seleccionando muestras arbitrarias, CLARA devuelve la mejor clusterización obtenida de todas ellas para aplicarla, ahora sí, en todo el conjunto de datos $D$.
 
-Esto permite que la complejidad computacional disminuya, pues la comprobación de la calidad de los clusters y el intercambio de representantes que tanto costaba en PAM es reducido de manera drástica con este enfoque, permitiendo de esta manera que pueda trabajar con grandes volúmenes de datos.
+Esto permite que la complejidad computacional disminuya, pues la comprobación de la calidad de los clusters y el intercambio de representantes que tanto costaba en PAM es reducido de manera drástica con este enfoque, permitiendo de esta manera que pueda trabajar con grandes volúmenes de datos. La complejidad para calcular los medoids de una muestra aleatoria es de $O\left(k\cdot s^2 + k\left(n - k \right)\right)$, siendo $s$ el tamaño de la muestra.
 
 Sin embargo, este algoritmo depende totalmente de las muestras escogidas y la probabilidad de que el mejor representante de cada cluster se encuentre en ella, puesto que si tan solo uno de ellos no aparece en alguna de las muestras, CLARA nunca encontrará la mejor clusterización posible. 
 
@@ -412,17 +442,17 @@ Sin embargo, este algoritmo depende totalmente de las muestras escogidas y la pr
 
 \section{Métodos jerárquicos} \label{sec:Métodos jerárquicos}
 
-Mientras que los métodos basados en particiones cumplen con el requisito básico de agrupar los datos en clusters exclusivos, hay ocasiones en las que clasificar los datos en diferentes niveles, es decir, de forma jerárquica, puede proporcionar grandes ventajas. De esta manera, los métodos jerárquicos organizan los datos en una jerarquía o árbol de clusters. 
+\cite{LIBRO} Mientras que los métodos basados en particiones cumplen con el requisito básico de agrupar los datos en clusters exclusivos, hay ocasiones en las que clasificar los datos en diferentes niveles, es decir, de forma jerárquica, puede proporcionar grandes ventajas. De esta manera, los métodos jerárquicos organizan los datos en una jerarquía o árbol de clusters. 
 
 Útil en escenarios donde los datos tengan de por sí cierta estructura jerárquica (\textit{p. ej.} estructura de empleados de una empresa) o en aquellos en los que se pretenda descubrir si existe una oculta(\textit{p. ej.} teoría de la evolución), estos métodos se clasifican a su vez en dos grupos: aglomerativos y divisivos. 
 
 \begin{itemize}
   \item \textbf{Métodos jerárquicos aglomerativos}: Estos métodos utilizan una estrategia de ``abajo a arriba'', partiendo de que cada objeto compone su propio cluster, de forma iterativa los va uniendo en clusters más grandes hasta que solo queda un único cluster, que se conoce como ``raíz''. En cada iteración se mergen los dos clusters más cercanos entre sí para formar uno solo.
 
-  \item \textbf{Métodos jerárquicos divisivos}: Este tipo de métodos utilizan una estrategia de ``arriba a abajo'', donde sitúa a todos los objetos en un cluster inicial, la raíz, y de manera progresiva divide la raíz en subclusters más pequeños sucesivamente hasta que cada cluster queda formado únicamente por un objeto o los objetos de cada cluster son prácticamente idénticos entre sí.
+  \item \textbf{Métodos jerárquicos divisivos}: Este tipo de métodos utilizan una estrategia de ``arriba a abajo'', donde se sitúa a todos los objetos en un cluster inicial, la raíz, y de manera progresiva se divide la raíz en subclusters más pequeños sucesivamente hasta que cada cluster queda formado únicamente por un objeto o los objetos de cada cluster son prácticamente idénticos entre sí.
 \end{itemize}
 
-Como se puede ver, son métodos opuestos pero que operan bajo el mismo principio. Sin embargo, es mucho más complicado dividir los datos que juntarlos, pues hay muchas más posibilidades y por lo tanto más comprobaciones que realizar, dando lugar a que los métodos aglomerativos sean más comunes y los divisivos dependan de métodos heurísticos que pueden dar resultados inexactos.
+Como se puede ver, son métodos opuestos pero que operan bajo el mismo principio. Sin embargo, es mucho más complicado dividir los datos que juntarlos, pues hay muchas más posibilidades, en concreto, existen $2^{n-1}-1$ formas de dividir un conjunto de $n$ datos en dos clusters; por lo tanto, hay má muchas más comprobaciones que realizar, dando lugar a que los métodos aglomerativos sean más comunes y los divisivos dependan de métodos heurísticos que pueden dar resultados inexactos.
 
 Los métodos jerárquicos pueden sufrir dificultades a la hora de dividir o juntar clusters, una parte crítica en su procedimiento, puesto que, a diferencia de los métodos basados en particiones donde en cada iteración se reagrupaban los puntos hacia el cluster más cercano, si un método jerárquico divide o junta dos clusters, no hay vuelta atrás y los siguiente pasos trabajarán con el resultado obtenido previamente sin poder cambiarlo. Por lo que decidir cómo y por qué motivo se genera un cluster es una tarea complicada y que de no ser correcta, puede ocasionar clasificaciones pobres. Otra desventaja principal de este enfoque es que no escalan bien hacia grandes volúmenes de datos, puesto que deben realizar muchas comprobaciones cuando se quieren unir o separar clusters aumentando exponencialmente el coste computacional.
 
@@ -436,9 +466,17 @@ Antes de explicar algunos de los algoritmos más utilizados dentro de este grupo
 
 \subsection{\textbf{Medidas de distancia}} \label{subsec:Medidas de distancia}
 
-Independientemente del tipo de método que se utilice, aglomerativo o divisivo, se necesita una forma de medir la distancia entre dos clusters.
 
-Hay principalmente tres formas diferentes de realizar este cálculo, aunque existen otras variaciones en las que, por ejemplo, se consideran los centroides, estas utilizan puntos de clusters.
+Independientemente del tipo de método que se utilice, aglomerativo o divisivo, se necesita una forma de medir la distancia entre dos clusters.
+Hay principalmente tres formas diferentes de realizar este cálculo como se puede apreciar en la figura \ref{fig:distancias}, aunque existen otras variaciones en las que, por ejemplo, se consideran los centroides como en $k$-means, estas utilizan puntos de clusters.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{distancias}
+\caption{Diferentes métodos para calcular la distancia entre clusters \cite{babu}.}
+\label{fig:distancias}
+\end{figure}
+
 
 \begin{itemize}
   \item \textbf{Distancia mínima}: Esta define la proximidad entre dos clusters como la distancia entre los puntos más cercanos entre ambos, también conocida como ``single link''.
@@ -459,16 +497,16 @@ Las dos primeras son medidas que se van a los extremos y son susceptibles a dato
 
 \subsection{\textbf{AGNES}} \label{subsec:AGNES}
 
-AGglomerative NESting (AGNES) es quizás el algoritmo jerárquico aglomerativo más básico y extendido, pues aplica de forma exacta el concepto mencionado previamente. 
+\cite{jerarquico} AGglomerative NESting (AGNES) es quizás el algoritmo jerárquico aglomerativo más básico y extendido, pues aplica de forma exacta el concepto mencionado previamente. 
 
 Parte de una separación de todos los objetos, cada uno formando un único cluster y compara la proximidad entre todos ellos utilizando el método que más convenga de los mencionados en la sección previa \ref{subsec:Medidas de distancia}. Selecciona aquellos dos con el resultado más pequeño, es decir, los dos más cercanos y los fusiona en un solo cluster, y se vuelven a calcular la similaridad entre todos los clusters. Así sucesivamente hasta que todos los datos quedan agrupados en la raíz \cite{18}.
 
 
-\begin{figure}
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=\linewidth]{dendograma}
-\label{fig:dendograma}
 \caption{Clusterización jerárquica algomerativa (AGNES) y divisiva (DIANA) sobre el conjunto de datos \{$a$,$b$,$c$,$d$,$e$\} \cite{LIBRO}.}
+\label{fig:dendograma}
 \end{figure}
 
 
@@ -478,7 +516,7 @@ Parte de una separación de todos los objetos, cada uno formando un único clust
 
 \subsection{\textbf{DIANA}} \label{subsec:DIANA}
 
-El algoritmo DIvisive ANAlysis (DIANA) es la contraparte a AGNES, siendo también el método jerárquico divisivo más simple y utilizado. En este caso, al ser divisivo, parte de un solo cluster en el que se encuentran todos los datos y que de forma iterativa los va dividiendo en función de un criterio preestablecido, como por ejemplo la distancia Euclidiana mínima entre los objetos más cercanos del vecindario.
+\cite{jerarquico} El algoritmo DIvisive ANAlysis (DIANA) es la contraparte a AGNES, siendo también el método jerárquico divisivo más simple y utilizado. En este caso, al ser divisivo, parte de un solo cluster en el que se encuentran todos los datos y que de forma iterativa los va dividiendo en función de un criterio preestablecido, como por ejemplo la distancia Euclidiana mínima entre los objetos más cercanos del vecindario.
 
 Tanto AGNES como DIANA generan una estructura denominada dendograma que se puede ver en la figura \ref{fig:dendograma}, donde se compara el proceso de estos dos algoritmos.
 
@@ -488,9 +526,9 @@ Tanto AGNES como DIANA generan una estructura denominada dendograma que se puede
 
 \subsection{\textbf{BIRCH}} \label{subsec:BIRCH}
 
-\cite{LIBRO, BIRCH, BIRCH 2} El algoritmo BIRCH, proveniente del nombre Balanced Iterative Reducing and Clustering using Hierarchies, es uno de los que mencionábamos previamente que combina el método jerárquico con otros métodos para solucionar los problemas de escalabilidad e imposibilidad de deshacer las divisiones o fusiones de clusters.
+\cite{BIRCH, BIRCH 2} El algoritmo BIRCH, proveniente del nombre Balanced Iterative Reducing and Clustering using Hierarchies, es uno de los que mencionábamos previamente que combina el método jerárquico con otros métodos para solucionar los problemas de escalabilidad e imposibilidad de deshacer las divisiones o fusiones de clusters.
 
-Lo que permite a BIRCH esto es utilizar un concepto denominado \textit{característica de agrupamiento}, en inglés clustering feature (CF), que sirve para resumir un cluster, y otro llamado \textit{árbol de características de agrupamiento}, en inglés clustering feature tree (CF-tree), para representar la jerarquía de clusters. Estos dos atributos ayudan en la escalabilidad y rapidez del algoritmo y hacen posible utilizarlo en conjuntos de datos en los que se añaden nuevos datos. Veamos brevemente cómo funciona.
+Para ello, BIRCH utiliza un concepto denominado \textit{característica de agrupamiento}, en inglés clustering feature (CF), que sirve para resumir un cluster, y otro llamado \textit{árbol de características de agrupamiento}, en inglés clustering feature tree (CF-tree), para representar la jerarquía de clusters. Estos dos atributos ayudan en la escalabilidad y rapidez del algoritmo y hacen posible utilizarlo en conjuntos de datos en los que se añaden nuevas muestras. Veamos brevemente cómo funciona.
 
 Consideremos un cluster $C_i$ con $n$ objetos en él, CF es un vector de tres dimensiones que pretende resumir la información estadística del cluster de la siguiente manera \begin{equation} CF = \left(n, LS, SS \right ), \end{equation} donde $LS$ es la suma de los $n$ objetos y $SS$ es la suma de los $n$ objetos elevados al cuadrado. Esto permite obtener datos como el centroide $c_i$, el radio $R$ y diámetro $D$ del mismo, donde estos dos últimos representan lo ajustado que está el cluster alrededor del centroide. 
 
@@ -504,7 +542,7 @@ SS_i &= \left (2^2 + 3^2 + 4^2 , 5^2 + 2^2 + 3^2 \right) = \left (29, 38 \right)
 CF_i &=  \left(n_i, LS_i, SS_i \right )= \left (3, \left (9, 10 \right), \left (29, 38 \right) \right).  
 \end{align*}
 
-Y ahora, consideremos que hay que fusionar $C_i$ con $C_j$ para formar otro cluster nuevo $C_z$, siendo $CF_j = \left(3, \left(6,7 \right), \left(36,49 \right) \right)$,
+Y si ahora, consideramos que hay que fusionar $C_i$ con $C_j$ para formar otro cluster nuevo $C_z$, siendo $CF_j = \left(3, \left(6,7 \right), \left(36,49 \right) \right)$, la operación sería la siguiente:
 
 \begin{align*}
 &CF_z = CF_i + CF_j = \\
@@ -512,7 +550,15 @@ Y ahora, consideremos que hay que fusionar $C_i$ con $C_j$ para formar otro clus
 &= \left(6, \left(15,17 \right), \left(65,87 \right) \right).
 \end{align*}
 
-El otro concepto que se ha mencionado previamente, CF-tree, tiene una estructura en forma de árbol que contiene el CF de cada cluster. Una estructura de árbol está formada por raíces y hojas. Un nodo raíz debe tener al menos un descendiente u hoja, mientras que las hojas son nodos terminales. Las hojas  almacenan el CF de un cluster, y su nodo padre o la raíz de dicha hoja almacena la suma de los CF de todos sus hijos. Este utiliza dos parámetros para controlar el desarrollo del árbol: el factor de ramificación $B$ y el umbral $T$; estos indican cuántos hijos u hojas puede tener un nodo y cuántos nodos puede tener un cluster, respectivamente. El tamaño del umbral determina el tamaño del árbol y su elección supone cierta dificultad.
+
+El otro concepto que se ha mencionado previamente, CF-tree, tiene una estructura en forma de árbol que contiene el CF de cada cluster. Esta estructura de árbol, como se aprecia en la Figura \ref{fig:birch} está formada por nodos y hojas. Un nodo debe tener al menos un descendiente u hoja, mientras que las hojas son nodos terminales. Las hojas  almacenan el CF de un cluster, y su nodo padre o la raíz de dicha hoja almacena la suma de los CF de todos sus hijos. Este utiliza dos parámetros para controlar el desarrollo del árbol: el factor de ramificación $B$ y el umbral $T$ o $L$; estos indican cuántos hijos u hojas puede tener un nodo y cuántos nodos puede tener un cluster respectivamente. El tamaño del umbral determina el tamaño del árbol y su elección supone cierta dificultad. 
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{birch}
+\caption{Estructura CF-tree del algoritmo BIRCH \cite{birchfoto}.}
+\label{fig:birch}
+\end{figure}
 
 BIRCH es un método que consiste de dos fases principales, motivo por el que es considerado un algoritmo multifase:
 
@@ -521,7 +567,7 @@ BIRCH es un método que consiste de dos fases principales, motivo por el que es 
   \item Posteriormente, se aplica un algoritmo de clusterización a las hojas del CF-tree que elimina clusters con poca calidad o pocos datos, que suelen ser datos anómalos y fusiona grupos de datos densos en clusters aún más grandes. Típicamente son algoritmos basados en particiones.
 \end{enumerate}
 
-Esta aproximación de clusterización ha probado ser rápida, escalable y fiable con los resultados generados, sin embargo sigue teniendo problemas puesto que el umbral $T$ determina en gran medida la formación de clusters y puede que se generen grupos que no son precisamente ``naturales'', y por otro lado, al utilizar el radio como criterio para definir clusters tiene peores resultados si los clusters no son esféricos o circulares.
+Esta aproximación de clusterización ha probado ser rápida con una complejidad temporal de $O\left(n \right)$, escalable y fiable con los resultados generados, sin embargo sigue teniendo problemas puesto que el umbral $T$ determina en gran medida la formación de clusters y puede que se generen grupos que no son precisamente ``naturales'', y por otro lado, al utilizar el radio como criterio para definir clusters tiene peores resultados si los clusters no son esféricos o circulares.
 
 
 %====================================================================================================================================================%
@@ -530,20 +576,22 @@ Esta aproximación de clusterización ha probado ser rápida, escalable y fiable
 \subsection{\textbf{Chameleon}} \label{subsec:Chameleon}
 
 
-Chameleon es un algoritmo jerárquico que utiliza un modelado dinámico para calcular la similaridad entre pares de clusters. Esto es determinado por el grado de conexión entre los objetos dentro del cluster y la proximidad entre clusters; es decir, dos clusters se fusionarán si su interconectividad es alta y están muy cerca. Una de las principales ventajas de esta aproximación es que puede adaptarse a casi cualquier forma que pueda tomar un cluster para casi todos los tipos de datos, siempre que a estos se les pueda aplicar una función para calcular la similaridad.
+\cite{chameleon} Chameleon es un algoritmo jerárquico que utiliza un modelado dinámico para calcular la similaridad entre pares de clusters. Esto es determinado por el grado de conexión entre los objetos dentro del cluster y la proximidad entre clusters; es decir, dos clusters se fusionarán si su interconectividad es alta y están muy cerca. Una de las principales ventajas de esta aproximación es que puede adaptarse a casi cualquier forma que pueda tomar un cluster para casi todos los tipos de datos, siempre que a estos se les pueda aplicar una función para calcular la similaridad.
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\linewidth]{chameleon}
-\label{fig:chameleon}
 \caption{Chameleon: clusterización jerárquica basada en k-vecinos y modelado dinámico \cite{LIBRO}.}
+\label{fig:chameleon}
 \end{figure}
+
+Este usa la aproximación de \textit{divide y vencerás}, donde primero particiona los datos en subclusters para posteriormente ir fusionándolos \cite{14}.
 
 En la imagen \ref{fig:chameleon} podemos observar el funcionamiento de este algoritmo. Primero utiliza $k$-vecinos para construir un grafo disperso, donde cada vértice representa un objeto y estos están conectados mediante aristas si dichos objetos se encuentran dentro del rango de $k$-vecinos y son similares. Las aristas, además, están ponderadas en función de la similaridad de los objetos. 
 
 Posteriormente, se aplica un algoritmo basado en particiones para dividir el grafo generado por $k$-vecinos en clusters, eliminando aquellas aristas con menos peso, es decir, las que unen clusters menos similares. Y una ver termina este proceso, se vuelve a aplica un algoritmo jerárquico aglomerativo que itera sobre los clusters generados y los fusiona basándose en la \textit{interconectividad relativa} y la \textit{cercanía relativa} de los clusters.
 
-Este algoritmo ha demostrado ser capaz de identificar clusters con formas arbitrarias de mejor manera que otros algoritmos, pero su coste computacional sigue siendo elevado cuando se trabaja con conjuntos de datos con muchos atributos.
+Este algoritmo ha demostrado ser capaz de identificar clusters con formas arbitrarias de mejor manera que otros algoritmos, pero su coste computacional sigue siendo elevado cuando se trabaja con conjuntos de datos con muchos atributos, siendo su complejidad $O\left(n^2\right)$.
 
 %====================================================================================================================================================%
 
@@ -558,9 +606,9 @@ Todos los métodos jerárquicos vistos hasta ahora utilizan algoritmos y medidas
   \item Muchos de estos métodos utilizan heurísticas que buscan optimizaciones locales fusionando o separando clusters, pudiendo resultar en un resultado global inexacto.
 \end{itemize}
 
-Para ello, los métodos jerárquicos probabilísticos pretenden solventar algunos de estos problemas utilizando modelos probabilísticos para calcular la proximidad entre clusters.
+De esta manera, los métodos jerárquicos probabilísticos pretenden solventar algunos de estos problemas utilizando modelos probabilísticos para calcular la proximidad entre clusters.
 
-Estos métodos tratan de ver el conjunto de datos como una muestra de un mecanismo subyacente que ha generado los datos, denominado \textit{moldeo generativo}, y lo que pretende esta forma de clustering es intentar estimar de la manera más precisa el modelo generativo a traves de los datos que se van a procesar. 
+Estos métodos tratan de ver el conjunto de datos como una muestra de un mecanismo subyacente que ha generado los datos, denominado \textit{modelo generativo}, y lo que pretende esta forma de clustering es intentar estimar de la manera más precisa el modelo generativo a traves de los datos que se van a procesar. 
 
 Normalmente se asume que estos modelos generativos siguen funciones de distribución como la de Bernoulli o la Gausiana, por lo que se reduce mucho el campo de trabajo y solo queda probar valores hasta dar con los que más se ajustan a los objetos del conjunto de datos. 
 
@@ -573,7 +621,7 @@ Normalmente se asume que estos modelos generativos siguen funciones de distribuc
 \section{Métodos basados en densidad} \label{sec:Métodos basados en densidad}
 
 
-Los métodos jerárquicos y basados en particiones son muy útiles y eficaces encontrando clusters con formas esféricas y circulares, y aunque algunos de ellos sí puedan detectar en cierta medida otras formas, sigue siendo insuficiente en conjuntos de datos con datos anómalos e impurezas, donde es muy probable que no sean capaces de generar clusters de calidad.
+\cite{LIBRO} Los métodos jerárquicos y basados en particiones son muy útiles y eficaces encontrando clusters con formas esféricas y circulares, y aunque algunos de ellos sí puedan detectar en cierta medida otras formas, sigue siendo insuficiente en conjuntos de datos con datos anómalos e impurezas, donde es muy probable que no sean capaces de generar clusters de calidad.
 
 Una solución a este problema es modelar los clusters como regiones densas de objetos separadas por regiones de baja densidad, la estrategia principal de los algoritmos basados en densidad. 
 
@@ -596,8 +644,8 @@ Esta condición suele ser recíproca entre núcleos, pero no entre núcleos y pu
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\linewidth]{dbscan1}
-\label{fig:dbscan1}
 \caption{DBSCAN: diferencia entre núcleos y puntos fronterizos \cite{DBSCAN}.}
+\label{fig:dbscan1}
 \end{figure}
 
 De esta definición se puede extrapolar otra, y es que un punto $p$ es \textit{alcanzable por densidad} desde $q$, si hay una cadena de puntos $p_1, \cdots, p_n$ donde el primer punto es $q$ ($p_1 = q$) y cada punto sucesivo $p_{i+1}$ es directamente alcanzable por densidad desde el anterior $p_i$. Al igual que la anterior, no suele ser recíproca con núcleos y puntos fronterizos, pero sí entre núcleos. Sin embargo, puede que existan dos puntos fronterizos del mismo cluster que no sean alcanzables por densidad entre ellos porque no tengan $MinPts$ objetos en su vecindario, pero que si lo sean desde un núcleo del cluster, que da lugar a otra definición.
@@ -609,8 +657,8 @@ Ejemplos de estas tres definiciones pueden observarse en la figura \ref{fig:dbsc
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\linewidth]{dbscan2}
-\label{fig:dbscan2}
 \caption{DBSCAN: términos \textit{directamente alcanzable por densidad}, \textit{alcanzable por densidad} y \textit{conectado por densidad} \cite{DBSCAN 2}.}
+\label{fig:dbscan2}
 \end{figure}
 
 Con estos conceptos, DBSCAN es capaz de formar clusters de forma que todos sus objetos estén conectados por densidad y detectando como impurezas y datos anómalos aquellos puntos que no pertenezcan a ningún cluster.
@@ -618,6 +666,8 @@ Con estos conceptos, DBSCAN es capaz de formar clusters de forma que todos sus o
 Así pues, el primer paso de este algoritmo es seleccionar un punto cualquiera $p$ del conjunto de datos $D$, y comprueba todos los puntos alcanzables por densidad con respecto a $\epsilon$ y $MinPts$. Si $p$ es un núcleo, se forma un cluster con todos los objetos alcanzables por densidad desde $p$ que no pertenezcan a otro cluster, y si es un punto fronterizo, no hay puntos que sean alcanzables por densidad desde $p$, por lo que es marcado como ruido y selecciona otro objeto. 
 
 Una vez ser forma el cluster, se selecciona otro objeto que no se haya visitado y se repite la operación. Asimismo, DBSCAN puede fusionar dos cluster si se encuentran muy cerca entre sí. Este procedimiento queda reflejado en el algoritmo \ref{alg:Algoritmo DBSCAN}.
+
+
 
 \begin{algorithm}[!ht]
 \SetAlgoLined
@@ -660,21 +710,28 @@ Sin embargo, DBSACN sigue solicitando al usuario $\epsilon$ y $MinPts$, valores 
 
 Con este proceso podemos extraer la información básica de la clasificación, como los centros de los clusters o grupos con formas raras, una visualización de la clusterización y también se puede derivar la estructura intrínseca de la agrupación.
 
-Para ello, OPTICS necesita obtener dos datos adicionales para cada objeto:
+Para ello, OPTICS necesita obtener dos datos adicionales para cada objeto, cuyos conceptos se reflejan en la Figura \ref{fig:optics}:
 
 \begin{itemize}
   \item \textbf{Distancia al núcleo}: La \textit{distancia al núcleo} de un objeto $p$ es el valor más pequeño para $\epsilon'$ de manera que en el vecindario delimitado por dicho valor haya al menos $MinPts$, y si $p$ cumple con esta condición, se le considera núcleo. En caso de que que no haya $MinPts$ en el $\epsilon'$ vecindario, se considera que la distancia al núcleo es indefinida.
   
   \item \textbf{Distancia de alcance}: La \textit{distancia de alcance} hacia un objeto $p$ desde otro objeto $q$ es el radio mínimo que hace que $p$ sea alcanzable por densidad desde $q$ (\ref{subsec:dbscan}), por lo que $q$ debe ser un núcleo y $p$ debe estar en su vecindario. Si $q$ no es un núcleo, se considera que la distancia de alcance de $p$ a $q$ es indefinida. 
   
-  Es posible que un objeto $p$ tenga más de una distancia de alcance, es decir, que sea alcanzable desde varios puntos. En este caso, la medida que más nos interesa es la distancia de alcance más pequeña.
-                        
-  Se puede formalizar el concepto de distancia de alcance como $\max\{distancia \ al \ nucleo(q), dist(p,q)\}$. 
+  Es posible que un objeto $p$ tenga más de una distancia de alcance, es decir, que sea alcanzable desde varios puntos. En este caso, la medida que más nos interesa es la distancia de alcance más pequeña. Se puede formalizar el concepto de distancia de alcance como $\max\{distancia \ al \ nucleo(q), dist(p,q)\}$. 
 \end{itemize}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{optics}
+\caption{OPTICS: conceptos de distancia al núcleo (core-distance) y distancia de alcance (reachability-distance).}
+\label{fig:optics}
+\end{figure}
 
 OPTICS almacena para cada objeto del conjunto de datos la distancia al núcleo y una distancia de alcance apta, y en función de la distancia de alcance de cada objeto desde su núcleo más cercano, genera una lista llamada OrdenSemillas (OrderSeeds). 
 
 Posteriormente, se escoge un objeto cualquiera como punto actual $p$ del que se obtiene su $\epsilon$ vecindario y se calcula su distancia al núcleo, estableciendo a priori su distancia de alcance como indefinida. Si $p$ no es un núcleo, simplemente se pasa al siguiente objeto de OrdenSemillas, pero si $p$ es un núcleo, se actualiza la distancia de alcance para cada objeto $q$ de su $\epsilon$ vecindario y se inserta en OrdenSemillas si todavía no está en la lista. Esta iteración continúa hasta que la lista OrdenSemillas está vacía. 
+
+Tanto DBSCAN como OPTICS tienen una complejidad de $O\left(n^2\right)$ para $n$ número de objetos.
 
 
 %====================================================================================================================================================%
@@ -700,7 +757,7 @@ Este algoritmo tiene varias ventajas, y es que es tan versátil como otros algor
 
 \section{Métodos basados en rejilla} \label{sec:Métodos basados en rejilla}
 
-Todos los métodos expuestos hasta ahora tienen se enfocan principalmente en los datos, es decir, se basan en la distribución de los objetos en el espacio de datos para formar los clusters. Sin embargo, los métodos basados en rejilla se centran en el propio espacio; no dividen los datos, sino el espacio de datos, que distribuyen en celdas equitativas, independientemente de cómo estén repartidos los puntos.
+\cite{LIBRO} Todos los métodos expuestos hasta ahora tienen se enfocan principalmente en los datos, es decir, se basan en la distribución de los objetos en el espacio de datos para formar los clusters. Sin embargo, los métodos basados en rejilla se centran en el propio espacio; no dividen los datos, sino el espacio de datos, que distribuyen en celdas equitativas, independientemente de cómo estén repartidos los puntos.
 
 Estos métodos dividen el espacio de datos en un número finito de celdas que forman una estructura de rejilla o cuadrícula, donde se realizan las operaciones de clusterización, aumentando considerablemente la velocidad de clustering, hasta el punto que la cantidad de datos es irrelevante y solo depende del número de celdas. Es esta característica lo que hace estos métodos ideales para combinarlos con otro tipo de métodos y mejorar su eficiencia.
 
@@ -712,13 +769,47 @@ En esta sección veremos dos de los métodos más conocidos dentro de este grupo
 
 \subsection{\textbf{STING}} \label{subsec:sting}
 
-La técnica STING (STatistical INformation Grid) es una técnica de clusterización en la que el espacio de datos es dividido en celdas rectangulares o cuadradas, con la opción de poder descomponerlo de forma jerárquica. Cada capa de celdas forma un nivel distinto, done cada celda de un nivel superior está compuesta por varias celdas del nivel inferior, lo cual permite obtener esa estructura jerárquica de los datos.
+\cite{sting} STING (STatistical INformation Grid) es una técnica de clusterización en la que el espacio de datos es dividido en celdas rectangulares o cuadradas, con la opción de poder descomponerlo de forma jerárquica. Cada capa de celdas forma un nivel distinto, done cada celda de un nivel superior está compuesta por varias celdas del nivel inferior, lo cual permite obtener esa estructura jerárquica de los datos tal y como se aprecia en la Figura \ref{fig:sting}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{sting}
+\caption{STING: división del espacio de datos en celdas en diferentes niveles \cite{sting 2}.}
+\label{fig:sting}
+\end{figure}
 
 De cada celda se calcula de antemano información estadística clave de los datos que esta contiene, tales como la media, máximo, mínimo; lo que facilita la obtención de paramentos para las celdas superiores: el número de objetos dentro de la celda, la media, desviación típica\footnote{Medida estadística que sirve para cuatificar la dispersión de un conjunto de datos numéricos.}, máximo, mínimo y si los datos siguen algún tipo de distribución (normal, uniforme, exponencial o ninguna). 
 
 STING selecciona una de las capas superiores que se han generado, no necesariamente la primera, sino una con pocas celdas; examina todas ellas y descarta aquella celdas que tras analizarlas, se considere que tienen poca relevancia con respecto a la clasificación deseada. Posteriormente se desciende un nivel y se examinan las celdas inferiores agrupadas bajo las celdas que han superado la prueba realizando el mismo proceso de manera iterativa hasta que se alcanza la última capa. Si en esta capa se considera que se cumple con los requisitos de la clusterización, se devuelven las celdas relevantes, es decir, todas las que se han analizado en este último nivel; por el contrario, se realiza un análisis más en profundidad de las mismas. Independientemente del caso, todas las celdas descartadas durante este proceso son analizadas posteriormente. 
 
-Uno de los principales problemas de STING es que, dependiendo del tamaño de las celdas, el resultado puede ser más o menos preciso, pues devuelve el polígono resultante de las celdas finales. Cuanto más pequeñas sean las celdas, menos se notarán las uniones bruscas y rectas entre celdas, y si el tamaño de las mismas fuera de 0, el resultado sería idéntico a DBSCAN \ref{subsec:dbscan}, por lo que a veces se considera STING como un algoritmo basado en densidad.
+Este comportamiento queda reflejado en el Algoritmo \ref{alg:Algoritmo sting}.
+
+\begin{algorithm}[ht]
+\SetAlgoLined
+  \LinesNumbered
+  \DontPrintSemicolon
+  \KwIn{$D$: conjunto de datos con $n$ objetos \\$N$: nivel inicial.}
+  \KwOut{Un conjunto de clusters.}
+  \Begin{
+    desarrollar rejilla jerárquica\;
+    \While{no sea la última capa}{
+      \ForEach{celda del nivel actual $c \in N$}{
+        obtener información clave\;
+        calcular la probabilidad de que sea una celda relevante\;}
+      descender un nivel\;
+      seleccionar las celdas de este nuevo nivel que componen las celdas relevantes del nivel anterior\;
+    }
+    \uIf{se cumplen los requisitos de clustering}{devolver todos los datos de las celdas relevantes}
+    \uElse{volver a procesar los datos de las celdas relevantes y devolver los resultados}
+  }
+  \caption{STING, basado en rejilla}
+  \label{alg:Algoritmo sting}
+\end{algorithm}
+
+
+Este enfoque hace que la complejidad de este algoritmo para generar los clusters sea de $O\left(n\right)$ para $n$ objetos, pero si se genera una estructura jerárquica el tiempo de procesamiento disminuye hasta $O\left(g\right)$, siendo $g$ el número de celdas, que es mucho menor que $n$.
+
+Sin embargo, uno de los principales problemas de STING es que, dependiendo del tamaño de las celdas, el resultado puede ser más o menos preciso, pues devuelve el polígono resultante de las celdas finales. Cuanto más pequeñas sean las celdas, menos se notarán las uniones bruscas y rectas entre celdas, y si el tamaño de las mismas fuera de 0, el resultado sería idéntico a DBSCAN \ref{subsec:dbscan}, por lo que a veces se considera STING como un algoritmo basado en densidad.
 
 
 %====================================================================================================================================================%
@@ -728,11 +819,20 @@ Uno de los principales problemas de STING es que, dependiendo del tamaño de las
 
 En gran cantidad de ocasiones nos encontramos con situaciones en las que algunos de los atributos de los datos no aportan información a la hora de clasificar los datos. Por ejemplo, si tratásemos de clusterizar un conjunto de pacientes de gripe, atributos como ``trabajo'', ``género'' o ``edad'' varían drásticamente entre los pacientes, lo que genera dificultades a la hora de clusterizar todo el conjunto de datos. En estos casos es más conveniente realizar búsquedas en subespacios, donde se seleccionan los datos relevantes para la clasificación. En el caso de la gripe, podría ser pacientes con síntomas similares en un rango de edad entre los tres y diez años. 
 
-CLIQUE (CLustering In QUEst) es un método simple de clusterización basada en rejilla para encontrar clusters basados en densidad dentro de subespacios. Esta técnica particiona cada atributo de los datos en una dimensión diferente que posteriormente divide en celdas y cataloga como densas o no si la cantidad de objetos dentro de una celda supera cierto umbral. 
+  CLIQUE (CLustering In QUEst) es un método simple de clusterización basada en rejilla para encontrar clusters basados en densidad dentro de subespacios. Esta técnica particiona cada atributo de los datos en una dimensión diferente que posteriormente divide en celdas y cataloga como densas o no si la cantidad de objetos dentro de una celda supera cierto umbral, como se puede obeservar en la Figura \ref{fig:clique}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.6]{clique}
+\caption{CLIQUE: las celdas densas encontradas con respecto a \textit{edad} (\textit{age}) para las dimensiones \textit{salario} (\textit{salary}) y \textit{vacaciones} (\textit{vacation}) se intersectan para formar un espacio de búsqeda de unidades densas de mayor dimensionalidad \cite{LIBRO}.}
+\label{fig:clique}
+\end{figure}
 
 El primer paso de este algoritmo consiste precisamente en esto, dividir los datos en diferentes dimensiones, generar las rejillas y encontrar las celdas que superen el umbral. Para encontrar estas celdas, se utilizan los ejes catesianos. Se delimitan ciertos intervalos en los valores de cada atributo, y si un intervalo supera el umbral, es decir, hay más de $X$ puntos dentro de ese intervalo ($X > umbral$), se seleccionan las celdas de ese intervalo en las que haya objetos. Si hay varios intervalos contiguos que superan el umbral, estos se unen. Este proceso se repite para cada dimensión. Y en el segundo paso, CLIQUE utiliza las celdas densas para formar clusters, permitiendo de esta manera detectar aquellos con formas arbitrarias.
 
 Algunas de las principales ventajas que presenta es que no es sensible al orden de entrada de los datos, escala linealmente con el tamaño del conjunto de datos y automáticamente encuentra aquellos subespacios con tantos atributos (dimensiones) posibles en los que hay clusters de alta densidad.
+
+
 
 
 %====================================================================================================================================================%
@@ -751,7 +851,14 @@ Para valorar el resultado de una clusterización se suelen realizar tres tareas:
 \begin{itemize}
   \item \textbf{Evaluar la tendencia de la clasificación}: Intentar determinar si existe una estructura no aleatoria en la distribución de los datos antes de custerizarlos es crucial para obtener buenos resultados. Aplicar un método de clustering a un conjunto de datos aleatorio no devolverá resultados útiles y con significado, pues los clusters que se pueden formar serán también aleatorios y por lo tanto no aportarán información. Para esto, se suele usar un procedimiento similar al de los métodos jerárquicos probabilísticos \ref{subsec:Métodos jerárquicos probabilísticos} en el que se calcula la probabilidad de que el conjunto de datos con el que se quiere trabajar haya sido generado por una distribución de datos uniforme. Uno de los procedimientos más comunes es la Estadística de Hopkins. 
   
-  \item \textbf{Determinar el número de clusters}: En algunos algoritmos como $k$-means \ref{subsec:k-means} el número final de clusters es solicitado al usuario y por lo tanto debe aproximarse de antemano. Sin embargo, es una buena práctica calcular este valor antes de utilizar cualquier método para contrastar el resultado final. Esta tarea aunque ciertamente complicada, pues los factores de los que depende son muchos (distribución de los datos, número de atributos, cantidad de datos...) y para la que existen numerosas formas de calcularla, puede ser simplificada para un mayor entendimiento o fácil aplicación.  Uno de los métodos más sencillos es aproximar el número de clusters a $\sqrt{\frac{n}{2}}$, donde en cada cluster debería haber $\sqrt{2 \cdotp n}$ objetos, para un conjunto de $n$ datos. \textcolor{Red}{Otros métodos son Elbow Method y Validación cruzada}.
+  \item \textbf{Determinar el número de clusters}: En algunos algoritmos como $k$-means \ref{subsec:k-means} el número final de clusters es solicitado al usuario y por lo tanto debe aproximarse de antemano. Sin embargo, es una buena práctica calcular este valor antes de utilizar cualquier método para contrastar el resultado final. Esta tarea aunque ciertamente complicada, pues los factores de los que depende son muchos (distribución de los datos, número de atributos, cantidad de datos...) y para la que existen numerosas formas de calcularla, puede ser simplificada para un mayor entendimiento o fácil aplicación.  Uno de los métodos más sencillos es aproximar el número de clusters a $\sqrt{\frac{n}{2}}$, donde en cada cluster debería haber $\sqrt{2 \cdotp n}$ objetos, para un conjunto de $n$ datos. Otro métodos es Elbow Method, en el que se repite de forma iterativa el proceso de clusterización variando el valor de $k$ (número de clusters) y calculando la varianza de los puntos dentro de los clusters. Una vez termina el proceso, se muestran los resultados en un gráfico y se escoge como valor para $k$ el punto de la gráfica en el que esta se curva de forma severa tal y como se puede observar en la Figura \ref{fig:elbow}, donde el valor escogido para $k$ es tres. Este proceso también es utilizado para determinar más parámetros dentro de otros algoritmos como \textit{Epsilon} pada DBSCAN. 
+  
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{elbow}
+\caption{Elbow Method para encontrar el número de clusters óptimo \cite{elbow}.}
+\label{fig:elbow}
+\end{figure}
   
   \item \textbf{Calcular la calidad de la clusterización}: Una vez los datos han sido clasificados, se debe verificar que el resultado es bueno. Para ello se pueden usar principalmente dos aproximaciones: comprobar si los clusters acogen bien los datos (métodos intrínsecos)  o si los clusters se aproximan a una realidad existente (métodos extrínsecos), que suele ser una clasificación ideal realizada por expertos en la materia. 
   
@@ -773,9 +880,11 @@ Para valorar el resultado de una clusterización se suelen realizar tres tareas:
 %====================================================================================================================================================%
 %====================================================================================================================================================%
                                               %============================================================%
-%====================================================================================================================================================%%====================================================================================================================================================%
+%====================================================================================================================================================%
+%====================================================================================================================================================%
                                               %============================================================%
-%====================================================================================================================================================%%====================================================================================================================================================%
+%====================================================================================================================================================%
+%====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
 %====================================================================================================================================================%
@@ -821,6 +930,8 @@ Para valorar el resultado de una clusterización se suelen realizar tres tareas:
 
 \bibitem{8} Apuntes JJ clustering
 
+\bibitem{survey} Xu, R., \& Wunschii, D. (2005). Survey of Clustering Algorithms. IEEE Transactions on Neural Networks, 16(3), 645-678. doi:10.1109/tnn.2005.845141
+
 \bibitem{9} Alkhaibari, A. A., \& Chung, P. (2017). \href{https://ieeexplore.ieee.org/document/8001983} {Cluster analysis for reducing city crime rates}. 2017 IEEE Long Island Systems, Applications and Technology Conference (LISAT). doi:10.1109/lisat.2017.8001983
 
 \bibitem{10} Song, Y., Meng, H., \& Zhang, Y. (2010). \href{https://ieeexplore.ieee.org/document/5602787} {Clustering analysis and its applications}. 2010 Second IITA International Conference on Geoscience and Remote Sensing. doi:10.1109/iita-grs.2010.5602787
@@ -834,22 +945,38 @@ Para valorar el resultado de una clusterización se suelen realizar tres tareas:
 \bibitem{14} Emebo, O., Aromolaran, O., Oyelade, J., Isewon, I., Oladipupo, O., Omogbadegun, Z., ... Olawole, O. (2019). Data Clustering: Algorithms and Its Applications. 2019 19th International Conference on Computational Science and Its Applications (ICCSA). doi:10.1109/iccsa.2019.000-1
 
 \bibitem{15} Carugo, O., \& Eisenhaber, F. (2010). Data Mining Techniques for the Life Sciences. Humana Press.
-             
+
 \bibitem{LIBRO}Han, J., Kamber, M., \& Pei, J. (2012). Data Mining: Concepts and Techniques (3rd ed., p.~740). 225 Wyman Street, Waltham, MA 02451, USA: Morgan Kaufmann Publishers, Elsevier.
 
 \bibitem{17} Höppner, F., Klawonn, F., Kruse, R., \& Runkler, T. (1999). Fuzzy cluster analysis: methods for classification, data analysis and image recognition. John Wiley \& Sons.
 
+\bibitem{kmeansfoto} Benavente, P., Protopapas, P., \& Pichara, K. (2017). Automatic Survey-invariant Classification of Variable Stars. The Astrophysical Journal, 845(2), 147. doi: 10.3847/1538-4357/aa7f2d
+
+\bibitem{babu} Grant, R. P., \& Babu, M. M. (2004). Computational genomics: Theory and application. Wymondham: Horizon Bioscience.
+
+\bibitem{jerarquico} Struyf, A., Hubert, M., \& Rousseeuw, P. (1997). Clustering in an object-oriented environment. Journal of Statistical Software, 1(4), 1-30.
+
 \bibitem{18} Sano, A. V., Imanuel, T. D., Calista, M. I., Nindito, H., \& Condrobimo, A. R. (2018). The Application of AGNES Algorithm to Optimize Knowledge Base for Tourism Chatbot. 2018 International Conference on Information Management and Technology (ICIMTech). doi:10.1109/icimtech.2018.8528174
+
+\bibitem{birchfoto} A. Periklis. (2002). Data Clustering Techniques. University of Toronto.
 
 \bibitem{BIRCH} T. Zhang. (n.d.). BIRCH: An efficient data clustering method for very large databases. Proc. ACM SIGMOD Conf. Management of Data, 103-114.
 
 \bibitem{BIRCH 2} Lorbeer, B., Kosareva, A., Deva, B., Softić, D., Ruppel, P., \& Küpper, A. (2018). Variations on the Clustering Algorithm BIRCH. Big Data Research, 11, 44-53. doi: 10.1016/j.bdr.2017.09.002
+
+\bibitem{chameleon} Karypis, G., Eui-Hong Han, \& Kumar, V. (1999). Chameleon: hierarchical clustering using dynamic modeling. Computer, 32(8), 68-75. doi: 10.1109/2.781637
 
 \bibitem{DBSCAN} Ester, M., Kriegel, H. P., Sander, J., \& Xu, X. (1996, August). A density-based algorithm for discovering clusters in large spatial databases with noise. In Kdd (Vol. 96, No. 34, pp. 226-231).
 
 \bibitem{DBSCAN 2} Schlitter, N., Falkowski, T., \& Laessig, J. (2011). DenGraph-HO: Density-based Hierarchical Community Detection for Explorative Visual Network Analysis. Research and Development in Intelligent Systems XXVIII, 283-296. doi:10.1007\/978-1-4471-2318-7\_22
 
 \bibitem{DENCLUE} Hinneburg, A., \& Keim, D. A. (1998). An efficient approach to clustering in large multimedia databases with noise.
+
+\bibitem{sting} Wang, W., Yang, J., \& Muntz, R. (1997, August). STING: A statistical information grid approach to spatial data mining. In VLDB (Vol. 97, pp. 186-195).
+
+\bibitem{sting 2} Makhabel, B. (2015). Learning data mining with R: Develop key skills and techniques with R to create and customize data mining algorithms. Birmingham, UK: Packt Publishing.
+
+\bibitem{elbow} Xing, Wanli. (2016). Exploring the collective knowledge curation process of online health communities´. 10.13140/RG.2.2.17964.05761. 
 
 \end{thebibliography}
 
