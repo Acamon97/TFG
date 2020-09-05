@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.5)  5 SEP 2020 15:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.5)  5 SEP 2020 22:46
 entering extended mode
 **./TFG.tex
 (TFG.tex
@@ -771,118 +771,128 @@ Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png
  used on input line 249.
 (pdftex.def)             Requested size: 222.0pt x 221.55891pt.
  [6] [7 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png>] [8]
-[9]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png, id=285, 665.48625pt x 
+Underfull \hbox (badness 1603) in paragraph at lines 305--306
+[]\OT1/lmr/bx/n/10 M[]eto-dos ba-sa-dos en mo-de-los pro-ba-
+ []
+
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png, id=260, 655.44875pt x 2
+99.1175pt>
+File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png Graphic file (type 
+png)
+<use C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png>
+Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png 
+ used on input line 318.
+(pdftex.def)             Requested size: 222.0pt x 101.31064pt.
+[9 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png>] [10]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png, id=296, 665.48625pt x 
 578.16pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png Graphic file (type
  png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png
-  used on input line 371.
+  used on input line 408.
 (pdftex.def)             Requested size: 222.0pt x 192.86655pt.
-
-Underfull \vbox (badness 1005) has occurred while \output is active []
-
- [10 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png>] [11] [12]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png, id=341, 985.6825pt
+ [11 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png>] [12] [13]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png, id=354, 985.6825pt
  x 546.04pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png Graphic file (
 type png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias
-.png  used on input line 485.
+.png  used on input line 522.
 (pdftex.def)             Requested size: 222.0pt x 122.97867pt.
- [13 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png, id=360, 1097.09875
+ [14 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png>]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png, id=372, 1097.09875
 pt x 551.05875pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png Graphic file (
 type png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma
-.png  used on input line 517.
+.png  used on input line 554.
 (pdftex.def)             Requested size: 222.0pt x 111.5047pt.
 LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 5
-18.
+55.
 
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 518.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 555.
 
-[14 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png, id=381, 675.52374pt x 3
+[15 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png>]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png, id=393, 675.52374pt x 3
 62.35374pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png Graphic file (type 
 png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png 
- used on input line 568.
+ used on input line 605.
 (pdftex.def)             Requested size: 222.0pt x 119.07948pt.
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png, id=384, 1037.8775pt
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png, id=396, 1037.8775pt
  x 240.9pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png Graphic file (t
 ype png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.
-png  used on input line 593.
+png  used on input line 630.
 (pdftex.def)             Requested size: 222.0pt x 51.52782pt.
- [15 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png> <C:/Users/acamo/Do
+ [16 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png> <C:/Users/acamo/Do
 cuments/TFG/Recursos/Fotos/chameleon.png>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png, id=406, 453.695pt x 1
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png, id=418, 453.695pt x 1
 11.41624pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png Graphic file (typ
 e png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.pn
-g  used on input line 656.
+g  used on input line 693.
 (pdftex.def)             Requested size: 222.0pt x 54.51793pt.
- [16 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png, id=417, 598.235pt x 2
+ [17]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png, id=428, 598.235pt x 2
 66.9975pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png Graphic file (typ
 e png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.pn
-g  used on input line 669.
+g  used on input line 706.
 (pdftex.def)             Requested size: 222.0pt x 99.08084pt.
- [17 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png (PNG copy)>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png, id=453, 764.8575pt x 3
+ [18 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png> <C:/Users/acamo/
+Documents/TFG/Recursos/Fotos/dbscan2.png (PNG copy)>]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png, id=465, 764.8575pt x 3
 77.41pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png Graphic file (type
  png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png
-  used on input line 735.
+  used on input line 772.
 (pdftex.def)             Requested size: 222.0pt x 109.54399pt.
- [18 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png (PNG copy)>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg, id=470, 120.45pt x 52.2
+ [19 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png (PNG copy)>]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg, id=483, 120.45pt x 52.2
 753pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg Graphic file (type 
 jpg)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg 
- used on input line 786.
+ used on input line 823.
 (pdftex.def)             Requested size: 222.0pt x 96.35759pt.
- [19 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png, id=488, 317.185pt x 67
+ [20 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg>]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png, id=500, 317.185pt x 67
 0.505pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png Graphic file (type
  png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png
-  used on input line 836.
+  used on input line 873.
 (pdftex.def)             Requested size: 190.31245pt x 402.3061pt.
- [20 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png, id=515, 528.97626pt x 3
+ [21 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png>]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png, id=527, 528.97626pt x 3
 98.48875pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png Graphic file (type 
 png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png 
- used on input line 868.
+ used on input line 905.
 (pdftex.def)             Requested size: 222.0pt x 167.23643pt.
- [21 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png>] [22] [23
+ [22] [23 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png>] [24
 
 ] (TFG.toc
 LaTeX Info: Redefining \. on input line 1.
@@ -929,16 +939,16 @@ LaTeX Info: Redefining \% on input line 4.
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 11.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 12.
 
-Underfull \hbox (badness 1888) in paragraph at lines 12--12
+Underfull \hbox (badness 1888) in paragraph at lines 13--13
  [][] [][][]\OT1/lmr/m/n/10 Estructura CF-tree del al-go-rit-mo 
  []
 
-[24
+[25
 
 ]
-Underfull \hbox (badness 1320) in paragraph at lines 19--19
+Underfull \hbox (badness 1320) in paragraph at lines 20--20
  [][] [][][]\OT1/lmr/m/n/10 Elbow Method pa-ra en-con-trar el 
  []
 
@@ -947,60 +957,60 @@ Underfull \hbox (badness 1320) in paragraph at lines 19--19
 \openout8 = `TFG.lof'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 987--988
+Underfull \hbox (badness 10000) in paragraph at lines 1024--1025
 []\OT1/lmr/m/n/8 Baron, J. N., Az-nar, M. N., Mon-te-rub-bia-ne-
  []
 
 
-Underfull \hbox (badness 7203) in paragraph at lines 987--988
+Underfull \hbox (badness 7203) in paragraph at lines 1024--1025
 \OT1/lmr/m/n/8 si, M., & Martnez-Lopez, B. (2020). [][]Ap-pli-ca-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 987--988
+Underfull \hbox (badness 10000) in paragraph at lines 1024--1025
 \OT1/lmr/m/n/8 tion of net-work analy-sis and clus-ter analy-sis
  []
 
 
-Underfull \hbox (badness 5592) in paragraph at lines 987--988
+Underfull \hbox (badness 5592) in paragraph at lines 1024--1025
 \OT1/lmr/m/n/8 for bet-ter pre-ven-tion and con-trol of swi-ne di-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 987--988
+Underfull \hbox (badness 10000) in paragraph at lines 1024--1025
 \OT1/lmr/m/n/8 sea-ses in Ar-gen-ti-na[][]. PLoS ONE, 15(6), 1{26.
  []
 
 
-Underfull \hbox (badness 1448) in paragraph at lines 991--992
+Underfull \hbox (badness 1448) in paragraph at lines 1028--1029
 []\OT1/lmr/m/n/8 Emebo, O., Aro-mo-la-ran, O., Oye-la-de, J., Ise-won,
  []
 
 
-Underfull \hbox (badness 2269) in paragraph at lines 991--992
+Underfull \hbox (badness 2269) in paragraph at lines 1028--1029
 \OT1/lmr/m/n/8 I., Ola-di-pu-po, O., Omog-ba-de-gun, Z., ... Ola-wo-le,
  []
 
 
-Underfull \hbox (badness 3158) in paragraph at lines 991--992
+Underfull \hbox (badness 3158) in paragraph at lines 1028--1029
 \OT1/lmr/m/n/8 pli-ca-tions. 2019 19th In-ter-na-tio-nal Con-fe-ren-ce on
  []
 
 
-Underfull \hbox (badness 1014) in paragraph at lines 1017--1018
+Underfull \hbox (badness 1014) in paragraph at lines 1058--1059
 []\OT1/lmr/m/n/8 Schlitter, N., Fal-kows-ki, T., & Laes-sig, J. (2011).
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1039.
+ [26]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1080.
 
-[26
+[27
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1039.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1080.
  (TFG.aux
 LaTeX Info: Redefining \. on input line 32.
 LaTeX Info: Redefining \% on input line 32.
@@ -1011,18 +1021,18 @@ LaTeX Info: Redefining \% on input line 35.
 LaTeX Info: Redefining \. on input line 39.
 LaTeX Info: Redefining \% on input line 39.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1039.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1039.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1080.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1080.
 
 Package rerunfilecheck Info: File `TFG.out' has not changed.
 (rerunfilecheck)             Checksum: 3F19315AEDB0A797639F1FDCB692D0B4;2048.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1039.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1080.
  ) 
 Here is how much of TeX's memory you used:
- 11432 strings out of 481178
- 176200 string characters out of 2902470
- 499082 words of memory out of 3000000
- 26584 multiletter control sequences out of 15000+200000
+ 11450 strings out of 481178
+ 176641 string characters out of 2902470
+ 499197 words of memory out of 3000000
+ 26598 multiletter control sequences out of 15000+200000
  578588 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,27n,42p,1457b,862s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1056,9 +1066,9 @@ rs/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:
 fb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy
 8.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/l
 mtt8.pfb>
-Output written on TFG.pdf (26 pages, 1037512 bytes).
+Output written on TFG.pdf (27 pages, 1055616 bytes).
 PDF statistics:
- 802 PDF objects out of 1000 (max. 8388607)
- 210 named destinations out of 1000 (max. 500000)
- 330 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 818 PDF objects out of 1000 (max. 8388607)
+ 214 named destinations out of 1000 (max. 500000)
+ 335 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -291,9 +291,46 @@ A continuación, se exponen los requisitos típicos que se exigen dentro de Data
   Esto permite que estos métodos puedan ser integrados con otros métodos de clustering pertenecientes a otros grupos como jerárquicos y basados en densidad para mejorar su eficiencia.
 \end{itemize}
 
-En la tabla \ref{Tab:Tabla 1} se han resumido estos grupos y las principales características de los mismos. Cabe mencionar que esta clasificación no es perfecta, pues existen algoritmos que integran conceptos de diferentes métodos. 
+En la tabla \ref{Tab:Tabla 1} se han resumido estos grupos y las principales características de los mismos. Cabe mencionar que esta clasificación no es perfecta, pues existen algoritmos que integran conceptos de diferentes métodos.
 
-A continuación, exploraremos todos estos grupos y los principales algoritmos empleados en cada uno de ellos.
+Sin embargo, el mundo de Data Mining y de los datos no deja de crecer, implicando la aparición de nuevos tipos de problemas que afrontar con clustering. Esto ha dado lugar al desarrollo de nuevos algoritmos de clusterización que son lo suficientemente diferentes a los ya mencionados como para poder considerarlos otro tipo de métodos. Algunos de estos nuevos enfoques de clusterización se han convertido muy populares debido a sus nuevas características:
+
+\begin{itemize}
+  \item \textbf{Métodos de clusteriación relajada}: Como se ha mencionado previamente, lo más común a la hora de formar cluster es que estos sean exclusivos, es decir, que un objeto solo puede pertenecer a un cluster. Los métodos de clusterización relajada o fuzzy clustering  permiten que los objetos puedan estar en varios clusters a la vez. Esto se consigue utilizando el grado de pertenencia, un valor entre 0 y 1 que cuantifica la probabilidad o confianza de que un objeto pertenezca a un determinado cluster. La suma del grado de pertenencia de un objeto debe ser 1.
+  
+  Este enfoque es realmente útil cuando las fronteras entre los clusters no están separadas de una forma clara y es ambigua, puediendo además obtener más informacion gracias al grado de pertenencia. 
+  
+  Este tipo de métodos a veces se consideran modificaciones o variaciones de algoritmos, pero con la cantidad de atención y aplicaciones que ha recibido recientemente es adecuado tratarlos como un grupo distinto.
+  
+  \item \textbf{Métodos basados en modelos probabilísticos}: Uno de los objetivos de clustering es encontrar una estructura subyacente en los datos, algo oculto que no se vea a simple vista pero que esté latente en la muestra a analizar. Este tipo de métodos se aprovechan de esta característica para utilizar funciones de distribución y/o densidad como el origen de los datos a analizar, pues desde el punto de vista probabilistico, se asume que los objetos se generan de acuerdo a diversas distribuciones de probabilidad.
+  
+  Normalmente se utilizan distribuciones conocidas y estudiadas en profundidad como la Gausiana, eliminando así tener que buscar el modelo generativo y limitando la identificación de clusters a estimar los parámetros de dichas funciones probabilísticas.
+  
+  \item \textbf{Métodos basados en la teoría de grafos}: Podemos utilizar la teoría de grafos \cite{teoria grafos} para representar la clusterización mediante grafos ponderados, donde los nodos representan los objetos y las aristas que los conectan reflejan la proximidad entre pares de datos. 
+  
+  Para determinar los clusters se cortan las aristas más débiles, dejando juntos aquellos objetos que estén bien conectados entre sí, considerando esto un cluster, tal y como se aprecia en la Figura \ref{fig:grafo}, donde hay tres clusters claramente diferenciados por la falta de conexiones entre los objetos.
+  
+  Estos métodos surgieron como variante de los métodos jerárquicos y sirven tanto para clusterizar datos con muchos atributos o para analizar grafos per se.
+  
+  
+  \begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{grafo}
+\caption{Clusterización basada en teoría de grafos \cite{foto grafo}.}
+\label{fig:grafo}
+\end{figure}
+  
+  \item \textbf{Métodos basados en redes neuronales}: Las redes neutonales artificiales son un área del aprendizaje automático que representan modelos matemáticos de la actividad cerebral. Su objetivo inicial era reproducir el procesamiento de información humano, y ahora este enfoque se ha aplicado en mucho campos, entre ellos clasificación. 
+  
+  Estos modelos consiste en un conjunto de unidades denominadas neuronas que están conectadas entre sí para trasmitir señales, de forma similar al cerebro humano. La información que recibe la red de forma inicial atraviesa las distintas neruonas donde se realizan ciertas operaciones y finaliza dando un valor de salida.
+  
+  Este tipo de métodos utilizan redes neuronales para localizar los clusters o en su defecto, sus centros, para facilitar el posterior desarrollo.
+  
+  
+\end{itemize}
+
+
+A continuación, exploraremos los cuatro primeros grupos (métodos basados en particiones, jerárquicos, basados en densidad y basados en rejilla), puesto que son los más populares y comunes, y tambien veremos los principales algoritmos empleados en cada uno de ellos y otros pertenecientes a los nuevos tipos de métodos.
 
 
 \begin{table*}[ht]
@@ -586,7 +623,7 @@ Esta aproximación de clusterización ha probado ser rápida con una complejidad
 \subsection{\textbf{Chameleon}} \label{subsec:Chameleon}
 
 
-\cite{chameleon} Chameleon es un algoritmo jerárquico que utiliza un modelado dinámico para calcular la similaridad entre pares de clusters. Esto es determinado por el grado de conexión entre los objetos dentro del cluster y la proximidad entre clusters; es decir, dos clusters se fusionarán si su interconectividad es alta y están muy cerca. Una de las principales ventajas de esta aproximación es que puede adaptarse a casi cualquier forma que pueda tomar un cluster para casi todos los tipos de datos, siempre que a estos se les pueda aplicar una función para calcular la similaridad.
+\cite{chameleon} Chameleon es un algoritmo jerárquico y basado en grafos que utiliza un modelado dinámico para calcular la similaridad entre pares de clusters. Esto es determinado por el grado de conexión entre los objetos dentro del cluster y la proximidad entre clusters; es decir, dos clusters se fusionarán si su interconectividad es alta y están muy cerca. Una de las principales ventajas de esta aproximación es que puede adaptarse a casi cualquier forma que pueda tomar un cluster para casi todos los tipos de datos, siempre que a estos se les pueda aplicar una función para calcular la similaridad.
 
 \begin{figure}[ht]
 \centering
@@ -995,6 +1032,10 @@ Y aunque dentro de la misma Sección \ref{clustering} se han expuesto varios eje
 \bibitem{LIBRO}Han, J., Kamber, M., \& Pei, J. (2012). Data Mining: Concepts and Techniques (3rd ed., p.~740). 225 Wyman Street, Waltham, MA 02451, USA: Morgan Kaufmann Publishers, Elsevier.
 
 \bibitem{17} Höppner, F., Klawonn, F., Kruse, R., \& Runkler, T. (1999). Fuzzy cluster analysis: methods for classification, data analysis and image recognition. John Wiley \& Sons.
+
+\bibitem{teoria grafos} Harary, F. (1996). Graph theory. London: Addison-Wesley.
+
+\bibitem{foto grafo} Foggia, Pasquale \& Percannella, Gennaro \& Vento, Mario. (2014). Graph Matching and Learning in Pattern Recognition in the Last 10 Years. International Journal of Pattern Recognition and Artificial Intelligence. doi:10.1142/S0218001414500013. 
 
 \bibitem{kmeansfoto} Benavente, P., Protopapas, P., \& Pichara, K. (2017). Automatic Survey-invariant Classification of Variable Stars. The Astrophysical Journal, 845(2), 147. doi: 10.3847/1538-4357/aa7f2d
 
