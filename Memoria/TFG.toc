@@ -30,9 +30,10 @@
 \contentsline {subsection}{\numberline {7.1}\textbf {STING}}{19}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}\textbf {CLIQUE}}{20}{subsection.7.2}%
 \contentsline {section}{\numberline {8}Evaluación del clustering}{21}{section.8}%
-\contentsline {section}{\numberline {9}Anexo}{23}{section.9}%
-\contentsline {subsection}{\numberline {9.1}\textbf {Índice}}{23}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}\textbf {Algoritmos}}{23}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}\textbf {Tablas}}{23}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}\textbf {Imágenes y figuras}}{23}{subsection.9.4}%
-\contentsline {section}{\numberline {10}Referencias}{24}{section.10}%
+\contentsline {section}{\numberline {9}Aplicaciones de clustering}{22}{section.9}%
+\contentsline {section}{\numberline {10}Anexo}{24}{section.10}%
+\contentsline {subsection}{\numberline {10.1}\textbf {Índice}}{24}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}\textbf {Algoritmos}}{24}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}\textbf {Tablas}}{24}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}\textbf {Imágenes y figuras}}{24}{subsection.10.4}%
+\contentsline {section}{\numberline {11}Referencias}{25}{section.11}%

@@ -1,6 +1,7 @@
 % Configuración a 2 columnas
 
 %\documentclass{elsarticle} % original latex
+%\documentclass[1p]{elsarticle} % una sola columna elsevier
 %\documentclass[3p]{elsarticle} % una sola columna elsevier
 \documentclass[3p,twocolumn]{elsarticle} % dos columnas elsevier
 
@@ -139,7 +140,7 @@ Una vez realizado el marco teórico previo, se pretende hacer una parte práctic
 %====================================================================================================================================================%
 
 
-\section{Clustering} 
+\section{Clustering} \label{clustering}
 
 Clustering o cluster analysis, llamado en español agrupamiento o análisis de grupos y adaptado al término clusterización, es un método de Data Mining que se basa en el Aprendizaje Automático (Machine Learning), una rama de la Inteligencia Artificial (Artificial Intelligence) que pretende desarrollar sistemas que sean capaces de resolver problemas basándose en los resultados de experiencias previas, aprendiendo de sus errores. Concretamente, se fundamenta en uno de los métodos de aprendizaje explorados en esta disciplina: Aprendizaje No Supervisado, enfocado en el desarrollo y descubrimiento de nuevos conocimientos. Este, a diferencia de otros métodos de aprendizaje, no dispone de conocimiento o experiencias previas sobre las que poder aprender, por lo que su objetivo principal es discernir patrones y relaciones entre los datos para poder agruparlos y trabajar sobre los resultados de la clasificación resultante \cite{7}.
 
@@ -157,7 +158,7 @@ Es gracias a estas características que la clusterización es empleada en muchos
 
 También se puede hacer uso de su capacidad para detectar datos anómalos con la finalidad de revelar posibles fraudes o transacciones  financieras sospechosas, incluso ayudar en la disminución de crímenes analizando los resultados obtenidos tras clusterizar datos de detenciones y delitos; incluso aplicada a datos geofísicos\footnote{La Geofísica es la ciencia que estudia la Tierra desde el punto de vista de la física.} para interpretarlos y obtener resultados significativos. Asimismo, se utiliza a la hora de comparar comunidades en redes sociales permitiendo recomendar a los usuarios contenido de su agrado, o dentro del mundo sanitario, ayudando en la identificación y control de diversos tipos de enfermedades, e incluso puede usarse como apoyo en la gestión de edificios públicos como bibliotecas, agrupando a los lectores por sus preferencias de manera similar a los consumidores de un negocio \cite{9,10,11,12,13}.
 
-Comprimiendo toda esta información, podemos concretar los tres principales objetivos por los que clustering es empleado: clasificación natural de individuos, objetos, etc., compresión de información para mayor facilidad a la hora de mostrar resultados y generación de una estructura base para el posterior tratamiento de los datos \cite{14}.
+Comprimiendo toda esta información, podemos concretar los tres principales objetivos por los que clustering es empleado: clasificación natural de individuos, objetos, etc., compresión de información para mayor facilidad a la hora de mostrar resultados y generación de una estructura base para el posterior tratamiento de los datos \cite{articulo14}.
 
 La utilidad de este método y la flexibilidad que ofrece con las diversas técnicas y formas de aplicarlo de las que dispone es también parte fundamental de que sea tan comúnmente utilizado y con objetivos tan dispares en gran parte de las áreas del conocimiento. Sin embargo, también es un método frágil, pues depende en gran medida de los datos con los que se trabaje y el criterio escogido para determinar si dos objetos deben agruparse bajo el mismo cluster o separarlos, siendo necesario seguir una serie de pasos a la hora de realizar un análisis de grupos de manera correcta \cite{survey,15}:
 
@@ -283,7 +284,7 @@ A continuación, se exponen los requisitos típicos que se exigen dentro de Data
 
 En la tabla \ref{Tab:Tabla 1} se han resumido estos grupos y las principales características de los mismos. Cabe mencionar que esta clasificación no es perfecta, pues existen algoritmos que integran conceptos de diferentes métodos. 
 
-A continuación, exploraremos todos estos grupos y las principales técnicas empleadas en cada uno de ellos.
+A continuación, exploraremos todos estos grupos y los principales algoritmos empleados en cada uno de ellos.
 
 
 \begin{table*}[ht]
@@ -585,7 +586,7 @@ Esta aproximación de clusterización ha probado ser rápida con una complejidad
 \label{fig:chameleon}
 \end{figure}
 
-Este usa la aproximación de \textit{divide y vencerás}, donde primero particiona los datos en subclusters para posteriormente ir fusionándolos \cite{14}.
+Este usa la aproximación de \textit{divide y vencerás}, donde primero particiona los datos en subclusters para posteriormente ir fusionándolos \cite{articulo14}.
 
 En la imagen \ref{fig:chameleon} podemos observar el funcionamiento de este algoritmo. Primero utiliza $k$-vecinos para construir un grafo disperso, donde cada vértice representa un objeto y estos están conectados mediante aristas si dichos objetos se encuentran dentro del rango de $k$-vecinos y son similares. Las aristas, además, están ponderadas en función de la similaridad de los objetos. 
 
@@ -869,6 +870,42 @@ Para valorar el resultado de una clusterización se suelen realizar tres tareas:
 %====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
+
+\section{Aplicaciones de clustering} \label{sec:aplicaciones}
+
+Como se ha mencionado previamente en la Sección \ref{clustering}, la clusterización ha probado ser uno de los métodos más eficaces a la hora de obtener información de los datos mediante su clasificación y etiquetado por similaridad, motivo por lo que es empleado de manera recurrente en muchos de los campos más influyentes e importantes del mundo moderno tales como ingeniería, ciencias de la computación, ciencias de la salud, ciencias sociales o economía. 
+
+\textcolor{Red}{Durante este documento se han nombrado algunos de los dominios de aplicación más comunes en los que clustering ha demostrado ser una técnica súmamante útil. Ahora vamos a ampliar dicha información con la encontrada en \cite{otrolibro}. Dichos dominios son los siguientes:}
+
+\begin{itemize}
+  \item \textbf{Paso intermedio para otros métodos de data mining}: El proceso de clusterización sirve tanto para etiquetar y clasificar un conjunto de datos como para sumarizar la información de los mismos, haciendo que sea un paso intermedio clave para otro tipo de métodos como clasificación supervisada\footnote{INFORMACIÓN SOBRE CLASIFICACION SUPERVISADA} o detección de outliers.
+  
+  \item \textbf{Método de filtrado colaborativo}: Este tipo de filtros en los que múltiples usuarios puntúan o evalúan algo se vale de la clusterización para encontrar aquellos usuarios con respuestas similares, permitiendo utilizar esta información en gran variedad de formas, sobretodo en sistemas recomendadores.
+  
+  \item \textbf{Segmentación de clientes}: Esta aplicación es una variación de los métodos de filtro colaborativos específica para clientes, que se agrupan por similaridad de preferencias o gustos. La principal diferencia con el anterior es que en vez de usar las evaluaciones de los usuarios, aquí se utilizan atributos arbitrarios de los consumidores \cite{13}.
+  
+  \item \textbf{Resumir datos}: Muchas técnicas de clusterización están relacionadas con métodos de reducción de dimensiones en los datos, es decir, eliminar los atributos que no sean relevantes. Esto permite obtener cierta forma de resumen del conjunto de datos, que es muy útil a la hora de crear representaciones compactas de los datos, haciendo que el procesamiento e interpretamiento de los mismos sea más sencillo.
+  
+  \item \textbf{Detección de tendencias dinámicas}: Los métodos de clusterización dinámicos y fluidos son usados para detectar la dirección de los datos y encontrar patrones de cambio en ellos.
+  
+  \item \textbf{Análisis de datos multimedia}: Los datos multiemedia están compuestos por imágenes, vídeos y audios. Clustering se aplica en este tipo de datos muchas veces con intención de detectar segmentos similares para la clasificación de tipos de música, detección de infracciones de derechos de autor, etc.
+  
+  \item \textbf{Análisis de redes sociales}: El continuo crecimiento de las redes sociales ha dado mucha importancia a este ámbito en el que clustering se utiliza para detectar estructuras sociales o comunidades subyacentes dentro de los datos. Encontrar comunidades sirve para entender mejor cómo funciona la red social y para recomendar a usuarios de una comunidad otras similares a sus gustos \cite{11}.
+  
+  \item \textbf{Análisis de datos biológicos}: Los datos biológicos se han convertido en datos importantes gracias al éxito de los análisis del genoma humano\footnote{GNEOMA HUMANO} y la capacidad de recolectar diferentes KINDS OF GENE EXPRESSION DATA. Este tipo de datos suelen estructurarse como secuencias o redes, y aplicando clustering podemos detectar secuaencias inusuales y su tendencia. 
+\end{itemize}
+
+
+Y aunque dentro de la misma Sección \ref{clustering} se han expuesto varios ejemplos de aplicaciones de clustering en dichos ámbitos, a continuación exploraremos un poco más en detalle qué aporta esta técnica en las áreas de data mining, motores de búsqueda web, educación, procesamiento de imágenes, aprendizaje automático y bioinformática, donde se han obtenido resultados muy importantes gracias a su uso \cite{articulo14}.
+
+
+
+
+
+
+%====================================================================================================================================================%
+                                              %============================================================%
+%====================================================================================================================================================%
 %====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
@@ -942,7 +979,7 @@ Para valorar el resultado de una clusterización se suelen realizar tres tareas:
 
 \bibitem{13} Li, J., \& Chen, P. (2008). \href{https://ieeexplore.ieee.org/document/4810639} {The application of Cluster analysis in Library system}. 2008 IEEE International Symposium on Knowledge Acquisition and Modeling Workshop. doi:10.1109/kamw.2008.4810639
 
-\bibitem{14} Emebo, O., Aromolaran, O., Oyelade, J., Isewon, I., Oladipupo, O., Omogbadegun, Z., ... Olawole, O. (2019). Data Clustering: Algorithms and Its Applications. 2019 19th International Conference on Computational Science and Its Applications (ICCSA). doi:10.1109/iccsa.2019.000-1
+\bibitem{articulo14} Emebo, O., Aromolaran, O., Oyelade, J., Isewon, I., Oladipupo, O., Omogbadegun, Z., ... Olawole, O. (2019). Data Clustering: Algorithms and Its Applications. 2019 19th International Conference on Computational Science and Its Applications (ICCSA). doi:10.1109/iccsa.2019.000-1
 
 \bibitem{15} Carugo, O., \& Eisenhaber, F. (2010). Data Mining Techniques for the Life Sciences. Humana Press.
 
@@ -977,6 +1014,8 @@ Para valorar el resultado de una clusterización se suelen realizar tres tareas:
 \bibitem{sting 2} Makhabel, B. (2015). Learning data mining with R: Develop key skills and techniques with R to create and customize data mining algorithms. Birmingham, UK: Packt Publishing.
 
 \bibitem{elbow} Xing, Wanli. (2016). Exploring the collective knowledge curation process of online health communities´. 10.13140/RG.2.2.17964.05761. 
+
+\bibitem{otrolibro} C. C. Aggarwal \&. K. Reddy. (2014). Data Clustering: Algorithms and Applications. Taylor \& Francis Group. LLC
 
 \end{thebibliography}
 
