@@ -14,7 +14,10 @@
 %\linenumbers
 % Paquete para mostrar imágenes
 \usepackage{graphicx}
-\graphicspath{ {/home/acamon/TFG/GitHub/TFG/Recursos/Fotos/} }
+%\graphicspath{ {/home/acamon/TFG/GitHub/TFG/Recursos/Fotos/} } % LINUX
+\graphicspath{ {C:/Users/acamo/Documents/TFG/Recursos/Fotos/} } % WINDOWS
+
+
 % Paquete para resaltar enlaces y referencias
 \usepackage{hyperref}
 % Configuración del paquete
@@ -55,6 +58,10 @@
 \usepackage{booktabs}
 \usepackage{threeparttable}
 
+% Paquete para insertar páginas de PDF
+\usepackage{pdfpages}
+
+
 % Espacio para dos abstractos en dos lenguajes
 \newenvironment{abstracts}
  {\global\setbox\absbox=\vbox\bgroup
@@ -65,12 +72,10 @@
  {\if\relax\detokenize{#1}\relax\else\selectlanguage{#1}\fi
   \noindent\textbf{\abstractname}\par\medskip\noindent\ignorespaces}
  {\par\bigskip}
-
+ 
 
 %====================================================================================================================================================%
 %====================================================================================================================================================%
-
-
 
 
 
@@ -79,7 +84,11 @@
 
 \selectlanguage{spanish}
 
-\title{Mi TFG}
+
+% PORTADA
+%\includepdf[pages=1]{Recursos/portada.pdf}
+
+\title{Análisis de clustering en R}
 
 \author[1]{Aarón Casado Monge} % Autor del TFG
 \ead{aaron.casado@uah.es} % Correo del alumno
@@ -875,10 +884,10 @@ Para valorar el resultado de una clusterización se suelen realizar tres tareas:
 
 Como se ha mencionado previamente en la Sección \ref{clustering}, la clusterización ha probado ser uno de los métodos más eficaces a la hora de obtener información de los datos mediante su clasificación y etiquetado por similaridad, motivo por lo que es empleado de manera recurrente en muchos de los campos más influyentes e importantes del mundo moderno tales como ingeniería, ciencias de la computación, ciencias de la salud, ciencias sociales o economía. 
 
-\textcolor{Red}{Durante este documento se han nombrado algunos de los dominios de aplicación más comunes en los que clustering ha demostrado ser una técnica súmamante útil. Ahora vamos a ampliar dicha información con la encontrada en \cite{otrolibro}. Dichos dominios son los siguientes:}
+Durante este documento se han nombrado algunos de los dominios de aplicación más comunes en los que clustering ha demostrado ser una técnica súmamante útil. Ahora vamos a ampliar dicha información con la encontrada en \cite{otrolibro}. Dichos dominios son los siguientes:
 
 \begin{itemize}
-  \item \textbf{Paso intermedio para otros métodos de data mining}: El proceso de clusterización sirve tanto para etiquetar y clasificar un conjunto de datos como para sumarizar la información de los mismos, haciendo que sea un paso intermedio clave para otro tipo de métodos como clasificación supervisada\footnote{INFORMACIÓN SOBRE CLASIFICACION SUPERVISADA} o detección de outliers.
+  \item \textbf{Paso intermedio para otros métodos de data mining}: El proceso de clusterización sirve tanto para etiquetar y clasificar un conjunto de datos como para sumarizar la información de los mismos, haciendo que sea un paso intermedio clave para otro tipo de métodos como clasificación supervisada\footnote{Método de Data Mining que define un modelo de clasificación que permite obtener el valor desconocido de un suceso elemental a partir del resto de valores dado un conjunto de datos sobre el que conocemos todos los posibles valores que puede tomar dicho valor desconocido.} o detección de outliers.
   
   \item \textbf{Método de filtrado colaborativo}: Este tipo de filtros en los que múltiples usuarios puntúan o evalúan algo se vale de la clusterización para encontrar aquellos usuarios con respuestas similares, permitiendo utilizar esta información en gran variedad de formas, sobretodo en sistemas recomendadores.
   
@@ -892,7 +901,7 @@ Como se ha mencionado previamente en la Sección \ref{clustering}, la clusteriza
   
   \item \textbf{Análisis de redes sociales}: El continuo crecimiento de las redes sociales ha dado mucha importancia a este ámbito en el que clustering se utiliza para detectar estructuras sociales o comunidades subyacentes dentro de los datos. Encontrar comunidades sirve para entender mejor cómo funciona la red social y para recomendar a usuarios de una comunidad otras similares a sus gustos \cite{11}.
   
-  \item \textbf{Análisis de datos biológicos}: Los datos biológicos se han convertido en datos importantes gracias al éxito de los análisis del genoma humano\footnote{GNEOMA HUMANO} y la capacidad de recolectar diferentes KINDS OF GENE EXPRESSION DATA. Este tipo de datos suelen estructurarse como secuencias o redes, y aplicando clustering podemos detectar secuaencias inusuales y su tendencia. 
+  \item \textbf{Análisis de datos biológicos}: Los datos biológicos se han convertido en datos importantes gracias al éxito de los análisis del genoma humano\footnote{El genoma es el conjunto de genes contenidos en los cromosomas.} y la capacidad de recolectar diferentes tipos de expresión génica\footnote{La expresión génica es el proceso mediante el cual todos los organismos transforman la información codificada por los ácidos nucleicos en las proteinas necesarias para su desarrollo, fincionamiento y reproducción con otros organismos.}. Este tipo de datos suelen estructurarse como secuencias o redes, y aplicando clustering podemos detectar secuaencias inusuales y su tendencia. 
 \end{itemize}
 
 
@@ -1018,5 +1027,13 @@ Y aunque dentro de la misma Sección \ref{clustering} se han expuesto varios eje
 \bibitem{otrolibro} C. C. Aggarwal \&. K. Reddy. (2014). Data Clustering: Algorithms and Applications. Taylor \& Francis Group. LLC
 
 \end{thebibliography}
+
+%====================================================================================================================================================%
+                                              %============================================================%
+%====================================================================================================================================================%
+
+%\clearpage
+%\includepdf[pages=2]{Recursos/portada.pdf}
+
 
 \end{document}
