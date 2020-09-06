@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.5)  6 SEP 2020 19:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.5)  6 SEP 2020 20:21
 entering extended mode
 **./TFG.tex
 (TFG.tex
@@ -328,9 +328,13 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip53
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 30.
-Package hyperref Info: Option `colorlinks' set `true' on input line 30.
+Package hyperref Info: Option `breaklinks' set `true' on input line 31.
+Package hyperref Info: Option `colorlinks' set `true' on input line 31.
 
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/comment\comment.st
+y"
+\CommentStream=\write4
+ Excluding comment 'comment')
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
@@ -568,577 +572,60 @@ File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
 \AM@toc@title=\toks29
 \c@AM@survey=\count297
 \AM@templatesizebox=\box64
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tcolorbox\tcolorbo
-x.sty"
-Package: tcolorbox 2020/07/31 version 4.31 text color boxes
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/basiclayer\pgf
-.sty"
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgfr
-cs.sty"
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
-futil-common.tex"
-\pgfutil@everybye=\toks30
-\pgfutil@tempdima=\dimen193
-\pgfutil@tempdimb=\dimen194
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
-futil-common-lists.tex"))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
-futil-latex.def"
-\pgfutil@abb=\box65
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ms\everyshi.sty"
-Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
-frcs.code.tex"
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf\pgf.revision
-.tex")
-Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
-))
-Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/basiclayer\pgf
-core.sty"
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/systemlayer\pg
-fsys.sty"
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
-pgfsys.code.tex"
-Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
-fkeys.code.tex"
-\pgfkeys@pathtoks=\toks31
-\pgfkeys@temptoks=\toks32
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
-fkeysfiltered.code.tex"
-\pgfkeys@tmptoks=\toks33
-))
-\pgf@x=\dimen195
-\pgf@y=\dimen196
-\pgf@xa=\dimen197
-\pgf@ya=\dimen198
-\pgf@xb=\dimen199
-\pgf@yb=\dimen256
-\pgf@xc=\dimen257
-\pgf@yc=\dimen258
-\pgf@xd=\dimen259
-\pgf@yd=\dimen260
-\w@pgf@writea=\write4
-\r@pgf@reada=\read3
-\c@pgf@counta=\count298
-\c@pgf@countb=\count299
-\c@pgf@countc=\count300
-\c@pgf@countd=\count301
-\t@pgf@toka=\toks34
-\t@pgf@tokb=\toks35
-\t@pgf@tokc=\toks36
-\pgf@sys@id@count=\count302
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
-pgf.cfg"
-File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
-)
-Driver file for pgf: pgfsys-pdftex.def
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
-pgfsys-pdftex.def"
-File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
-pgfsys-common-pdf.def"
-File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
-)))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
-pgfsyssoftpath.code.tex"
-File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count303
-\pgfsyssoftpath@bigbuffer@items=\count304
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
-pgfsysprotocol.code.tex"
-File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcore.code.tex"
-Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
-.code.tex"
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
-calc.code.tex"
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
-util.code.tex")
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
-parser.code.tex"
-\pgfmath@dimen=\dimen261
-\pgfmath@count=\count305
-\pgfmath@box=\box66
-\pgfmath@toks=\toks37
-\pgfmath@stack@operand=\toks38
-\pgfmath@stack@operation=\toks39
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
-functions.code.tex"
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
-functions.basic.code.tex")
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
-functions.trigonometric.code.tex")
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
-functions.random.code.tex")
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
-functions.comparison.code.tex")
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
-functions.base.code.tex")
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
-functions.round.code.tex")
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
-functions.misc.code.tex")
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
-functions.integerarithmetics.code.tex")))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
-float.code.tex"
-\c@pgfmathroundto@lastzeros=\count306
-))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfint.
-code.tex")
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcorepoints.code.tex"
-File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen262
-\pgf@picmaxx=\dimen263
-\pgf@picminy=\dimen264
-\pgf@picmaxy=\dimen265
-\pgf@pathminx=\dimen266
-\pgf@pathmaxx=\dimen267
-\pgf@pathminy=\dimen268
-\pgf@pathmaxy=\dimen269
-\pgf@xx=\dimen270
-\pgf@xy=\dimen271
-\pgf@yx=\dimen272
-\pgf@yy=\dimen273
-\pgf@zx=\dimen274
-\pgf@zy=\dimen275
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcorepathconstruct.code.tex"
-File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen276
-\pgf@path@lasty=\dimen277
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcorepathusage.code.tex"
-File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen278
-\pgf@shorten@start@additional=\dimen279
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcorescopes.code.tex"
-File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box67
-\pgf@hbox=\box68
-\pgf@layerbox@main=\box69
-\pgf@picture@serial@count=\count307
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcoregraphicstate.code.tex"
-File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen280
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcoretransformations.code.tex"
-File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen281
-\pgf@pt@y=\dimen282
-\pgf@pt@temp=\dimen283
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcorequick.code.tex"
-File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcoreobjects.code.tex"
-File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcorepathprocessing.code.tex"
-File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcorearrows.code.tex"
-File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen284
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcoreshade.code.tex"
-File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen285
-\pgf@sys@shading@range@num=\count308
-\pgf@shadingcount=\count309
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcoreimage.code.tex"
-File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcoreexternal.code.tex"
-File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box70
-))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcorelayers.code.tex"
-File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcoretransparency.code.tex"
-File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcorepatterns.code.tex"
-File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
-gfcorerdf.code.tex"
-File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfm
-oduleshapes.code.tex"
-File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box71
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfm
-oduleplot.code.tex"
-File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility\
-pgfcomp-version-0-65.sty"
-Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen286
-\pgf@nodesepend=\dimen287
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility\
-pgfcomp-version-1-18.sty"
-Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
-))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\verbatim.sty
-"
-Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks40
-\verbatim@line=\toks41
-\verbatim@in@stream=\read4
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/environ\environ.st
-y"
-Package: environ 2014/05/04 v0.3 A new way to define environments
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/trimspaces\trimspa
-ces.sty"
-Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.
-sty"
-Package: etoolbox 2020/08/24 v2.5j e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count310
-)
-\tcb@titlebox=\box72
-\tcb@upperbox=\box73
-\tcb@lowerbox=\box74
-\tcb@phantombox=\box75
-\c@tcbbreakpart=\count311
-\c@tcblayer=\count312
-\c@tcolorbox@number=\count313
-\tcb@temp=\box76
-\tcb@temp=\box77
-\tcb@temp=\box78
-\tcb@temp=\box79
-\tcb@out=\write5
-\tcb@record@out=\write6
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tcolorbox\tcbbreak
-able.code.tex"
-Library (tcolorbox): 'tcbbreakable.code.tex' version '4.31'
-\tcb@testbox=\box80
-\tcb@totalupperbox=\box81
-\tcb@totallowerbox=\box82
-))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/parskip\parskip.st
-y"
-Package: parskip 2020-06-15 v2.0f non-zero parskip adjustments
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\fontenc.sty"
-Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
-2.
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
-File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\mathpazo.st
-y"
-Package: mathpazo 2020/03/25 PSNFSS-v9.3 Palatino w/ Pazo Math (D.Puga, WaS) 
-\symupright=\mathgroup4
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.st
-y"
-Package: caption 2020/05/30 v3.4k Customizing captions (AR)
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.s
-ty"
-Package: caption3 2020/07/20 v1.12b caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen288
-\captionmargin@=\dimen289
-\captionwidth=\dimen290
-\caption@tempdima=\dimen291
-\caption@indent=\dimen292
-\caption@parindent=\dimen293
-\caption@hangindent=\dimen294
-Package caption Info: elsarticle document class detected.
-)
-\c@caption@flags=\count314
-\c@continuedfloat=\count315
-Package caption Info: hyperref package is loaded.
-Package caption Info: threeparttable package is loaded.
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\adjustbo
-x.sty"
-Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xkeyval\xkeyval.st
-y"
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkeyval.
-tex"
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkvutils
-.tex"
-\XKV@toks=\toks42
-\XKV@tempa@toks=\toks43
-)
-\XKV@depth=\count316
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\adjcalc.
-sty"
-Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
--ends (calc, etex, pgfmath)
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\trimclip
-.sty"
-Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/collectbox\collect
-box.sty"
-Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box83
-)
-\tc@llx=\dimen295
-\tc@lly=\dimen296
-\tc@urx=\dimen297
-\tc@ury=\dimen298
-Package trimclip Info: Using driver 'tc-pdftex.def'.
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\tc-pdfte
-x.def"
-File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
-))
-\adjbox@Width=\dimen299
-\adjbox@Height=\dimen300
-\adjbox@Depth=\dimen301
-\adjbox@Totalheight=\dimen302
-\adjbox@pwidth=\dimen303
-\adjbox@pheight=\dimen304
-\adjbox@pdepth=\dimen305
-\adjbox@ptotalheight=\dimen306
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/varwidth\varwidth.
-sty"
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box84
-\sift@deathcycles=\count317
-\@vwid@loff=\dimen307
-\@vwid@roff=\dimen308
-))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count318
-\float@exts=\toks44
-\float@box=\box85
-\@float@everytoks=\toks45
-\@floatcapt=\box86
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\enumerate.st
-y"
-Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
-\@enLab=\toks46
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb.s
-ty"
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.
-sty"
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup5
-\symAMSb=\mathgroup6
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\textcomp.sty"
-Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/upquote\upquote.st
-y"
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
-tim
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/eurosym\eurosym.st
-y"
-Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
-\@eurobox=\box87
-) ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ucs\ucs.sty"
-Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ucs\uni-global.def
-"
-File: uni-global.def 2013/05/13 UCS: Unicode global data
-)
-\uc@secondtry=\count319
-\uc@combtoks=\toks47
-\uc@combtoksb=\toks48
-\uc@temptokena=\toks49
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyvrb\fancyvrb.
-sty"
-Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count320
-\FV@InFile=\read5
-\FV@TabBox=\box88
-\c@FancyVerbLine=\count321
-\FV@StepNumber=\count322
-\FV@OutFile=\write7
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/grffile\grffile.st
-y"
-Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
-y)
-Package grffile Info: This package is an empty stub for compatibility on input 
-line 40.
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/titling\titling.st
-y"
-Package: titling 2009/09/04 v2.1d maketitle typesetting
-\thanksmarkwidth=\skip79
-\thanksmargin=\skip80
-\droptitle=\skip81
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\longtable.st
-y"
-Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip82
-\LTright=\skip83
-\LTpre=\skip84
-\LTpost=\skip85
-\LTchunksize=\count323
-\LTcapwidth=\dimen309
-\LT@head=\box89
-\LT@firsthead=\box90
-\LT@foot=\box91
-\LT@lastfoot=\box92
-\LT@cols=\count324
-\LT@rows=\count325
-\c@LT@tables=\count326
-\c@LT@chunks=\count327
-\LT@p@ftn=\toks50
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/enumitem\enumitem.
-sty"
-Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip86
-\enit@outerparindent=\dimen310
-\enit@toks=\toks51
-\enit@inbox=\box93
-\enit@count@id=\count328
-\enitdp@description=\count329
-) ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ulem\ulem.sty"
-\UL@box=\box94
-\UL@hyphenbox=\box95
-\UL@skip=\skip87
-\UL@hook=\toks52
-\UL@height=\dimen311
-\UL@pe=\count330
-\UL@pixel=\dimen312
-\ULC@box=\box96
-Package: ulem 2019/11/18
-\ULdepth=\dimen313
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/jknappen\mathrsfs.
-sty"
-Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
-\symrsfs=\mathgroup7
-)
-\Wrappedcontinuationbox=\box97
-\Wrappedvisiblespacebox=\box98
-Package hyperref Info: Option `breaklinks' set `true' on input line 436.
-Package hyperref Info: Option `colorlinks' set `true' on input line 436.
-
-
-Package geometry Warning: Over-specification in `h'-direction.
-    `width' (468.0pt) is ignored.
-
-
-Package geometry Warning: Over-specification in `v'-direction.
-    `height' (622.0pt) is ignored.
-
-
+) Excluding 'comment' comment.
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backen
 d-pdfmode.def"
 File: l3backend-pdfmode.def 2020-08-07 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count331
-\l__pdf_internal_box=\box99
+\l__kernel_color_stack_int=\count298
+\l__pdf_internal_box=\box65
+) (TFG.aux
+LaTeX Info: Redefining \. on input line 32.
+LaTeX Info: Redefining \% on input line 32.
+LaTeX Info: Redefining \. on input line 33.
+LaTeX Info: Redefining \% on input line 33.
+LaTeX Info: Redefining \. on input line 35.
+LaTeX Info: Redefining \% on input line 35.
+LaTeX Info: Redefining \. on input line 39.
+LaTeX Info: Redefining \% on input line 39.
 )
-No file TFG.aux.
 \openout1 = `TFG.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 447.
-LaTeX Font Info:    ... okay on input line 447.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 447.
-LaTeX Font Info:    ... okay on input line 447.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 447.
-LaTeX Font Info:    ... okay on input line 447.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 447.
-LaTeX Font Info:    ... okay on input line 447.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 447.
-LaTeX Font Info:    ... okay on input line 447.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 447.
-LaTeX Font Info:    ... okay on input line 447.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 447.
-LaTeX Font Info:    ... okay on input line 447.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 447.
-LaTeX Font Info:    ... okay on input line 447.
-LaTeX Font Info:    Trying to load font information for T1+ppl on input line 44
-7.
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\t1ppl.fd"
-File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 410.
+LaTeX Font Info:    ... okay on input line 410.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 410.
+LaTeX Font Info:    ... okay on input line 410.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 410.
+LaTeX Font Info:    ... okay on input line 410.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 410.
+LaTeX Font Info:    ... okay on input line 410.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 410.
+LaTeX Font Info:    ... okay on input line 410.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 410.
+LaTeX Font Info:    ... okay on input line 410.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 410.
+LaTeX Font Info:    ... okay on input line 410.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 410.
+LaTeX Font Info:    ... okay on input line 410.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
+10.
+
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd"
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
 df.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count332
-\scratchdimen=\dimen314
-\scratchbox=\box100
-\nofMPsegments=\count333
-\nofMParguments=\count334
-\everyMPshowfont=\toks53
-\MPscratchCnt=\count335
-\MPscratchDim=\dimen315
-\MPnumerator=\count336
-\makeMPintoPDFobject=\count337
-\everyMPtoPDFconversion=\toks54
+\scratchcounter=\count299
+\scratchdimen=\dimen193
+\scratchbox=\box66
+\nofMPsegments=\count300
+\nofMParguments=\count301
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count302
+\MPscratchDim=\dimen194
+\MPnumerator=\count303
+\makeMPintoPDFobject=\count304
+\everyMPtoPDFconversion=\toks31
 )
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epsto
 pdf-base.sty"
@@ -1156,15 +643,15 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 * hratio: 1:1
 * vratio: 1:1
 * modes: 
-* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
-* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* h-part:(L,W,R)=(64.75394pt, 468.0pt, 64.75394pt)
+* v-part:(T,H,B)=(111.52342pt, 622.0pt, 111.52342pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=452.9679pt
-* \textheight=700.50687pt
-* \oddsidemargin=0.0pt
-* \evensidemargin=0.0pt
-* \topmargin=-62.0pt
+* \textwidth=468.0pt
+* \textheight=622.0pt
+* \oddsidemargin=-7.51605pt
+* \evensidemargin=-7.51605pt
+* \topmargin=-22.74657pt
 * \headheight=50.0pt
 * \headsep=12.0pt
 * \topskip=10.0pt
@@ -1182,8 +669,8 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box101
-Package hyperref Info: Link coloring ON on input line 447.
+\AtBeginShipoutBox=\box67
+Package hyperref Info: Link coloring ON on input line 410.
 
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
 ty"
@@ -1197,13 +684,14 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count338
+\c@section@level=\count305
 )
-LaTeX Info: Redefining \ref on input line 447.
-LaTeX Info: Redefining \pageref on input line 447.
-LaTeX Info: Redefining \nameref on input line 447.
-\@outlinefile=\write8
-\openout8 = `TFG.out'.
+LaTeX Info: Redefining \ref on input line 410.
+LaTeX Info: Redefining \pageref on input line 410.
+LaTeX Info: Redefining \nameref on input line 410.
+ (TFG.out) (TFG.out)
+\@outlinefile=\write5
+\openout5 = `TFG.out'.
 
 
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdflscape\pdflscap
@@ -1215,1405 +703,384 @@ y"
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-) ABD: EveryShipout initializing macros
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: float package is loaded.
-Package caption Info: longtable package is loaded.
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\ltcaption.
-sty"
-Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
-Package caption Info: End \AtBeginDocument code.
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ucs\ucsencs.def"
-File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
+LaTeX Info: Redefining \. on input line 412.
+LaTeX Info: Redefining \% on input line 412.
+LaTeX Info: Redefining \. on input line 431.
+LaTeX Info: Redefining \% on input line 431.
+LaTeX Info: Redefining \. on input line 433.
+LaTeX Info: Redefining \% on input line 433.
+LaTeX Info: Redefining \. on input line 436.
+LaTeX Info: Redefining \% on input line 436.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
+45.
+ ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omllmm.fd"
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \. on input line 449.
-LaTeX Info: Redefining \% on input line 449.
-LaTeX Info: Redefining \. on input line 468.
-LaTeX Info: Redefining \% on input line 468.
-LaTeX Info: Redefining \. on input line 470.
-LaTeX Info: Redefining \% on input line 470.
-LaTeX Info: Redefining \. on input line 473.
-LaTeX Info: Redefining \% on input line 473.
-
-[1
-
-{C:/Users/acamo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
-
-]
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 4
-81.
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1ppl.fd"
-File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+445.
+ ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omslmsy.fd"
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
-481.
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omlzplm.fd"
-File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+445.
+
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omxlmex.fd"
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
-481.
- ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omszplm.fd
-"
-File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 445.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 445.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 445.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 445.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 445.
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
+445.
+
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ot1lmtt.fd"
+File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
-481.
+Underfull \vbox (badness 4181) has occurred while \output is active []
 
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omxzplm.fd"
-File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
-)
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
-481.
- ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1zplm.fd
-"
-File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
-)
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 481.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 481.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 481.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 481.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 481.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 481.
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 48
-1.
+ [1{C:/Users/acamo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd"
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.481 \maketitle
-                 % Creación del Título, autores, abstracto...
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.481 \maketitle
-                 % Creación del Título, autores, abstracto...
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.481 \maketitle
-                 % Creación del Título, autores, abstracto...
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.481 \maketitle
-                 % Creación del Título, autores, abstracto...
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.481 \maketitle
-                 % Creación del Título, autores, abstracto...
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.481 \maketitle
-                 % Creación del Título, autores, abstracto...
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.481 \maketitle
-                 % Creación del Título, autores, abstracto...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.481 \maketitle
-                 % Creación del Título, autores, abstracto...
-I'm guessing that you meant to end an alignment here.
-
-! Missing { inserted.
-<inserted text> 
-                {
-l.481 \maketitle
-                 % Creación del Título, autores, abstracto...
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.481 \maketitle
-                 % Creación del Título, autores, abstracto...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.481 \maketitle
-                 % Creación del Título, autores, abstracto...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Extra }, or forgotten \endgroup.
-\color@endbox ->\color@endgroup \egroup 
-                                        
-l.481 \maketitle
-                 % Creación del Título, autores, abstracto...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 490.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 490.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 490.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 490.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 490.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 490.
-
-Package natbib Warning: Citation `INTRODUCCION' on page 2 undefined on input li
-ne 492.
-
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 4
-92.
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ts1ppl.fd"
-File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-)
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 492.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 492.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 492.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 492.
-
-Package natbib Warning: Citation `DATA NEVER SLEEP' on page 2 undefined on inpu
-t line 492.
-
-
-Package natbib Warning: Citation `3' on page 2 undefined on input line 496.
-
-
-Package natbib Warning: Citation `4' on page 2 undefined on input line 498.
-
-
-Package natbib Warning: Citation `LIBRO' on page 2 undefined on input line 500.
-
-
-
-Package natbib Warning: Citation `6' on page 2 undefined on input line 508.
-
-
-Package natbib Warning: Citation `7' on page 2 undefined on input line 518.
-
-
-Package natbib Warning: Citation `8' on page 2 undefined on input line 522.
-
-
-Package natbib Warning: Citation `survey' on page 2 undefined on input line 530
-.
-
-
-Package natbib Warning: Citation `9' on page 2 undefined on input line 532.
-
-
-Package natbib Warning: Citation `10' on page 2 undefined on input line 532.
-
-
-Package natbib Warning: Citation `11' on page 2 undefined on input line 532.
-
-
-Package natbib Warning: Citation `12' on page 2 undefined on input line 532.
-
-
-Package natbib Warning: Citation `13' on page 2 undefined on input line 532.
-
-
-Package natbib Warning: Citation `articulo14' on page 2 undefined on input line
- 534.
-
-
-Package natbib Warning: Citation `survey' on page 2 undefined on input line 536
-.
-
-
-Package natbib Warning: Citation `15' on page 2 undefined on input line 536.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.548 \begin{figure}[ht]
-                        
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg, id=19, 503.8825pt x
- 182.6825pt>
+] [2] [3]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg, id=201, 503.8825pt 
+x 182.6825pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg Graphic file (t
 ype jpg)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.
-jpg  used on input line 550.
-(pdftex.def)             Requested size: 503.88127pt x 182.68204pt.
+jpg  used on input line 513.
+(pdftex.def)             Requested size: 222.0pt x 80.48647pt.
+ [4 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
+42.
 
-LaTeX Warning: Reference `fig:flowchart' on page 2 undefined on input line 555.
-
-
-
-Package natbib Warning: Citation `LIBRO' on page 2 undefined on input line 572.
-
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.581 ...ferenciarla de otra.}, binarios\footnote{
-                                                  Datos que solo pueden toma...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.581 ...den tomar los valores cero y uno (0, 1).}
-                                                  , ordinales\footnote{Datos...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.581 ... cero y uno (0, 1).}, ordinales\footnote{
-                                                  Datos cualitativos que pro...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.581 ...rmación para ordenar las observaciones.}
-                                                  , imágenes, gráficos, do...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Package natbib Warning: Citation `LIBRO' on page 2 undefined on input line 604.
-
-
-
-LaTeX Warning: Reference `fig:fuzzy' on page 2 undefined on input line 609.
-
-
-Package natbib Warning: Citation `17' on page 2 undefined on input line 609.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.611 \begin{figure}[ht]
-                        
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png, id=24, 503.8825pt x 502
-.87875pt>
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+[5]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png, id=234, 503.8825pt x 50
+2.87875pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png Graphic file (type 
 png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png 
- used on input line 613.
-(pdftex.def)             Requested size: 503.88127pt x 502.87752pt.
+ used on input line 576.
+(pdftex.def)             Requested size: 222.0pt x 221.55891pt.
+ [6] [7 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png>] [8]
+Underfull \hbox (badness 1603) in paragraph at lines 632--633
+[]\OT1/lmr/bx/n/10 M[]eto-dos ba-sa-dos en mo-de-los pro-ba-
+ []
 
-Package natbib Warning: Citation `LIBRO' on page 2 undefined on input line 629.
-
-
-
-LaTeX Warning: Reference `sec:Métodos basados en particiones' on page 2 undefi
-ned on input line 629.
-
-
-LaTeX Warning: Reference `sec:Métodos jerárquicos' on page 2 undefined on inp
-ut line 629.
-
-
-LaTeX Warning: Reference `sec:Métodos basados en densidad' on page 2 undefined
- on input line 629.
-
-
-LaTeX Warning: Reference `sec:Métodos basados en rejilla' on page 2 undefined 
-on input line 629.
-
-
-LaTeX Warning: Reference `Tab:Tabla 1' on page 2 undefined on input line 658.
-
-
-Package natbib Warning: Citation `teoria grafos' on page 2 undefined on input l
-ine 673.
-
-
-LaTeX Warning: Reference `fig:grafo' on page 2 undefined on input line 675.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.680   \begin{figure}[ht]
-                          
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png, id=26, 655.44875pt x 29
-9.1175pt>
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png, id=263, 655.44875pt x 2
+99.1175pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png Graphic file (type 
 png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png 
- used on input line 682.
-(pdftex.def)             Requested size: 655.44714pt x 299.11676pt.
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.700 \begin{table*}[ht]
-                        
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Package natbib Warning: Citation `LIBRO' on page 2 undefined on input line 724.
-
-
-
-LaTeX Warning: Reference `subsec:Requisitos de un algoritmo de clustering' on p
-age 2 undefined on input line 724.
-
-
-LaTeX Warning: Reference `subsec:k-means' on page 2 undefined on input line 730
-.
-
-
-LaTeX Warning: Reference `subsec:k-medoids' on page 2 undefined on input line 7
-30.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.738 ...objetos en un espacio Euclídeo\footnote{
-                                                  Espacio geométrico donde ...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.738 ...e se satisfacen los axiomas de Euclides.}
-                                                  , formar $k$ clusters, $C_...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.742 ...q$, con coordenadas cartesianas\footnote{
-                                                  Tipo de coordenadas ortogo...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.742 ...en como referencia los ejes ortogonales.}
-                                                   $(x_{1}, y_{1})$ y $(x_{2...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.744 ...s la suma del error cuadrático\footnote{
-                                                  Técnica para calcular la ...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.744 ...a entre el estimador y lo que se estima.}
-                                                   entre todos los objetos d...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.746 ...lema de complexión NP-complejo\footnote{
-                                                  No se definir esto bien}. ...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.746 ...omplejo\footnote{No se definir esto bien}
-                                                  . Para resolverlo, se util...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.746 ... se utilizan algoritmos voraces\footnote{
-                                                  Estrategia de búsqueda en...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.746 ... llegar a una solución general óptima.}
-                                                   como $k$-Means, simples y...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `alg:Algoritmo k-means' on page 2 undefined on input l
-ine 748.
-
-
-LaTeX Warning: Reference `fig:kmeans' on page 2 undefined on input line 748.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.750 \begin{algorithm}[ht]
-                           
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.770 \begin{figure}[ht]
-                        
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png, id=32, 665.48625pt x 5
-78.16pt>
+ used on input line 645.
+(pdftex.def)             Requested size: 222.0pt x 101.31064pt.
+[9 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png>] [10]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png, id=299, 665.48625pt x 
+578.16pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png Graphic file (type
  png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png
-  used on input line 772.
-(pdftex.def)             Requested size: 665.48462pt x 578.15858pt.
+  used on input line 735.
+(pdftex.def)             Requested size: 222.0pt x 192.86655pt.
+ [11 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png>] [12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package natbib Warning: Citation `fuzzymeans' on page 2 undefined on input line
- 794.
-
-
-Package natbib Warning: Citation `otrolibro' on page 2 undefined on input line 
-794.
-
-
-LaTeX Warning: Reference `subsec:k-means' on page 2 undefined on input line 807
-.
-
-
-LaTeX Warning: Reference `eq:k-medoids' on page 2 undefined on input line 821.
-
-
-LaTeX Warning: Reference `eq:k-medoids' on page 2 undefined on input line 823.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.825 \begin{algorithm}[ht]
-                           
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `alg:Algoritmo PAM' on page 2 undefined on input line 
-847.
-
-
-Package natbib Warning: Citation `LIBRO' on page 2 undefined on input line 870.
-
-
-
-LaTeX Warning: Reference `subsec:BIRCH' on page 2 undefined on input line 884.
-
-
-LaTeX Warning: Reference `subsec:Chameleon' on page 2 undefined on input line 8
-84.
-
-
-LaTeX Warning: Reference `subsec:AGNES' on page 2 undefined on input line 886.
-
-
-LaTeX Warning: Reference `subsec:DIANA' on page 2 undefined on input line 886.
-
-
-LaTeX Warning: Reference `subsec:BIRCH' on page 2 undefined on input line 886.
-
-
-LaTeX Warning: Reference `subsec:Chameleon' on page 2 undefined on input line 8
-86.
-
-
-LaTeX Warning: Reference `fig:distancias' on page 2 undefined on input line 896
-.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.898 \begin{figure}[ht]
-                        
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png, id=33, 985.6825pt 
-x 546.04pt>
+ [13]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png, id=361, 985.6825pt
+ x 546.04pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png Graphic file (
 type png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias
-.png  used on input line 900.
-(pdftex.def)             Requested size: 985.68008pt x 546.03867pt.
+.png  used on input line 863.
+(pdftex.def)             Requested size: 222.0pt x 122.97867pt.
 
-Package natbib Warning: Citation `jerarquico' on page 2 undefined on input line
- 925.
-
-
-LaTeX Warning: Reference `subsec:Medidas de distancia' on page 2 undefined on i
-nput line 927.
-
-
-Package natbib Warning: Citation `18' on page 2 undefined on input line 927.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.930 \begin{figure}[!ht]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png, id=34, 1097.09875p
-t x 551.05875pt>
+[14 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png>]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png, id=374, 1097.09875
+pt x 551.05875pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png Graphic file (
 type png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma
-.png  used on input line 932.
-(pdftex.def)             Requested size: 1097.09608pt x 551.05739pt.
+.png  used on input line 895.
+(pdftex.def)             Requested size: 222.0pt x 111.5047pt.
+LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 8
+96.
 
-Package natbib Warning: Citation `jerarquico' on page 2 undefined on input line
- 944.
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omslmr.fd"
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 896.
 
-
-LaTeX Warning: Reference `fig:dendograma' on page 2 undefined on input line 946
-.
-
-
-Package natbib Warning: Citation `BIRCH' on page 2 undefined on input line 954.
-
-
-
-Package natbib Warning: Citation `BIRCH 2' on page 2 undefined on input line 95
-4.
-
-
-LaTeX Warning: Reference `fig:birch' on page 2 undefined on input line 979.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.981 \begin{figure}[ht]
-                        
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png, id=35, 675.52374pt x 36
-2.35374pt>
+[15 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png>]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png, id=399, 675.52374pt x 3
+62.35374pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png Graphic file (type 
 png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png 
- used on input line 983.
-(pdftex.def)             Requested size: 675.5221pt x 362.35286pt.
-
-Package natbib Warning: Citation `chameleon' on page 2 undefined on input line 
-1004.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1006 \begin{figure}[ht]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png, id=36, 1037.8775pt 
-x 240.9pt>
+ used on input line 946.
+(pdftex.def)             Requested size: 222.0pt x 119.07948pt.
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png, id=402, 1037.8775pt
+ x 240.9pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png Graphic file (t
 ype png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.
-png  used on input line 1008.
-(pdftex.def)             Requested size: 1037.87498pt x 240.8994pt.
-
-Package natbib Warning: Citation `articulo14' on page 2 undefined on input line
- 1013.
-
-
-LaTeX Warning: Reference `fig:chameleon' on page 2 undefined on input line 1015
-.
-
-
-LaTeX Warning: Reference `subsec:Clasificación general de técnicas' on page 2
- undefined on input line 1036.
-
-
-Package natbib Warning: Citation `LIBRO' on page 2 undefined on input line 1049
-.
-
-
-LaTeX Warning: Reference `subsec:dbscan' on page 2 undefined on input line 1053
-.
-
-
-LaTeX Warning: Reference `subsec:optics' on page 2 undefined on input line 1053
-.
-
-
-LaTeX Warning: Reference `subsec:denclue' on page 2 undefined on input line 105
-3.
-
-
-Package natbib Warning: Citation `DBSCAN' on page 2 undefined on input line 106
-1.
-
-
-LaTeX Warning: Reference `fig:dbscan1' on page 2 undefined on input line 1067.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1069 \begin{figure}[ht]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png, id=37, 453.695pt x 11
-1.41624pt>
+png  used on input line 971.
+(pdftex.def)             Requested size: 222.0pt x 51.52782pt.
+ [16 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png>] [17 <C:/Users/aca
+mo/Documents/TFG/Recursos/Fotos/chameleon.png>]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png, id=431, 453.695pt x 1
+11.41624pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png Graphic file (typ
 e png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.pn
-g  used on input line 1071.
-(pdftex.def)             Requested size: 453.6939pt x 111.41597pt.
-
-LaTeX Warning: Reference `fig:dbscan2' on page 2 undefined on input line 1080.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1082 \begin{figure}[ht]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png, id=38, 598.235pt x 26
-6.9975pt>
+g  used on input line 1034.
+(pdftex.def)             Requested size: 222.0pt x 54.51793pt.
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png, id=435, 598.235pt x 2
+66.9975pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png Graphic file (typ
 e png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.pn
-g  used on input line 1084.
-(pdftex.def)             Requested size: 598.23354pt x 266.99683pt.
-
-LaTeX Warning: Reference `alg:Algoritmo DBSCAN' on page 2 undefined on input li
-ne 1093.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1097 \begin{algorithm}[!ht]
-                             
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `subsec:Requisitos de un algoritmo de clustering' on p
-age 2 undefined on input line 1134.
-
-
-LaTeX Warning: Reference `fig:optics' on page 2 undefined on input line 1138.
-
-
-LaTeX Warning: Reference `subsec:dbscan' on page 2 undefined on input line 1143
-.
-
-
-Underfull \hbox (badness 1112) in paragraph at lines 1145--1146
-[]\T1/ppl/m/n/10 Es po-si-ble que un ob-je-to $\OML/zplm/m/it/10 p$ \T1/ppl/m/n
-/10 ten-ga m�s de una dis-tan-cia de al-can-ce, es de-cir, que sea al-
- []
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1148 \begin{figure}[ht]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png, id=39, 764.8575pt x 37
-7.41pt>
+g  used on input line 1047.
+(pdftex.def)             Requested size: 222.0pt x 99.08084pt.
+ [18 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png> <C:/Users/acamo/
+Documents/TFG/Recursos/Fotos/dbscan2.png (PNG copy)>]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png, id=452, 764.8575pt x 3
+77.41pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png Graphic file (type
  png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png
-  used on input line 1150.
-(pdftex.def)             Requested size: 764.85562pt x 377.40907pt.
-
-LaTeX Warning: Reference `subsec:dbscan' on page 2 undefined on input line 1167
-.
-
-
-LaTeX Warning: Reference `subsec:optics' on page 2 undefined on input line 1167
-.
-
-
-Package natbib Warning: Citation `DENCLUE' on page 2 undefined on input line 11
-67.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1171 ...l algoritmo de Escalada Simple\footnote{
-                                                  Técnica de optimización ...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1171 ...lizada para encontrar óptimos locales.}
-                                                   guiado por el gradiente d...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Package natbib Warning: Citation `LIBRO' on page 2 undefined on input line 1185
-.
-
-
-LaTeX Warning: Reference `subsec:sting' on page 2 undefined on input line 1189.
-
-
-
-LaTeX Warning: Reference `subsec:clique' on page 2 undefined on input line 1189
-.
-
-
-Package natbib Warning: Citation `sting' on page 2 undefined on input line 1197
-.
-
-
-LaTeX Warning: Reference `fig:sting' on page 2 undefined on input line 1197.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1199 \begin{figure}[ht]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg, id=41, 120.45pt x 52.27
-53pt>
+  used on input line 1113.
+(pdftex.def)             Requested size: 222.0pt x 109.54399pt.
+ [19 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png (PNG copy)>]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg, id=489, 120.45pt x 52.2
+753pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg Graphic file (type 
 jpg)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg 
- used on input line 1201.
-(pdftex.def)             Requested size: 120.44969pt x 52.27516pt.
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1206 ... la media, desviación típica\footnote{
-                                                  Medida estadística que si...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1206 ...ón de un conjunto de datos numéricos.}
-                                                  , máximo, mínimo y si lo...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `alg:Algoritmo sting' on page 2 undefined on input lin
-e 1210.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1212 \begin{algorithm}[ht]
-                            
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `subsec:dbscan' on page 2 undefined on input line 1237
-.
-
-
-LaTeX Warning: Reference `fig:clique' on page 2 undefined on input line 1247.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1254 \begin{figure}[ht]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png, id=43, 317.185pt x 670
-.505pt>
+ used on input line 1164.
+(pdftex.def)             Requested size: 222.0pt x 96.35759pt.
+ [20 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg>] [21]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png, id=528, 317.185pt x 67
+0.505pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png Graphic file (type
  png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png
-  used on input line 1256.
-(pdftex.def)             Requested size: 317.1842pt x 670.50337pt.
-
-LaTeX Warning: Reference `subsec:Métodos jerárquicos probabilísticos' on pag
-e 2 undefined on input line 1275.
-
-
-LaTeX Warning: Reference `subsec:k-means' on page 2 undefined on input line 127
-7.
-
-
-LaTeX Warning: Reference `fig:elbow' on page 2 undefined on input line 1277.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1279 \begin{figure}[ht]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png, id=44, 528.97626pt x 39
-8.48875pt>
+  used on input line 1219.
+(pdftex.def)             Requested size: 190.31245pt x 402.3061pt.
+ [22 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png>]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png, id=539, 528.97626pt x 3
+98.48875pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png Graphic file (type 
 png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png 
- used on input line 1281.
-(pdftex.def)             Requested size: 528.97496pt x 398.48778pt.
+ used on input line 1244.
+(pdftex.def)             Requested size: 222.0pt x 167.23643pt.
 
-LaTeX Warning: Reference `clustering' on page 2 undefined on input line 1298.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [23 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png>] [24
 
-Package natbib Warning: Citation `otrolibro' on page 2 undefined on input line 
-1300.
+]
+Excluding 'comment' comment. (TFG.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 2.
+LaTeX Info: Redefining \% on input line 2.
+LaTeX Info: Redefining \. on input line 4.
+LaTeX Info: Redefining \% on input line 4.
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
 
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1303 ...omo clasificación supervisada\footnote{
-                                                  Método de Data Mining que...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1303 ...ue puede tomar dicho valor desconocido.}
-                                                   o detección de outliers.
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Package natbib Warning: Citation `13' on page 2 undefined on input line 1307.
-
-
-Package natbib Warning: Citation `11' on page 2 undefined on input line 1315.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1317 ...os análisis del genoma humano\footnote{
-                                                  El genoma es el conjunto d...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1317 ... de genes contenidos en los cromosomas.}
-                                                   y la capacidad de recolec...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1317 ...es tipos de expresión génica\footnote{
-                                                  La expresión génica es e...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Counter too large.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1317 ...o y reproducción con otros organismos.}
-                                                  . Este tipo de datos suele...
-
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `clustering' on page 2 undefined on input line 1321.
-
-
-Package natbib Warning: Citation `articulo14' on page 2 undefined on input line
- 1321.
-
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-333.
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd"
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-1336.
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmtt.fd"
-File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1369.
-<Latex Jupyter/output_3_1.png, id=48, 843.15pt x 843.15pt>
-File: Latex Jupyter/output_3_1.png Graphic file (type png)
-<use Latex Jupyter/output_3_1.png>
-Package pdftex.def Info: Latex Jupyter/output_3_1.png  used on input line 1413.
-
-(pdftex.def)             Requested size: 843.14793pt x 843.14793pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1415--1416
-
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+ [][] [][][]\OT1/lmr/bx/n/10 M[]eto-dos jer[]arqui-cos pro-ba- 
  []
-
-<Latex Jupyter/output_5_0.png, id=49, 843.15pt x 843.15pt>
-File: Latex Jupyter/output_5_0.png Graphic file (type png)
-<use Latex Jupyter/output_5_0.png>
-Package pdftex.def Info: Latex Jupyter/output_5_0.png  used on input line 1449.
-
-(pdftex.def)             Requested size: 843.14793pt x 843.14793pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1451--1452
-
- []
-
-<Latex Jupyter/output_6_0.png, id=50, 843.15pt x 843.15pt>
-File: Latex Jupyter/output_6_0.png Graphic file (type png)
-<use Latex Jupyter/output_6_0.png>
-Package pdftex.def Info: Latex Jupyter/output_6_0.png  used on input line 1464.
-
-(pdftex.def)             Requested size: 843.14793pt x 843.14793pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1466--1467
-
- []
-
-<Latex Jupyter/output_7_1.png, id=51, 843.15pt x 843.15pt>
-File: Latex Jupyter/output_7_1.png Graphic file (type png)
-<use Latex Jupyter/output_7_1.png>
-Package pdftex.def Info: Latex Jupyter/output_7_1.png  used on input line 1485.
-
-(pdftex.def)             Requested size: 843.14793pt x 843.14793pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1487--1488
-
- []
-
-
-Package hyperref Warning: old toc file detected, not used; run LaTeX again.
-
-\tf@toc=\write9
-\openout9 = `TFG.toc'.
-
-
-Package hyperref Warning: old loa file detected, not used; run LaTeX again.
-
-\tf@loa=\write10
-\openout10 = `TFG.loa'.
-
-
-Package hyperref Warning: old lot file detected, not used; run LaTeX again.
-
-\tf@lot=\write11
-\openout11 = `TFG.lot'.
-
-
-Package hyperref Warning: old lof file detected, not used; run LaTeX again.
-
-\tf@lof=\write12
-\openout12 = `TFG.lof'.
-
-Package textcomp Info: Symbol \textasciiacute not provided by
-(textcomp)             font family ppl in TS1 encoding.
-(textcomp)             Default family used instead on input line 1540.
-
-Underfull \hbox (badness 2521) in paragraph at lines 1558--1559
-[]\T1/ppl/m/n/8 Baron, J. N., Az-nar, M. N., Mon-te-rub-bia-ne-si, M., & Mart�n
-ez-L�pez, B. (2020). [][]Ap-pli-ca-tion of net-work analy-
- []
-
-Package textcomp Info: Symbol \textasciiacute not provided by
-(textcomp)             font family ppl in TS1 encoding.
-(textcomp)             Default family used instead on input line 1602.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1602--1603
-[]\T1/ppl/m/n/8 Xing, Wan-li. (2016). Ex-plo-ring the co-llec-ti-ve know-led-ge
- cu-ra-tion pro-cess of on-li-ne health com-mu-ni-ties\TS1/cmr/m/n/8 �\T1/ppl/m
-/n/8 .
- []
-
-
-Package natbib Warning: There were undefined citations.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1616.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1616.
-(TFG.aux
-LaTeX Info: Redefining \. on input line 30.
-LaTeX Info: Redefining \% on input line 30.
-
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
 
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1616.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1616.
+\tf@toc=\write6
+\openout6 = `TFG.toc'.
+
+ (TFG.loa)
+\tf@loa=\write7
+\openout7 = `TFG.loa'.
+
+ (TFG.lot
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 2.
+LaTeX Info: Redefining \% on input line 2.
+LaTeX Info: Redefining \. on input line 4.
+LaTeX Info: Redefining \% on input line 4.
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+)
+\tf@lot=\write8
+\openout8 = `TFG.lot'.
+
+ (TFG.lof
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 2.
+LaTeX Info: Redefining \% on input line 2.
+LaTeX Info: Redefining \. on input line 4.
+LaTeX Info: Redefining \% on input line 4.
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 12.
+
+Underfull \hbox (badness 1888) in paragraph at lines 13--13
+ [][] [][][]\OT1/lmr/m/n/10 Estructura CF-tree del al-go-rit-mo 
+ []
+
+[25
 
 
-
-Package rerunfilecheck Warning: File `TFG.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `TFG.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1616.
-! You can't use `\end' in internal vertical mode.
-\enddocument ...es \z@ \Call@AtVeryVeryEnd \@@end 
-                                                  
-l.1616 \end{document}
-                     
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.1616 \end{document}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.1616 \end{document}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+]
+Underfull \hbox (badness 1320) in paragraph at lines 20--20
+ [][] [][][]\OT1/lmr/m/n/10 Elbow Method pa-ra en-con-trar el 
+ []
 
 )
-! Emergency stop.
-<*> ./TFG.tex
-             
-*** (job aborted, no legal \end found)
+\tf@lof=\write9
+\openout9 = `TFG.lof'.
 
- 
+
+Underfull \hbox (badness 10000) in paragraph at lines 1524--1525
+[]\OT1/lmr/m/n/8 Baron, J. N., Az-nar, M. N., Mon-te-rub-bia-ne-
+ []
+
+
+Underfull \hbox (badness 7203) in paragraph at lines 1524--1525
+\OT1/lmr/m/n/8 si, M., & Martnez-Lopez, B. (2020). [][]Ap-pli-ca-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1524--1525
+\OT1/lmr/m/n/8 tion of net-work analy-sis and clus-ter analy-sis
+ []
+
+
+Underfull \hbox (badness 5592) in paragraph at lines 1524--1525
+\OT1/lmr/m/n/8 for bet-ter pre-ven-tion and con-trol of swi-ne di-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1524--1525
+\OT1/lmr/m/n/8 sea-ses in Ar-gen-ti-na[][]. PLoS ONE, 15(6), 1{26.
+ []
+
+
+Underfull \hbox (badness 1448) in paragraph at lines 1528--1529
+[]\OT1/lmr/m/n/8 Emebo, O., Aro-mo-la-ran, O., Oye-la-de, J., Ise-won,
+ []
+
+
+Underfull \hbox (badness 2269) in paragraph at lines 1528--1529
+\OT1/lmr/m/n/8 I., Ola-di-pu-po, O., Omog-ba-de-gun, Z., ... Ola-wo-le,
+ []
+
+
+Underfull \hbox (badness 3158) in paragraph at lines 1528--1529
+\OT1/lmr/m/n/8 pli-ca-tions. 2019 19th In-ter-na-tio-nal Con-fe-ren-ce on
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 1560--1561
+[]\OT1/lmr/m/n/8 Schlitter, N., Fal-kows-ki, T., & Laes-sig, J. (2011).
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [26]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1582.
+
+[27
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1582.
+ (TFG.aux
+LaTeX Info: Redefining \. on input line 32.
+LaTeX Info: Redefining \% on input line 32.
+LaTeX Info: Redefining \. on input line 33.
+LaTeX Info: Redefining \% on input line 33.
+LaTeX Info: Redefining \. on input line 35.
+LaTeX Info: Redefining \% on input line 35.
+LaTeX Info: Redefining \. on input line 39.
+LaTeX Info: Redefining \% on input line 39.
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1582.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1582.
+
+Package rerunfilecheck Info: File `TFG.out' has not changed.
+(rerunfilecheck)             Checksum: C39F60B9D86F4839366666591AE832C6;2111.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1582.
+ ) 
 Here is how much of TeX's memory you used:
- 25443 strings out of 481178
- 460714 string characters out of 2902470
- 1016012 words of memory out of 3000000
- 40496 multiletter control sequences out of 15000+200000
- 573292 words of font info for 116 fonts, out of 3000000 for 9000
+ 11491 strings out of 481178
+ 177413 string characters out of 2902470
+ 500119 words of memory out of 3000000
+ 26634 multiletter control sequences out of 15000+200000
+ 578588 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,29n,77p,1455b,1016s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 44i,27n,42p,1457b,862s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.e
+nc}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-math
+sy.enc}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-
+mathit.enc}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm
+/lm-rm.enc}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm
+/lm-mathex.enc}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvip
+s/lm/lm-rmtt.enc}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dv
+ips/lm/lm-rmsc.enc}<C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/lm/lmbx10.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/lm/lmbx7.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/lm/lmbxi10.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/acamo/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/acamo/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/acamo/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/lm/lmmi5.pfb><C:/Users/acamo/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Users/acamo/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/acamo/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/acamo/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/acamo/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Users/acamo/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Users/acamo/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/acam
+o/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/
+acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb><C:/Use
+rs/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:
+/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy5.pfb>
+<C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.p
+fb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy
+8.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/l
+mtt8.pfb>
+Output written on TFG.pdf (27 pages, 1058660 bytes).
+PDF statistics:
+ 826 PDF objects out of 1000 (max. 8388607)
+ 215 named destinations out of 1000 (max. 500000)
+ 343 words of extra memory for PDF output out of 10000 (max. 10000000)
+
