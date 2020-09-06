@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.5)  6 SEP 2020 19:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.5)  6 SEP 2020 19:40
 entering extended mode
 **./TFG.tex
 (TFG.tex
@@ -1100,10 +1100,8 @@ d-pdfmode.def"
 File: l3backend-pdfmode.def 2020-08-07 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count331
 \l__pdf_internal_box=\box99
-) (TFG.aux
-LaTeX Info: Redefining \. on input line 30.
-LaTeX Info: Redefining \% on input line 30.
 )
+No file TFG.aux.
 \openout1 = `TFG.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 447.
@@ -1124,7 +1122,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 447.
 LaTeX Font Info:    ... okay on input line 447.
 LaTeX Font Info:    Trying to load font information for T1+ppl on input line 44
 7.
-
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\t1ppl.fd"
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
@@ -1205,7 +1202,6 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 447.
 LaTeX Info: Redefining \pageref on input line 447.
 LaTeX Info: Redefining \nameref on input line 447.
- (TFG.out) (TFG.out)
 \@outlinefile=\write8
 \openout8 = `TFG.out'.
 
@@ -1435,6 +1431,10 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.91925pt on input line 490.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 6.25204pt on input line 490.
+
+Package natbib Warning: Citation `INTRODUCCION' on page 2 undefined on input li
+ne 492.
+
 LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 4
 92.
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ts1ppl.fd"
@@ -1449,6 +1449,59 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 492.
 
+Package natbib Warning: Citation `DATA NEVER SLEEP' on page 2 undefined on inpu
+t line 492.
+
+
+Package natbib Warning: Citation `3' on page 2 undefined on input line 496.
+
+
+Package natbib Warning: Citation `4' on page 2 undefined on input line 498.
+
+
+Package natbib Warning: Citation `LIBRO' on page 2 undefined on input line 500.
+
+
+
+Package natbib Warning: Citation `6' on page 2 undefined on input line 508.
+
+
+Package natbib Warning: Citation `7' on page 2 undefined on input line 518.
+
+
+Package natbib Warning: Citation `8' on page 2 undefined on input line 522.
+
+
+Package natbib Warning: Citation `survey' on page 2 undefined on input line 530
+.
+
+
+Package natbib Warning: Citation `9' on page 2 undefined on input line 532.
+
+
+Package natbib Warning: Citation `10' on page 2 undefined on input line 532.
+
+
+Package natbib Warning: Citation `11' on page 2 undefined on input line 532.
+
+
+Package natbib Warning: Citation `12' on page 2 undefined on input line 532.
+
+
+Package natbib Warning: Citation `13' on page 2 undefined on input line 532.
+
+
+Package natbib Warning: Citation `articulo14' on page 2 undefined on input line
+ 534.
+
+
+Package natbib Warning: Citation `survey' on page 2 undefined on input line 536
+.
+
+
+Package natbib Warning: Citation `15' on page 2 undefined on input line 536.
+
+
 ! LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -1460,7 +1513,7 @@ l.548 \begin{figure}[ht]
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg, id=33, 503.8825pt x
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg, id=19, 503.8825pt x
  182.6825pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg Graphic file (t
 ype jpg)
@@ -1470,6 +1523,10 @@ jpg  used on input line 550.
 (pdftex.def)             Requested size: 503.88127pt x 182.68204pt.
 
 LaTeX Warning: Reference `fig:flowchart' on page 2 undefined on input line 555.
+
+
+
+Package natbib Warning: Citation `LIBRO' on page 2 undefined on input line 572.
 
 
 
@@ -1525,7 +1582,14 @@ You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
+Package natbib Warning: Citation `LIBRO' on page 2 undefined on input line 604.
+
+
+
 LaTeX Warning: Reference `fig:fuzzy' on page 2 undefined on input line 609.
+
+
+Package natbib Warning: Citation `17' on page 2 undefined on input line 609.
 
 
 ! LaTeX Error: Not in outer par mode.
@@ -1539,7 +1603,7 @@ l.611 \begin{figure}[ht]
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png, id=41, 503.8825pt x 502
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png, id=24, 503.8825pt x 502
 .87875pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png Graphic file (type 
 png)
@@ -1547,6 +1611,10 @@ png)
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png 
  used on input line 613.
 (pdftex.def)             Requested size: 503.88127pt x 502.87752pt.
+
+Package natbib Warning: Citation `LIBRO' on page 2 undefined on input line 629.
+
+
 
 LaTeX Warning: Reference `sec:Métodos basados en particiones' on page 2 undefi
 ned on input line 629.
@@ -1567,6 +1635,10 @@ on input line 629.
 LaTeX Warning: Reference `Tab:Tabla 1' on page 2 undefined on input line 658.
 
 
+Package natbib Warning: Citation `teoria grafos' on page 2 undefined on input l
+ine 673.
+
+
 LaTeX Warning: Reference `fig:grafo' on page 2 undefined on input line 675.
 
 
@@ -1581,7 +1653,7 @@ l.680   \begin{figure}[ht]
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png, id=45, 655.44875pt x 29
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png, id=26, 655.44875pt x 29
 9.1175pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png Graphic file (type 
 png)
@@ -1600,6 +1672,10 @@ l.700 \begin{table*}[ht]
                         
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
+
+
+Package natbib Warning: Citation `LIBRO' on page 2 undefined on input line 724.
+
 
 
 LaTeX Warning: Reference `subsec:Requisitos de un algoritmo de clustering' on p
@@ -1774,7 +1850,7 @@ l.770 \begin{figure}[ht]
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png, id=52, 665.48625pt x 5
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png, id=32, 665.48625pt x 5
 78.16pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png Graphic file (type
  png)
@@ -1782,6 +1858,14 @@ File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png Graphic file (type
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png
   used on input line 772.
 (pdftex.def)             Requested size: 665.48462pt x 578.15858pt.
+
+Package natbib Warning: Citation `fuzzymeans' on page 2 undefined on input line
+ 794.
+
+
+Package natbib Warning: Citation `otrolibro' on page 2 undefined on input line 
+794.
+
 
 LaTeX Warning: Reference `subsec:k-means' on page 2 undefined on input line 807
 .
@@ -1807,6 +1891,10 @@ If that doesn't work, type  X <return>  to quit.
 
 LaTeX Warning: Reference `alg:Algoritmo PAM' on page 2 undefined on input line 
 847.
+
+
+Package natbib Warning: Citation `LIBRO' on page 2 undefined on input line 870.
+
 
 
 LaTeX Warning: Reference `subsec:BIRCH' on page 2 undefined on input line 884.
@@ -1844,7 +1932,7 @@ l.898 \begin{figure}[ht]
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png, id=56, 985.6825pt 
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png, id=33, 985.6825pt 
 x 546.04pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png Graphic file (
 type png)
@@ -1853,8 +1941,15 @@ Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias
 .png  used on input line 900.
 (pdftex.def)             Requested size: 985.68008pt x 546.03867pt.
 
+Package natbib Warning: Citation `jerarquico' on page 2 undefined on input line
+ 925.
+
+
 LaTeX Warning: Reference `subsec:Medidas de distancia' on page 2 undefined on i
 nput line 927.
+
+
+Package natbib Warning: Citation `18' on page 2 undefined on input line 927.
 
 
 ! LaTeX Error: Not in outer par mode.
@@ -1868,7 +1963,7 @@ l.930 \begin{figure}[!ht]
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png, id=59, 1097.09875p
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png, id=34, 1097.09875p
 t x 551.05875pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png Graphic file (
 type png)
@@ -1877,8 +1972,20 @@ Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma
 .png  used on input line 932.
 (pdftex.def)             Requested size: 1097.09608pt x 551.05739pt.
 
+Package natbib Warning: Citation `jerarquico' on page 2 undefined on input line
+ 944.
+
+
 LaTeX Warning: Reference `fig:dendograma' on page 2 undefined on input line 946
 .
+
+
+Package natbib Warning: Citation `BIRCH' on page 2 undefined on input line 954.
+
+
+
+Package natbib Warning: Citation `BIRCH 2' on page 2 undefined on input line 95
+4.
 
 
 LaTeX Warning: Reference `fig:birch' on page 2 undefined on input line 979.
@@ -1895,7 +2002,7 @@ l.981 \begin{figure}[ht]
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png, id=63, 675.52374pt x 36
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png, id=35, 675.52374pt x 36
 2.35374pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png Graphic file (type 
 png)
@@ -1903,6 +2010,10 @@ png)
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png 
  used on input line 983.
 (pdftex.def)             Requested size: 675.5221pt x 362.35286pt.
+
+Package natbib Warning: Citation `chameleon' on page 2 undefined on input line 
+1004.
+
 
 ! LaTeX Error: Not in outer par mode.
 
@@ -1915,7 +2026,7 @@ l.1006 \begin{figure}[ht]
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png, id=65, 1037.8775pt 
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png, id=36, 1037.8775pt 
 x 240.9pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png Graphic file (t
 ype png)
@@ -1924,12 +2035,20 @@ Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.
 png  used on input line 1008.
 (pdftex.def)             Requested size: 1037.87498pt x 240.8994pt.
 
+Package natbib Warning: Citation `articulo14' on page 2 undefined on input line
+ 1013.
+
+
 LaTeX Warning: Reference `fig:chameleon' on page 2 undefined on input line 1015
 .
 
 
 LaTeX Warning: Reference `subsec:Clasificación general de técnicas' on page 2
  undefined on input line 1036.
+
+
+Package natbib Warning: Citation `LIBRO' on page 2 undefined on input line 1049
+.
 
 
 LaTeX Warning: Reference `subsec:dbscan' on page 2 undefined on input line 1053
@@ -1942,6 +2061,10 @@ LaTeX Warning: Reference `subsec:optics' on page 2 undefined on input line 1053
 
 LaTeX Warning: Reference `subsec:denclue' on page 2 undefined on input line 105
 3.
+
+
+Package natbib Warning: Citation `DBSCAN' on page 2 undefined on input line 106
+1.
 
 
 LaTeX Warning: Reference `fig:dbscan1' on page 2 undefined on input line 1067.
@@ -1958,7 +2081,7 @@ l.1069 \begin{figure}[ht]
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png, id=69, 453.695pt x 11
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png, id=37, 453.695pt x 11
 1.41624pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png Graphic file (typ
 e png)
@@ -1981,7 +2104,7 @@ l.1082 \begin{figure}[ht]
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png, id=70, 598.235pt x 26
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png, id=38, 598.235pt x 26
 6.9975pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png Graphic file (typ
 e png)
@@ -2034,7 +2157,7 @@ l.1148 \begin{figure}[ht]
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png, id=71, 764.8575pt x 37
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png, id=39, 764.8575pt x 37
 7.41pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png Graphic file (type
  png)
@@ -2049,6 +2172,10 @@ LaTeX Warning: Reference `subsec:dbscan' on page 2 undefined on input line 1167
 
 LaTeX Warning: Reference `subsec:optics' on page 2 undefined on input line 1167
 .
+
+
+Package natbib Warning: Citation `DENCLUE' on page 2 undefined on input line 11
+67.
 
 
 ! LaTeX Error: Counter too large.
@@ -2077,11 +2204,19 @@ You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
+Package natbib Warning: Citation `LIBRO' on page 2 undefined on input line 1185
+.
+
+
 LaTeX Warning: Reference `subsec:sting' on page 2 undefined on input line 1189.
 
 
 
 LaTeX Warning: Reference `subsec:clique' on page 2 undefined on input line 1189
+.
+
+
+Package natbib Warning: Citation `sting' on page 2 undefined on input line 1197
 .
 
 
@@ -2099,7 +2234,7 @@ l.1199 \begin{figure}[ht]
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg, id=76, 120.45pt x 52.27
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg, id=41, 120.45pt x 52.27
 53pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg Graphic file (type 
 jpg)
@@ -2168,7 +2303,7 @@ l.1254 \begin{figure}[ht]
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png, id=78, 317.185pt x 670
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png, id=43, 317.185pt x 670
 .505pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png Graphic file (type
  png)
@@ -2199,7 +2334,7 @@ l.1279 \begin{figure}[ht]
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png, id=79, 528.97626pt x 39
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png, id=44, 528.97626pt x 39
 8.48875pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png Graphic file (type 
 png)
@@ -2209,6 +2344,10 @@ Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png
 (pdftex.def)             Requested size: 528.97496pt x 398.48778pt.
 
 LaTeX Warning: Reference `clustering' on page 2 undefined on input line 1298.
+
+
+Package natbib Warning: Citation `otrolibro' on page 2 undefined on input line 
+1300.
 
 
 ! LaTeX Error: Counter too large.
@@ -2234,6 +2373,12 @@ l.1303 ...ue puede tomar dicho valor desconocido.}
                                                    o detección de outliers.
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
+
+
+Package natbib Warning: Citation `13' on page 2 undefined on input line 1307.
+
+
+Package natbib Warning: Citation `11' on page 2 undefined on input line 1315.
 
 
 ! LaTeX Error: Counter too large.
@@ -2290,6 +2435,10 @@ If that doesn't work, type  X <return>  to quit.
 
 LaTeX Warning: Reference `clustering' on page 2 undefined on input line 1321.
 
+
+Package natbib Warning: Citation `articulo14' on page 2 undefined on input line
+ 1321.
+
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 333.
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd"
@@ -2303,7 +2452,7 @@ File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1369.
-<Latex Jupyter/output_3_1.png, id=87, 843.15pt x 843.15pt>
+<Latex Jupyter/output_3_1.png, id=48, 843.15pt x 843.15pt>
 File: Latex Jupyter/output_3_1.png Graphic file (type png)
 <use Latex Jupyter/output_3_1.png>
 Package pdftex.def Info: Latex Jupyter/output_3_1.png  used on input line 1413.
@@ -2314,7 +2463,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1415--1416
 
  []
 
-<Latex Jupyter/output_5_0.png, id=88, 843.15pt x 843.15pt>
+<Latex Jupyter/output_5_0.png, id=49, 843.15pt x 843.15pt>
 File: Latex Jupyter/output_5_0.png Graphic file (type png)
 <use Latex Jupyter/output_5_0.png>
 Package pdftex.def Info: Latex Jupyter/output_5_0.png  used on input line 1449.
@@ -2325,7 +2474,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1451--1452
 
  []
 
-<Latex Jupyter/output_6_0.png, id=89, 843.15pt x 843.15pt>
+<Latex Jupyter/output_6_0.png, id=50, 843.15pt x 843.15pt>
 File: Latex Jupyter/output_6_0.png Graphic file (type png)
 <use Latex Jupyter/output_6_0.png>
 Package pdftex.def Info: Latex Jupyter/output_6_0.png  used on input line 1464.
@@ -2336,7 +2485,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1466--1467
 
  []
 
-<Latex Jupyter/output_7_1.png, id=90, 843.15pt x 843.15pt>
+<Latex Jupyter/output_7_1.png, id=51, 843.15pt x 843.15pt>
 File: Latex Jupyter/output_7_1.png Graphic file (type png)
 <use Latex Jupyter/output_7_1.png>
 Package pdftex.def Info: Latex Jupyter/output_7_1.png  used on input line 1485.
@@ -2347,28 +2496,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 1487--1488
 
  []
 
-(TFG.toc
-LaTeX Info: Redefining \. on input line 2.
-LaTeX Info: Redefining \% on input line 2.
-)
+
+Package hyperref Warning: old toc file detected, not used; run LaTeX again.
+
 \tf@toc=\write9
 \openout9 = `TFG.toc'.
 
- (TFG.loa)
+
+Package hyperref Warning: old loa file detected, not used; run LaTeX again.
+
 \tf@loa=\write10
 \openout10 = `TFG.loa'.
 
- (TFG.lot
-LaTeX Info: Redefining \. on input line 2.
-LaTeX Info: Redefining \% on input line 2.
-)
+
+Package hyperref Warning: old lot file detected, not used; run LaTeX again.
+
 \tf@lot=\write11
 \openout11 = `TFG.lot'.
 
- (TFG.lof
-LaTeX Info: Redefining \. on input line 2.
-LaTeX Info: Redefining \% on input line 2.
-)
+
+Package hyperref Warning: old lof file detected, not used; run LaTeX again.
+
 \tf@lof=\write12
 \openout12 = `TFG.lof'.
 
@@ -2391,18 +2539,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 1602--1603
 /n/8 .
  []
 
+
+Package natbib Warning: There were undefined citations.
+
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1616.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1616.
 (TFG.aux
 LaTeX Info: Redefining \. on input line 30.
 LaTeX Info: Redefining \% on input line 30.
+
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
 )
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1616.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1616.
 
-Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
+
+Package rerunfilecheck Warning: File `TFG.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `TFG.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
 
 LaTeX Warning: There were undefined references.
 
@@ -2447,9 +2609,9 @@ my insertion and my current dilemma will both disappear.
 
  
 Here is how much of TeX's memory you used:
- 25457 strings out of 481178
- 461071 string characters out of 2902470
- 1018878 words of memory out of 3000000
+ 25443 strings out of 481178
+ 460714 string characters out of 2902470
+ 1016012 words of memory out of 3000000
  40496 multiletter control sequences out of 15000+200000
  573292 words of font info for 116 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
