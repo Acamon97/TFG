@@ -37,4 +37,4 @@
 \contentsline {subsection}{\numberline {10.2}\textbf {Algoritmos}}{25}{subsection.10.2}%
 \contentsline {subsection}{\numberline {10.3}\textbf {Tablas}}{25}{subsection.10.3}%
 \contentsline {subsection}{\numberline {10.4}\textbf {Imágenes y figuras}}{25}{subsection.10.4}%
-\contentsline {section}{\numberline {11}Referencias}{26}{section.11}%
+\contentsline {section}{\numberline {11}Referencias}{25}{section.11}%

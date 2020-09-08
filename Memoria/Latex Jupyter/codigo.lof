@@ -1,0 +1,17 @@
+\babel@toc {english}{}
+\babel@toc {spanish}{}
+\babel@toc {english}{}
+\contentsline {figure}{\numberline {1}{\ignorespaces Procedimiento para el análisis de grupos. Este consta de cuatro pasos fundamenteales con realimentación \cite {survey}.\relax }}{6}{figure.caption.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Fuzzy clusterering.\relax }}{8}{figure.caption.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Clusterización basada en teoría de grafos \cite {foto grafo}.\relax }}{11}{figure.caption.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Ejemplo de $k$-means en dos dimensiones. (a) Los centroides de los clusters se inicializan en posiciones aleatorioas. (b) Primer paso: cada objeto se añade al cluster cuyo centroide es el mas cercano. (c) Segundo paso: Cada centroide se mueve a la media de los puntos que conforman el cluster. (d, e, f) Estos pasos se repiten hasta que el resultado de dos iteraciones sea el mismo. \cite {kmeansfoto}.\relax }}{14}{figure.caption.6}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Diferentes métodos para calcular la distancia entre clusters \cite {babu}.\relax }}{17}{figure.caption.8}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Clusterización jerárquica algomerativa (AGNES) y divisiva (DIANA) sobre el conjunto de datos \{$a$,$b$,$c$,$d$,$e$\} \cite {LIBRO}.\relax }}{18}{figure.caption.9}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Estructura CF-tree del algoritmo BIRCH \cite {birchfoto}.\relax }}{19}{figure.caption.10}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Chameleon: clusterización jerárquica basada en k-vecinos y modelado dinámico \cite {LIBRO}.\relax }}{20}{figure.caption.11}%
+\contentsline {figure}{\numberline {9}{\ignorespaces DBSCAN: diferencia entre núcleos y puntos fronterizos \cite {DBSCAN}.\relax }}{21}{figure.caption.12}%
+\contentsline {figure}{\numberline {10}{\ignorespaces DBSCAN: términos \textit {directamente alcanzable por densidad}, \textit {alcanzable por densidad} y \textit {conectado por densidad} \cite {DBSCAN 2}.\relax }}{22}{figure.caption.13}%
+\contentsline {figure}{\numberline {11}{\ignorespaces OPTICS: conceptos de distancia al núcleo (core-distance) y distancia de alcance (reachability-distance).\relax }}{23}{figure.caption.15}%
+\contentsline {figure}{\numberline {12}{\ignorespaces STING: división del espacio de datos en celdas en diferentes niveles \cite {sting 2}.\relax }}{24}{figure.caption.16}%
+\contentsline {figure}{\numberline {13}{\ignorespaces CLIQUE: las celdas densas encontradas con respecto a \textit {edad} (\textit {age}) para las dimensiones \textit {salario} (\textit {salary}) y \textit {vacaciones} (\textit {vacation}) se intersectan para formar un espacio de búsqeda de unidades densas de mayor dimensionalidad \cite {LIBRO}.\relax }}{26}{figure.caption.18}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Elbow Method para encontrar el número de clusters óptimo \cite {elbow}.\relax }}{27}{figure.caption.19}%

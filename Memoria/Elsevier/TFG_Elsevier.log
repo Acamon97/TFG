@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.5)  7 SEP 2020 12:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.5)  7 SEP 2020 13:50
 entering extended mode
 **./TFG_Elsevier.tex
 (TFG_Elsevier.tex
@@ -578,16 +578,8 @@ d-pdfmode.def"
 File: l3backend-pdfmode.def 2020-08-07 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count298
 \l__pdf_internal_box=\box65
-) (TFG_Elsevier.aux
-LaTeX Info: Redefining \. on input line 32.
-LaTeX Info: Redefining \% on input line 32.
-LaTeX Info: Redefining \. on input line 33.
-LaTeX Info: Redefining \% on input line 33.
-LaTeX Info: Redefining \. on input line 35.
-LaTeX Info: Redefining \% on input line 35.
-LaTeX Info: Redefining \. on input line 39.
-LaTeX Info: Redefining \% on input line 39.
 )
+No file TFG_Elsevier.aux.
 \openout1 = `TFG_Elsevier.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 410.
@@ -608,7 +600,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 410.
 LaTeX Font Info:    ... okay on input line 410.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
 10.
-
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -689,7 +680,6 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 410.
 LaTeX Info: Redefining \pageref on input line 410.
 LaTeX Info: Redefining \nameref on input line 410.
- (TFG_Elsevier.out) (TFG_Elsevier.out)
 \@outlinefile=\write5
 \openout5 = `TFG_Elsevier.out'.
 
@@ -734,61 +724,202 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 445.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 445.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 445.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 445.
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-445.
 
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ot1lmtt.fd"
-File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Underfull \vbox (badness 4181) has occurred while \output is active []
+
+Package natbib Warning: Citation `INTRODUCCION' on page 1 undefined on input li
+ne 455.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 455.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 455.
+
+Package natbib Warning: Citation `DATA NEVER SLEEP' on page 1 undefined on inpu
+t line 455.
+
+
+Package natbib Warning: Citation `3' on page 1 undefined on input line 459.
+
+
+Package natbib Warning: Citation `4' on page 1 undefined on input line 461.
+
+
+Package natbib Warning: Citation `LIBRO' on page 1 undefined on input line 463.
+
+
+
+Underfull \vbox (badness 1237) has occurred while \output is active []
 
  [1{C:/Users/acamo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-] [2] [3]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg, id=201, 503.8825pt 
-x 182.6825pt>
+]
+
+Package natbib Warning: Citation `6' on page 2 undefined on input line 471.
+
+
+Package natbib Warning: Citation `7' on page 2 undefined on input line 481.
+
+
+Package natbib Warning: Citation `8' on page 2 undefined on input line 485.
+
+[2]
+
+Package natbib Warning: Citation `survey' on page 3 undefined on input line 493
+.
+
+
+Package natbib Warning: Citation `9' on page 3 undefined on input line 495.
+
+
+Package natbib Warning: Citation `10' on page 3 undefined on input line 495.
+
+
+Package natbib Warning: Citation `11' on page 3 undefined on input line 495.
+
+
+Package natbib Warning: Citation `12' on page 3 undefined on input line 495.
+
+
+Package natbib Warning: Citation `13' on page 3 undefined on input line 495.
+
+
+Package natbib Warning: Citation `articulo14' on page 3 undefined on input line
+ 497.
+
+
+Package natbib Warning: Citation `survey' on page 3 undefined on input line 499
+.
+
+
+Package natbib Warning: Citation `15' on page 3 undefined on input line 499.
+
+[3]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg, id=40, 503.8825pt x
+ 182.6825pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg Graphic file (t
 ype jpg)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.
 jpg  used on input line 513.
 (pdftex.def)             Requested size: 222.0pt x 80.48647pt.
- [4 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg>]
+
+
+Package natbib Warning: Citation `survey' on page 4 undefined on input line 514
+.
+
+
+Package natbib Warning: Citation `survey' on page 4 undefined on input line 514
+.
+
+
+LaTeX Warning: Reference `fig:flowchart' on page 4 undefined on input line 518.
+
+
+[4 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg>]
+
+Package natbib Warning: Citation `LIBRO' on page 5 undefined on input line 535.
+
+
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
 42.
-
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 [5]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png, id=234, 503.8825pt x 50
-2.87875pt>
+
+Package natbib Warning: Citation `LIBRO' on page 6 undefined on input line 567.
+
+
+
+LaTeX Warning: Reference `fig:fuzzy' on page 6 undefined on input line 572.
+
+
+Package natbib Warning: Citation `17' on page 6 undefined on input line 572.
+
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png, id=68, 503.8825pt x 502
+.87875pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png Graphic file (type 
 png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png 
  used on input line 576.
 (pdftex.def)             Requested size: 222.0pt x 221.55891pt.
- [6] [7 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png>] [8]
+[6]
+
+Package natbib Warning: Citation `LIBRO' on page 7 undefined on input line 592.
+
+
+
+LaTeX Warning: Reference `sec:Métodos basados en particiones' on page 7 undefi
+ned on input line 592.
+
+
+LaTeX Warning: Reference `sec:Métodos jerárquicos' on page 7 undefined on inp
+ut line 592.
+
+
+LaTeX Warning: Reference `sec:Métodos basados en densidad' on page 7 undefined
+ on input line 592.
+
+
+LaTeX Warning: Reference `sec:Métodos basados en rejilla' on page 7 undefined 
+on input line 592.
+
+[7 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png>]
+
+LaTeX Warning: Reference `Tab:Tabla 1' on page 8 undefined on input line 621.
+
+[8]
 Underfull \hbox (badness 1603) in paragraph at lines 632--633
 []\OT1/lmr/bx/n/10 M[]eto-dos ba-sa-dos en mo-de-los pro-ba-
  []
 
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png, id=263, 655.44875pt x 2
-99.1175pt>
+
+Package natbib Warning: Citation `teoria grafos' on page 9 undefined on input l
+ine 636.
+
+
+LaTeX Warning: Reference `fig:grafo' on page 9 undefined on input line 638.
+
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png, id=89, 655.44875pt x 29
+9.1175pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png Graphic file (type 
 png)
 <use C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png>
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png 
  used on input line 645.
 (pdftex.def)             Requested size: 222.0pt x 101.31064pt.
-[9 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png>] [10]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png, id=299, 665.48625pt x 
+
+Package natbib Warning: Citation `foto grafo' on page 9 undefined on input line
+ 646.
+
+
+Package natbib Warning: Citation `LIBRO' on page 9 undefined on input line 687.
+
+
+
+LaTeX Warning: Reference `subsec:Requisitos de un algoritmo de clustering' on p
+age 9 undefined on input line 687.
+
+[9 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png>]
+
+LaTeX Warning: Reference `subsec:k-means' on page 10 undefined on input line 69
+3.
+
+
+LaTeX Warning: Reference `subsec:k-medoids' on page 10 undefined on input line 
+693.
+
+[10]
+
+LaTeX Warning: Reference `alg:Algoritmo k-means' on page 11 undefined on input 
+line 711.
+
+
+LaTeX Warning: Reference `fig:kmeans' on page 11 undefined on input line 711.
+
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png, id=118, 665.48625pt x 
 578.16pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png Graphic file (type
  png)
@@ -796,11 +927,77 @@ File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png Graphic file (type
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png
   used on input line 735.
 (pdftex.def)             Requested size: 222.0pt x 192.86655pt.
- [11 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png>] [12]
+
+Package natbib Warning: Citation `kmeansfoto' on page 11 undefined on input lin
+e 736.
+
+
+Package natbib Warning: Citation `kmeansfoto' on page 11 undefined on input lin
+e 736.
+
+[11 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png>]
+
+Package natbib Warning: Citation `fuzzymeans' on page 12 undefined on input lin
+e 757.
+
+
+Package natbib Warning: Citation `otrolibro' on page 12 undefined on input line
+ 757.
+
+
+LaTeX Warning: Reference `subsec:k-means' on page 12 undefined on input line 77
+0.
+
+
+LaTeX Warning: Reference `eq:k-medoids' on page 12 undefined on input line 784.
+
+
+[12]
+
+LaTeX Warning: Reference `eq:k-medoids' on page 13 undefined on input line 786.
+
+
+
+LaTeX Warning: Reference `alg:Algoritmo PAM' on page 13 undefined on input line
+ 810.
+
+
+Package natbib Warning: Citation `LIBRO' on page 13 undefined on input line 833
+.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png, id=361, 985.6825pt
+
+LaTeX Warning: Reference `subsec:BIRCH' on page 14 undefined on input line 847.
+
+
+
+LaTeX Warning: Reference `subsec:Chameleon' on page 14 undefined on input line 
+847.
+
+
+LaTeX Warning: Reference `subsec:AGNES' on page 14 undefined on input line 849.
+
+
+
+LaTeX Warning: Reference `subsec:DIANA' on page 14 undefined on input line 849.
+
+
+
+LaTeX Warning: Reference `subsec:BIRCH' on page 14 undefined on input line 849.
+
+
+
+LaTeX Warning: Reference `subsec:Chameleon' on page 14 undefined on input line 
+849.
+
+
+LaTeX Warning: Reference `fig:distancias' on page 14 undefined on input line 85
+9.
+
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png, id=166, 985.6825pt
  x 546.04pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png Graphic file (
 type png)
@@ -809,8 +1006,26 @@ Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias
 .png  used on input line 863.
 (pdftex.def)             Requested size: 222.0pt x 122.97867pt.
 
+Package natbib Warning: Citation `babu' on page 14 undefined on input line 864.
+
+
+
+Package natbib Warning: Citation `babu' on page 14 undefined on input line 864.
+
+
 [14 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png, id=374, 1097.09875
+
+Package natbib Warning: Citation `jerarquico' on page 15 undefined on input lin
+e 888.
+
+
+LaTeX Warning: Reference `subsec:Medidas de distancia' on page 15 undefined on 
+input line 890.
+
+
+Package natbib Warning: Citation `18' on page 15 undefined on input line 890.
+
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png, id=175, 1097.09875
 pt x 551.05875pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png Graphic file (
 type png)
@@ -820,15 +1035,41 @@ Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma
 (pdftex.def)             Requested size: 222.0pt x 111.5047pt.
 LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 8
 96.
-
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 896.
 
+
+Package natbib Warning: Citation `LIBRO' on page 15 undefined on input line 896
+.
+
+
+Package natbib Warning: Citation `LIBRO' on page 15 undefined on input line 896
+.
+
+
+Package natbib Warning: Citation `jerarquico' on page 15 undefined on input lin
+e 907.
+
+
+LaTeX Warning: Reference `fig:dendograma' on page 15 undefined on input line 90
+9.
+
+
+Package natbib Warning: Citation `BIRCH' on page 15 undefined on input line 917
+.
+
+
+Package natbib Warning: Citation `BIRCH 2' on page 15 undefined on input line 9
+17.
+
 [15 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png, id=399, 675.52374pt x 3
+
+LaTeX Warning: Reference `fig:birch' on page 16 undefined on input line 942.
+
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png, id=192, 675.52374pt x 3
 62.35374pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png Graphic file (type 
 png)
@@ -836,7 +1077,15 @@ png)
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png 
  used on input line 946.
 (pdftex.def)             Requested size: 222.0pt x 119.07948pt.
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png, id=402, 1037.8775pt
+
+Package natbib Warning: Citation `birchfoto' on page 16 undefined on input line
+ 947.
+
+
+Package natbib Warning: Citation `chameleon' on page 16 undefined on input line
+ 967.
+
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png, id=193, 1037.8775pt
  x 240.9pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png Graphic file (t
 ype png)
@@ -844,9 +1093,53 @@ ype png)
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.
 png  used on input line 971.
 (pdftex.def)             Requested size: 222.0pt x 51.52782pt.
- [16 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png>] [17 <C:/Users/aca
-mo/Documents/TFG/Recursos/Fotos/chameleon.png>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png, id=431, 453.695pt x 1
+
+Package natbib Warning: Citation `LIBRO' on page 16 undefined on input line 972
+.
+
+
+Package natbib Warning: Citation `LIBRO' on page 16 undefined on input line 972
+.
+
+
+Package natbib Warning: Citation `articulo14' on page 16 undefined on input lin
+e 976.
+
+
+LaTeX Warning: Reference `fig:chameleon' on page 16 undefined on input line 978
+.
+
+[16 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png>]
+
+LaTeX Warning: Reference `subsec:Clasificación general de técnicas' on page 1
+7 undefined on input line 999.
+
+
+Package natbib Warning: Citation `LIBRO' on page 17 undefined on input line 101
+2.
+
+
+LaTeX Warning: Reference `subsec:dbscan' on page 17 undefined on input line 101
+6.
+
+
+LaTeX Warning: Reference `subsec:optics' on page 17 undefined on input line 101
+6.
+
+
+LaTeX Warning: Reference `subsec:denclue' on page 17 undefined on input line 10
+16.
+
+
+Package natbib Warning: Citation `DBSCAN' on page 17 undefined on input line 10
+24.
+
+[17 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png>]
+
+LaTeX Warning: Reference `fig:dbscan1' on page 18 undefined on input line 1030.
+
+
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png, id=212, 453.695pt x 1
 11.41624pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png Graphic file (typ
 e png)
@@ -854,7 +1147,19 @@ e png)
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.pn
 g  used on input line 1034.
 (pdftex.def)             Requested size: 222.0pt x 54.51793pt.
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png, id=435, 598.235pt x 2
+
+Package natbib Warning: Citation `DBSCAN' on page 18 undefined on input line 10
+35.
+
+
+Package natbib Warning: Citation `DBSCAN' on page 18 undefined on input line 10
+35.
+
+
+LaTeX Warning: Reference `fig:dbscan2' on page 18 undefined on input line 1043.
+
+
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png, id=213, 598.235pt x 2
 66.9975pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png Graphic file (typ
 e png)
@@ -862,9 +1167,32 @@ e png)
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.pn
 g  used on input line 1047.
 (pdftex.def)             Requested size: 222.0pt x 99.08084pt.
- [18 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png> <C:/Users/acamo/
-Documents/TFG/Recursos/Fotos/dbscan2.png (PNG copy)>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png, id=452, 764.8575pt x 3
+
+Package natbib Warning: Citation `DBSCAN 2' on page 18 undefined on input line 
+1048.
+
+
+Package natbib Warning: Citation `DBSCAN 2' on page 18 undefined on input line 
+1048.
+
+
+LaTeX Warning: Reference `alg:Algoritmo DBSCAN' on page 18 undefined on input l
+ine 1056.
+
+
+LaTeX Warning: Reference `subsec:Requisitos de un algoritmo de clustering' on p
+age 18 undefined on input line 1097.
+
+
+LaTeX Warning: Reference `fig:optics' on page 18 undefined on input line 1101.
+
+[18 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png> <C:/Users/acamo/D
+ocuments/TFG/Recursos/Fotos/dbscan2.png (PNG copy)>]
+
+LaTeX Warning: Reference `subsec:dbscan' on page 19 undefined on input line 110
+6.
+
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png, id=223, 764.8575pt x 3
 77.41pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png Graphic file (type
  png)
@@ -872,8 +1200,39 @@ File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png Graphic file (type
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png
   used on input line 1113.
 (pdftex.def)             Requested size: 222.0pt x 109.54399pt.
- [19 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png (PNG copy)>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg, id=489, 120.45pt x 52.2
+
+LaTeX Warning: Reference `subsec:dbscan' on page 19 undefined on input line 113
+0.
+
+
+LaTeX Warning: Reference `subsec:optics' on page 19 undefined on input line 113
+0.
+
+
+Package natbib Warning: Citation `DENCLUE' on page 19 undefined on input line 1
+130.
+
+[19 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png (PNG copy)>]
+
+Package natbib Warning: Citation `LIBRO' on page 20 undefined on input line 114
+8.
+
+
+LaTeX Warning: Reference `subsec:sting' on page 20 undefined on input line 1152
+.
+
+
+LaTeX Warning: Reference `subsec:clique' on page 20 undefined on input line 115
+2.
+
+
+Package natbib Warning: Citation `sting' on page 20 undefined on input line 116
+0.
+
+
+LaTeX Warning: Reference `fig:sting' on page 20 undefined on input line 1160.
+
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg, id=254, 120.45pt x 52.2
 753pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg Graphic file (type 
 jpg)
@@ -881,8 +1240,28 @@ jpg)
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg 
  used on input line 1164.
 (pdftex.def)             Requested size: 222.0pt x 96.35759pt.
- [20 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg>] [21]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png, id=528, 317.185pt x 67
+
+Package natbib Warning: Citation `sting 2' on page 20 undefined on input line 1
+165.
+
+
+Package natbib Warning: Citation `sting 2' on page 20 undefined on input line 1
+165.
+
+[20 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg>]
+
+LaTeX Warning: Reference `alg:Algoritmo sting' on page 21 undefined on input li
+ne 1173.
+
+
+LaTeX Warning: Reference `subsec:dbscan' on page 21 undefined on input line 120
+0.
+
+
+LaTeX Warning: Reference `fig:clique' on page 21 undefined on input line 1210.
+
+[21]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png, id=287, 317.185pt x 67
 0.505pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png Graphic file (type
  png)
@@ -890,8 +1269,28 @@ File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png Graphic file (type
 Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png
   used on input line 1219.
 (pdftex.def)             Requested size: 190.31245pt x 402.3061pt.
- [22 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png, id=539, 528.97626pt x 3
+
+
+Package natbib Warning: Citation `LIBRO' on page 22 undefined on input line 122
+0.
+
+
+Package natbib Warning: Citation `LIBRO' on page 22 undefined on input line 122
+0.
+
+
+LaTeX Warning: Reference `subsec:Métodos jerárquicos probabilísticos' on pag
+e 22 undefined on input line 1238.
+
+
+LaTeX Warning: Reference `subsec:k-means' on page 22 undefined on input line 12
+40.
+
+
+LaTeX Warning: Reference `fig:elbow' on page 22 undefined on input line 1240.
+
+[22 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png>]
+<C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png, id=295, 528.97626pt x 3
 98.48875pt>
 File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png Graphic file (type 
 png)
@@ -900,71 +1299,63 @@ Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png
  used on input line 1244.
 (pdftex.def)             Requested size: 222.0pt x 167.23643pt.
 
+
+Package natbib Warning: Citation `elbow' on page 23 undefined on input line 124
+5.
+
+
+Package natbib Warning: Citation `elbow' on page 23 undefined on input line 124
+5.
+
+
+LaTeX Warning: Reference `clustering' on page 23 undefined on input line 1261.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png>] [24
 
-]
-Excluding 'comment' comment. (TFG_Elsevier.toc
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-LaTeX Info: Redefining \. on input line 2.
-LaTeX Info: Redefining \% on input line 2.
-LaTeX Info: Redefining \. on input line 4.
-LaTeX Info: Redefining \% on input line 4.
-LaTeX Info: Redefining \. on input line 6.
-LaTeX Info: Redefining \% on input line 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--25
- [][] [][][]\OT1/lmr/bx/n/10 M[]eto-dos jer[]arqui-cos pro-ba- 
- []
+Package natbib Warning: Citation `otrolibro' on page 23 undefined on input line
+ 1263.
 
-)
+
+Package natbib Warning: Citation `13' on page 23 undefined on input line 1270.
+
+[23 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png>]
+
+Package natbib Warning: Citation `11' on page 24 undefined on input line 1278.
+
+
+LaTeX Warning: Reference `clustering' on page 24 undefined on input line 1284.
+
+
+Package natbib Warning: Citation `articulo14' on page 24 undefined on input lin
+e 1284.
+
+[24
+
+] Excluding 'comment' comment.
+
+Package hyperref Warning: old toc file detected, not used; run LaTeX again.
+
 \tf@toc=\write6
 \openout6 = `TFG_Elsevier.toc'.
 
- (TFG_Elsevier.loa)
+
+Package hyperref Warning: old loa file detected, not used; run LaTeX again.
+
 \tf@loa=\write7
 \openout7 = `TFG_Elsevier.loa'.
 
- (TFG_Elsevier.lot
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-LaTeX Info: Redefining \. on input line 2.
-LaTeX Info: Redefining \% on input line 2.
-LaTeX Info: Redefining \. on input line 4.
-LaTeX Info: Redefining \% on input line 4.
-LaTeX Info: Redefining \. on input line 6.
-LaTeX Info: Redefining \% on input line 6.
-)
+
+Package hyperref Warning: old lot file detected, not used; run LaTeX again.
+
 \tf@lot=\write8
 \openout8 = `TFG_Elsevier.lot'.
 
- (TFG_Elsevier.lof
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-LaTeX Info: Redefining \. on input line 2.
-LaTeX Info: Redefining \% on input line 2.
-LaTeX Info: Redefining \. on input line 4.
-LaTeX Info: Redefining \% on input line 4.
-LaTeX Info: Redefining \. on input line 6.
-LaTeX Info: Redefining \% on input line 6.
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 12.
 
-Underfull \hbox (badness 1888) in paragraph at lines 13--13
- [][] [][][]\OT1/lmr/m/n/10 Estructura CF-tree del al-go-rit-mo 
- []
+Package hyperref Warning: old lof file detected, not used; run LaTeX again.
 
-[25
-
-
-]
-Underfull \hbox (badness 1320) in paragraph at lines 20--20
- [][] [][][]\OT1/lmr/m/n/10 Elbow Method pa-ra en-con-trar el 
- []
-
-)
 \tf@lof=\write9
 \openout9 = `TFG_Elsevier.lof'.
 
@@ -1016,10 +1407,15 @@ Underfull \hbox (badness 1014) in paragraph at lines 1560--1561
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1582.
+ [25
 
-[27
+
+]
+
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1582.
+[26
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1582.
@@ -1032,55 +1428,72 @@ LaTeX Info: Redefining \. on input line 35.
 LaTeX Info: Redefining \% on input line 35.
 LaTeX Info: Redefining \. on input line 39.
 LaTeX Info: Redefining \% on input line 39.
+
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
 )
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1582.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1582.
 
-Package rerunfilecheck Info: File `TFG_Elsevier.out' has not changed.
-(rerunfilecheck)             Checksum: C39F60B9D86F4839366666591AE832C6;2111.
+
+
+Package rerunfilecheck Warning: File `TFG_Elsevier.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `TFG_Elsevier.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  C39F60B9D86F4839366666591AE832C6;2111.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1582.
  ) 
 Here is how much of TeX's memory you used:
- 11491 strings out of 481178
- 177692 string characters out of 2902470
- 500155 words of memory out of 3000000
- 26634 multiletter control sequences out of 15000+200000
- 578588 words of font info for 55 fonts, out of 3000000 for 9000
+ 11402 strings out of 481178
+ 176047 string characters out of 2902470
+ 494029 words of memory out of 3000000
+ 26563 multiletter control sequences out of 15000+200000
+ 581218 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,27n,42p,1466b,862s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,27n,42p,1464b,864s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.e
 nc}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-math
 sy.enc}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-
 mathit.enc}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm
 /lm-rm.enc}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm
 /lm-mathex.enc}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvip
-s/lm/lm-rmtt.enc}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dv
-ips/lm/lm-rmsc.enc}<C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/lm/lmbx10.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/lm/lmbx7.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/lm/lmbxi10.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/acamo/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/acamo/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/acamo/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/lm/lmmi5.pfb><C:/Users/acamo/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Users/acamo/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/acamo/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/acamo/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/acamo/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Users/acamo/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Users/acamo/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/acam
-o/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users/
-acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb><C:/Use
-rs/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:
-/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy5.pfb>
-<C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.p
-fb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy
-8.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/l
-mtt8.pfb>
-Output written on TFG_Elsevier.pdf (27 pages, 1058655 bytes).
+s/lm/lm-rmsc.enc}<C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/lm/lmbx10.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/lm/lmbx7.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/lm/lmbx8.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/lm/lmbxi10.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/acamo/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/acamo/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/acamo/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/lm/lmmi5.pfb><C:/Users/acamo/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Users/acamo/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/acamo/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Users/acamo/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/acamo/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Users/acamo/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Users/acamo
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/aca
+mo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Users
+/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb><C:/Us
+ers/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C
+:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy5.pfb
+><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.
+pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lms
+y8.pfb>
+Output written on TFG_Elsevier.pdf (26 pages, 1006808 bytes).
 PDF statistics:
- 826 PDF objects out of 1000 (max. 8388607)
- 215 named destinations out of 1000 (max. 500000)
- 343 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 505 PDF objects out of 1000 (max. 8388607)
+ 214 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
