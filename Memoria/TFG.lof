@@ -14,3 +14,5 @@
 \contentsline {figure}{\numberline {12}{\ignorespaces STING: división del espacio de datos en celdas en diferentes niveles \cite {sting 2}.}}{25}{figure.12}%
 \contentsline {figure}{\numberline {13}{\ignorespaces CLIQUE: las celdas densas encontradas con respecto a \textit {edad} (\textit {age}) para las dimensiones \textit {salario} (\textit {salary}) y \textit {vacaciones} (\textit {vacation}) se intersectan para formar un espacio de búsqeda de unidades densas de mayor dimensionalidad \cite {LIBRO}.}}{27}{figure.13}%
 \contentsline {figure}{\numberline {14}{\ignorespaces Elbow Method para encontrar el número de clusters óptimo \cite {elbow}.}}{30}{figure.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Medidas externas para la validación de clusters \cite {otrolibro}.}}{31}{figure.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Medidas internas para la validación de clusters \cite {otrolibro}.}}{33}{figure.16}%

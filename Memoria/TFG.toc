@@ -28,10 +28,13 @@
 \contentsline {subsection}{\numberline {7.2}\textbf {CLIQUE}}{26}{subsection.7.2}%
 \contentsline {section}{\numberline {8}Tipos de datos}{26}{section.8}%
 \contentsline {section}{\numberline {9}Evaluación del clustering}{29}{section.9}%
-\contentsline {section}{\numberline {10}Aplicaciones de clustering}{30}{section.10}%
-\contentsline {section}{\numberline {11}Anexo}{32}{section.11}%
-\contentsline {subsection}{\numberline {11.1}\textbf {Índice}}{32}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}\textbf {Algoritmos}}{32}{subsection.11.2}%
-\contentsline {subsection}{\numberline {11.3}\textbf {Tablas}}{33}{subsection.11.3}%
-\contentsline {subsection}{\numberline {11.4}\textbf {Imágenes y figuras}}{33}{subsection.11.4}%
-\contentsline {section}{\numberline {12}Referencias}{33}{section.12}%
+\contentsline {subsection}{\numberline {9.1}\textbf {Calcular la calidad de la clusterización}}{30}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {9.1.1}\textbf {Métodos extrínsecos}}{30}{subsubsection.9.1.1}%
+\contentsline {subsubsection}{\numberline {9.1.2}\textbf {Métodos intrínsecos}}{31}{subsubsection.9.1.2}%
+\contentsline {section}{\numberline {10}Aplicaciones de clustering}{32}{section.10}%
+\contentsline {section}{\numberline {11}Anexo}{35}{section.11}%
+\contentsline {subsection}{\numberline {11.1}\textbf {Índice}}{35}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}\textbf {Algoritmos}}{36}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}\textbf {Tablas}}{36}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}\textbf {Imágenes y figuras}}{36}{subsection.11.4}%
+\contentsline {section}{\numberline {12}Referencias}{36}{section.12}%

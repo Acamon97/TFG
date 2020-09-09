@@ -430,7 +430,7 @@
     \textbf{Abstract}
     \end{center}
     English abstract \\ \newline
-    \textbf{Keywords}: Data Mining, Clustering, R. \newline
+    \textbf{Keywords}: Data Mining, Text Mining, Clustering, R, COVID-19. \newline
     
 %====================================================================================================================================================%
                                               %============================================================%
@@ -1299,12 +1299,15 @@ Las técnicas y algoritmos que se han expuesto son tan solo los más populares, 
 
 Sin embargo, ¿cómo sabemos que el resultado de una clusterización es preciso y correcto?  Es necesario evaluar la clasificación final de un proceso de clustering y y los pasos iniciales para cerciorarnos de que el método utilizado y los valores asignados a las variables pertinentes son los adecuados. Gracias a esto, se pueden determinar los puntos fuertes de los algoritmos e identificar aquellas condiciones, valores y tipos de datos bajo los que ofrece mejores resultados.
 
-Para valorar el resultado de una clusterización se suelen realizar tres tareas:
+Algunas de las comprobaciones que se realizan para evaluar el proceso de clustering son las siguientes:
 
 \begin{itemize}
   \item \textbf{Evaluar la tendencia de la clasificación}: Intentar determinar si existe una estructura no aleatoria en la distribución de los datos antes de custerizarlos es crucial para obtener buenos resultados. Aplicar un método de clustering a un conjunto de datos aleatorio no devolverá resultados útiles y con significado, pues los clusters que se pueden formar serán también aleatorios y por lo tanto no aportarán información. Para esto, se suele usar un procedimiento similar al de los métodos jerárquicos probabilísticos \ref{subsec:Métodos jerárquicos probabilísticos} en el que se calcula la probabilidad de que el conjunto de datos con el que se quiere trabajar haya sido generado por una distribución de datos uniforme. Uno de los procedimientos más comunes es la Estadística de Hopkins. 
   
   \item \textbf{Determinar el número de clusters}: En algunos algoritmos como $k$-means \ref{subsec:k-means} el número final de clusters es solicitado al usuario y por lo tanto debe aproximarse de antemano. Sin embargo, es una buena práctica calcular este valor antes de utilizar cualquier método para contrastar el resultado final. Esta tarea aunque ciertamente complicada, pues los factores de los que depende son muchos (distribución de los datos, número de atributos, cantidad de datos...) y para la que existen numerosas formas de calcularla, puede ser simplificada para un mayor entendimiento o fácil aplicación.  Uno de los métodos más sencillos es aproximar el número de clusters a $\sqrt{\frac{n}{2}}$, donde en cada cluster debería haber $\sqrt{2 \cdotp n}$ objetos, para un conjunto de $n$ datos. Otro métodos es Elbow Method, en el que se repite de forma iterativa el proceso de clusterización variando el valor de $k$ (número de clusters) y calculando la varianza de los puntos dentro de los clusters. Una vez termina el proceso, se muestran los resultados en un gráfico y se escoge como valor para $k$ el punto de la gráfica en el que esta se curva de forma severa tal y como se puede observar en la Figura \ref{fig:elbow}, donde el valor escogido para $k$ es tres. Este proceso también es utilizado para determinar más parámetros dentro de otros algoritmos como \textit{Epsilon} pada DBSCAN. 
+  
+\end{itemize}
+
   
 \begin{figure}[ht]
 \centering
@@ -1312,12 +1315,75 @@ Para valorar el resultado de una clusterización se suelen realizar tres tareas:
 \caption{Elbow Method para encontrar el número de clusters óptimo \cite{elbow}.}
 \label{fig:elbow}
 \end{figure}
+
+Sin embargo, la forma más importante de evaluar la clusterización es comprobar el resultado final, la clasificación de los datos.
+
+%====================================================================================================================================================%
   
-  \item \textbf{Calcular la calidad de la clusterización}: Una vez los datos han sido clasificados, se debe verificar que el resultado es bueno. Para ello se pueden usar principalmente dos aproximaciones: comprobar si los clusters acogen bien los datos (métodos intrínsecos)  o si los clusters se aproximan a una realidad existente (métodos extrínsecos), que suele ser una clasificación ideal realizada por expertos en la materia. 
   
-  Los métodos extrínsecos intentan puntuar la clusterización obtenida $C$ comparándola con una realidad $C_g$ basándose en cuatro conceptos fundamentales: la homogeneidad del cluster, la integridad del cluster, la pureza del cluster y la preservación de clusters pequeños. Mientras que los métodos intrínsecos se centran en lo compactos que son los clusters y la separación entre ellos calculando la proximidad entre objetos.
+\subsection{\textbf{Calcular la calidad de la clusterización}}
+
+Una vez los datos han sido clasificados, se debe verificar que el resultado es bueno. Para ello se utilzan métodos que miden la calidad de los clusters. Estos se dividen principalmente en dos grupos dependiendo de si se usa información externa para la validacióno no. Los métodos intrínsecos o internos comprueban si los clusters acogen bien los datos, mientras que los métodos extrínsecos o externos comprueban si los clusters se aproximan a una realidad existente que suele ser una clasificación ideal realizada por expertos en la materia o información externa que no está presente en los datos. 
+  
+Ambos tipos de validaciones son curciales para muchos escenario. Dado que los métodos externos conocen el ``verdadero''  número de clusters de antemano, se pueden usar para determinar qué algoritmo es el más óptimo para determinados conjuntos de datos. Por ejemplo, si los métodos extrínsecos muestran que un algoritmo de clusterización de documentos genera una clasificación similar a una realizada por expertos, se puede afirmar que dicho algoritmo tiene gran impacto en el análisis de textos o documentos. Asimismo, la validación interna también permite escoger el mejor algoritmo y el número de clusters óptimos sin ningún tipo de información adicional. Sin embargo, es frecuente que no sea posible aplicar métodos de validación extrínsecos por la falta de información extra sobre el conjunto de datos, haciendo que la única forma posible de medir la calidad sea mediante métodos intrínsecos \cite{otrolibro}.
+  
+Veamos algunas de las principales formas de validación entre ámbos métodos:
+  
+%====================================================================================================================================================%
+
+  
+\subsubsection{\textbf{Métodos extrínsecos}}
+
+En aquellos casos en los que se disponga de información externa con la que comparar el resultado de la clusterización podemos usar métodos extrínsecos. Para afirmar si la clusterización ha sido efectiva, los métodos extrínsecos utilizan los siguientes criterios para su evaluación \cite{LIBRO}:
+
+\begin{itemize}
+  \item \textbf{Homogeneídad del cluster}: Cuanto más puros sean los clusters, mejor es la clusterización. Por ejemplo, si tenemos un conjunto de datos del que sabemos que extisten varias categorías gracias a la información externa utilizada, un algoritmo, $A_1$, que genere un cluster $C_1$ en el que hay datos de más de una categoria será puntuado de peor forma que otro algoritmo, $A_2$, que, en vez de generar un solo cluster $C_1$, genere diferentes subclusters en los que agrupe aquellos datos de la misma categoría, haciendo que en cada grupo solo exista un tipo de dato.
+  
+  \item \textbf{Integridad del cluster}: Si dos objetos pertenecen a la misma categoría, deben estar en el mismo cluster. De una forma similar al criterio anterior, si un algoritmo $A_1$ genera un solo cluster en el que agrupa los datos de la misma categoría $C_1$ mientras que otro, $A_2$, divide $C_1$ en dos clusters diferentes, ambos teniendo datos de la misma categoría, el primer algoritmo $A_1$ recibirá una mejor puntuación.
+  
+  \item \textbf{Misceláneo}: En muchos escenarios se genera una categoriá de datos denominada ``misceláneo'', ``varios'', ``otros'', etc., donde se agrupan aquellos objetos que no se pueden fusionar o unir con otros. Se penalizará a aquellos algoritmos que en vez de añadir un objeto heterogéneo a al conjunto de ``misceláneo'' lo agrupe dentro de un cluster.
+  
+  \item \textbf{Preservación de clusters pequeños}: Si una categoría que contiene pocos datos es dividida en muchas partes durante la clusterización es probable que acabe convirtiéndose en ruido y por lo tanto, poco probable que se acabe descubriendo. Se dará más puntuación a aquellos algoritmos que en vez de separar en diferentes clusters los objetos de la categoría con pocos datos, separen en clusters categorías con más datos para permitir así que los objetos de la categoría pequeña estén en el mismo cluster. 
+   
 \end{itemize}
 
+La mayoría de métodos no inspeccionan todos los criterios sino que suelen explorar uno o dos, aunque sí que existen aquellos que implementan los cuatro. En la Figura \ref{fig:extrinsecos} se muestran algunos de los métodos extrínsecos más utilizados para el algoritmo $k$-means \ref{subsec:k-means},
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{extrinsecos}
+\caption{Medidas externas para la validación de clusters \cite{otrolibro}.}
+\label{fig:extrinsecos}
+\end{figure}
+  
+%====================================================================================================================================================%
+
+\subsubsection{\textbf{Métodos intrínsecos}} 
+
+Como se ha mencionado previamente, el método de clusterización se aplica cuando no se dispone de etiquetas o información por la que clasificar dichos datos de una forma supervisada, por lo que disponer de información extra para la realización de una validación externa sucede en raras ocasiones. De esta manera, los métodos intrínsecos, también denominados no supervisados, evalúan la calidad de la clasificación examinando cuán compactos son los clusters y lo bien que están separados.
+
+Para calificar lo compactos que son los clusters se suele utiliza la varianza, donde un menor resultado de esta medidad indica una mejor clusterización. Por otro lado, para medir la separación entre clusters se suelen utilizar cálculos de distancias o densidad.
+
+El proceso mediante el cuá se suele determinar la mejor partición y el número óptimo de clusters mediante validación interna es el siguiente \cite{otrolibro}:
+
+\begin{enumerate}
+  \item Seleccionar el conjunto de algoritmos que van a ser aplicados al conjunto de datos.
+  \item Para cada algroritmo utilizar diferentes combinaciones de los parámetros para obtener diferentes resultados finales.
+  \item Calcular utilizando el método de validación interna requerido los resultados del paso anterior.
+  \item Escoger en función de los valores obtenidos la mejor partición y el número de clusters adecuado.
+\end{enumerate}
+
+En la Figura \ref{fig:intrinsecos} se muestran los 12 métodos de cálculo de calidad intrínsecos de entre los cuales cabe destacar el coeficiente de silueta (silhouette coefficient).
+
+Este supone que, dado un conjunto de datos $D$ con $n$ objetos, este está dividido en $k$ clusters, $C_1,\ldots,C_k$. Para cada objeto perteneciente al conjunto de datos $o \in D$ calculamos la distancia media entre dicho objeto $o$ y todos los otros objetos dentro del cluster al que pertenece $o$, con lo que obtenemos una representación de lo compacto que es el cluster al que pertenece $o$. Por otro lado, también calculamos la distancia media desde $o$ al resto de clusters a los que este no pertenece y selecionamos la más pequeña, como forma de observar cuánta separación hay entre el objeto $o$ y el resto de clusters. Esto da como resultado la ecuación mostrada en la Figura \ref{fig:intrinsecos}, cuyo valor oscila entre -1 y 1. Cuando el valor es 1, quiere decir que el cluster de $o$ es compacto y que está separado de otros clusters, indicando un buen resultado de clusterización \cite{LIBRO}.
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{intrinsecos}
+\caption{Medidas internas para la validación de clusters \cite{otrolibro}.}
+\label{fig:intrinsecos}
+\end{figure}
 
 %====================================================================================================================================================%
                                               %============================================================%
@@ -1356,169 +1422,7 @@ Y aunque dentro de la misma Sección \ref{clustering} se han expuesto varios eje
                                               %============================================================%
 %====================================================================================================================================================%
 
-\begin{comment}
 
-\clearpage
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{14}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n+nf}{if }\PY{p}{(}\PY{o}{!}\PY{n+nf}{require}\PY{p}{(}\PY{n}{cluster}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
-  \PY{n+nf}{install.packages}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{cluster\PYZdq{}}\PY{p}{,} \PY{n}{repos}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://cran.us.r\PYZhy{}project.org\PYZsq{}}\PY{p}{)}
-\PY{p}{\PYZcb{}}
-\PY{n+nf}{if }\PY{p}{(}\PY{o}{!}\PY{n+nf}{require}\PY{p}{(}\PY{n}{purrr}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
-  \PY{n+nf}{install.packages}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{purrr\PYZdq{}}\PY{p}{,} \PY{n}{repos}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://cran.us.r\PYZhy{}project.org\PYZsq{}}\PY{p}{)}
-\PY{p}{\PYZcb{}}
-\PY{n+nf}{if }\PY{p}{(}\PY{o}{!}\PY{n+nf}{require}\PY{p}{(}\PY{n}{fpc}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
-  \PY{n+nf}{install.packages}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{fpc\PYZdq{}}\PY{p}{,} \PY{n}{repos}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://cran.us.r\PYZhy{}project.org\PYZsq{}}\PY{p}{)}
-\PY{p}{\PYZcb{}}
-\PY{n+nf}{if }\PY{p}{(}\PY{o}{!}\PY{n+nf}{require}\PY{p}{(}\PY{n}{dbscan}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
-  \PY{n+nf}{install.packages}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{dbscan\PYZdq{}}\PY{p}{,} \PY{n}{repos}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://cran.us.r\PYZhy{}project.org\PYZsq{}}\PY{p}{)}
-\PY{p}{\PYZcb{}}
-\PY{n+nf}{if }\PY{p}{(}\PY{o}{!}\PY{n+nf}{require}\PY{p}{(}\PY{n}{factoextra}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
-  \PY{n+nf}{install.packages}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{factoextra\PYZdq{}}\PY{p}{,} \PY{n}{repos}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://cran.us.r\PYZhy{}project.org\PYZsq{}}\PY{p}{)}
-\PY{p}{\PYZcb{}}
-\PY{n+nf}{if }\PY{p}{(}\PY{o}{!}\PY{n+nf}{require}\PY{p}{(}\PY{n}{Matrix}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
-  \PY{n+nf}{install.packages}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Matrix\PYZdq{}}\PY{p}{,} \PY{n}{repos}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://cran.us.r\PYZhy{}project.org\PYZsq{}}\PY{p}{)}
-\PY{p}{\PYZcb{}}
-\PY{n+nf}{if }\PY{p}{(}\PY{o}{!}\PY{n+nf}{require}\PY{p}{(}\PY{n}{xtable}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
-  \PY{n+nf}{install.packages}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{xtable\PYZdq{}}\PY{p}{,} \PY{n}{repos}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://cran.us.r\PYZhy{}project.org\PYZsq{}}\PY{p}{)}
-\PY{p}{\PYZcb{}}
-\PY{n+nf}{library}\PY{p}{(}\PY{n}{cluster}\PY{p}{)}
-\PY{n+nf}{library}\PY{p}{(}\PY{n}{purrr}\PY{p}{)}
-\PY{n+nf}{library}\PY{p}{(}\PY{n}{fpc}\PY{p}{)}
-\PY{n+nf}{library}\PY{p}{(}\PY{n}{dbscan}\PY{p}{)}
-\PY{n+nf}{library}\PY{p}{(}\PY{n}{factoextra}\PY{p}{)}
-\PY{n+nf}{library}\PY{p}{(}\PY{n}{Matrix}\PY{p}{)}
-\PY{n+nf}{library}\PY{p}{(}\PY{n}{xtable}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{19}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{pokemon} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{read.csv}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Pokemon.csv\PYZdq{}}\PY{p}{,} \PY{n}{encoding}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{UTF\PYZhy{}8\PYZdq{}}\PY{p}{,} \PY{n}{header}\PY{o}{=}\PY{k+kc}{TRUE}\PY{p}{,} \PY{n}{sep}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{,\PYZdq{}}\PY{p}{,} \PY{n}{strip.white}\PY{o}{=}\PY{k+kc}{TRUE}\PY{p}{)}\PY{n}{[} \PY{p}{,}\PY{n+nf}{c}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Name\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Total\PYZsq{}}\PY{p}{)}\PY{n}{]}
-\PY{n}{pokemon} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{data.frame}\PY{p}{(}\PY{n}{pokemon}\PY{p}{)}
-\PY{n}{pokemon\PYZus{}fig} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{head}\PY{p}{(}\PY{n}{pokemon}\PY{p}{,} \PY{l+m}{10}\PY{p}{)}
-\PY{n}{pokemon\PYZus{}fig}
-\end{Verbatim}
-\end{tcolorbox}
-
-    A data.frame: 10 × 2
-\begin{tabular}{r|ll}
-  & Name & Total\\
-  & <fct> & <int>\\
-\hline
-	1 & Bulbasaur                 & 318\\
-	2 & Ivysaur                   & 405\\
-	3 & Venusaur                  & 525\\
-	4 & VenusaurMega Venusaur     & 625\\
-	5 & Charmander                & 309\\
-	6 & Charmeleon                & 405\\
-	7 & Charizard                 & 534\\
-	8 & CharizardMega Charizard X & 634\\
-	9 & CharizardMega Charizard Y & 634\\
-	10 & Squirtle                  & 314\\
-\end{tabular}
-
-
-    
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{22}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{d} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{dist}\PY{p}{(}\PY{n}{pokemon}\PY{p}{,} \PY{n}{method}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{euclidian\PYZdq{}}\PY{p}{)}
-\PY{n}{hc1} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{hclust}\PY{p}{(}\PY{n}{d}\PY{p}{,} \PY{n}{method}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{complete\PYZdq{}}\PY{p}{)}
-\PY{n}{hc1} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{as.dendrogram}\PY{p}{(}\PY{n}{hc1}\PY{p}{)}
-\PY{n+nf}{par}\PY{p}{(}\PY{n}{mar} \PY{o}{=} \PY{n+nf}{c}\PY{p}{(}\PY{l+m}{2}\PY{p}{,}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{0}\PY{p}{)}\PY{p}{)}
-\PY{n}{nodePar} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{list}\PY{p}{(}\PY{n}{lab.cex}\PY{o}{=}\PY{l+m}{0.6}\PY{p}{,} \PY{n}{pch}\PY{o}{=}\PY{n+nf}{c}\PY{p}{(}\PY{k+kc}{NA}\PY{p}{,} \PY{l+m}{19}\PY{p}{)}\PY{p}{,} \PY{n}{cex}\PY{o}{=}\PY{l+m}{0.7}\PY{p}{,} \PY{n}{col}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{blue\PYZdq{}}\PY{p}{)}
-\PY{n+nf}{plot}\PY{p}{(}\PY{n}{hc1}\PY{p}{,} \PY{n}{nodePar}\PY{o}{=}\PY{n}{nodePar}\PY{p}{,} \PY{n}{edgePar}\PY{o}{=}\PY{n+nf}{list}\PY{p}{(}\PY{n}{col}\PY{o}{=}\PY{l+m}{2}\PY{o}{:}\PY{l+m}{3}\PY{p}{,} \PY{n}{lwd}\PY{o}{=}\PY{l+m}{2}\PY{o}{:}\PY{l+m}{1}\PY{p}{)}\PY{p}{,} \PY{n}{labels}\PY{o}{=}\PY{k+kc}{NULL}\PY{p}{,} \PY{n}{cex}\PY{o}{=}\PY{l+m}{0.6}\PY{p}{,} \PY{n}{xlim}\PY{o}{=}\PY{n+nf}{c}\PY{p}{(}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{35}\PY{p}{)}\PY{p}{,} \PY{n}{ylim}\PY{o}{=}\PY{n+nf}{c}\PY{p}{(}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{6}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-Warning message in dist(pokemon, method = "euclidian"):
-"NAs introducidos por coerción"
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_3_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{24}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{hc2} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{agnes}\PY{p}{(}\PY{n}{d}\PY{p}{,} \PY{n}{method}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{complete\PYZdq{}}\PY{p}{)}
-\PY{n}{m} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{c}\PY{p}{(} \PY{l+s}{\PYZdq{}}\PY{l+s}{average\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{single\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{complete\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{ward\PYZdq{}}\PY{p}{)}
-\PY{n+nf}{names}\PY{p}{(}\PY{n}{m}\PY{p}{)} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{c}\PY{p}{(} \PY{l+s}{\PYZdq{}}\PY{l+s}{average\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{single\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{complete\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{ward\PYZdq{}}\PY{p}{)}
-\PY{n}{ac} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{function}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{p}{\PYZob{}}
-    \PY{n+nf}{agnes}\PY{p}{(}\PY{n}{d}\PY{p}{,}\PY{n}{method}\PY{o}{=}\PY{n}{x}\PY{p}{)}\PY{o}{\PYZdl{}}\PY{n}{ac}
-\PY{p}{\PYZcb{}}
-\PY{n+nf}{map\PYZus{}dbl}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{ac}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{description*}
-\item[average] 0.999318908624144
-\item[single] 0.996050000000001
-\item[complete] 0.999622916666667
-\item[ward] 0.999933844937563
-\end{description*}
-
-
-    
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{27}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{hc3} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{as.dendrogram}\PY{p}{(}\PY{n+nf}{agnes}\PY{p}{(}\PY{n}{d}\PY{p}{,} \PY{n}{method}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{ward\PYZdq{}}\PY{p}{)}\PY{p}{)}
-\PY{n+nf}{par}\PY{p}{(}\PY{n}{mar} \PY{o}{=} \PY{n+nf}{c}\PY{p}{(}\PY{l+m}{2}\PY{p}{,}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{0}\PY{p}{)}\PY{p}{)}
-\PY{n+nf}{plot}\PY{p}{(}\PY{n}{hc3}\PY{p}{,} \PY{n}{nodePar}\PY{o}{=}\PY{n}{nodePar} \PY{p}{,}\PY{n}{edgePar}\PY{o}{=}\PY{n+nf}{list}\PY{p}{(}\PY{n}{col}\PY{o}{=}\PY{l+m}{2}\PY{o}{:}\PY{l+m}{3}\PY{p}{,} \PY{n}{lwd}\PY{o}{=}\PY{l+m}{2}\PY{o}{:}\PY{l+m}{1}\PY{p}{)}\PY{p}{,} \PY{n}{labels}\PY{o}{=}\PY{k+kc}{NULL}\PY{p}{,} \PY{n}{cex}\PY{o}{=}\PY{l+m}{0.6}\PY{p}{,} \PY{n}{xlim}\PY{o}{=}\PY{n+nf}{c}\PY{p}{(}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{35}\PY{p}{)}\PY{p}{,} \PY{n}{ylim}\PY{o}{=}\PY{n+nf}{c}\PY{p}{(}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{8}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_5_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{28}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{hc4} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{diana}\PY{p}{(}\PY{n}{d}\PY{p}{)}
-\PY{n}{hc4d} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{as.dendrogram}\PY{p}{(}\PY{n}{hc4}\PY{p}{)}
-\PY{n+nf}{par}\PY{p}{(}\PY{n}{mar} \PY{o}{=} \PY{n+nf}{c}\PY{p}{(}\PY{l+m}{2}\PY{p}{,}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{0}\PY{p}{)}\PY{p}{)}
-\PY{n+nf}{plot}\PY{p}{(}\PY{n}{hc4d}\PY{p}{,} \PY{n}{nodePar}\PY{o}{=}\PY{n}{nodePar} \PY{p}{,}\PY{n}{edgePar}\PY{o}{=}\PY{n+nf}{list}\PY{p}{(}\PY{n}{col}\PY{o}{=}\PY{l+m}{2}\PY{o}{:}\PY{l+m}{3}\PY{p}{,} \PY{n}{lwd}\PY{o}{=}\PY{l+m}{2}\PY{o}{:}\PY{l+m}{1}\PY{p}{)}\PY{p}{,} \PY{n}{labels}\PY{o}{=}\PY{k+kc}{NULL}\PY{p}{,} \PY{n}{cex}\PY{o}{=}\PY{l+m}{0.6}\PY{p}{,} \PY{n}{xlim}\PY{o}{=}\PY{n+nf}{c}\PY{p}{(}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{30}\PY{p}{)}\PY{p}{,} \PY{n}{ylim}\PY{o}{=}\PY{n+nf}{c}\PY{p}{(}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{8}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_6_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{32}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{pokemon} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{head}\PY{p}{(}\PY{n}{pokemon}\PY{p}{,} \PY{l+m}{100}\PY{p}{)}
-\PY{n}{d} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{dist}\PY{p}{(}\PY{n}{pokemon}\PY{p}{,} \PY{n}{method}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{euclidian\PYZdq{}}\PY{p}{)}
-\PY{n}{hc4} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{diana}\PY{p}{(}\PY{n}{d}\PY{p}{)}
-\PY{n}{clust} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{cutree}\PY{p}{(}\PY{n}{hc4}\PY{p}{,} \PY{n}{k}\PY{o}{=}\PY{l+m}{5}\PY{p}{)}
-\PY{n+nf}{fviz\PYZus{}cluster}\PY{p}{(}\PY{n+nf}{list}\PY{p}{(}\PY{n}{data} \PY{o}{=} \PY{n}{d}\PY{p}{,} \PY{n}{cluster}\PY{o}{=}\PY{n}{clust}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-Warning message in dist(pokemon, method = "euclidian"):
-"NAs introducidos por coerción"
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_7_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    
-\end{comment}
     
 
 %====================================================================================================================================================%
