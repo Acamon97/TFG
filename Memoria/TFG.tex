@@ -1406,7 +1406,7 @@ Durante este documento se han nombrado algunos de los dominios de aplicación m�
   
   \item \textbf{Detección de tendencias dinámicas}: Los métodos de clusterización dinámicos y fluidos son usados para detectar la dirección de los datos y encontrar patrones de cambio en ellos.
   
-  \item \textbf{Análisis de datos multimedia}: Los datos multiemedia están compuestos por imágenes, vídeos y audios. Clustering se aplica en este tipo de datos muchas veces con intención de detectar segmentos similares para la clasificación de tipos de música, detección de infracciones de derechos de autor, etc.
+  \item \textbf{Análisis de datos multi media}: Los datos multiemedia están compuestos por imágenes, vídeos y audios. Clustering se aplica en este tipo de datos muchas veces con intención de detectar segmentos similares para la clasificación de tipos de música, detección de infracciones de derechos de autor, etc.
   
   \item \textbf{Análisis de redes sociales}: El continuo crecimiento de las redes sociales ha dado mucha importancia a este ámbito en el que clustering se utiliza para detectar estructuras sociales o comunidades subyacentes dentro de los datos. Encontrar comunidades sirve para entender mejor cómo funciona la red social y para recomendar a usuarios de una comunidad otras similares a sus gustos \cite{11}.
   
@@ -1414,14 +1414,82 @@ Durante este documento se han nombrado algunos de los dominios de aplicación m�
 \end{itemize}
 
 
-Como se ha podido observar, clustering es utilizado en muchas áreas del conocimiento y ofrece una gran variedad de opciones y alternativas que se adaptan a cada situación. Sin embargo
+Como se ha podido observar durante este documento, la clusterización ofrece un gran abanico de opciones y técnicas específicas que permiten su adaptación a casi cualquier área del conocimiento del mundo moderno, motivo por el que es uno de los métodos más utilizados a la hora de obtener información a partir de datos. Sin embargo, si tuviéramos que destacar un entorno en el que la aplicación de clustering puede ser súmamente provechosa, es en los documentos de texto. 
+
 
 %====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
 
 
-    
+\section{Clusterización de textos} \label{sec:clusterizacion de documentos}
+
+En esta época dominada por la incesante cantidad de datos que se generarn a diario, se estima que alrededor del ochenta por ciento de la información se encuentra en textos \cite{improved som algorithm applied in text clustering}, bien en forma de noticias, artículos, libros, mensajes de correo, blogs\footnote{Sitio web que se asemeja a un dirario personal de su autor y donde escribe contenido de su interés sobre el que incita a sus lectores a comentar.}, páginas web, etc. Esto hace que sea humanamente imposible el proceso manual de toda esa información, por lo que la utilización de computadores es algo imprescindible.
+
+Por ello, surgió la Minería de Textos o Text Mining, una disciplina enfocada en la utilización de ordenadores para el descubrimiento de nueva información previamente desconocida mediante la automatización de la extracción de información de difetentes fuentes \cite{a survey of text mining techniques and applications}. Esta es una variación de Data Mining, cuya diferencia principal es el tipo de texto con el que se trabaja, ya que la minería de textos se centra en las palabras y frases que forman parte de los documentos de texto, una fuente de datos no estructurada y no numérica. Por lo que el problema principal que esto representa es el hecho de que el lenguaje natural surgió como forma de comunicación entre seres humanos. 
+
+Como solución a este problema, se han desarrollado técnicas de Procesamiento de Lenguaje Natural (NLP), un área de estudio y aplicación dentro de la Inteligencia Artificial cuya meta principal es el estudio del lenguaje humano de manera que las máquinas puedan comprenderlo, tratarlo y manipularlo  de una forma similar a como lo hace el ser humano \cite{TFG Jorge}. Las principales técnicas que se han desarrollado en este campo son:
+
+\begin{itemize}
+  \item \textbf{Extracción de la información (IE)}: Uno de los puntos de partida a la hora de analizar datos no estructurados es la extracción de información, que identifica palabras y frases clave y sus relaciones dentro de un texto. Una vez obtenida esta información, se pueden realizar técnicas de Data Mining que de otra forma no serían posibles \cite{a survey of text mining techniques and applications, TFG Jorge, libro jorge}
+  
+  \item \textbf{Control de temática}: Este tipo de sistemas permiten a los usuarios seleccionar palabras claves y recibir alertas o recomendaciones de textos con temáticas similares y de sus gustos. Esto puede ser utilizado para alertar a compañias de nuevos competidores, nuevas ofertas laborales, descubrimientos recientes o simplemente noticias relacionadas \cite{a survey of text mining techniques and applications}.
+  
+  \item \textbf{Creación de resúmenes}: A la hora de comprobar si un documento cumple con las necesidades que buscan los usuarios, la creación de resúmenes es crucial. Mediante la identificación de palabras y frases claves, este proceso procesa y resume documentos en el tiempo que toma al lector leer el primer parrafo. Primero se obtiene una representación estructurada del texto original, posteriormente, un algoritmo transforma la estructura de texto en estructura de resumen y por último, el resumen es obtenido de la estructura anterior \cite{a survey of text mining techniques and applications}.
+  
+  \item \textbf{Clasificación de documentos}: La clasificación o categorización consiste en identificar los temas principales de un texto y posicionarlo de acuerdo a un conjunto de tópicos preestablecidos. Esto se suele hacer mediante métodos de aprendizaje supervisados, realizando la clasificación en base a ejemplos conocidos. Este proceso permite la aplicación de posteriores técnicas de Data Mining \cite{a survey of text mining techniques and applications}.
+  
+  \item \textbf{Vinculación de conceptos}: Las herramientas de vinculación de conceptos permiten conectar textos que estén relacionados identificando aquellos elementos que tienen en común ayudando a los usuarios a encontrar nueva información que quizás no hubieran encontrado por métodos normales. Este es habitual en áreas como la biología y disciplinas de la ciencia donde es dificil encontrar todas las publicaciones sobre un tema en concreto \cite{a survey of text mining techniques and applications}.
+  
+  \item \textbf{Visualización de la información}: Este proceso permite mostrar textos de forma visual en una estructura jerárquica o mapa, ofreciendo posibilidades de búsqueda y navegación en las que el usuario puede interactuar. Esto es util cuando se necesita minimizar el área de búsqueda dentro de un gran abanico de opciones \cite{a survey of text mining techniques and applications}. 
+  
+  \item \textbf{Responder preguntas}: Otra de las aplicaciones del procesamiento de lenguaje natural es responder preguntas, en las que intenta ofrecer la mejor réplica a una consulta realizada por un usuario. Esto es utilizado por diversas páginas web e instituciones para sus apartados de preguntas frecuentes (FAQ) \cite{a survey of text mining techniques and applications}.
+  
+  \item \textbf{Búsqueda y recuperacion de información (IR)}: La búsqueda y recuperación de información es una tarea que se suele dar principalmente en motores de búsqueda donde, en función de ciertas palabras clave, se devuelve un conjunto de resultados relevantes que guarden relación con ellas. En la minería de textos se trabaja con documentos, por lo que esto sirve principalmente como forma de calcular la similitud entre documentos \cite{libro jorge}. 
+  
+  \item \textbf{Análisis de sentimiento}: Este análisis consiste en la detección de ciertas palabras clave que permiten determinar la opinión de los usuarios con respecto a cierto tema. Estas palabras suelen estar preestablecidas y se dividen en palabras favorables o desfaborables. Al precisar de un número elevado de reseñas o comentarios sobre el tema para que el resultado sea certero, este método es realmente útil en redes sociales \cite{libro jorge}.
+  
+  \item \textbf{Representación del conocimiento}: Esta área de la Inteligencia Artificial se centra en la representación, mantenimiento y manipulación del conocimiento sobre un dominio de aplicación. En relación a la Minería de Textos, esto se refleja en la creación de formas intermedias que permiten representar el contenido semántico de un texto \cite{TFG Jorge}.
+  
+\end{itemize}
+
+Y la otra técnica principal que falta en la lista anterior es la clusterización de textos. El funcionamiento de este procceso es el mismo que se ha comentado al inicio de este texto en la Sección \ref{clustering}, y permite agrupar documentos similares basándose en la examinación de sus palabras y frases. 
+
+
+
+\begin{comment}
+Por qué es importante
+  improved som algorithm applied in text clustering
+  a survey of text mining techniques and applications
+  survey
+
+Dificultades
+  a survey of text mining techniques and applications
+  technique of cluster validity for text mining
+  survey
+  textmining
+
+Preparar datos y forma de trabajar
+  a survey of text mining techniques and applications
+  pattern and cluster mining on text data
+  technique of cluster validity for text mining
+  survey
+  textmining
+
+Algoritmos
+  improved som algorithm applied in text clustering
+  survey on text clustering algorithm
+  survey
+
+COVID
+
+\end{comment}   
+
+
+
+
+
+ 
 
 %====================================================================================================================================================%
                                               %============================================================%
@@ -1517,6 +1585,14 @@ Como se ha podido observar, clustering es utilizado en muchas áreas del conocim
 \bibitem{elbow} Xing, Wanli. (2016). Exploring the collective knowledge curation process of online health communities´. 10.13140/RG.2.2.17964.05761. 
 
 \bibitem{otrolibro} C. C. Aggarwal \&. K. Reddy. (2014). Data Clustering: Algorithms and Applications. Taylor \& Francis Group. LLC
+
+\bibitem{improved som algorithm applied in text clustering} improved som algorithm applied in text clustering
+
+\bibitem{a survey of text mining techniques and applications} A survey of text mining techniques and applications
+
+\bibitem{TFG Jorge} TFG Jorge
+
+\bibitem{libro jorge} Weiss, S. M., Indurkhya, N., \& Zhang, T. (2015). Fundamentals of predictive text mining. Springer.
 
 \end{thebibliography}    
     
