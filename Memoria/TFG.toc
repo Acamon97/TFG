@@ -33,9 +33,9 @@
 \contentsline {subsubsection}{\numberline {9.1.2}\textbf {Métodos intrínsecos}}{31}{subsubsection.9.1.2}%
 \contentsline {section}{\numberline {10}Aplicaciones de clustering}{32}{section.10}%
 \contentsline {section}{\numberline {11}Clusterización de textos}{34}{section.11}%
-\contentsline {section}{\numberline {12}Anexo}{36}{section.12}%
-\contentsline {subsection}{\numberline {12.1}\textbf {Índice}}{36}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}\textbf {Algoritmos}}{37}{subsection.12.2}%
-\contentsline {subsection}{\numberline {12.3}\textbf {Tablas}}{37}{subsection.12.3}%
-\contentsline {subsection}{\numberline {12.4}\textbf {Imágenes y figuras}}{37}{subsection.12.4}%
-\contentsline {section}{\numberline {13}Referencias}{37}{section.13}%
+\contentsline {section}{\numberline {12}Anexo}{37}{section.12}%
+\contentsline {subsection}{\numberline {12.1}\textbf {Índice}}{37}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}\textbf {Algoritmos}}{38}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}\textbf {Tablas}}{38}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}\textbf {Imágenes y figuras}}{38}{subsection.12.4}%
+\contentsline {section}{\numberline {13}Referencias}{38}{section.13}%
