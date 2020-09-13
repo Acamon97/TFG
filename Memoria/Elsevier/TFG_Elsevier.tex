@@ -1,26 +1,89 @@
-\documentclass[10pt, a4paper]{article}
+% Configuración a 2 columnas
 
-    \usepackage[breakable]{tcolorbox}
-    \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
-    
-    \usepackage{iftex}
-    \ifPDFTeX
-    	\usepackage[T1]{fontenc}
-    	\usepackage{mathpazo}
-    \else
-    	\usepackage{fontspec}
-    \fi
+%\documentclass[10pt]{article}
+%\documentclass{elsarticle} % original latex 45
+%\documentclass[1p]{elsarticle} % una sola columna elsevier 41
+%\documentclass[3p]{elsarticle} % una sola columna elsevier 36
+\documentclass[3p,twocolumn]{elsarticle} % dos columnas elsevier 27
 
-    % Basic figure setup, for now with no caption control since it's done
-    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
-    \usepackage{graphicx}
-    % Maintain compatibility with old templates. Remove in nbconvert 6.0
-    \let\Oldincludegraphics\includegraphics
+% Paquete con el tipo de codificación del lenguaje
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, english]{babel}
 
-    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
-    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
-    \usepackage{float}
-    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+% Paquete para mostrar el número de líneas
+\usepackage[modulo]{lineno}
+%\linenumbers
+% Paquete para mostrar imágenes
+\usepackage{graphicx}
+%\graphicspath{ {/home/acamon/TFG/GitHub/TFG/Recursos/Fotos/} } % LINUX
+\graphicspath{ {C:/Users/acamo/Documents/TFG/Recursos/Fotos/} } % WINDOWS
+
+
+% Paquete para resaltar enlaces y referencias
+\usepackage{hyperref}
+% Configuración del paquete
+\hypersetup{
+  breaklinks=true,  
+  colorlinks=true,
+  urlcolor=urlcolor,
+  linkcolor=linkcolor,
+  citecolor=citecolor,
+}
+
+% Modifica el formato de las referencias
+\biboptions{sort&compress}
+
+\usepackage{comment}
+
+% Modifica el pie de la primera página para poner el número de la misma
+\makeatletter
+\def\ps@pprintTitle{%
+   \let\@oddhead\@empty
+   \let\@evenhead\@empty
+   \def\@oddfoot{\reset@font\hfil\thepage\hfil}
+   \let\@evenfoot\@oddfoot
+}
+\makeatother
+
+% Paquete para cambiar color texto
+\usepackage[dvipsnames]{xcolor}
+% \textcolor{Red}{Hola}
+
+% Paquete para las ecuaciones
+\usepackage{amsmath}
+\usepackage{lmodern}
+
+% Paquete para escribir algoritmos y pseudocodigo
+\usepackage[spanish,onelanguage,ruled,vlined]{algorithm2e} 
+
+% Paquetes para la tabla
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+
+% Paquete para insertar páginas de PDF
+\usepackage{pdfpages}
+
+
+% Espacio para dos abstractos en dos lenguajes
+\newenvironment{abstracts}
+ {\global\setbox\absbox=\vbox\bgroup
+    \hsize=\textwidth
+    \linespread{1}\selectfont}
+ {\vspace{-\bigskipamount}\egroup}
+\renewenvironment{abstract}[1][]
+ {\if\relax\detokenize{#1}\relax\else\selectlanguage{#1}\fi
+  \noindent\textbf{\abstractname}\par\medskip\noindent\ignorespaces}
+ {\par\bigskip}
+ 
+%====================================================================================================================================================%
+%====================================================================================================================================================%
+
+\begin{comment}
+
+\usepackage[breakable]{tcolorbox}
+    \tcbset{nobeforeafter} % prevents tcolorboxes being placing in paragraphs
+
     \usepackage{xcolor} % Allow colors to be defined
     \usepackage{enumerate} % Needed for markdown enumerations to work
     \usepackage{geometry} % Used to adjust the document margins
@@ -35,32 +98,21 @@
     \usepackage{eurosym} % defines \euro
     \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
     \usepackage{fancyvrb} % verbatim replacement that allows latex
-    \usepackage{grffile} % extends the file name processing of package graphics 
+    \usepackage{grffile} % extends the file name processing of package graphics
                          % to support a larger range
-    \makeatletter % fix for grffile with XeLaTeX
-    \def\Gread@@xetex#1{%
-      \IfFileExists{"\Gin@base".bb}%
-      {\Gread@eps{\Gin@base.bb}}%
-      {\Gread@@xetex@aux#1}%
-    }
-    \makeatother
-
     % The hyperref package gives us a pdf with properly built
     % internal navigation ('pdf bookmarks' for the table of contents,
     % internal cross-reference links, web links for URLs, etc.)
     \usepackage{hyperref}
-    % The default LaTeX title has an obnoxious amount of whitespace. By default,
-    % titling removes some of it. It also provides customization options.
-    \usepackage{titling}
     \usepackage{longtable} % longtable support required by pandoc >1.10
     \usepackage{booktabs}  % table support for pandoc > 1.12.2
     \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
     \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
                                 % normalem makes italics be italics, not underlines
     \usepackage{mathrsfs}
-    
+   
 
-    
+   
     % Colors for the hyperref package
     \definecolor{urlcolor}{rgb}{0,.145,.698}
     \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
@@ -107,7 +159,7 @@
     \newcommand{\RegionMarkerTok}[1]{{#1}}
     \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
     \newcommand{\NormalTok}[1]{{#1}}
-    
+   
     % Additional commands for more recent versions of Pandoc
     \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
     \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
@@ -126,8 +178,8 @@
     \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
     \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
     \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-    
-    
+   
+   
     % Define a nice break command that doesn't care if a line doesn't already
     % exist.
     \def\br{\hspace*{\fill} \\* }
@@ -138,10 +190,8 @@
     \let\Oldlatex\LaTeX
     \renewcommand{\TeX}{\textrm{\Oldtex}}
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
-    % Document parameters
-    % Document title
-
-    
+   
+   
 % Pygments definitions
 \makeatletter
 \def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
@@ -244,53 +294,53 @@
 \makeatother
 
 
-    % For linebreaks inside Verbatim environment from package fancyvrb. 
+    % For linebreaks inside Verbatim environment from package fancyvrb.
     \makeatletter
-        \newbox\Wrappedcontinuationbox 
-        \newbox\Wrappedvisiblespacebox 
-        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}} 
-        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}} 
-        \newcommand*\Wrappedcontinuationindent {3ex } 
-        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox} 
-        % Take advantage of the already applied Pygments mark-up to insert 
-        % potential linebreaks for TeX processing. 
-        %        {, <, #, %, $, ' and ": go to next line. 
-        %        _, }, ^, &, >, - and ~: stay at end of broken line. 
-        % Use of \textquotesingle for straight quote. 
-        \newcommand*\Wrappedbreaksatspecials {% 
-            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}% 
-            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}% 
-            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}% 
-            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}% 
-            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}% 
-            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}% 
-            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
-            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
-            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
-            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}% 
-            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
-            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
-            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
-            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}% 
-        } 
-        % Some characters . , ; ? ! / are not pygmentized. 
-        % This macro makes them "active" and they will insert potential linebreaks 
-        \newcommand*\Wrappedbreaksatpunct {% 
-            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}% 
-            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}% 
-            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}% 
-            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}% 
-            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}% 
-            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}% 
-            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}% 
+        \newbox\Wrappedcontinuationbox
+        \newbox\Wrappedvisiblespacebox
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}}
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}}
+        \newcommand*\Wrappedcontinuationindent {3ex }
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox}
+        % Take advantage of the already applied Pygments mark-up to insert
+        % potential linebreaks for TeX processing.
+        %        {, <, #, %, $, ' and ": go to next line.
+        %        _, }, ^, &, >, - and ~: stay at end of broken line.
+        % Use of \textquotesingle for straight quote.
+        \newcommand*\Wrappedbreaksatspecials {%
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}%
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}%
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}%
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}%
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}%
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}%
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}%
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}%
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}%
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}%
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}%
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}%
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}%
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}%
+        }
+        % Some characters . , ; ? ! / are not pygmentized.
+        % This macro makes them "active" and they will insert potential linebreaks
+        \newcommand*\Wrappedbreaksatpunct {%
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}%
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}%
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}%
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}%
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}%
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}%
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}%
             \catcode`\.\active
-            \catcode`\,\active 
+            \catcode`\,\active
             \catcode`\;\active
             \catcode`\:\active
             \catcode`\?\active
             \catcode`\!\active
-            \catcode`\/\active 
-            \lccode`\~`\~ 	
+            \catcode`\/\active
+            \lccode`\~`\~
         }
     \makeatother
 
@@ -313,10 +363,10 @@
             \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
             {\kern\fontdimen2\font}%
         }%
-        
+       
         % Allow breaks at special characters using \PYG... macros.
         \Wrappedbreaksatspecials
-        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active 	
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active
         \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
     }
     \makeatother
@@ -326,21 +376,16 @@
     \definecolor{outcolor}{HTML}{D84315}
     \definecolor{cellborder}{HTML}{CFCFCF}
     \definecolor{cellbackground}{HTML}{F7F7F7}
-    
+   
     % prompt
-    \makeatletter
-    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
-    \makeatother
     \newcommand{\prompt}[4]{
-        \ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}
+        \llap{{\color{#2}[#3]: #4}}\vspace{-1.25em}
     }
-    
-    % Paquete para centrar verticalmente las tablas
-    \usepackage{array}                                                                      
+   
 
-    
+   
     % Prevent overflowing lines due to hard-to-break entities
-    \sloppy 
+    \sloppy
     % Setup hyperref package
     \hypersetup{
       breaklinks=true,  % so long urls are correctly broken across lines
@@ -349,93 +394,61 @@
       linkcolor=linkcolor,
       citecolor=citecolor,
       }
-    % Slightly bigger margins than the latex defaults
+      
+       % Slightly bigger margins than the latex defaults
     
     \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+      
+\end{comment}
     
-    
-%====================================================================================================================================================%
-%====================================================================================================================================================%    
-  
-    \usepackage[utf8]{inputenc}
-    \usepackage[spanish, english]{babel}
-    
-    % Paquete para el título
-    \usepackage{authblk}
-    
-    % Paquete para las citaciones
-    \usepackage[square,numbers]{natbib}
-    
-    % Paquete para escribir algoritmos y pseudocodigo
-    \usepackage[spanish,onelanguage,ruled,vlined]{algorithm2e} 
-        
-    % Paquete para las ecuaciones
-    \usepackage{lmodern}
-    
-    % Para comentar bloques de texto
-    \usepackage{comment}
-    
-    % PATH a los gráficos
-    %\graphicspath{ {/home/acamon/TFG/GitHub/TFG/Recursos/Fotos/} } % LINUX
-    \graphicspath{ {C:/Users/acamo/Documents/TFG/Recursos/Fotos/} } % WINDOWS
-    
-    % Paquete para insertar páginas de PDF
-    \usepackage{pdfpages} 
-    
-    % Keywords command
-    \providecommand{\keywords}[1]
-    {
-      \small	
-      \textbf{\textit{Keywords---}} #1
-    }
-
 %====================================================================================================================================================%
 %====================================================================================================================================================%
 
+
+
+% Inicio del documento
 \begin{document}
 
-    \selectlanguage{spanish}
-    
-    
-    % PORTADA
-    \includepdf[pages=1]{Recursos/portada.pdf}
-    
-    \title{Análisis de clustering en R}
-    
-    \author{Aarón Casado Monge$^{1}$, Juan José Cuadrado Gallego$^{1}$  \\
-      \small $^{1}$University of Alcala, Polytechnic School, Computer Science Department, Scientific and Technological Campus, Politechnic Building. Office: O243, 28805, Alcala de Henares, Madrid, Spain}
-  
-    % Abstracto del TFG
-    %\begin{abstract}{spanish}
-    %    Clusterización
-    %\end{abstract}
-    
-    %\selectlanguage{english}
-    
-    %\begin{abstract}
-    %   Lo mismo pero en ingles.
-    %\end{abstract}
-    
-    % Palabras clave del TFG
-    %\keywords{Data Mining, Clustering, R}
-    
-  \maketitle
-    
-    
-    \begin{center}
-    \textbf{Resumen}
-    \end{center}
-    Resumen en español \newline
-    \begin{center}
-    \textbf{Abstract}
-    \end{center}
-    English abstract \\ \newline
-    \textbf{Keywords}: Data Mining, Text Mining, Clustering, R, COVID-19. \newline
-    
+\selectlanguage{spanish}
+
+
+% PORTADA
+%\includepdf[pages=1]{Recursos/portada.pdf}
+
+\title{Análisis de clustering en R}
+
+\author[1]{Aarón Casado Monge} % Autor del TFG
+\ead{aaron.casado@uah.es} % Correo del alumno
+
+\author[2]{Juan José Cuadrado Gallego} % Tutor del TFG
+\ead{jcg@uah.es} % Correo del profesor
+
+% Dirección de la Escuela Politécnica Superior de UAH
+\address{University of Alcala, Polytechnic School, Computer Science Department, Scientific and Technological Campus, Politechnic Building. Office: O243, 28805, Alcala de Henares, Madrid, Spain}
+
+% Abstracto del TFG
+\begin{abstracts}
+  \begin{abstract}[spanish]
+    Clusterización (qué es y para qué sirve) - Técnicas (para qué sirven) - Paquetes 
+  \end{abstract}
+  \begin{abstract}[english]
+    Resumen en ingles.
+  \end{abstract}
+\end{abstracts}
+
+% Palabras clave del TFG
+\begin{keyword}
+Data Mining, Clustering, R, Bioinformatics
+\end{keyword}
+
+\maketitle % Creación del Título, autores, abstracto...
+ 
+ 
 %====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
 
+ 
 % Introducción del TFG
 \section{Introducción}
 
@@ -469,7 +482,7 @@ Clustering o cluster analysis, llamado en español agrupamiento o análisis de g
 
 En esencia, el proceso de clustering es el mismo, hasta el punto en que básicamente podríamos considerarlos sinónimos, puesto que la clusterización se aplica principalmente sobre conjuntos de datos que se desean organizar en diferentes grupos pero los valores que delimitan cada cluster son desconocidos y por lo tanto se definen en el propio proceso de clasificación.
 
-De una manera más técnica, podríamos decir que clustering busca definir para una determinada característica\footnote{Dicho de una cualidad que da carácter o sirve para distinguir a algo o alguien de sus semejante.} o Suceso Elemental\footnote{Cada uno de los resultados más simples que se pueen obtener de la realización de un experimento. Obtener el número 3 al tirar un dado.} (SE), un conjunto de grupos de observaciones (suceso) \footnote{Se denomina así al subconjunto total de resultados posibles al realizar un experimento. Obtener un 3 o sacar par al tirar un dado.} con valores cercanos, donde los clusters permiten, dados los diferentes sucesos elementales que configuran un suceso, asignar cada SE al mismo cluster \cite{8}.
+\textcolor{Red} {De una manera más técnica, podríamos decir que clustering busca definir para una determinada característica\footnote{Dicho de una cualidad que da carácter o sirve para distinguir a algo o alguien de sus semejante.} o Suceso Elemental\footnote{Cada uno de los resultados más simples que se pueen obtener de la realización de un experimento. Obtener el número 3 al tirar un dado.} (SE), un conjunto de grupos de observaciones (suceso) \footnote{Se denomina así al subconjunto total de resultados posibles al realizar un experimento. Obtener un 3 o sacar par al tirar un dado.} con valores cercanos, donde los clusters permiten, dados los diferentes sucesos elementales que configuran un suceso, asignar cada SE al mismo cluster \cite{8}.}
 
 Para poder decidir si dos datos deben ser agrupados en el mismo cluster o por el contrario, separados, es necesario introducir los conceptos de similitud y disparidad. Cuanto más similares sean los datos, más tendrán en común y por lo tanto es más probable que terminen bajo el mismo cluster; y por otra parte, si los datos son dispares entre sí, estos terminarán separados en clusters diferentes. Este criterio se basa en la proximidad de dichos objetos. Si midiéramos la similitud entre dos objetos \textit{i} y \textit{j}, esta devolvería 0 si ambos fueran totalmente distintos, y cuanto más elevado fuera el valor, más semejantes serían, siendo 1 el valor más alto, indicando que ambos datos son idénticos. De la misma manera, medir la disparidad entre los objetos daría resultados opuestos, con un 0 indicando que son idénticos y con un 1 que no tienen nada en común. 
 
@@ -497,7 +510,7 @@ La utilidad de este método y la flexibilidad que ofrece con las diversas técni
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\textwidth]{flowchart}
+\includegraphics[width=\linewidth]{flowchart}
 \caption{Procedimiento para el análisis de grupos. Este consta de cuatro pasos fundamenteales con realimentación \cite{survey}.}
 \label{fig:flowchart}
 \end{figure}
@@ -509,11 +522,9 @@ Asimismo, tanto el paso inicial como el último requieren de la ayuda de persona
 La utilidad que aporta clustering permitiendo crear grupos con datos similares entre sí y dispares con respecto a otros grupos con el fin de clasificarlos y las ventajas que esto presenta queda reflejada en la cantidad de usos que recibe, por lo que vamos a profundizar en las diferentes técnicas que son empleadas para la generación de clusters que lo hacen tan importante.
 
 
-
 %====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
-
 
 \section{Técnicas de clustering} \label{sec:Técnicas de clustering}
 
@@ -562,7 +573,7 @@ A continuación, se exponen los requisitos típicos que se exigen dentro de Data
   
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.5\textwidth]{fuzzy}
+\includegraphics[width=\linewidth]{fuzzy}
 \caption{Fuzzy clusterering.}
 \label{fig:fuzzy}
 \end{figure}
@@ -629,9 +640,9 @@ Sin embargo, el mundo de Data Mining y de los datos no deja de crecer, implicand
   Estos métodos surgieron como variante de los métodos jerárquicos y sirven tanto para clusterizar datos con muchos atributos o para analizar grafos per se.
   
   
-\begin{figure}[ht]
+  \begin{figure}[ht]
 \centering
-\includegraphics[width=0.8\textwidth]{grafo}
+\includegraphics[width=\linewidth]{grafo}
 \caption{Clusterización basada en teoría de grafos \cite{foto grafo}.}
 \label{fig:grafo}
 \end{figure}
@@ -642,12 +653,14 @@ Sin embargo, el mundo de Data Mining y de los datos no deja de crecer, implicand
   
   Este tipo de métodos utilizan redes neuronales para localizar los clusters o en su defecto, sus centros, para facilitar el posterior desarrollo.
   
+  
 \end{itemize}
+
 
 A continuación, exploraremos los cuatro primeros grupos (métodos basados en particiones, jerárquicos, basados en densidad y basados en rejilla), puesto que son los más populares y comunes, y tambien veremos los principales algoritmos empleados en cada uno de ellos y otros pertenecientes a los nuevos tipos de métodos.
 
 
-\begin{table}[ht]
+\begin{table*}[ht]
   \centering
   \resizebox{\linewidth}{!}{%
   \begin{tabular}{|l|l|}
@@ -661,12 +674,13 @@ A continuación, exploraremos los cuatro primeros grupos (métodos basados en pa
   }
   \caption{Resumen de métodos de clusterización}
   \label{Tab:Tabla 1}
-\end{table}
+\end{table*}
 
 
 %====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
+
 
 \section{Métodos basados en particiones} \label{sec:Métodos basados en particiones}
 
@@ -813,6 +827,7 @@ Sin embargo, este algoritmo depende totalmente de las muestras escogidas y la pr
                                               %============================================================%
 %====================================================================================================================================================%
 
+
 \section{Métodos jerárquicos} \label{sec:Métodos jerárquicos}
 
 \cite{LIBRO} Mientras que los métodos basados en particiones cumplen con el requisito básico de agrupar los datos en clusters exclusivos, hay ocasiones en las que clasificar los datos en diferentes niveles, es decir, de forma jerárquica, puede proporcionar grandes ventajas. De esta manera, los métodos jerárquicos organizan los datos en una jerarquía o árbol de clusters. 
@@ -877,7 +892,7 @@ Parte de una separación de todos los objetos, cada uno formando un único clust
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.9\textwidth]{dendograma}
+\includegraphics[width=\linewidth]{dendograma}
 \caption{Clusterización jerárquica algomerativa (AGNES) y divisiva (DIANA) sobre el conjunto de datos \{$a$,$b$,$c$,$d$,$e$\} \cite{LIBRO}.}
 \label{fig:dendograma}
 \end{figure}
@@ -917,15 +932,11 @@ CF_i &=  \left(n_i, LS_i, SS_i \right )= \left (3, \left (9, 10 \right), \left (
 
 Y si ahora, consideramos que hay que fusionar $C_i$ con $C_j$ para formar otro cluster nuevo $C_z$, siendo $CF_j = \left(3, \left(6,7 \right), \left(36,49 \right) \right)$, la operación sería la siguiente:
 
-\begin{comment}
 \begin{align*}
-&CF_z = CF_i + CF_j =
+&CF_z = CF_i + CF_j = \\
 &= \left(3, \left (9, 10 \right), \left (29, 38 \right) \right) +\left(3, \left(6,7 \right), \left(36,49 \right) \right)= \\
 &= \left(6, \left(15,17 \right), \left(65,87 \right) \right).
 \end{align*}
-\end{comment}
-
-$$CF_z = CF_i + CF_j = \left(3, \left (9, 10 \right), \left (29, 38 \right) \right) +\left(3, \left(6,7 \right), \left(36,49 \right) \right) = \left(6, \left(15,17 \right), \left(65,87 \right) \right).$$
 
 
 El otro concepto que se ha mencionado previamente, CF-tree, tiene una estructura en forma de árbol que contiene el CF de cada cluster. Esta estructura de árbol, como se aprecia en la Figura \ref{fig:birch} está formada por nodos y hojas. Un nodo debe tener al menos un descendiente u hoja, mientras que las hojas son nodos terminales. Las hojas  almacenan el CF de un cluster, y su nodo padre o la raíz de dicha hoja almacena la suma de los CF de todos sus hijos. Este utiliza dos parámetros para controlar el desarrollo del árbol: el factor de ramificación $B$ y el umbral $T$ o $L$; estos indican cuántos hijos u hojas puede tener un nodo y cuántos nodos puede tener un cluster respectivamente. El tamaño del umbral determina el tamaño del árbol y su elección supone cierta dificultad. 
@@ -993,6 +1004,7 @@ Normalmente se asume que estos modelos generativos siguen funciones de distribuc
 %====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
+
 
 \section{Métodos basados en densidad} \label{sec:Métodos basados en densidad}
 
@@ -1204,89 +1216,10 @@ Algunas de las principales ventajas que presenta es que no es sensible al orden 
 
 \begin{figure}[ht]
 \centering
-\includegraphics[height=0.6\textheight]{clique}
+\includegraphics[scale=0.6]{clique}
 \caption{CLIQUE: las celdas densas encontradas con respecto a \textit{edad} (\textit{age}) para las dimensiones \textit{salario} (\textit{salary}) y \textit{vacaciones} (\textit{vacation}) se intersectan para formar un espacio de búsqeda de unidades densas de mayor dimensionalidad \cite{LIBRO}.}
 \label{fig:clique}
 \end{figure}
-
-%====================================================================================================================================================%
-                                              %============================================================%
-%====================================================================================================================================================%
-
-
-\section{Tipos de datos} \label{sec:tipos de datos}
-
-Otro de los factores más importantes en el proceso de clusterización es conocer el tipo de dato con el que se esté trabajando, pues esto influye en gran medida a la hora de seleccionar el algoritmo de clusterización a aplicar. Muchos de los algoritmos originales de clustering fueron diseñados con la idea de tratar únicamente con datos numéricos \cite{otrolibro}, pero como se ha mencionado previamente, el imparable desarrollo de las tecnologías de la información y la comunicación ha desembocado en la generación de otro tipos de datos como imágenes, documentos, audios, vídeos, etc. 
-
-Esto a su vez ha provocado el aumento de datos estructurados, semiestructurados y no estructurados. Los datos estructurados son todos aquellos que se suelen encontrar en bases de datos, donde cada campo tiene su descripción, restricciones y relaciones con otros campos y estructuras. Los datos semisupervisados provienen de información estructurada pero que no está representada con modelos de datos estructurados y bases de datos relacionales. Y por último, los datos no estructurados no guardan ningún tipo de formato ni está organizada de una forma estructurada. Estos dos últimos tipos de datos dificultan su procesamiento y hacen más costoso obtener información de ellos \cite{articulo14}.
-
-Los diferentes categorías de datos con los que se suele trabajar de forma común dentro del mundo de la clusterización son las siguientes:
-
-\begin{itemize}
-  \item \textbf{Datos categóricos}: Se consideran datos categóricos todos aquellos que pueden ser asignadas en un número finito de categorías, tales como sexo, edad, etnia, etc. Estos son muy comunes en conjuntos de datos reales, donde además es probable que estén mezclados con otro tipo de datos numéricos.  Un ejemplo típico de este tipo de datos se da en encuestas en las que se te da a elegir entre un número limitado de opciones (\textit{p. ej.} Tipo de educación: pública o privada).
-  
-  Clusterizar este tipo de datos ha supuesto numerosos problemas puesto que las medidas comunes de similitud quedan obsoletas, haciendo necesario definir nuevos criterios para el cálculo de la semejanza; y por otro lado, al no tratar datos numéricos, métodos que utilizan la media o mediana deben ser modificados apropiadamente para estos datos discretos. Si a esto le sumamos que puede haber atributos mezclados en el conjuntos de datos, aumentamos la complejidad del problema.
-  
-  \item \textbf{Datos textuales}: Los datos de texto o documentos son un tipo de dato que siempre ha sido común, pero hasta hace pocos años predominaba en formato físico. Con el desarrollo de editores de texto, la informatización de los trabajos y el todavía creciente mundo de Internet y las redes sociales estos datos abundan en su forma digital.
-  
-  Normalmente estos documentos se representan como un amalgama de palabras, donde cada una de ellas se considera un atributo, sin tener en cuenta el orden de aparición. Esto implica que la cantidad de atributos por cada documento es muy alta, que es el principal obstáculo que presenta la clusterización de estos datos, así como la ambigüedad de las palabras. 
-  
-  \item \textbf{Datos multimedia}: De la misma manera, las redes sociales e Internet han favorecido la creación de contenido multimedia que se compone de audio, imágenes y vídeos principalmente, que normalmente se encuentra acompañado de otros tipos de datos.
-  
-  Aplicar clusterización en este tipo de datos se ha convertido en una de las herramientas más eficaces para la obtención de información en este ámbito, pero también tiene sus complicaciones, pues en el fondo, todos ellos son tipos de datos diferentes que necesitan ser procesados de forma distinta.
-  
-  \item \textbf{Datos de emisiones continuas}: Este tipo de datos, también denominados datos de ``streaming''\footnote{Este término inglés es cada vez más utilizado de forma coloquial sobre todo entre los jóvenes para referirse a retransmisiones en vivo principalmente emitidas en Internet o redes sociales.} puede considerarse como un subconjunto de datos multimedia, pues estos datos suelen ser audio, vídeos o animaciones pero que se retransmiten en tiempo real. En los últimos años este tipo de datos se ha visto fuertemente incrementado gracias a plataformas como YouTube o Twitch\footnote{Plataforma que permite realizar transmisiones en vivo propiedad de Amazon, siendo una de las principales fuentes de retransmisión de videojuegos, compitiendo con YouTube} y diversas redes sociales que permiten emitir en directo a más personas.
-  
-  Los principales problemas que presentan este tipo de datos son el gran volumen de datos y su retransmisión en tiempo real. Esto implica que, métodos vistos en los que se necesitan varias iteraciones para clusterizar los datos no sirven, puesto que es necesario hacerlo de una sola pasada. Esto implica que la velocidad de los algoritmos debe ser elevada y con poca complejidad. Asimismo, los patrones de los datos cambian constantemente, obligando a actualizar la estructura subyacente de los mismos.
-  
-  \item \textbf{Series temporales}: Los datos temporales o cronológicos son obtenidos en mediciones realizadas en momentos concretos y que están ordenadas de forma secuencial, según el tiempo en el que se realizó la prueba. Algunos ejemplos sencillos son muestras de temperatura que se recogen en intervalos de tiempo constante, recuento del número de afectados por una enfermedad o incluso mediciones del control de peso de una persona.
-  
-  Entre los ejemplos planteados se puede diferenciar entre datos divididos en intervalos constantes o dispersos y suelen contener un tipo de valor asociado con un atributo contextual: el tiempo.
-  
-  La aplicación de clustering en ámbitos con este tipo de datos ayuda con la detección de entidades con tendencias similares, aunque también existen complicaciones, puesto que es difícil definir la similitud entre distintas secuencias temporales debido al hecho de que esto puede suponer grandes cambios conforme el tiempo avanza.
-  
-  \item \textbf{Secuencias discretas}: Cada vez más son los ámbitos que generan secuencias discretas en vez de categóricas, y que en vez de diferenciarse por el contexto temporal, lo hacen por la posición o emplazamiento. Estos datos tiene una estructura normalmente lineal y algunos ejemplos de este tipo de datos son los registros de acceso a Internet o las secuencias de comandos de un ordenador. 
-  
-  Al contrario que datos numéricos, este tipo de datos requiere de un alto nivel computacional para su procesamiento, puesto que es complicado encontrar representantes de los datos.
-  
-  \item \textbf{Datos biológicos}: Los datos biológicos son el principal tipo de dato de las secuencias discretas y se centran sobretodo en datos referentes al genoma y proteínas. Clustering se aplica en este caso con la intención de agrupar las secuencias biológicas que están relacionadas para así poder comprender mejor el funcionamiento del genoma y las tareas que realizan las células.
-  
-  \item \textbf{Redes y grafos}: Este tipo de datos son de los más comunes entre las representaciones de datos, puesto que virtualmente cada tipo de dato puede ser representado como un grafo de similitud con aristas ponderadas en función de la semejanza. 
-  
-  La clusterización de estos datos es una de las formas más fiables e importantes a la hora de obtener información valiosa los grafos y redes, y muchos otros problemas pueden ser afrontados si se transforman en este tipo de datos y aplicando métodos de clusterización, sirviendo como una forma de abstracción de los datos.
-  
-  \item \textbf{Datos difusos}: Muchos conjuntos de datos suelen tener cierto grado de incertidumbre en los mismos, y esto puede ser medido y recolectado para mejorar los resultados de los algoritmos de Data Mining. Esto se debe al hecho de que la incertidumbre de estos datos ofrece una medida probabilista de la importancia que tiene los atributos, haciendo más efectivo su procesamiento. 
-  
-  Por lo tanto, es una práctica común disminuir la calidad de los datos para utilizar algoritmos que se benefician de lo mencionado previamente o simplemente utilizar herramientas de medidas imprecisas. Este puede ser el caso de sensores donde la imprecisión puede medirse de antemano o datos obtenidos de previsiones donde siempre hay cierta incertidumbre que puede ser inferida.
-  
-  Uno de los problemas que presentan estos datos ese que la incertidumbre se puede confundir con la de Fuzzy clustering. En la clusterización relajada la incertidumbre proviene del diseño de los métodos, mientras que en los datos difusos esta es inherente a los mismos.
-   
-\end{itemize}
-
-En la Tabla \ref{tab:Tabla 2} se han comparado los diferentes métodos que se han expuesto en este documento en función del tipo de dato para el que son utilizados según \cite{articulo14,otrolibro}. Como se puede ver, los métodos probabilísticos soportan todos los tipos de datos debido a su gran abstracción, pues al basarse en la estructura subyacente de los mismos, puede aplicarse de más formas. El siguiente tipo de algoritmos que más datos puede procesar son los basados en particiones, puesto que su gran sencillez permite modificarlos fácilmente y adaptarlos a las necesidades pertinentes.
-
-\begin{table}[ht]
-\renewcommand\arraystretch{2}
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-\hline
-\textbf{\begin{tabular}[c]{@{}c@{}}Métodos\\ /Tipo de dato\end{tabular}} & \textbf{Particiones} & \textbf{Jerárquicos} & \textbf{Densidad} & \textbf{Rejilla} & \textbf{Fuzzy} & \textbf{Probabilísticos} & \textbf{Grafos} & \textbf{Redes nuronales} \\ \hline
-\textbf{Categórico} & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark &  &  \\ \hline
-\textbf{Texto} & \checkmark & \checkmark & \checkmark &  & \checkmark & \checkmark & \checkmark & \checkmark \\ \hline
-\textbf{Multimedia} & \checkmark & \checkmark &  &  &  & \checkmark & \checkmark &  \\ \hline
-\textbf{Streaming} & \checkmark &  & \checkmark & \checkmark &  & \checkmark & \checkmark &  \\ \hline
-\textbf{Temporales} & \checkmark & \checkmark & \checkmark & \checkmark &  & \checkmark &  &  \\ \hline
-\textbf{Discretos} & \checkmark &  &  &  &  & \checkmark &  &  \\ \hline
-\textbf{Biológicos} & \checkmark & \checkmark &  & \checkmark &  & \checkmark & \checkmark & \checkmark \\ \hline
-\textbf{Red} &  & \checkmark &  &  & \checkmark & \checkmark & \checkmark & \checkmark \\ \hline
-\textbf{Difusos} & \checkmark &  & \checkmark & \checkmark &  & \checkmark &  &  \\ \hline
-\end{tabular}%
-}
-\caption{Comparativa entre los métodos de clusterización y los tipos de datos con los que suelen trabajar.}
-\label{tab:Tabla 2}
-\end{table}
-
 
 %====================================================================================================================================================%
                                               %============================================================%
@@ -1299,91 +1232,25 @@ Las técnicas y algoritmos que se han expuesto son tan solo los más populares, 
 
 Sin embargo, ¿cómo sabemos que el resultado de una clusterización es preciso y correcto?  Es necesario evaluar la clasificación final de un proceso de clustering y y los pasos iniciales para cerciorarnos de que el método utilizado y los valores asignados a las variables pertinentes son los adecuados. Gracias a esto, se pueden determinar los puntos fuertes de los algoritmos e identificar aquellas condiciones, valores y tipos de datos bajo los que ofrece mejores resultados.
 
-Algunas de las comprobaciones que se realizan para evaluar el proceso de clustering son las siguientes:
+Para valorar el resultado de una clusterización se suelen realizar tres tareas:
 
 \begin{itemize}
   \item \textbf{Evaluar la tendencia de la clasificación}: Intentar determinar si existe una estructura no aleatoria en la distribución de los datos antes de custerizarlos es crucial para obtener buenos resultados. Aplicar un método de clustering a un conjunto de datos aleatorio no devolverá resultados útiles y con significado, pues los clusters que se pueden formar serán también aleatorios y por lo tanto no aportarán información. Para esto, se suele usar un procedimiento similar al de los métodos jerárquicos probabilísticos \ref{subsec:Métodos jerárquicos probabilísticos} en el que se calcula la probabilidad de que el conjunto de datos con el que se quiere trabajar haya sido generado por una distribución de datos uniforme. Uno de los procedimientos más comunes es la Estadística de Hopkins. 
   
   \item \textbf{Determinar el número de clusters}: En algunos algoritmos como $k$-means \ref{subsec:k-means} el número final de clusters es solicitado al usuario y por lo tanto debe aproximarse de antemano. Sin embargo, es una buena práctica calcular este valor antes de utilizar cualquier método para contrastar el resultado final. Esta tarea aunque ciertamente complicada, pues los factores de los que depende son muchos (distribución de los datos, número de atributos, cantidad de datos...) y para la que existen numerosas formas de calcularla, puede ser simplificada para un mayor entendimiento o fácil aplicación.  Uno de los métodos más sencillos es aproximar el número de clusters a $\sqrt{\frac{n}{2}}$, donde en cada cluster debería haber $\sqrt{2 \cdotp n}$ objetos, para un conjunto de $n$ datos. Otro métodos es Elbow Method, en el que se repite de forma iterativa el proceso de clusterización variando el valor de $k$ (número de clusters) y calculando la varianza de los puntos dentro de los clusters. Una vez termina el proceso, se muestran los resultados en un gráfico y se escoge como valor para $k$ el punto de la gráfica en el que esta se curva de forma severa tal y como se puede observar en la Figura \ref{fig:elbow}, donde el valor escogido para $k$ es tres. Este proceso también es utilizado para determinar más parámetros dentro de otros algoritmos como \textit{Epsilon} pada DBSCAN. 
   
-\end{itemize}
-
-  
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.6\linewidth]{elbow}
+\includegraphics[width=\linewidth]{elbow}
 \caption{Elbow Method para encontrar el número de clusters óptimo \cite{elbow}.}
 \label{fig:elbow}
 \end{figure}
-
-Sin embargo, la forma más importante de evaluar la clusterización es comprobar el resultado final, la clasificación de los datos.
-
-%====================================================================================================================================================%
   
+  \item \textbf{Calcular la calidad de la clusterización}: Una vez los datos han sido clasificados, se debe verificar que el resultado es bueno. Para ello se pueden usar principalmente dos aproximaciones: comprobar si los clusters acogen bien los datos (métodos intrínsecos)  o si los clusters se aproximan a una realidad existente (métodos extrínsecos), que suele ser una clasificación ideal realizada por expertos en la materia. 
   
-\subsection{\textbf{Calcular la calidad de la clusterización}}
-
-Una vez los datos han sido clasificados, se debe verificar que el resultado es bueno. Para ello se utilzan métodos que miden la calidad de los clusters. Estos se dividen principalmente en dos grupos dependiendo de si se usa información externa para la validacióno no. Los métodos intrínsecos o internos comprueban si los clusters acogen bien los datos, mientras que los métodos extrínsecos o externos comprueban si los clusters se aproximan a una realidad existente que suele ser una clasificación ideal realizada por expertos en la materia o información externa que no está presente en los datos. 
-  
-Ambos tipos de validaciones son curciales para muchos escenario. Dado que los métodos externos conocen el ``verdadero''  número de clusters de antemano, se pueden usar para determinar qué algoritmo es el más óptimo para determinados conjuntos de datos. Por ejemplo, si los métodos extrínsecos muestran que un algoritmo de clusterización de documentos genera una clasificación similar a una realizada por expertos, se puede afirmar que dicho algoritmo tiene gran impacto en el análisis de textos o documentos. Asimismo, la validación interna también permite escoger el mejor algoritmo y el número de clusters óptimos sin ningún tipo de información adicional. Sin embargo, es frecuente que no sea posible aplicar métodos de validación extrínsecos por la falta de información extra sobre el conjunto de datos, haciendo que la única forma posible de medir la calidad sea mediante métodos intrínsecos \cite{otrolibro}.
-  
-Veamos algunas de las principales formas de validación entre ámbos métodos:
-  
-%====================================================================================================================================================%
-
-  
-\subsubsection{\textbf{Métodos extrínsecos}}
-
-En aquellos casos en los que se disponga de información externa con la que comparar el resultado de la clusterización podemos usar métodos extrínsecos. Para afirmar si la clusterización ha sido efectiva, los métodos extrínsecos utilizan los siguientes criterios para su evaluación \cite{LIBRO}:
-
-\begin{itemize}
-  \item \textbf{Homogeneídad del cluster}: Cuanto más puros sean los clusters, mejor es la clusterización. Por ejemplo, si tenemos un conjunto de datos del que sabemos que extisten varias categorías gracias a la información externa utilizada, un algoritmo, $A_1$, que genere un cluster $C_1$ en el que hay datos de más de una categoria será puntuado de peor forma que otro algoritmo, $A_2$, que, en vez de generar un solo cluster $C_1$, genere diferentes subclusters en los que agrupe aquellos datos de la misma categoría, haciendo que en cada grupo solo exista un tipo de dato.
-  
-  \item \textbf{Integridad del cluster}: Si dos objetos pertenecen a la misma categoría, deben estar en el mismo cluster. De una forma similar al criterio anterior, si un algoritmo $A_1$ genera un solo cluster en el que agrupa los datos de la misma categoría $C_1$ mientras que otro, $A_2$, divide $C_1$ en dos clusters diferentes, ambos teniendo datos de la misma categoría, el primer algoritmo $A_1$ recibirá una mejor puntuación.
-  
-  \item \textbf{Misceláneo}: En muchos escenarios se genera una categoriá de datos denominada ``misceláneo'', ``varios'', ``otros'', etc., donde se agrupan aquellos objetos que no se pueden fusionar o unir con otros. Se penalizará a aquellos algoritmos que en vez de añadir un objeto heterogéneo a al conjunto de ``misceláneo'' lo agrupe dentro de un cluster.
-  
-  \item \textbf{Preservación de clusters pequeños}: Si una categoría que contiene pocos datos es dividida en muchas partes durante la clusterización es probable que acabe convirtiéndose en ruido y por lo tanto, poco probable que se acabe descubriendo. Se dará más puntuación a aquellos algoritmos que en vez de separar en diferentes clusters los objetos de la categoría con pocos datos, separen en clusters categorías con más datos para permitir así que los objetos de la categoría pequeña estén en el mismo cluster. 
-   
+  Los métodos extrínsecos intentan puntuar la clusterización obtenida $C$ comparándola con una realidad $C_g$ basándose en cuatro conceptos fundamentales: la homogeneidad del cluster, la integridad del cluster, la pureza del cluster y la preservación de clusters pequeños. Mientras que los métodos intrínsecos se centran en lo compactos que son los clusters y la separación entre ellos calculando la proximidad entre objetos.
 \end{itemize}
 
-La mayoría de métodos no inspeccionan todos los criterios sino que suelen explorar uno o dos, aunque sí que existen aquellos que implementan los cuatro. En la Figura \ref{fig:extrinsecos} se muestran algunos de los métodos extrínsecos más utilizados para el algoritmo $k$-means \ref{subsec:k-means},
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=\linewidth]{extrinsecos}
-\caption{Medidas externas para la validación de clusters \cite{otrolibro}.}
-\label{fig:extrinsecos}
-\end{figure}
-  
-%====================================================================================================================================================%
-
-\subsubsection{\textbf{Métodos intrínsecos}} 
-
-Como se ha mencionado previamente, el método de clusterización se aplica cuando no se dispone de etiquetas o información por la que clasificar dichos datos de una forma supervisada, por lo que disponer de información extra para la realización de una validación externa sucede en raras ocasiones. De esta manera, los métodos intrínsecos, también denominados no supervisados, evalúan la calidad de la clasificación examinando cuán compactos son los clusters y lo bien que están separados.
-
-Para calificar lo compactos que son los clusters se suele utiliza la varianza, donde un menor resultado de esta medidad indica una mejor clusterización. Por otro lado, para medir la separación entre clusters se suelen utilizar cálculos de distancias o densidad.
-
-El proceso mediante el cuá se suele determinar la mejor partición y el número óptimo de clusters mediante validación interna es el siguiente \cite{otrolibro}:
-
-\begin{enumerate}
-  \item Seleccionar el conjunto de algoritmos que van a ser aplicados al conjunto de datos.
-  \item Para cada algroritmo utilizar diferentes combinaciones de los parámetros para obtener diferentes resultados finales.
-  \item Calcular utilizando el método de validación interna requerido los resultados del paso anterior.
-  \item Escoger en función de los valores obtenidos la mejor partición y el número de clusters adecuado.
-\end{enumerate}
-
-En la Figura \ref{fig:intrinsecos} se muestran los 12 métodos de cálculo de calidad intrínsecos de entre los cuales cabe destacar el coeficiente de silueta (silhouette coefficient).
-
-Este supone que, dado un conjunto de datos $D$ con $n$ objetos, este está dividido en $k$ clusters, $C_1,\ldots,C_k$. Para cada objeto perteneciente al conjunto de datos $o \in D$ calculamos la distancia media entre dicho objeto $o$ y todos los otros objetos dentro del cluster al que pertenece $o$, con lo que obtenemos una representación de lo compacto que es el cluster al que pertenece $o$. Por otro lado, también calculamos la distancia media desde $o$ al resto de clusters a los que este no pertenece y selecionamos la más pequeña, como forma de observar cuánta separación hay entre el objeto $o$ y el resto de clusters. Esto da como resultado la ecuación mostrada en la Figura \ref{fig:intrinsecos}, cuyo valor oscila entre -1 y 1. Cuando el valor es 1, quiere decir que el cluster de $o$ es compacto y que está separado de otros clusters, indicando un buen resultado de clusterización \cite{LIBRO}.
-
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=\linewidth]{intrinsecos}
-\caption{Medidas internas para la validación de clusters \cite{otrolibro}.}
-\label{fig:intrinsecos}
-\end{figure}
 
 %====================================================================================================================================================%
                                               %============================================================%
@@ -1406,7 +1273,7 @@ Durante este documento se han nombrado algunos de los dominios de aplicación m�
   
   \item \textbf{Detección de tendencias dinámicas}: Los métodos de clusterización dinámicos y fluidos son usados para detectar la dirección de los datos y encontrar patrones de cambio en ellos.
   
-  \item \textbf{Análisis de datos multi media}: Los datos multiemedia están compuestos por imágenes, vídeos y audios. Clustering se aplica en este tipo de datos muchas veces con intención de detectar segmentos similares para la clasificación de tipos de música, detección de infracciones de derechos de autor, etc.
+  \item \textbf{Análisis de datos multimedia}: Los datos multiemedia están compuestos por imágenes, vídeos y audios. Clustering se aplica en este tipo de datos muchas veces con intención de detectar segmentos similares para la clasificación de tipos de música, detección de infracciones de derechos de autor, etc.
   
   \item \textbf{Análisis de redes sociales}: El continuo crecimiento de las redes sociales ha dado mucha importancia a este ámbito en el que clustering se utiliza para detectar estructuras sociales o comunidades subyacentes dentro de los datos. Encontrar comunidades sirve para entender mejor cómo funciona la red social y para recomendar a usuarios de una comunidad otras similares a sus gustos \cite{11}.
   
@@ -1414,99 +1281,203 @@ Durante este documento se han nombrado algunos de los dominios de aplicación m�
 \end{itemize}
 
 
-Como se ha podido observar durante este documento, la clusterización ofrece un gran abanico de opciones y técnicas específicas que permiten su adaptación a casi cualquier área del conocimiento del mundo moderno, motivo por el que es uno de los métodos más utilizados a la hora de obtener información a partir de datos. Sin embargo, si tuviéramos que destacar un entorno en el que la aplicación de clustering puede ser súmamente provechosa, es en los documentos de texto. 
+Y aunque dentro de la misma Sección \ref{clustering} se han expuesto varios ejemplos de aplicaciones de clustering en dichos ámbitos, a continuación exploraremos un poco más en detalle qué aporta esta técnica en las áreas de data mining, motores de búsqueda web, educación, procesamiento de imágenes, aprendizaje automático y bioinformática, donde se han obtenido resultados muy importantes gracias a su uso \cite{articulo14}.
 
+
+
+
+\clearpage
 
 %====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
-
-
-\section{Clusterización de textos} \label{sec:clusterizacion de documentos}
-
-En esta época dominada por la incesante cantidad de datos que se generan a diario, se estima que alrededor del ochenta por ciento de la información se encuentra en textos \cite{improved som algorithm applied in text clustering}, bien en forma de noticias, artículos, libros, mensajes de correo, blogs\footnote{Sitio web que se asemeja a un diario personal de su autor y donde escribe contenido de su interés sobre el que incita a sus lectores a comentar.}, páginas web, etc. Esto hace que sea humanamente imposible el proceso manual de toda esa información, por lo que la utilización de computadores es algo imprescindible.
-
-Por ello, surgió la Minería de Textos o Text Mining, una disciplina enfocada en la utilización de ordenadores para el descubrimiento de nueva información previamente desconocida mediante la automatización de la extracción de información de diferentes fuentes \cite{a survey of text mining techniques and applications}. Esta es una variación de Data Mining, cuya diferencia principal es el tipo de texto con el que se trabaja, ya que la minería de textos se centra en las palabras y frases que forman parte de los documentos de texto, una fuente de datos no estructurada y no numérica. Por lo que el problema principal que esto representa es el hecho de que el lenguaje natural surgió como forma de comunicación entre seres humanos. 
-
-Como solución a este problema, se han desarrollado técnicas de Procesamiento de Lenguaje Natural (NLP), un área de estudio y aplicación dentro de la Inteligencia Artificial cuya meta principal es el estudio del lenguaje humano de manera que las máquinas puedan comprenderlo, tratarlo y manipularlo  de una forma similar a como lo hace el ser humano \cite{TFG Jorge}. Las principales técnicas que se han desarrollado en este campo son:
-
-\begin{itemize}
-  \item \textbf{Extracción de la información (IE)}: Uno de los puntos de partida a la hora de analizar datos no estructurados es la extracción de información, que identifica palabras y frases clave y sus relaciones dentro de un texto. Una vez obtenida esta información, se pueden realizar técnicas de Data Mining que de otra forma no serían posibles \cite{a survey of text mining techniques and applications, TFG Jorge, libro jorge}
-  
-  \item \textbf{Control de temática}: Este tipo de sistemas permiten a los usuarios seleccionar palabras claves y recibir alertas o recomendaciones de textos con temáticas similares y de sus gustos. Esto puede ser utilizado para alertar a compañías de nuevos competidores, nuevas ofertas laborales, descubrimientos recientes o simplemente noticias relacionadas \cite{a survey of text mining techniques and applications}.
-  
-  \item \textbf{Creación de resúmenes}: A la hora de comprobar si un documento cumple con las necesidades que buscan los usuarios, la creación de resúmenes es crucial. Mediante la identificación de palabras y frases claves, este proceso procesa y resume documentos en el tiempo que toma al lector leer el primer párrafo. Primero se obtiene una representación estructurada del texto original, posteriormente, un algoritmo transforma la estructura de texto en estructura de resumen y por último, el resumen es obtenido de la estructura anterior \cite{a survey of text mining techniques and applications}.
-  
-  \item \textbf{Clasificación de documentos}: La clasificación o categorización consiste en identificar los temas principales de un texto y posicionarlo de acuerdo a un conjunto de tópicos preestablecidos. Esto se suele hacer mediante métodos de aprendizaje supervisados, realizando la clasificación en base a ejemplos conocidos. Este proceso permite la aplicación de posteriores técnicas de Data Mining \cite{a survey of text mining techniques and applications}.
-  
-  \item \textbf{Vinculación de conceptos}: Las herramientas de vinculación de conceptos permiten conectar textos que estén relacionados identificando aquellos elementos que tienen en común ayudando a los usuarios a encontrar nueva información que quizás no hubieran encontrado por métodos normales. Este es habitual en áreas como la biología y disciplinas de la ciencia donde es difícil encontrar todas las publicaciones sobre un tema en concreto \cite{a survey of text mining techniques and applications}.
-  
-  \item \textbf{Visualización de la información}: Este proceso permite mostrar textos de forma visual en una estructura jerárquica o mapa, ofreciendo posibilidades de búsqueda y navegación en las que el usuario puede interactuar. Esto es útil cuando se necesita minimizar el área de búsqueda dentro de un gran abanico de opciones \cite{a survey of text mining techniques and applications}. 
-  
-  \item \textbf{Responder preguntas}: Otra de las aplicaciones del procesamiento de lenguaje natural es responder preguntas, en las que intenta ofrecer la mejor réplica a una consulta realizada por un usuario. Esto es utilizado por diversas páginas web e instituciones para sus apartados de preguntas frecuentes (FAQ) \cite{a survey of text mining techniques and applications}.
-  
-  \item \textbf{Búsqueda y recuperación de información (IR)}: La búsqueda y recuperación de información es una tarea que se suele dar principalmente en motores de búsqueda donde, en función de ciertas palabras clave, se devuelve un conjunto de resultados relevantes que guarden relación con ellas. En la minería de textos se trabaja con documentos, por lo que esto sirve principalmente como forma de calcular la similitud entre documentos \cite{libro jorge}. 
-  
-  \item \textbf{Análisis de sentimiento}: Este análisis consiste en la detección de ciertas palabras clave que permiten determinar la opinión de los usuarios con respecto a cierto tema. Estas palabras suelen estar preestablecidas y se dividen en palabras favorables o desfavorables. Al precisar de un número elevado de reseñas o comentarios sobre el tema para que el resultado sea certero, este método es realmente útil en redes sociales \cite{libro jorge}.
-  
-  \item \textbf{Representación del conocimiento}: Esta área de la Inteligencia Artificial se centra en la representación, mantenimiento y manipulación del conocimiento sobre un dominio de aplicación. En relación a la Minería de Textos, esto se refleja en la creación de formas intermedias que permiten representar el contenido semántico de un texto \cite{TFG Jorge}.
-  
-\end{itemize}
-
-Y la otra técnica principal que falta en la lista anterior es la clusterización de textos. El funcionamiento de este proceso es el mismo que se ha comentado al inicio de este texto en la Sección \ref{clustering}, y permite agrupar documentos similares basándose en la examinación de sus palabras y frases. 
-
-Las principales aplicaciones que recibe clustering dentro del ámbito textual son las siguientes \cite{survey text}:
-
-\begin{itemize}
-  \item \textbf{Organización y navegación de documentos}: Mayoritariamente los algoritmos de clusterización jerárquicos, aunque no son los únicos, ofrecen la posibilidad de organizar documentos y textos en categorías coherentes y similares que facilitan su búsqueda y navegación.
-  
-  \item \textbf{Sintetización de corpus\footnote{Conjunto lo más extenso y ordenado posible de datos o textos científicos, literarios, etc., que pueden servir de base a una investigación.}}: Las técnicas de clustering proveen un resumen congruente sobre una colección de textos en forma de clusters de palabras como se puede apreciar en la Figura \ref{fig:wordcluster}, donde se ha realizado este mismo proceso sobre el conjunto de títulos de artículos de la muestra de datos sobre COVID-19 de la que hablaremos más adelante. 
-
-  \item \textbf{Clasificación de documentos}: Aunque clustering sea un método de clasificación no supervisado, es realmente útil a la hora de organizar documentos por su contenido, identificando en el mismo proceso aquellos que sean similares y situándolos en el mismo grupo, permitiendo así su clasificación. 
-
-\end{itemize}
-
-\begin{figure}[ht]
-\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{wordcluster}
-\caption{Cluster de palabras de los títulos de artículos científicos relacionados con COVID-19.}
-\label{fig:wordcluster}
-\end{figure}
-
-Gran parte de los algoritmos de clustering tienen un carácter general y permiten trabajar con más de un tipo de datos tal y como se vio en la Tabla \ref{tab:Tabla 2}, pero su empleo sobre los datos textuales presenta un conjunto de dificultades específicas y que requieren de un procesamiento de los datos previo a su aplicación.
-
-Uno de los problemas principales. y que se ha comentado previamente, es la alta dimensionalidad de los datos, puesto que se debe considerar cada palabra como un atributo único; y a su vez, la cantidad de información útil que hay en los textos es relativamente pequeña con respecto a su tamaño. Muchas de las palabras que se utilizan en un texto son meros conectores y palabras comunes que permiten aligerar y mejorar la experiencia del lector, pero son pocas las que realmente son importantes a la hora de discernir sobre qué versa dicho documento.
-
-Otro problema es la relación entre las palabras que como humanos somos capaces de identificar pero que es una tarea ardua para las computadores y por lo que los algoritmos que se usan en este ámbito contienen funcionalidades que tienen en consideración este tipo de correlaciones. Y otra dificultad añadida, es que cada texto es diferente, y su número de palabras varía de forma considerable, por lo que normalizar los datos es una tarea imperativa previa a su procesamiento. 
-
-De esta manera, muchas operaciones utilizadas en clustering no pueden ser llevadas a cabo con palabras, por lo que es necesario transformar los datos de manera que se puedan aplicar los algoritmos. 
 
 \begin{comment}
-Preparar datos y forma de trabajar
-  a survey of text mining techniques and applications
-  pattern and cluster mining on text data
-  technique of cluster validity for text mining
-  survey
-  textmining
 
-Algoritmos
-  improved som algorithm applied in text clustering
-  survey on text clustering algorithm
-  survey
+ \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{14}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nf}{if }\PY{p}{(}\PY{o}{!}\PY{n+nf}{require}\PY{p}{(}\PY{n}{cluster}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+  \PY{n+nf}{install.packages}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{cluster\PYZdq{}}\PY{p}{,} \PY{n}{repos}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://cran.us.r\PYZhy{}project.org\PYZsq{}}\PY{p}{)}
+\PY{p}{\PYZcb{}}
+\PY{n+nf}{if }\PY{p}{(}\PY{o}{!}\PY{n+nf}{require}\PY{p}{(}\PY{n}{purrr}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+  \PY{n+nf}{install.packages}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{purrr\PYZdq{}}\PY{p}{,} \PY{n}{repos}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://cran.us.r\PYZhy{}project.org\PYZsq{}}\PY{p}{)}
+\PY{p}{\PYZcb{}}
+\PY{n+nf}{if }\PY{p}{(}\PY{o}{!}\PY{n+nf}{require}\PY{p}{(}\PY{n}{fpc}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+  \PY{n+nf}{install.packages}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{fpc\PYZdq{}}\PY{p}{,} \PY{n}{repos}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://cran.us.r\PYZhy{}project.org\PYZsq{}}\PY{p}{)}
+\PY{p}{\PYZcb{}}
+\PY{n+nf}{if }\PY{p}{(}\PY{o}{!}\PY{n+nf}{require}\PY{p}{(}\PY{n}{dbscan}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+  \PY{n+nf}{install.packages}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{dbscan\PYZdq{}}\PY{p}{,} \PY{n}{repos}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://cran.us.r\PYZhy{}project.org\PYZsq{}}\PY{p}{)}
+\PY{p}{\PYZcb{}}
+\PY{n+nf}{if }\PY{p}{(}\PY{o}{!}\PY{n+nf}{require}\PY{p}{(}\PY{n}{factoextra}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+  \PY{n+nf}{install.packages}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{factoextra\PYZdq{}}\PY{p}{,} \PY{n}{repos}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://cran.us.r\PYZhy{}project.org\PYZsq{}}\PY{p}{)}
+\PY{p}{\PYZcb{}}
+\PY{n+nf}{if }\PY{p}{(}\PY{o}{!}\PY{n+nf}{require}\PY{p}{(}\PY{n}{Matrix}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+  \PY{n+nf}{install.packages}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Matrix\PYZdq{}}\PY{p}{,} \PY{n}{repos}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://cran.us.r\PYZhy{}project.org\PYZsq{}}\PY{p}{)}
+\PY{p}{\PYZcb{}}
+\PY{n+nf}{if }\PY{p}{(}\PY{o}{!}\PY{n+nf}{require}\PY{p}{(}\PY{n}{xtable}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+  \PY{n+nf}{install.packages}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{xtable\PYZdq{}}\PY{p}{,} \PY{n}{repos}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{http://cran.us.r\PYZhy{}project.org\PYZsq{}}\PY{p}{)}
+\PY{p}{\PYZcb{}}
+\PY{n+nf}{library}\PY{p}{(}\PY{n}{cluster}\PY{p}{)}
+\PY{n+nf}{library}\PY{p}{(}\PY{n}{purrr}\PY{p}{)}
+\PY{n+nf}{library}\PY{p}{(}\PY{n}{fpc}\PY{p}{)}
+\PY{n+nf}{library}\PY{p}{(}\PY{n}{dbscan}\PY{p}{)}
+\PY{n+nf}{library}\PY{p}{(}\PY{n}{factoextra}\PY{p}{)}
+\PY{n+nf}{library}\PY{p}{(}\PY{n}{Matrix}\PY{p}{)}
+\PY{n+nf}{library}\PY{p}{(}\PY{n}{xtable}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
 
-COVID
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{19}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{pokemon} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{read.csv}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Pokemon.csv\PYZdq{}}\PY{p}{,} \PY{n}{encoding}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{UTF\PYZhy{}8\PYZdq{}}\PY{p}{,} \PY{n}{header}\PY{o}{=}\PY{k+kc}{TRUE}\PY{p}{,} \PY{n}{sep}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{,\PYZdq{}}\PY{p}{,} \PY{n}{strip.white}\PY{o}{=}\PY{k+kc}{TRUE}\PY{p}{)}\PY{n}{[} \PY{p}{,}\PY{n+nf}{c}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Name\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Total\PYZsq{}}\PY{p}{)}\PY{n}{]}
+\PY{n}{pokemon} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{data.frame}\PY{p}{(}\PY{n}{pokemon}\PY{p}{)}
+\PY{n}{pokemon\PYZus{}fig} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{head}\PY{p}{(}\PY{n}{pokemon}\PY{p}{,} \PY{l+m}{10}\PY{p}{)}
+\PY{n}{pokemon\PYZus{}fig}
+\end{Verbatim}
+\end{tcolorbox}
 
-\end{comment}   
+    A data.frame: 10 × 2
+\begin{tabular}{r|ll}
+  & Name & Total\\
+  & <fct> & <int>\\
+\hline
+	1 & Bulbasaur                 & 318\\
+	2 & Ivysaur                   & 405\\
+	3 & Venusaur                  & 525\\
+	4 & VenusaurMega Venusaur     & 625\\
+	5 & Charmander                & 309\\
+	6 & Charmeleon                & 405\\
+	7 & Charizard                 & 534\\
+	8 & CharizardMega Charizard X & 634\\
+	9 & CharizardMega Charizard Y & 634\\
+	10 & Squirtle                  & 314\\
+\end{tabular}
 
 
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{22}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{d} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{dist}\PY{p}{(}\PY{n}{pokemon}\PY{p}{,} \PY{n}{method}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{euclidian\PYZdq{}}\PY{p}{)}
+\PY{n}{hc1} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{hclust}\PY{p}{(}\PY{n}{d}\PY{p}{,} \PY{n}{method}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{complete\PYZdq{}}\PY{p}{)}
+\PY{n}{hc1} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{as.dendrogram}\PY{p}{(}\PY{n}{hc1}\PY{p}{)}
+\PY{n+nf}{par}\PY{p}{(}\PY{n}{mar} \PY{o}{=} \PY{n+nf}{c}\PY{p}{(}\PY{l+m}{2}\PY{p}{,}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{0}\PY{p}{)}\PY{p}{)}
+\PY{n}{nodePar} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{list}\PY{p}{(}\PY{n}{lab.cex}\PY{o}{=}\PY{l+m}{0.6}\PY{p}{,} \PY{n}{pch}\PY{o}{=}\PY{n+nf}{c}\PY{p}{(}\PY{k+kc}{NA}\PY{p}{,} \PY{l+m}{19}\PY{p}{)}\PY{p}{,} \PY{n}{cex}\PY{o}{=}\PY{l+m}{0.7}\PY{p}{,} \PY{n}{col}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{blue\PYZdq{}}\PY{p}{)}
+\PY{n+nf}{plot}\PY{p}{(}\PY{n}{hc1}\PY{p}{,} \PY{n}{nodePar}\PY{o}{=}\PY{n}{nodePar}\PY{p}{,} \PY{n}{edgePar}\PY{o}{=}\PY{n+nf}{list}\PY{p}{(}\PY{n}{col}\PY{o}{=}\PY{l+m}{2}\PY{o}{:}\PY{l+m}{3}\PY{p}{,} \PY{n}{lwd}\PY{o}{=}\PY{l+m}{2}\PY{o}{:}\PY{l+m}{1}\PY{p}{)}\PY{p}{,} \PY{n}{labels}\PY{o}{=}\PY{k+kc}{NULL}\PY{p}{,} \PY{n}{cex}\PY{o}{=}\PY{l+m}{0.6}\PY{p}{,} \PY{n}{xlim}\PY{o}{=}\PY{n+nf}{c}\PY{p}{(}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{35}\PY{p}{)}\PY{p}{,} \PY{n}{ylim}\PY{o}{=}\PY{n+nf}{c}\PY{p}{(}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{6}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Warning message in dist(pokemon, method = "euclidian"):
+"NAs introducidos por coerción"
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Latex Jupyter/output_3_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{24}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{hc2} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{agnes}\PY{p}{(}\PY{n}{d}\PY{p}{,} \PY{n}{method}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{complete\PYZdq{}}\PY{p}{)}
+\PY{n}{m} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{c}\PY{p}{(} \PY{l+s}{\PYZdq{}}\PY{l+s}{average\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{single\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{complete\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{ward\PYZdq{}}\PY{p}{)}
+\PY{n+nf}{names}\PY{p}{(}\PY{n}{m}\PY{p}{)} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{c}\PY{p}{(} \PY{l+s}{\PYZdq{}}\PY{l+s}{average\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{single\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{complete\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{ward\PYZdq{}}\PY{p}{)}
+\PY{n}{ac} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{function}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n+nf}{agnes}\PY{p}{(}\PY{n}{d}\PY{p}{,}\PY{n}{method}\PY{o}{=}\PY{n}{x}\PY{p}{)}\PY{o}{\PYZdl{}}\PY{n}{ac}
+\PY{p}{\PYZcb{}}
+\PY{n+nf}{map\PYZus{}dbl}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{ac}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{description*}
+\item[average] 0.999318908624144
+\item[single] 0.996050000000001
+\item[complete] 0.999622916666667
+\item[ward] 0.999933844937563
+\end{description*}
 
 
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{27}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{hc3} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{as.dendrogram}\PY{p}{(}\PY{n+nf}{agnes}\PY{p}{(}\PY{n}{d}\PY{p}{,} \PY{n}{method}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{ward\PYZdq{}}\PY{p}{)}\PY{p}{)}
+\PY{n+nf}{par}\PY{p}{(}\PY{n}{mar} \PY{o}{=} \PY{n+nf}{c}\PY{p}{(}\PY{l+m}{2}\PY{p}{,}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{0}\PY{p}{)}\PY{p}{)}
+\PY{n+nf}{plot}\PY{p}{(}\PY{n}{hc3}\PY{p}{,} \PY{n}{nodePar}\PY{o}{=}\PY{n}{nodePar} \PY{p}{,}\PY{n}{edgePar}\PY{o}{=}\PY{n+nf}{list}\PY{p}{(}\PY{n}{col}\PY{o}{=}\PY{l+m}{2}\PY{o}{:}\PY{l+m}{3}\PY{p}{,} \PY{n}{lwd}\PY{o}{=}\PY{l+m}{2}\PY{o}{:}\PY{l+m}{1}\PY{p}{)}\PY{p}{,} \PY{n}{labels}\PY{o}{=}\PY{k+kc}{NULL}\PY{p}{,} \PY{n}{cex}\PY{o}{=}\PY{l+m}{0.6}\PY{p}{,} \PY{n}{xlim}\PY{o}{=}\PY{n+nf}{c}\PY{p}{(}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{35}\PY{p}{)}\PY{p}{,} \PY{n}{ylim}\PY{o}{=}\PY{n+nf}{c}\PY{p}{(}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{8}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
 
- 
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Latex Jupyter/output_5_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{28}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{hc4} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{diana}\PY{p}{(}\PY{n}{d}\PY{p}{)}
+\PY{n}{hc4d} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{as.dendrogram}\PY{p}{(}\PY{n}{hc4}\PY{p}{)}
+\PY{n+nf}{par}\PY{p}{(}\PY{n}{mar} \PY{o}{=} \PY{n+nf}{c}\PY{p}{(}\PY{l+m}{2}\PY{p}{,}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{0}\PY{p}{)}\PY{p}{)}
+\PY{n+nf}{plot}\PY{p}{(}\PY{n}{hc4d}\PY{p}{,} \PY{n}{nodePar}\PY{o}{=}\PY{n}{nodePar} \PY{p}{,}\PY{n}{edgePar}\PY{o}{=}\PY{n+nf}{list}\PY{p}{(}\PY{n}{col}\PY{o}{=}\PY{l+m}{2}\PY{o}{:}\PY{l+m}{3}\PY{p}{,} \PY{n}{lwd}\PY{o}{=}\PY{l+m}{2}\PY{o}{:}\PY{l+m}{1}\PY{p}{)}\PY{p}{,} \PY{n}{labels}\PY{o}{=}\PY{k+kc}{NULL}\PY{p}{,} \PY{n}{cex}\PY{o}{=}\PY{l+m}{0.6}\PY{p}{,} \PY{n}{xlim}\PY{o}{=}\PY{n+nf}{c}\PY{p}{(}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{30}\PY{p}{)}\PY{p}{,} \PY{n}{ylim}\PY{o}{=}\PY{n+nf}{c}\PY{p}{(}\PY{l+m}{0}\PY{p}{,}\PY{l+m}{8}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Latex Jupyter/output_6_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{32}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{pokemon} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{head}\PY{p}{(}\PY{n}{pokemon}\PY{p}{,} \PY{l+m}{100}\PY{p}{)}
+\PY{n}{d} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{dist}\PY{p}{(}\PY{n}{pokemon}\PY{p}{,} \PY{n}{method}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{euclidian\PYZdq{}}\PY{p}{)}
+\PY{n}{hc4} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{diana}\PY{p}{(}\PY{n}{d}\PY{p}{)}
+\PY{n}{clust} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{cutree}\PY{p}{(}\PY{n}{hc4}\PY{p}{,} \PY{n}{k}\PY{o}{=}\PY{l+m}{5}\PY{p}{)}
+\PY{n+nf}{fviz\PYZus{}cluster}\PY{p}{(}\PY{n+nf}{list}\PY{p}{(}\PY{n}{data} \PY{o}{=} \PY{n}{d}\PY{p}{,} \PY{n}{cluster}\PY{o}{=}\PY{n}{clust}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Warning message in dist(pokemon, method = "euclidian"):
+"NAs introducidos por coerción"
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Latex Jupyter/output_7_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+\end{comment}
 
 %====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
-
+%====================================================================================================================================================%
+                                              %============================================================%
+%====================================================================================================================================================%
+%====================================================================================================================================================%
+                                              %============================================================%
+%====================================================================================================================================================%
+%====================================================================================================================================================%
+                                              %============================================================%
+%====================================================================================================================================================%
+%====================================================================================================================================================%
+                                              %============================================================%
+%====================================================================================================================================================%
+%====================================================================================================================================================%
+                                              %============================================================%
+%====================================================================================================================================================%
+%====================================================================================================================================================%
+                                              %============================================================%
+%====================================================================================================================================================%
+%====================================================================================================================================================%
+                                              %============================================================%
+%====================================================================================================================================================%
 
 \clearpage
 
@@ -1598,23 +1569,14 @@ COVID
 
 \bibitem{otrolibro} C. C. Aggarwal \&. K. Reddy. (2014). Data Clustering: Algorithms and Applications. Taylor \& Francis Group. LLC
 
-\bibitem{improved som algorithm applied in text clustering} Sun, A. (2010). Improved SOM Algorithm-HDSOM Applied in Text Clustering. 2010 International Conference on Multimedia Information Networking and Security. doi:10.1109/mines.2010.74
+\end{thebibliography}
 
-\bibitem{a survey of text mining techniques and applications} Gupta, V., \& Lehal, G. S. (2009). A Survey of Text Mining Techniques and Applications. Journal of Emerging Technologies in Web Intelligence, 1(1). doi:10.4304/jetwi.1.1.60-76
-
-\bibitem{TFG Jorge} TFG Jorge
-
-\bibitem{libro jorge} Weiss, S. M., Indurkhya, N., \& Zhang, T. (2015). Fundamentals of predictive text mining. Springer.
-
-\bibitem{survey text} Aggarwal, C. C., \& Zhai, C. (2012). A Survey of Text Clustering Algorithms. Mining Text Data, 77-128. doi:10.1007/978-1-4614-3223-4_4
-
-\end{thebibliography}    
-    
 %====================================================================================================================================================%
                                               %============================================================%
-%====================================================================================================================================================%    
-\clearpage
-\includepdf[pages=2]{Recursos/portada.pdf}
-    
-  
+%====================================================================================================================================================%
+
+%\clearpage
+%\includepdf[pages=2]{Recursos/portada.pdf}
+
+
 \end{document}
