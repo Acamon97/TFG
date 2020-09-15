@@ -1481,7 +1481,37 @@ Uno de los problemas principales. y que se ha comentado previamente, es la alta 
 
 Otro problema es la relación entre las palabras que como humanos somos capaces de identificar pero que es una tarea ardua para las computadores y por lo que los algoritmos que se usan en este ámbito contienen funcionalidades que tienen en consideración este tipo de correlaciones. Y otra dificultad añadida, es que cada texto es diferente, y su número de palabras varía de forma considerable, por lo que normalizar los datos es una tarea imperativa previa a su procesamiento. 
 
-De esta manera, muchas operaciones utilizadas en clustering no pueden ser llevadas a cabo con palabras, por lo que es necesario transformar los datos de manera que se puedan aplicar los algoritmos. 
+Es por estos motivos, y el hecho de que trabajamos con cadenas de texto y no con datos numéricos que muchas operaciones utilizadas en clustering no pueden ser llevadas a cabo, siendo necesario transformar los datos de manera que se puedan aplicar los algoritmos que hemos visto.
+
+\subsection{Preparación de datos}
+
+Los textos y documentos se consideran un saco de palabras, pero normalmente su contenido se encuentra en forma de una sola cadena de texto, es decir, todo el contenido del documento es un único atributo que contiene todas las palabras. Esto imposibilita cualquier tipo de operación, por lo que el primer paso que se debe realizar cuando se tratan textos es separar cada palabra individualmente. 
+
+A este proceso en el que se divide todo el texto en unidades independientes utilizando los espacios en blanco y signos de puntuación como separadores se le llama \textit{tokenización} (\textit{tokenization}) \cite{TFG Jorge}.  
+
+Sin embargo, ahora nos enfrentamos al problema de la alta dimensionalidad de trabajar con este tipo de datos puesto que cada una de esas palabras o \textit{tokens} que hemos obtenido del paso anterior es considerado un atributo, motivo por el cual necesitamos reducir su número. 
+
+Una de las formas más inmediatas para ello es eliminar todas aquellas palabras que no aportan ningún tipo de información tales como pronombres, conjunciones, signos de puntuación, etc., que suelen aparecer con mucha frecuencia. Este tipo de términos se denominan \textit{palabras vacías} o \textit{stop words} en inglés. 
+
+Una vez se ha reducido el número de atributos que procesar, es necesario normalizar todas las palabras restantes, es decir, transformarlas a su forma normal, reduciendo de nuevo espacio de términos. Hay dos métodos principales para aplicar dicha normalización: \textit{stemming} y \textit{lematización}. El primero trata de reducir cada palabra a su raiz, aunque a veces esto genera términos que no existen en el diccionario. El segundo método en cambio realiza una asignación de la forma base de cada palabra, eliminando múltiples derivaciones de la misma, como en el caso de formas verbales. 
+
+Esto permite que cada palabra reciba el mismo tratamiento y podamos compararlas de forma equitativa. Por ejemplo, considerando el siguiente grupo de palabras: ``cantamos'', ``canta'',``cantaría'' y ``cantase'', terminaríamos con los términos: ``cant'', ``cant'',``cant'' y ``cant'' si aplicamos stemming o ``cantar'', ``cantar'',``cantar'' y ``cantar'' si aplicamos lematización. Si se busca una normalización rápida, stemming es la más rápida, pero el proceso de lematización es más preciso y conserva más el sentido de las palabras, por lo que es la más utilizada entre ambas.
+
+Es habitual que el proceso de normalización utilice la \textit{categoría gramatical} o \textit{Part of Speech} en inglés (POS) para identificar el tipo de cada palabra basándose en un diccionario que contenga estos términos y así facilitar la extracción de su lema o raiz. 
+
+Una vez seguidos estos dos pasos para reducir la cantidad de atributos a analizar y permitir un estudio igualitario de los mismos, hay que identificar aquellas palabras de más relevancia.
+
+TF-IDF o que?????
+
+En todos los sitio mencionan ese, pero parece que hay más formas de hacerlo???
+
+
+\subsection{Algoritmos para clusterización de textos}
+
+
+\section{Muestra de datos: Artículos sobre COVID-19},
+
+
 
 \begin{comment}
 Preparar datos y forma de trabajar
