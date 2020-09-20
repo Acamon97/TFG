@@ -1027,7 +1027,7 @@ Esta condición suele ser recíproca entre núcleos, pero no entre núcleos y pu
 \label{fig:dbscan1}
 \end{figure}
 
-De esta definición se puede extrapolar otra, y es que un punto $p$ es \textit{alcanzable por densidad} desde $q$, si hay una cadena de puntos $p_1, \cdots, p_n$ donde el primer punto es $q$ ($p_1 = q$) y cada punto sucesivo $p_{i+1}$ es directamente alcanzable por densidad desde el anterior $p_i$. Al igual que la anterior, no suele ser recíproca con núcleos y puntos fronterizos, pero sí entre núcleos. Sin embargo, puede que existan dos puntos fronterizos del mismo cluster que no sean alcanzables por densidad entre ellos porque no tengan $MinPts$ objetos en su vecindario, pero que si lo sean desde un núcleo del cluster, que da lugar a otra definición.
+De esta definición se puede extrapolar otra, y es que un punto $p$ es \textit{alcanzable por densidad} desde $q$, si hay una cadena de puntos $p_1, \ldots, p_n$ donde el primer punto es $q$ ($p_1 = q$) y cada punto sucesivo $p_{i+1}$ es directamente alcanzable por densidad desde el anterior $p_i$. Al igual que la anterior, no suele ser recíproca con núcleos y puntos fronterizos, pero sí entre núcleos. Sin embargo, puede que existan dos puntos fronterizos del mismo cluster que no sean alcanzables por densidad entre ellos porque no tengan $MinPts$ objetos en su vecindario, pero que si lo sean desde un núcleo del cluster, que da lugar a otra definición.
  
 Se dice que un punto $p$ está \textit{conectado por densidad} a un punto $q$ si hay otro punto $o$ desde el cuál, ambos, $p$ y $q$, son alcanzables por densidad, y esta propiedad si es recíproca siempre.  
 
@@ -1483,58 +1483,92 @@ Otro problema es la relación entre las palabras que como humanos somos capaces 
 
 Es por estos motivos, y el hecho de que trabajamos con cadenas de texto y no con datos numéricos que muchas operaciones utilizadas en clustering no pueden ser llevadas a cabo, siendo necesario transformar los datos de manera que se puedan aplicar los algoritmos que hemos visto.
 
+%====================================================================================================================================================%
+
+
 \subsection{Preparación de datos}
 
-Los textos y documentos se consideran un saco de palabras, pero normalmente su contenido se encuentra en forma de una sola cadena de texto, es decir, todo el contenido del documento es un único atributo que contiene todas las palabras. Esto imposibilita cualquier tipo de operación, por lo que el primer paso que se debe realizar cuando se tratan textos es separar cada palabra individualmente. 
+Uno de los principales problemas a la hora de procesar datos de tipo texto, es la gran cantidad de atributos que estos contienen, por lo que una de las tareas principales antes de trabar con ellos es procesarlos de manera que podamos reducir dicha cantidad mediante la eliminación de todas aquellas palabras que no aportan significado o son demasiado comunes como para ser relevantes, así como la reducción de las palabras a su raiz o lexema. Estos dos procesos reciben los nombres de eliminación de \textit{palabras vacías} y \textit{normalización}.
 
-A este proceso en el que se divide todo el texto en unidades independientes utilizando los espacios en blanco y signos de puntuación como separadores se le llama \textit{tokenización} (\textit{tokenization}) \cite{TFG Jorge}.  
+\begin{itemize}
+  \item \textbf{Eliminación de palabras vacías}: Las palabras vacías o \textit{stopwords} en inglés, son todas aquellas palabras cuya función principal sea asociar palabras o simplemente concatenar frases u oraciones. Normalmente estas son pronombres, conjunciones, signos de puntuación y demás tipos que no aportan ningún tipo de información dentro del texto y su análisis únicamente entorpecería el resultado final, puesto que su tasa de aparición en un texto es tan elevada, alrededor de un treinta o cuarenta por ciento del texto, que serían el único tipo de palabras que se analizarían, dando lugar a un resultado de clusterización o cualquier tipo de análisis de datos erróneo. 
+  
+  Algunas de estas palabras vacías en español son las siguientes: ``a'', ``además'', ``casi'', ``como'', ``con'', ``de'', ``día'', ``él'', ``es'', ``fue'', ``más'', ``mientras'', ``muy'', etc.
+  
+  \item \textbf{normalización}: Se utilizan principalmente dos métodos para realizar este proceso que pretende eliminar la diversidad y variedad de palabras para resumirlas o reducirlas a su raiz o lexema: \textit{stemming} y \textit{lematización}. Eso nos permite reducir el espacio de términos, disminuyendo así la dimensionalidad del texto.
+  
+  \begin{itemize}
+    \item \textbf{Stemming}: Este método trata de reducir cada palabra a su raiz, un término que comparta con el resto de palabras de la misma familia o derivados, aunque a veces esto genera vocablos que no existen en el diccionario.
+    
+    \item \textbf{Lematización}: Se denomina lematización al proceso que permite hayar el lema de una forma flexionada\footnote{La flexión es la alteración que experimtentan las palabras mediantes morfemas. Existe la flexión verbal y la nominal.}. Este lema es la forma que por convenio se acepta como representante de todas las formas flexionadas de una misma palabra, permitiendo así eliminar múltiples derivaciones de una misma palabra, como en el caso de las formas verbales. \cite{lematizacion} 
+  \end{itemize}
+  
+  Por ejemplo, considerando el siguiente grupo de palabras: ``cantamos'', ``cantó'',``cantaría'' y ``cantase'', terminaríamos con los términos: ``cant'', ``cant'',``cant'' y ``cant'' si aplicamos stemming o ``cantar'', ``cantar'',``cantar'' y ``cantar'' si aplicamos lematización. Si se busca una normalización rápida, stemming es la adecuada, pero el proceso de lematización es más preciso y conserva más el sentido de las palabras, por lo que es la más utilizada entre ambas.
+  
+\end{itemize}
 
-Sin embargo, ahora nos enfrentamos al problema de la alta dimensionalidad de trabajar con este tipo de datos puesto que cada una de esas palabras o \textit{tokens} que hemos obtenido del paso anterior es considerado un atributo, motivo por el cual necesitamos reducir su número. 
+Asimismo, los textos y documentos se suelen considerar un saco de palabras, pero normalmente su contenido se encuentra en forma de una sola cadena de texto, es decir, todo el contenido del documento es un único atributo que contiene todas las palabras. Para poder realizar operaciones con dichas palabras, es necesario separarlas individualmente mediante un proceso denominado \textit{tokenización} (\textit{tokenization}). Este consiste en la división de todo el texto en unidades independientes, denominadas \textit{tokens}, utilizando como separadores los espacios en blancos y signos de puntuación. \cite{TFG Jorge}.
 
-Una de las formas más inmediatas para ello es eliminar todas aquellas palabras que no aportan ningún tipo de información tales como pronombres, conjunciones, signos de puntuación, etc., que suelen aparecer con mucha frecuencia. Este tipo de términos se denominan \textit{palabras vacías} o \textit{stop words} en inglés. 
+Estos tres pasos: eliminación de palabras vacías, normalización y tokenización son esenciales cuando se pretende trabajar con textos, y aunque su orden de aplicación varía en función del algoritmo o método que utilicemos, es común que la eliminación de palabras vacías vaya antes que la normalización. El motivo por el que el orden puede varíar es porque los métodos pueden trabajar con tokens o con texto plano, obligando a realizar la tokenización en primer o último lugar. 
 
-Una vez se ha reducido el número de atributos que procesar, es necesario normalizar todas las palabras restantes, es decir, transformarlas a su forma normal, reduciendo de nuevo espacio de términos. Hay dos métodos principales para aplicar dicha normalización: \textit{stemming} y \textit{lematización}. El primero trata de reducir cada palabra a su raiz, aunque a veces esto genera términos que no existen en el diccionario. El segundo método en cambio realiza una asignación de la forma base de cada palabra, eliminando múltiples derivaciones de la misma, como en el caso de formas verbales. 
+Sin embargo, esto no es una suficiente reducción de la dimensionalidad de los datos, por lo que es preciso aplicar métodos de reducción con el objetivo de acotar el número de atributos con el que se pretende trabajar al mínimo posible, escogiendo como palabras resultantes aquellas que aporten significado al texto y puedan considerarse clave a la hora de clasificarlos.
 
-Esto permite que cada palabra reciba el mismo tratamiento y podamos compararlas de forma equitativa. Por ejemplo, considerando el siguiente grupo de palabras: ``cantamos'', ``canta'',``cantaría'' y ``cantase'', terminaríamos con los términos: ``cant'', ``cant'',``cant'' y ``cant'' si aplicamos stemming o ``cantar'', ``cantar'',``cantar'' y ``cantar'' si aplicamos lematización. Si se busca una normalización rápida, stemming es la más rápida, pero el proceso de lematización es más preciso y conserva más el sentido de las palabras, por lo que es la más utilizada entre ambas.
+%====================================================================================================================================================%
 
-Es habitual que el proceso de normalización utilice la \textit{categoría gramatical} o \textit{Part of Speech} en inglés (POS) para identificar el tipo de cada palabra basándose en un diccionario que contenga estos términos y así facilitar la extracción de su lema o raiz. 
+\subsection{Técnicas de reducción de dimensionalidad}
 
-Una vez seguidos estos dos pasos para reducir la cantidad de atributos a analizar y permitir un estudio igualitario de los mismos, hay que identificar aquellas palabras de más relevancia.
+En el ámbito matemático, el problema de la reducción de dimensión puede ser descrito de la siguiente forma: dada una variable aleatoria de $p$-dimensiones $x = \left(x_i, \ldots, x_p \right)^T$, el objetivo es encontrar una representación con menor dimensión $k$, $s=\left( s_1, \ldots, s_k\right)^T$ donde $k < p$ y se preserve todo lo posible la información contenida en la variable original \cite{Document Representation and Dimension Reduction for Text Clustering}. 
 
-TF-IDF o que?????
+Dentro del ámbito de Text Mining existen dos tipos principales de técnicas: \textit{Selección de Características} y \textit{Transformación de Características}.
 
-En todos los sitio mencionan ese, pero parece que hay más formas de hacerlo???
+\subsubsection{Selección de Características}
+
+La selección de características o \textit{Feature Selection} es un proceso mediante el cual se escoge un subconjunto de los atributos originales de acuerdo a cierto criterio ordenando los términos en base a una variable numérica calculada a partir del conjunto de documentos y seleccionando aquellas palabras que sobrepasen el umbral. Los términos seleccionados mantienen gran parte de su valor original y ayudan a comprender mejor el conjunto de datos \cite{An Evaluation on Feature Selection for Text Clustering, Comparing and Combining Dimension Reduction Techniques for Efficient Text}. 
+
+Las características pueden considerarse de cuatro tipos: muy relevante, poco relevante, irrelevante y redundante. Todas aquellas palabras que se consideren muy relevantes no pueden ser eliminadas bajo ningún concepto. Las palabras relevantes no siempre son necesarias para un subconjunto óptimo, aunque depende de ciertas condiciones. Las palabras irrelevantes no tienen por qué incluirse en el subconjunto. Las palabras redundantes suelen ser palabras poco relevantes pero que pueden ser reemplazadas por otro conjunto de términos de manera que no afecte a la distribución original. De esta manera, el objetivo de este tipo de métodos es maximizar la relevancia del subconjunto y minimizar su redundancia \cite{A review of feature selection methods with applications}.
+
+A continuación se exponen algunos de los métodos más populares de selección de características.
+
+\begin{itemize}
+  \item \textbf{Frecuencia de Documento (DF)}: Este método denominado Document-Frequency en inglés, es una de las técnicas más sencillas y que utiliza la frecuencia de aparición de las palabras como criterio. Es común ver este método reflejado en forma de matriz, que se denomina  DTM (\textit{Document-Term Matrix}) o \textit{Matriz término-documento}. En dicha matriz cada fila representa un documento, cada columna un término y el valor de cada celda hace referencia al número de veces que aparece el término en ese documento. También se puede usar en formato binario, indicando si un término sencillamente está o no en un documento \cite{survey, Document Representation and Dimension Reduction for Text Clustering, An Evaluation on Feature Selection for Text Clustering, Comparing and Combining Dimension Reduction Techniques for Efficient Text}.
+  
+  A veces cuando se habla sobre este cambio a forma de matriz utilizando la frecuencia de las palabras se suele usar el término TF (\textit{Term-Frequency}) o \textit{Frecuencia de Término}, cuya estructura es idéntica a DTM, puesto que se basa en ella para el mismo concepto: contar el número de apariciones de un término en el documento. La principal diferencia es que DTM utiliza valores absolutos mientras que TF usa los relativos; es decir, divide la frecuencia de la palabra entre el número total de palabras en el documento. Esto permite aliviar o incluso eliminar el inconveniente de que en textos más largos es más probable que aparezca más veces la misma palabra que en un texto pequeño \cite{text mining use of tf idf to examine the relevance of words to documents}.
+  
+  \item \textbf{Frecuencia de Término - Frecuencia Inversa de Documento (TF-IDF)}: Este método es una variación de TF en la que se utiliza el concepto de \textit{Frecuencia Inversa de Documento} (IDF). Es probable que, aunque se eliminen gran parte de palabras vacías, siempre haya ciertas palabras que se escapen a este proceso y queden como impurezas a la hora de analizar el texto, siendo palabras relativamente comunes y frecuentes en los textos. De esta manera, IDF asigna a aquellas palabras que aparecen poco un mayor peso con la siguiente fórmula: \begin{equation} IDF = \log \left( \frac{n}{F_t} \right), \end{equation} siendo $n$ el número de documentos y $F_t$ la frecuencia total de un término en todos los documentos. Combinando el método visto previamente con este concepto, surge TF-IDF, uno de los métodos más populares entre todos los de reducción de dimensiones por su contribución eliminando palabras vacías de forma indirecta. \cite{text mining use of tf idf to examine the relevance of words to documents, A comparative study of tf idf lsi and multi words for text classification, Document clustering tfidf approach}.
+  
+  \item \textbf{Fuerza de Término (TS)}: Aunque inicialmente este era un método de reducción supervisado, ha sido extendido para la clusterización de textos utilizando funciones de similitud como la del coseno\footnote{Medida de similitud entre dos vectores que poseen un producto interior con el que se evalúa el valor del coseno del ángulo comprendido entre ellos.}. Este criterio intenta medir cuán importante es una palabra a la hora de identificar dos documentos relacionados. Para ello, se toma una muestra aleatoria de pares de documentos en las que se realiza la siguiente operación para un término $t$ \cite{survey, An Evaluation on Feature Selection for Text Clustering}: \begin{equation} s(t) = \frac{\text{Número de pares donde } t \text{ aparece en ambos documentos}}{\text{Número de pares donde } t \text{ aparece en el primer par}}.\end{equation} 
+  
+  \item \textbf{Ranking basado en Entropía (EN)}: Propuesto en \cite{entropia}, la calidad del término se obtiene calculando la reducción de entropía cuando se elimina dicha palabra. La entropía es una forma de medir el desorden de un sistema y su fórmula para un término $t$ en un conjunto de $n$ documentos es la siguiente: \begin{equation} E(t) = - \sum_{i=1}^{n} \sum_{j=1}^{n} \left)( S_{ij} \cdotp \log \left(S_{ij} \right) + \left( 1 - S_{ij}\right) \cdotp \log \left( 1 - S_{ij}\right) \right), \end{equation} donde $S_{ij} \in (0,1)$ es la similitud entre los documentos $i$ y $j$ después de haber retirado el término $t$, y se define de la siguiente forma:  \begin{equation} S_{ij} = 2^{- \frac{dist\left(i,j\right)}{\overline{dist}}}. \end{equation} $dist(i,j)$ es la distancia entre los documentos $i$ y $j$ después de haberse eliminado el término $t$ y $\overline{dist}$ es la distancia media entre todos los documentos tras la eliminación del término \cite{survey, An Evaluation on Feature Selection for Text Clustering}.
+  
+  \item \textbf{Contribución del Término (TC)}: Introducido en \cite{An Evaluation on Feature Selection for Text Clustering}, este método llamado \textit{Term Contribution} tiene en cuenta el peso de cada término con la intención de eliminar uno de los principales problemas de DF: considerar que cada palabra tiene la misma importancia en cada documento. Para ello, el aporte de una palabra es vista como su aporte a la similitud entre documentos, cuya fórmula se apoya en TF-IDF \cite{survey, An Evaluation on Feature Selection for Text Clustering}.
+\end{itemize}
+
+\subsubsection{Transformación de Características}
+
+En selección de características tratamos de seleccionar atributos del conjunto de datos original
+
+\begin{itemize}
+  \item \textbf{LSI}
+  
+  \item \textbf{RP}
+  
+  \item \textbf{ICA}
+\end{itemize}
+
+
 
 
 \subsection{Algoritmos para clusterización de textos}
 
 
-\section{Muestra de datos: Artículos sobre COVID-19},
-
-
-
-\begin{comment}
-Preparar datos y forma de trabajar
-  a survey of text mining techniques and applications
-  pattern and cluster mining on text data
-  technique of cluster validity for text mining
-  survey
-  textmining
-
-Algoritmos
-  improved som algorithm applied in text clustering
-  survey on text clustering algorithm
-  survey
-
-COVID
-
-\end{comment}   
-
-
-
-
+%====================================================================================================================================================%
+                                              %============================================================%
+%====================================================================================================================================================%
 
  
+ 
+\section{Muestra de datos: Artículos sobre COVID-19},
+
 
 %====================================================================================================================================================%
                                               %============================================================%
@@ -1637,6 +1671,28 @@ COVID
 \bibitem{libro jorge} Weiss, S. M., Indurkhya, N., \& Zhang, T. (2015). Fundamentals of predictive text mining. Springer.
 
 \bibitem{survey text} Aggarwal, C. C., \& Zhai, C. (2012). A Survey of Text Clustering Algorithms. Mininkg Text Data, 77-128. doi:10.1007/978-1-4614-3223-4\_4
+
+\bibitem{lematizacion} Lematización. (2019, July 16). Retrieved September 18, 2020, from https://es.wikipedia.org/wiki/Lematizaci\%C3\%B3n
+
+\bibitem{Genetic algorithm for text clustering based on latent semantic indexing} Song, W., \& Park, S. C. (2009). Genetic algorithm for text clustering based on latent semantic indexing. Computers \& Mathematics with Applications, 57(11-12), 1901-1907. doi:10.1016/j.camwa.2008.10.010
+
+\bibitem{text mining use of tf idf to examine the relevance of words to documents} Qaiser, S., \& Ali, R. (2018). Text Mining: Use of TF-IDF to Examine the Relevance of Words to Documents. International Journal of Computer Applications, 181(1), 25-29. doi:10.5120/ijca2018917395
+
+\bibitem{Document Representation and Dimension Reduction for Text Clustering} Shafiei, M., Wang, S., Zhang, R., Milios, E., Tang, B., Tougas, J., \& Spiteri, R. (2007, April). Document representation and dimension reduction for text clustering. In 2007 IEEE 23rd international conference on data engineering workshop (pp. 770-779). IEEE.
+
+\bibitem{An Evaluation on Feature Selection for Text Clustering} Liu, T., Liu, S., Chen, Z., \& Ma, W. Y. (2003). An evaluation on feature selection for text clustering. In Proceedings of the 20th international conference on machine learning (ICML-03) (pp. 488-495).
+
+\bibitem{Comparing and Combining Dimension Reduction Techniques for Efficient Text} Tang, B., Shepherd, M., Milios, E., \& Heywood, M. I. (2005, April). Comparing and combining dimension reduction techniques for efficient text clustering. In Proceeding of SIAM International Workshop on Feature Selection for Data Mining (pp. 17-26).
+
+\bibitem{A review of feature selection methods with applications} Jović, A., Brkić, K., \& Bogunović, N. (2015, May). A review of feature selection methods with applications. In 2015 38th international convention on information and communication technology, electronics and microelectronics (MIPRO) (pp. 1200-1205). Ieee.
+
+\bibitem{entropia} Dash, M.,\& Liu, H. (2000, April). Feature selection for clustering. In Pacific-Asia Conference on knowledge discovery and data mining (pp. 110-121). Springer, Berlin, Heidelberg.
+
+\bibitem{A comparative study of tf idf lsi and multi words for text classification} Zhang, W., Yoshida, T., \& Tang, X. (2011). A comparative study of TF* IDF, LSI and multi-words for text classification. Expert Systems with Applications, 38(3), 2758-2765.
+
+\bibitem{Document clustering tfidf approach} Bafna, P., Pramod, D.,  \& Vaidya, A. (2016, March). Document clustering: TF-IDF approach. In 2016 International Conference on Electrical, Electronics, and Optimization Techniques (ICEEOT) (pp. 61-66). IEEE.
+
+ 
 
 \end{thebibliography}    
     

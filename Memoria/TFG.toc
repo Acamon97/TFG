@@ -35,10 +35,13 @@
 \contentsline {section}{\numberline {10}Aplicaciones de clustering}{34}{section.10}%
 \contentsline {section}{\numberline {11}Clusterización de textos}{36}{section.11}%
 \contentsline {subsection}{\numberline {11.1}Preparación de datos}{38}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Algoritmos para clusterización de textos}{39}{subsection.11.2}%
-\contentsline {section}{\numberline {12}Muestra de datos: Artículos sobre COVID-19}{39}{section.12}%
-\contentsline {section}{\numberline {13}Anexo}{40}{section.13}%
-\contentsline {subsection}{\numberline {13.1}\textbf {Algoritmos}}{40}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}\textbf {Tablas}}{40}{subsection.13.2}%
-\contentsline {subsection}{\numberline {13.3}\textbf {Imágenes y figuras}}{40}{subsection.13.3}%
-\contentsline {section}{\numberline {14}Referencias}{41}{section.14}%
+\contentsline {subsection}{\numberline {11.2}Técnicas de reducción de dimensionalidad}{39}{subsection.11.2}%
+\contentsline {subsubsection}{\numberline {11.2.1}Selección de Características}{39}{subsubsection.11.2.1}%
+\contentsline {subsubsection}{\numberline {11.2.2}Transformación de Características}{41}{subsubsection.11.2.2}%
+\contentsline {subsection}{\numberline {11.3}Algoritmos para clusterización de textos}{41}{subsection.11.3}%
+\contentsline {section}{\numberline {12}Muestra de datos: Artículos sobre COVID-19}{41}{section.12}%
+\contentsline {section}{\numberline {13}Anexo}{42}{section.13}%
+\contentsline {subsection}{\numberline {13.1}\textbf {Algoritmos}}{42}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}\textbf {Tablas}}{42}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}\textbf {Imágenes y figuras}}{42}{subsection.13.3}%
+\contentsline {section}{\numberline {14}Referencias}{43}{section.14}%
