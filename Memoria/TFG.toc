@@ -39,9 +39,9 @@
 \contentsline {subsubsection}{\numberline {11.2.1}Selección de Características}{39}{subsubsection.11.2.1}%
 \contentsline {subsubsection}{\numberline {11.2.2}Transformación de Características}{41}{subsubsection.11.2.2}%
 \contentsline {subsection}{\numberline {11.3}Algoritmos para clusterización de textos}{41}{subsection.11.3}%
-\contentsline {section}{\numberline {12}Muestra de datos: Artículos sobre COVID-19}{41}{section.12}%
-\contentsline {section}{\numberline {13}Anexo}{42}{section.13}%
-\contentsline {subsection}{\numberline {13.1}\textbf {Algoritmos}}{42}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}\textbf {Tablas}}{42}{subsection.13.2}%
-\contentsline {subsection}{\numberline {13.3}\textbf {Imágenes y figuras}}{42}{subsection.13.3}%
-\contentsline {section}{\numberline {14}Referencias}{43}{section.14}%
+\contentsline {section}{\numberline {12}Muestra de datos: Artículos sobre COVID-19}{42}{section.12}%
+\contentsline {section}{\numberline {13}Anexo}{43}{section.13}%
+\contentsline {subsection}{\numberline {13.1}\textbf {Algoritmos}}{43}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}\textbf {Tablas}}{43}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}\textbf {Imágenes y figuras}}{43}{subsection.13.3}%
+\contentsline {section}{\numberline {14}Referencias}{44}{section.14}%

@@ -741,7 +741,7 @@ Además, recordemos que este algoritmo flaquea a la hora de encontrar clusters c
 %====================================================================================================================================================%
 
 \subsection{\textbf
-{Fuzzy \textit{k}-Means}}
+{Fuzzy \textit{k}-Means}} \label{fuzzymeans}
 
 Este algoritmo, también conocido como cuzzy $c$-means (FCM) \cite{fuzzymeans} es uno de los métodos de clusterización relajados más populares y utilizados \cite{otrolibro}. Utilizar algoritmos exclusivos en conjuntos de datos donde existen clusters superpuestos queda lejos de ser óptimo, por lo que aplicar una clusterización relajada es el método recomendado.
 
@@ -764,7 +764,7 @@ Los algoritmos más conocidos que utilizan esta aproximación para formar cluste
 
 %====================================================================================================================================================%
 
-\subsubsection{\textbf{PAM}}
+\subsubsection{\textbf{PAM}} \label{pam}
 
 Este algoritmo, que podría traducirse al español como Particionamiento Sobre Medoids, es una de las aplicaciones más extendidas del método $k$-medoids, y tiene un funcionamiento similar a $k$-means en el sentido de que utiliza también una heurística voraz de forma iterativa para la formación de clusters y disminuir la complejidad computacional. 
 
@@ -802,7 +802,7 @@ Este procedimiento, que queda reflejado en el algoritmo de PAM \ref{alg:Algoritm
 %====================================================================================================================================================%
 
 
-\subsubsection{\textbf{CLARA}}
+\subsubsection{\textbf{CLARA}} \label{clara}
 
 CLARA es una variación de PAM y que también aplica $k$-medoids a la hora de formar clusters, pero que en lugar de tener en cuenta todos los datos $n$ del conjunto de datos $D$, este algoritmo escoge una muestra aleatoria $m$ de datos y posteriormente aplica PAM para calcular los mejores representantes de la muestra. Esta muestra idealmente representa de una manera precisa al conjunto de datos original $D$ siempre y cuando cada objeto $p_i$ tenga las mismas posibilidades de ser escogido para la muestra. De esta manera y tras varias iteraciones seleccionando muestras arbitrarias, CLARA devuelve la mejor clusterización obtenida de todas ellas para aplicarla, ahora sí, en todo el conjunto de datos $D$.
 
@@ -871,7 +871,7 @@ Las dos primeras son medidas que se van a los extremos y son susceptibles a dato
 %====================================================================================================================================================%
 
 
-\subsection{\textbf{AGNES}} \label{subsec:AGNES}
+\subsection{\textbf{AGNES}} \label{subsec:AGNES} 
 
 \cite{jerarquico} AGglomerative NESting (AGNES) es quizás el algoritmo jerárquico aglomerativo más básico y extendido, pues aplica de forma exacta el concepto mencionado previamente. 
 
@@ -1545,20 +1545,28 @@ A continuación se exponen algunos de los métodos más populares de selección 
 
 \subsubsection{Transformación de Características}
 
-En selección de características tratamos de seleccionar atributos del conjunto de datos original
+La transformación de características consiste en proyectar el conjunto de datos original en un espacio dimensional más pequeño donde cada dimensión es una combinación lineal o no lineal de la muestra inicial, predominando la forma lineal \cite{Comparing and Combining Dimension Reduction Techniques for Efficient Text}. Es decir, los nuevos atributos son representaciones funcionales de los atributos originales basadas en combinaciones lineales de las dimensiones de la muestra \cite{survey, A review of feature selection methods with applications}.   
+
+Estos son los métodos más populares:
 
 \begin{itemize}
-  \item \textbf{LSI}
+  \item \textbf{Indexación Semántica Latente (LSI)}: Este método es junto con TF-IDF uno de los más estudiados y aplicados en Text Mining debido a su capacidad para detectar estructuras de un alto orden semántico, ya que esto permite eliminar ambigüedades del lenguaje natural como son los sinónimos y las palabras polisémicas \cite{Comparing and Combining Dimension Reduction Techniques for Efficient Text}. LSI se basa en la Descomposición en Valores Singulares (SVD) de la matriz DTM para reducir la dimensionalidad de los datos con una distorsión mínima, puesto que las dimensiones de este nuevo espacio son ortogonales, es decir, no tienen correlación. En SVD cada factor es ordenado de forma decreciente y excepto los $k$ primeros términos, todos los demás son reestablecidos a valor cero. Algunos estudios demuestran que el número $k$ adecuado ronda los cien términos. Esto permite capturar las asociaciones más importantes entre los documentos a la vez que elimina las impurezas entre los datos \cite{survey, A comparative study of tf idf lsi and multi words for text classification}.
   
-  \item \textbf{RP}
+  \item \textbf{Proyección Aleatoria (RP)}: Esta técnica se presenta como una alternativa computacionalmente más barata a LSI. A diferencia del método anterior, aquí las dimensiones son escogidas de forma arbitraria sin ningún orden de importancia. El funcionamiento es similar, RP también proyecta las columnas de DTM en un espacio reducido utilizando una matriz aleatoria. Sin embargo, sigue habiendo muchas dudas sobre su eficacia en comparación con LSI, por lo que todavía sigue en periodo de investigación y mejora \cite{Comparing and Combining Dimension Reduction Techniques for Efficient Text}.
   
-  \item \textbf{ICA}
+  \item \textbf{Análisis de componentes independientes (ICA)}: Este método de transformación surgió recientemente y ha recibido bastante atención dentro del ámbito del procesamiento de señales. ICA es una técnica estadística de caracter general que intenta tranformar de forma lineal los datos originales en componenetes que sean independientes entre sí estadísticamente hablando \cite{Comparing and Combining Dimension Reduction Techniques for Efficient Text}. 
 \end{itemize}
 
-
+%====================================================================================================================================================%
 
 
 \subsection{Algoritmos para clusterización de textos}
+
+Una vez se ha disminuido al máximo posible la dimensionalidad de los datos, podemos asegurar que los atributos restantes son aquellas palabras clave y de más importancia que permiten identificar la temática de un documento y agruparlo con otros de ándole similar. De esta manera, la gran mayoría de los proceosos de reducción de términos trabajan sobre el \textit{Modelo de Espacio Vectorial} (VSM), en el que se representa el texto como el saco de palabras que se ha ido mencionando a lo largo de esta sección, donde un texto queda representado por un subconjunto de sus palabras, presumiblemente aquellas más relevantes. La aplicación, por lo tanto de un método de reducción prepara los datos para poder aplicar clusterización sobre ellos como si se tratase de un conjunto de datos normales, en el que por ejemplo, en el caso de TF-IDF, asociamos cada documento con sus palabras más significativas, que son consideradas atributos de dicho documento, y cada una de estas palabras toma el valor obtenido del cálculo de TF-IDF.
+
+Muchos de los algoritmos de clusterización presentados en este proyecto son de caracter general, por lo que pueden ser aplicados a casi cualquier tipo de datos como se vio en la Tabla \ref{tab:Tabla 2}. Entre ellos, algunos de los más utilizados son $k$-means \ref{subsec:k-means}, Fuzzy $k$-means \ref{fuzzymeans}, PAM \ref{pam}, CLARA \ref{clara}, DBSCAN \ref{subsec:dbscan}, DENCLUE \ref{subsec:denclue} y casi cualquier algoritmo jerárquico aglomerativo (AGNES \ref{subsec:AGNES}, BIRCH \ref{subsec:BIRCH} o Chameleon \ref{subsec:Chameleon}). Estos ya han sido expuestos y estudiados en sus respectivas secciones, pero hay dos algoritmos más que no se han tratado y que son utilizados frecuentemente en la clusterización de textos: EM y SOM. EM mezcla métodos probabilísticos con fuzzy clustering mientras que SOM (Self Organizing Maps) es un modelo basado en redes neuronales.
+
+Dando por finalizado el marco teórico en el que se ha expuesto el método de clusterización, sus principales algoritmos y su aplicación a datos de tipo texto, en la subsiguiente parte práctica vamos a ver cómo la clusterización de documentos puede ayudar con problemas reales.
 
 
 %====================================================================================================================================================%
@@ -1567,7 +1575,11 @@ En selección de características tratamos de seleccionar atributos del conjunto
 
  
  
-\section{Muestra de datos: Artículos sobre COVID-19},
+\section{COVID-19}
+
+
+
+
 
 
 %====================================================================================================================================================%
