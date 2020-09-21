@@ -2,46 +2,50 @@
 \babel@toc {spanish}{}
 \contentsline {subsection}{\numberline {0.1}\textbf {Índice}}{2}{subsection.0.1}%
 \contentsline {section}{\numberline {1}Introducción}{4}{section.1}%
-\contentsline {section}{\numberline {2}Clustering}{5}{section.2}%
-\contentsline {section}{\numberline {3}Técnicas de clustering}{8}{section.3}%
-\contentsline {subsection}{\numberline {3.1}\textbf {Requisitos de un algoritmo de clustering}}{8}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}\textbf {Criterios de comparación}}{9}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}\textbf {Clasificación general de técnicas}}{10}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Métodos basados en particiones}{13}{section.4}%
-\contentsline {subsection}{\numberline {4.1}\textbf {\textit {k}-Means}}{13}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}\textbf {Fuzzy \textit {k}-Means}}{15}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}\textbf {\textit {k}-Medoids}}{16}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}\textbf {PAM}}{16}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}\textbf {CLARA}}{17}{subsubsection.4.3.2}%
-\contentsline {section}{\numberline {5}Métodos jerárquicos}{17}{section.5}%
-\contentsline {subsection}{\numberline {5.1}\textbf {Medidas de distancia}}{18}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}\textbf {AGNES}}{19}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}\textbf {DIANA}}{20}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}\textbf {BIRCH}}{20}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}\textbf {Chameleon}}{21}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}\textbf {Métodos jerárquicos probabilísticos}}{22}{subsection.5.6}%
-\contentsline {section}{\numberline {6}Métodos basados en densidad}{22}{section.6}%
-\contentsline {subsection}{\numberline {6.1}\textbf {DBSCAN}}{23}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}\textbf {OPTICS}}{24}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}\textbf {DENCLUE}}{25}{subsection.6.3}%
-\contentsline {section}{\numberline {7}Métodos basados en rejilla}{26}{section.7}%
-\contentsline {subsection}{\numberline {7.1}\textbf {STING}}{26}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}\textbf {CLIQUE}}{28}{subsection.7.2}%
-\contentsline {section}{\numberline {8}Tipos de datos}{28}{section.8}%
-\contentsline {section}{\numberline {9}Evaluación del clustering}{31}{section.9}%
-\contentsline {subsection}{\numberline {9.1}\textbf {Calcular la calidad de la clusterización}}{32}{subsection.9.1}%
-\contentsline {subsubsection}{\numberline {9.1.1}\textbf {Métodos extrínsecos}}{32}{subsubsection.9.1.1}%
-\contentsline {subsubsection}{\numberline {9.1.2}\textbf {Métodos intrínsecos}}{33}{subsubsection.9.1.2}%
-\contentsline {section}{\numberline {10}Aplicaciones de clustering}{34}{section.10}%
-\contentsline {section}{\numberline {11}Clusterización de textos}{36}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Preparación de datos}{38}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Técnicas de reducción de dimensionalidad}{39}{subsection.11.2}%
-\contentsline {subsubsection}{\numberline {11.2.1}Selección de Características}{39}{subsubsection.11.2.1}%
-\contentsline {subsubsection}{\numberline {11.2.2}Transformación de Características}{41}{subsubsection.11.2.2}%
-\contentsline {subsection}{\numberline {11.3}Algoritmos para clusterización de textos}{41}{subsection.11.3}%
-\contentsline {section}{\numberline {12}Muestra de datos: Artículos sobre COVID-19}{42}{section.12}%
-\contentsline {section}{\numberline {13}Anexo}{43}{section.13}%
-\contentsline {subsection}{\numberline {13.1}\textbf {Algoritmos}}{43}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}\textbf {Tablas}}{43}{subsection.13.2}%
-\contentsline {subsection}{\numberline {13.3}\textbf {Imágenes y figuras}}{43}{subsection.13.3}%
-\contentsline {section}{\numberline {14}Referencias}{44}{section.14}%
+\contentsline {section}{\numberline {2}Clustering}{6}{section.2}%
+\contentsline {section}{\numberline {3}Técnicas de clustering}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}\textbf {Requisitos de un algoritmo de clustering}}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}\textbf {Criterios de comparación}}{12}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}\textbf {Clasificación general de técnicas}}{14}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Métodos basados en particiones}{18}{section.4}%
+\contentsline {subsection}{\numberline {4.1}\textbf {\textit {k}-Means}}{18}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}\textbf {Fuzzy \textit {k}-Means}}{21}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}\textbf {\textit {k}-Medoids}}{22}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}\textbf {PAM}}{22}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}\textbf {CLARA}}{23}{subsubsection.4.3.2}%
+\contentsline {section}{\numberline {5}Métodos jerárquicos}{24}{section.5}%
+\contentsline {subsection}{\numberline {5.1}\textbf {Medidas de distancia}}{25}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}\textbf {AGNES}}{27}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}\textbf {DIANA}}{27}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}\textbf {BIRCH}}{27}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}\textbf {Chameleon}}{30}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}\textbf {Métodos jerárquicos probabilísticos}}{30}{subsection.5.6}%
+\contentsline {section}{\numberline {6}Métodos basados en densidad}{31}{section.6}%
+\contentsline {subsection}{\numberline {6.1}\textbf {DBSCAN}}{31}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}\textbf {OPTICS}}{33}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}\textbf {DENCLUE}}{35}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Métodos basados en rejilla}{36}{section.7}%
+\contentsline {subsection}{\numberline {7.1}\textbf {STING}}{36}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}\textbf {CLIQUE}}{38}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Tipos de datos}{40}{section.8}%
+\contentsline {section}{\numberline {9}Evaluación del clustering}{43}{section.9}%
+\contentsline {subsection}{\numberline {9.1}\textbf {Calcular la calidad de la clusterización}}{45}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {9.1.1}\textbf {Métodos extrínsecos}}{45}{subsubsection.9.1.1}%
+\contentsline {subsubsection}{\numberline {9.1.2}\textbf {Métodos intrínsecos}}{46}{subsubsection.9.1.2}%
+\contentsline {section}{\numberline {10}Aplicaciones de clustering}{47}{section.10}%
+\contentsline {section}{\numberline {11}Clusterización de textos}{50}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Preparación de datos}{53}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Técnicas de reducción de dimensionalidad}{55}{subsection.11.2}%
+\contentsline {subsubsection}{\numberline {11.2.1}Selección de Características}{55}{subsubsection.11.2.1}%
+\contentsline {subsubsection}{\numberline {11.2.2}Transformación de Características}{57}{subsubsection.11.2.2}%
+\contentsline {subsection}{\numberline {11.3}Algoritmos para clusterización de textos}{58}{subsection.11.3}%
+\contentsline {subsubsection}{\numberline {11.3.1}Self-Organizing Map (SOM)}{59}{subsubsection.11.3.1}%
+\contentsline {subsubsection}{\numberline {11.3.2}Expectation-maximization (EM)}{59}{subsubsection.11.3.2}%
+\contentsline {section}{\numberline {12}Consolidadción}{60}{section.12}%
+\contentsline {section}{\numberline {13}COVID-19}{61}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Objetivo de la parte práctica}{62}{subsection.13.1}%
+\contentsline {section}{\numberline {14}Anexo}{65}{section.14}%
+\contentsline {subsection}{\numberline {14.1}\textbf {Algoritmos}}{65}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}\textbf {Tablas}}{65}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}\textbf {Imágenes y figuras}}{65}{subsection.14.3}%
+\contentsline {section}{\numberline {15}Referencias}{67}{section.15}%

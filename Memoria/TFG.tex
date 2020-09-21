@@ -351,7 +351,8 @@
       }
     % Slightly bigger margins than the latex defaults
     
-    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    \geometry{verbose,tmargin=1.875in,bmargin=1.875in,lmargin=1.875in,rmargin=1.875in}
+    %\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
     
     
 %====================================================================================================================================================%
@@ -920,15 +921,13 @@ CF_i &=  \left(n_i, LS_i, SS_i \right )= \left (3, \left (9, 10 \right), \left (
 
 Y si ahora, consideramos que hay que fusionar $C_i$ con $C_j$ para formar otro cluster nuevo $C_z$, siendo $CF_j = \left(3, \left(6,7 \right), \left(36,49 \right) \right)$, la operación sería la siguiente:
 
-\begin{comment}
 \begin{align*}
-&CF_z = CF_i + CF_j =
+&CF_z = CF_i + CF_j = \\
 &= \left(3, \left (9, 10 \right), \left (29, 38 \right) \right) +\left(3, \left(6,7 \right), \left(36,49 \right) \right)= \\
 &= \left(6, \left(15,17 \right), \left(65,87 \right) \right).
 \end{align*}
-\end{comment}
 
-$$CF_z = CF_i + CF_j = \left(3, \left (9, 10 \right), \left (29, 38 \right) \right) +\left(3, \left(6,7 \right), \left(36,49 \right) \right) = \left(6, \left(15,17 \right), \left(65,87 \right) \right).$$
+%$$CF_z = CF_i + CF_j = \left(3, \left (9, 10 \right), \left (29, 38 \right) \right) +\left(3, \left(6,7 \right), \left(36,49 \right) \right) = \left(6, \left(15,17 \right), \left(65,87 \right) \right).$$
 
 
 El otro concepto que se ha mencionado previamente, CF-tree, tiene una estructura en forma de árbol que contiene el CF de cada cluster. Esta estructura de árbol, como se aprecia en la Figura \ref{fig:birch} está formada por nodos y hojas. Un nodo debe tener al menos un descendiente u hoja, mientras que las hojas son nodos terminales. Las hojas  almacenan el CF de un cluster, y su nodo padre o la raíz de dicha hoja almacena la suma de los CF de todos sus hijos. Este utiliza dos parámetros para controlar el desarrollo del árbol: el factor de ramificación $B$ y el umbral $T$ o $L$; estos indican cuántos hijos u hojas puede tener un nodo y cuántos nodos puede tener un cluster respectivamente. El tamaño del umbral determina el tamaño del árbol y su elección supone cierta dificultad. 
@@ -1470,7 +1469,7 @@ Las principales aplicaciones que recibe clustering dentro del ámbito textual so
 \end{itemize}
 
 \begin{figure}[ht]
-\adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{wordcluster}
+\adjustimage{width=\linewidth}{wordcluster}
 \caption{Cluster de palabras de los títulos de artículos científicos relacionados con COVID-19.}
 \label{fig:wordcluster}
 \end{figure}
@@ -1530,27 +1529,27 @@ Las características pueden considerarse de cuatro tipos: muy relevante, poco re
 A continuación se exponen algunos de los métodos más populares de selección de características.
 
 \begin{itemize}
-  \item \textbf{Frecuencia de Documento (DF)}: Este método denominado Document-Frequency en inglés, es una de las técnicas más sencillas y que utiliza la frecuencia de aparición de las palabras como criterio. Es común ver este método reflejado en forma de matriz, que se denomina  DTM (\textit{Document-Term Matrix}) o \textit{Matriz término-documento}. En dicha matriz cada fila representa un documento, cada columna un término y el valor de cada celda hace referencia al número de veces que aparece el término en ese documento. También se puede usar en formato binario, indicando si un término sencillamente está o no en un documento \cite{survey, Document Representation and Dimension Reduction for Text Clustering, An Evaluation on Feature Selection for Text Clustering, Comparing and Combining Dimension Reduction Techniques for Efficient Text}.
+  \item \textbf{Frecuencia de Documento (DF)}: Este método cuyo nombre en inglés es Document-Frequency, es una de las técnicas más sencillas y que utiliza la frecuencia de aparición de las palabras como criterio. Es común ver este método reflejado en forma de matriz, que se denomina  DTM (\textit{Document-Term Matrix}) o \textit{Matriz término-documento}. En dicha matriz cada fila representa un documento, cada columna un término y el valor de cada celda hace referencia al número de veces que aparece el término en ese documento. También se puede usar en formato binario, indicando si un término sencillamente está o no en un documento \cite{survey text, Document Representation and Dimension Reduction for Text Clustering, An Evaluation on Feature Selection for Text Clustering, Comparing and Combining Dimension Reduction Techniques for Efficient Text}.
   
   A veces cuando se habla sobre este cambio a forma de matriz utilizando la frecuencia de las palabras se suele usar el término TF (\textit{Term-Frequency}) o \textit{Frecuencia de Término}, cuya estructura es idéntica a DTM, puesto que se basa en ella para el mismo concepto: contar el número de apariciones de un término en el documento. La principal diferencia es que DTM utiliza valores absolutos mientras que TF usa los relativos; es decir, divide la frecuencia de la palabra entre el número total de palabras en el documento. Esto permite aliviar o incluso eliminar el inconveniente de que en textos más largos es más probable que aparezca más veces la misma palabra que en un texto pequeño \cite{text mining use of tf idf to examine the relevance of words to documents}.
   
   \item \textbf{Frecuencia de Término - Frecuencia Inversa de Documento (TF-IDF)}: Este método es una variación de TF en la que se utiliza el concepto de \textit{Frecuencia Inversa de Documento} (IDF). Es probable que, aunque se eliminen gran parte de palabras vacías, siempre haya ciertas palabras que se escapen a este proceso y queden como impurezas a la hora de analizar el texto, siendo palabras relativamente comunes y frecuentes en los textos. De esta manera, IDF asigna a aquellas palabras que aparecen poco un mayor peso con la siguiente fórmula: \begin{equation} IDF = \log \left( \frac{n}{F_t} \right), \end{equation} siendo $n$ el número de documentos y $F_t$ la frecuencia total de un término en todos los documentos. Combinando el método visto previamente con este concepto, surge TF-IDF, uno de los métodos más populares entre todos los de reducción de dimensiones por su contribución eliminando palabras vacías de forma indirecta. \cite{text mining use of tf idf to examine the relevance of words to documents, A comparative study of tf idf lsi and multi words for text classification, Document clustering tfidf approach}.
   
-  \item \textbf{Fuerza de Término (TS)}: Aunque inicialmente este era un método de reducción supervisado, ha sido extendido para la clusterización de textos utilizando funciones de similitud como la del coseno\footnote{Medida de similitud entre dos vectores que poseen un producto interior con el que se evalúa el valor del coseno del ángulo comprendido entre ellos.}. Este criterio intenta medir cuán importante es una palabra a la hora de identificar dos documentos relacionados. Para ello, se toma una muestra aleatoria de pares de documentos en las que se realiza la siguiente operación para un término $t$ \cite{survey, An Evaluation on Feature Selection for Text Clustering}: \begin{equation} s(t) = \frac{\text{Número de pares donde } t \text{ aparece en ambos documentos}}{\text{Número de pares donde } t \text{ aparece en el primer par}}.\end{equation} 
+  \item \textbf{Fuerza de Término (TS)}: Aunque inicialmente este era un método de reducción supervisado, ha sido extendido para la clusterización de textos utilizando funciones de similitud como la del coseno\footnote{Medida de similitud entre dos vectores que poseen un producto interior con el que se evalúa el valor del coseno del ángulo comprendido entre ellos.}. Este criterio intenta medir cuán importante es una palabra a la hora de identificar dos documentos relacionados. Para ello, se toma una muestra aleatoria de pares de documentos en las que se realiza la siguiente operación para un término $t$ \cite{survey text, An Evaluation on Feature Selection for Text Clustering}: \begin{equation} s(t) = \frac{\text{Número de pares donde } t \text{ aparece en ambos documentos}}{\text{Número de pares donde } t \text{ aparece en el primer par}}.\end{equation} 
   
-  \item \textbf{Ranking basado en Entropía (EN)}: Propuesto en \cite{entropia}, la calidad del término se obtiene calculando la reducción de entropía cuando se elimina dicha palabra. La entropía es una forma de medir el desorden de un sistema y su fórmula para un término $t$ en un conjunto de $n$ documentos es la siguiente: \begin{equation} E(t) = - \sum_{i=1}^{n} \sum_{j=1}^{n} \left)( S_{ij} \cdotp \log \left(S_{ij} \right) + \left( 1 - S_{ij}\right) \cdotp \log \left( 1 - S_{ij}\right) \right), \end{equation} donde $S_{ij} \in (0,1)$ es la similitud entre los documentos $i$ y $j$ después de haber retirado el término $t$, y se define de la siguiente forma:  \begin{equation} S_{ij} = 2^{- \frac{dist\left(i,j\right)}{\overline{dist}}}. \end{equation} $dist(i,j)$ es la distancia entre los documentos $i$ y $j$ después de haberse eliminado el término $t$ y $\overline{dist}$ es la distancia media entre todos los documentos tras la eliminación del término \cite{survey, An Evaluation on Feature Selection for Text Clustering}.
+  \item \textbf{Ranking basado en Entropía (EN)}: Propuesto en \cite{entropia}, la calidad del término se obtiene calculando la reducción de entropía cuando se elimina dicha palabra. La entropía es una forma de medir el desorden de un sistema y su fórmula para un término $t$ en un conjunto de $n$ documentos es la siguiente: \begin{equation} E(t) = - \sum_{i=1}^{n} \sum_{j=1}^{n} \left)( S_{ij} \cdotp \log \left(S_{ij} \right) + \left( 1 - S_{ij}\right) \cdotp \log \left( 1 - S_{ij}\right) \right), \end{equation} donde $S_{ij} \in (0,1)$ es la similitud entre los documentos $i$ y $j$ después de haber retirado el término $t$, y se define de la siguiente forma:  \begin{equation} S_{ij} = 2^{- \frac{dist\left(i,j\right)}{\overline{dist}}}. \end{equation} $dist(i,j)$ es la distancia entre los documentos $i$ y $j$ después de haberse eliminado el término $t$ y $\overline{dist}$ es la distancia media entre todos los documentos tras la eliminación del término \cite{survey text, An Evaluation on Feature Selection for Text Clustering}.
   
-  \item \textbf{Contribución del Término (TC)}: Introducido en \cite{An Evaluation on Feature Selection for Text Clustering}, este método llamado \textit{Term Contribution} tiene en cuenta el peso de cada término con la intención de eliminar uno de los principales problemas de DF: considerar que cada palabra tiene la misma importancia en cada documento. Para ello, el aporte de una palabra es vista como su aporte a la similitud entre documentos, cuya fórmula se apoya en TF-IDF \cite{survey, An Evaluation on Feature Selection for Text Clustering}.
+  \item \textbf{Contribución del Término (TC)}: Introducido en \cite{An Evaluation on Feature Selection for Text Clustering}, este método llamado \textit{Term Contribution} tiene en cuenta el peso de cada término con la intención de eliminar uno de los principales problemas de DF: considerar que cada palabra tiene la misma importancia en cada documento. Para ello, el aporte de una palabra es vista como su aporte a la similitud entre documentos, cuya fórmula se apoya en TF-IDF \cite{survey text, An Evaluation on Feature Selection for Text Clustering}.
 \end{itemize}
 
 \subsubsection{Transformación de Características}
 
-La transformación de características consiste en proyectar el conjunto de datos original en un espacio dimensional más pequeño donde cada dimensión es una combinación lineal o no lineal de la muestra inicial, predominando la forma lineal \cite{Comparing and Combining Dimension Reduction Techniques for Efficient Text}. Es decir, los nuevos atributos son representaciones funcionales de los atributos originales basadas en combinaciones lineales de las dimensiones de la muestra \cite{survey, A review of feature selection methods with applications}.   
+La transformación de características consiste en proyectar el conjunto de datos original en un espacio dimensional más pequeño donde cada dimensión es una combinación lineal o no lineal de la muestra inicial, predominando la forma lineal \cite{Comparing and Combining Dimension Reduction Techniques for Efficient Text}. Es decir, los nuevos atributos son representaciones funcionales de los atributos originales basadas en combinaciones lineales de las dimensiones de la muestra \cite{survey text, A review of feature selection methods with applications}.   
 
 Estos son los métodos más populares:
 
 \begin{itemize}
-  \item \textbf{Indexación Semántica Latente (LSI)}: Este método es junto con TF-IDF uno de los más estudiados y aplicados en Text Mining debido a su capacidad para detectar estructuras de un alto orden semántico, ya que esto permite eliminar ambigüedades del lenguaje natural como son los sinónimos y las palabras polisémicas \cite{Comparing and Combining Dimension Reduction Techniques for Efficient Text}. LSI se basa en la Descomposición en Valores Singulares (SVD) de la matriz DTM para reducir la dimensionalidad de los datos con una distorsión mínima, puesto que las dimensiones de este nuevo espacio son ortogonales, es decir, no tienen correlación. En SVD cada factor es ordenado de forma decreciente y excepto los $k$ primeros términos, todos los demás son reestablecidos a valor cero. Algunos estudios demuestran que el número $k$ adecuado ronda los cien términos. Esto permite capturar las asociaciones más importantes entre los documentos a la vez que elimina las impurezas entre los datos \cite{survey, A comparative study of tf idf lsi and multi words for text classification}.
+  \item \textbf{Indexación Semántica Latente (LSI)}: Este método es junto con TF-IDF uno de los más estudiados y aplicados en Text Mining debido a su capacidad para detectar estructuras de un alto orden semántico, ya que esto permite eliminar ambigüedades del lenguaje natural como son los sinónimos y las palabras polisémicas \cite{Comparing and Combining Dimension Reduction Techniques for Efficient Text}. LSI se basa en la Descomposición en Valores Singulares (SVD) de la matriz DTM para reducir la dimensionalidad de los datos con una distorsión mínima, puesto que las dimensiones de este nuevo espacio son ortogonales, es decir, no tienen correlación. En SVD cada factor es ordenado de forma decreciente y excepto los $k$ primeros términos, todos los demás son reestablecidos a valor cero. Algunos estudios demuestran que el número $k$ adecuado ronda los cien términos. Esto permite capturar las asociaciones más importantes entre los documentos a la vez que elimina las impurezas entre los datos \cite{survey text, A comparative study of tf idf lsi and multi words for text classification}.
   
   \item \textbf{Proyección Aleatoria (RP)}: Esta técnica se presenta como una alternativa computacionalmente más barata a LSI. A diferencia del método anterior, aquí las dimensiones son escogidas de forma arbitraria sin ningún orden de importancia. El funcionamiento es similar, RP también proyecta las columnas de DTM en un espacio reducido utilizando una matriz aleatoria. Sin embargo, sigue habiendo muchas dudas sobre su eficacia en comparación con LSI, por lo que todavía sigue en periodo de investigación y mejora \cite{Comparing and Combining Dimension Reduction Techniques for Efficient Text}.
   
@@ -1564,22 +1563,134 @@ Estos son los métodos más populares:
 
 Una vez se ha disminuido al máximo posible la dimensionalidad de los datos, podemos asegurar que los atributos restantes son aquellas palabras clave y de más importancia que permiten identificar la temática de un documento y agruparlo con otros de ándole similar. De esta manera, la gran mayoría de los proceosos de reducción de términos trabajan sobre el \textit{Modelo de Espacio Vectorial} (VSM), en el que se representa el texto como el saco de palabras que se ha ido mencionando a lo largo de esta sección, donde un texto queda representado por un subconjunto de sus palabras, presumiblemente aquellas más relevantes. La aplicación, por lo tanto de un método de reducción prepara los datos para poder aplicar clusterización sobre ellos como si se tratase de un conjunto de datos normales, en el que por ejemplo, en el caso de TF-IDF, asociamos cada documento con sus palabras más significativas, que son consideradas atributos de dicho documento, y cada una de estas palabras toma el valor obtenido del cálculo de TF-IDF.
 
-Muchos de los algoritmos de clusterización presentados en este proyecto son de caracter general, por lo que pueden ser aplicados a casi cualquier tipo de datos como se vio en la Tabla \ref{tab:Tabla 2}. Entre ellos, algunos de los más utilizados son $k$-means \ref{subsec:k-means}, Fuzzy $k$-means \ref{fuzzymeans}, PAM \ref{pam}, CLARA \ref{clara}, DBSCAN \ref{subsec:dbscan}, DENCLUE \ref{subsec:denclue} y casi cualquier algoritmo jerárquico aglomerativo (AGNES \ref{subsec:AGNES}, BIRCH \ref{subsec:BIRCH} o Chameleon \ref{subsec:Chameleon}). Estos ya han sido expuestos y estudiados en sus respectivas secciones, pero hay dos algoritmos más que no se han tratado y que son utilizados frecuentemente en la clusterización de textos: EM y SOM. EM mezcla métodos probabilísticos con fuzzy clustering mientras que SOM (Self Organizing Maps) es un modelo basado en redes neuronales.
+Muchos de los algoritmos de clusterización presentados en este proyecto son de caracter general, por lo que pueden ser aplicados a casi cualquier tipo de datos como se vio en la Tabla \ref{tab:Tabla 2}. Entre ellos, algunos de los más utilizados son $k$-means \ref{subsec:k-means}, Fuzzy $k$-means \ref{fuzzymeans}, PAM \ref{pam}, CLARA \ref{clara}, DBSCAN \ref{subsec:dbscan}, DENCLUE \ref{subsec:denclue} y casi cualquier algoritmo jerárquico aglomerativo (AGNES \ref{subsec:AGNES}, BIRCH \ref{subsec:BIRCH} o Chameleon \ref{subsec:Chameleon}). Estos ya han sido expuestos y estudiados en sus respectivas secciones, pero hay dos algoritmos más que no se han tratado y que son utilizados frecuentemente en la clusterización de textos: EM y SOM. EM mezcla métodos probabilísticos con fuzzy clustering y densidad mientras que SOM (Self Organizing Maps) es un modelo basado en redes neuronales.
 
-Dando por finalizado el marco teórico en el que se ha expuesto el método de clusterización, sus principales algoritmos y su aplicación a datos de tipo texto, en la subsiguiente parte práctica vamos a ver cómo la clusterización de documentos puede ayudar con problemas reales.
+%====================================================================================================================================================%
+
+\subsubsection{Self-Organizing Map (SOM)}
+
+El algoritmo de Mapa Autoorganizado es utilizado en Inteligencia artificial y propuesto en \cite{som} ha sido aplicado en diversos campos como reconcimiento de voz, telecomunicacione o robtica. Su cualidad principal es que tiene la capacidad de crear representacionese internas de las características de entrada, permitiendo descubrir relaciones semánticas en las frases. Pertenece al grupo de algoritmos basados en redes neuronales, en el que intenta generar un mapa intuituvo de un conjunto de datos con alta dimensionalidad mediante aprendizaje no supervisado bien en un espacio bidimensional o tridimensional, donde gracias al producto de procesar los datos con una red neurnal de una sola capa es capaz de situar objetos similares cerca entre ellos. 
+
+Cada una de las neuronas tienen asociado un vector de pesos que tiene la misma dimensión que los vectores de entrada y una posición en el mapa, conectando entre sí aquellas neuronas que estén cerca. Esta cercanía queda determinada por los patrones encontrados en los datos de entrada. Asimismo, SOM utiliza el concepto de red neuronal competitiva, donde las neuronas avtivas refuerzan la actividad dentro de su vecindario mientras suprimen la actividad de otras neuronas \cite{survey text}. Gracias a esto, este algoritmo ofrece una representación de la estructura y relación entre los datos de una forma visual, haciendo que algunos expertos lo consideren más un método para la representación de datos que un algoritmo de clusterización. 
+
+Sin embargo, SOM requiere de una etapa de aprendizaje previa. En ella, las neuronas inicializan su peso de forma aleatoria o utilizando una muestra del conjunto de datos original, siendo más eficaz esta última. Posteriormente se administran ejemplos obtenidos del conjunto de datos de forma iterativa para el que se calcula su distancia euclidiana a todos los vectores de peso Se considera como la neurona con mayor correspondencia aquella cuyo vector de peso es el más similar al de la entrada. Los pesos de dicha neurona, denominada BMU (Best Matching Unit), y los de las otras neuronas cercanas son ajustados de forma que se aproximen más al vector de la entreda. Este proceso es repetido para cada vector de entrada dentro de un número de ciclos \cite{articulo14}. Este proceso queda resumido en el Algoritmo \ref{alg:Algoritmo SOM} y en la Figura \ref{fig:som}.
+
+
+\begin{algorithm}[!ht]
+\SetAlgoLined
+  \LinesNumbered
+  \SetKwRepeat{Do}{repetir}{hasta}
+  \DontPrintSemicolon
+  \KwIn{$D$: conjunto de datos con $n$ objetos.}
+  \KwOut{Un conjunto de prototipos.}
+  \Begin{
+    generar un mapa de neuronas con vectores de pesos aleatorios\;
+    \Do{queden muestras que procesar}{
+      administrar un vector de entrada $D(t)$\;
+      \ForEach{neurona $m$}{
+        calcular la distancia euclídea entre el vector de entrada $D(t)$ y el vector de peso de la neurona $m$\;
+        escoger la neurona con menor distancia: BMU\;
+      }
+      actualizar los pesos de las neuronas dentro del vecindario de BMU\;
+    }
+  }
+  \caption{SOM, basado en redes neuronales}
+  \label{alg:Algoritmo SOM}
+\end{algorithm}
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{som}
+\caption{SOM: Esquema del proceso del algoritmo de Mapa Autoorganizado \cite{som foto}.}
+\label{fig:som}
+\end{figure}
+
+
+%====================================================================================================================================================%
+
+\subsubsection{Expectation-maximization (EM)}
+
+Este tipo de algoritmo llamado \textit{Esperanza-maximización} en español pertenece a los grupos de algoritmos basados en densidad y en modelos probabilísticos, siendo uno de los más populares de este último grupo. Su enfoque se basa en intentar encontrar de forma iterativa la máxima verimisilitud entre parámetros de modelos probabilísticos que dependen de variables no observables. Este alterna entre pasos de \textit{Esperanza} o \textit{Expectation} (E) y \textit{Maximización} o \textit{Maximization} (M). En los pasos E se calcula la esperanza de la verosimilitud gracias a la incorporación de variables latentes como si fueran observables. Por otro lado, en los paso M se obtienen las estimaciones de máxima verosimilitud de los parámetros mediante la maximización de la verosimilitud esperada del paso E. Los resultados obtenidos en el paso M son usados de nuevo en otro paso E \cite{em}.
+
+Esto sirve como entorno de trabajo donde los pasos E y M pueden ser modificados para acomodarse a otros procesos de clustering como $k$-means o fuzzy $k$-means, donde el paso E conseiste en la asignación de cada objeto al cluster cuyo centroide está más cerca y el paso M en el ajuste de los centroides tras la asignación de objetos del paso E, cuyo resultado vuelve a aplicarse a un nuevo paso E \cite{LIBRO}.
 
 
 %====================================================================================================================================================%
                                               %============================================================%
 %====================================================================================================================================================%
 
+\section{Consolidadción}
+
+En esta sección recapitularemos brevemente sobre lo visto hasta ahora en este proyecto, dando así por concluido el marco teórico. La técnica de clusterización y su capacidad para clasificar objetos de manera no supervisada y durante el propio proceso ha hecho que se convierta en uno de los métodos más utilizados del mundo moderno con gran variedad de aplicaciones en diversos ámbitos. Los diferentes algoritmos que existen para realizar este proceso se pueden agrupar en cuatro grandes grupos: jerárquicos, basados en densidad, basados en rejilla y basados en particiones, existiendo otros grupos menores pero de creciente relevancia como algoritmos basados en métodos probabilísticos o en redes neuronales. Cada uno de los algoritmos de estos grupos opera de manera distinta y cuentan con ventajas e inconvenientes que obligan a tomar decisiones cruciales a la hora de decir cuál usar y qué valor asignar a los parámetros que nos puedan exigir. 
+
+Uno de los problemas que hacen al usuario determinar el tipo de algoritmo a utilizar es el tipo de datos con el que se pretende trabajar, siendo el texto uno de esos tipos de datos. Dentro de los textos y documentos encontramos gran parte de la información que se genera cada día, pero esto viene con la pega de que es información no estructurada y que necesita ser procesada de antemano para poder aplicar cualquier tipo de clusterización, con la que podemos agrupar documentos basándonos en su similitud repecto al tema que versan para facilitar su búsqueda y navegación.
+
+A continuación se presenta un caso real donde la clusterización de documentos puede ser de gran importancia y que es tan relevante en estos momentos: COVID-19. 
+
+ 
+%====================================================================================================================================================%
+                                              %============================================================%
+%====================================================================================================================================================%
  
  
 \section{COVID-19}
 
+A finales del año 2019 se detecó en Wuhan, China, una nueva enfermedad cuyo origen apuntaba al Mercado Mayorista de Mariscos de dicha ciudad \cite{oms}. Los primeros casos se diagnosticaron como un principio de neumonía de origen desconocido por la similitud de sus síntomas, lo que hizo que saltasen las alamrmas y se pudiese identificar en las primeras semanas del mes de enero de 2020 al causante de la enfermedad, un nuevo tipo de \textit{coronavirus}: \textit{SARS-CoV-2}. Los coronavirus reciben este nombre por la forma que tiene  y que se puede apreciar en la Figura \ref{fig:coronavirus} y que circulan principalmente en animales pero que han evolucionado de manera que también pueden infectar a humanos.   
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{coronavirus}
+\caption{Ilustración del coronavirus SARS-CoV-2 realizada por Alissa Eckert y Dan Higgins \cite{coronavirus imagen}.}
+\label{fig:coronavirus}
+\end{figure}
+
+Ya en diciembre la enfermedad se había propagado fuera de China, pero no sería hasta el trece de febrero de 2020 cuando la Organización Mundial de la Salud (OMS) avisó de manera oficial sobre el primer caso confirmado en Tailandia. Nuevos casos confirmaron el hecho de que este virus podía propagarse entre humanos, siendo el personal sanitario de China el más afectado y empezando a propagarse la enfermedad por otros países como Corea del Sur. No fue hasta el día treinta de enero que se declaró la existencia de un riesgo de salud pública de interés internacional y el día once de marzo se consideró pandemia debido al gran número de afectados (118.000) y muertes (4291) que habia provocado en más de ciento catorce países \cite{mas coronavirus}.
+
+A fecha de la realización de este TFG (septiembre, 2020) las cifras datan más de treinta millones de personas contagiadas y casi un millón de fallecidos \cite{mas mas coronavirus}. Se considera en este punto que se ha pasado la primera oleada de casos tras un periodo de cuarentena obligatorio que ha sido llevado a cabo en gran parte del mundo. Sin embargo, tras dicho confinamiento el número de casos volvió a aumentar generando nuevos focos de contagio, haciendo que la comunidad científica y sanitaría considere volver a tomar medidas dráscticas para preservar la salud de la población temiendo una segunda oleada. 
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{mapa covid}
+\caption{Distribución geográfica de catorce días acumulados de casos reportados de COVID-19 por cien mil habitantes a fecha de veinte de septiembre 2020 \cite{coronavirus mapa}.}
+\label{fig:mapa covid}
+\end{figure}
+
+\subsection{Objetivo de la parte práctica}
+
+Desde el primer caso confirmado hasta la fecha actual han pasado nueve meses en los que las labores científicas por desarrollar una vacuna contra el virus y encontrar más información al respecto no han cesado. Sin embargo, es dificil para los expertos mantenerse actualizados con los nuevos datos y resultados obtenidos cada día sobre el virus. Gran parte de estos nuevos avances se encuentran en la forma de artículos científicos, reportes o documentos; datos de tipo texto. Aplicando clusterización a este conjunto de artículos se pretende realizar una clasificación no supervisada de los mismos en base a su contenido permitiendo a los científicos encontrar de una forma más facil aquello que buscan.
+
+De esta manera, se aplicarán los conocimientos obtenidos a lo largo de este documento en un ámbito real con la intención de no solo ver un caso práctico de la teoría sino de ayudar a la comunidad científica en sus esfuerzos por terminar con la pandemia.
+
+El conjunto de datos con el que trabajaremos se encuentra en la plataforma Kaggle, una comunidad online enfocada a analistas de datos y personas dedicadas al aprendizaje automático donde se pueden encontrar multitud de conjuntos de datos y publicaciones relacionadas con los mismos. De vez en cuando o en momentos cruciales, como este que estamos viviendo, Kaggle organiza competiciones remuneradas en las que incita a expertos e iniciados a participar. Con motivo de la pandemia de COVID-19 se lanzó una nueva competición en la que se pone a disposición del público más de dos cientos mil artículos sobre el virus e información relacionada con el mismo que se va actualizando periódicamente con la intención de obtener información útil \cite{kaggle}.
+
+Para el procesamiento de dichos datos utilizaremos R \cite{R}, un entorno lenguaje de programación enfocado al análisis estadístico de datos, siendo uno de los más populares dentro del ámbito de la investigación científica, minería de datos, matemáticas, minería de datos, etc. Escogemos R sobre otros lenguajes por ser gratuito, de software libre, por su capacidad de alta escalabilidad y por su compatibilidad con todos los sistemas operativos. Otra alternativa que presenta las mismas características sería Python, otro de los lenguajes de programación más populares y que se caracteriza por su capacidad para emplearse en cualquier ámbito. Sin embargo, la familiaridad obtenida con R para este tipo de taréas hace que me decante por dicho lenguaje. Como entornos de trabajo se utilizarán RStudio, el IDE\footnote{Se denominan así a los entornos de desarrollo integrado, aplicaciones informáticas que ofrecen servicios para ayudar a los programadores en el desarrollo de software.} por defecto para trabajar con R y JupyterNotebook, un entorno informático basado en web que permite crear documentos donde ejecutar código ofreciendo ayuda al usuario a la hora de mostrar gráfos y código, permitiendo exportar su contenido en diferentes formatos.
+
+Por consiguiente, se planea aplicar diversos métodos de clusterización al conjunto de artículos relacionados con el COVID-19 ofrecidos por Kaggle utilizando R. El orden de operaciones se muestra a continuación y dentro de cada paso se expondrán los requisitos y más información al respecto.
+
+\begin{itemize}
+  \item EDA
+  
+  \item STOPWORDS: SI USAMOS TAU SERÍA CONVENIENTE QUITAR LAS PALABRAS VACÍAS ANTES DE LA TOKENIZACIÓN. 
+
+  \item LENMATIZACIÓN: USAMOS TEXTSTEM
+
+  \item TOKENIZACIÓN: CLEANNLP (SEGUN JORGE TRABAJA MEJOR CON MÁS DOCUMENTOS QUE TEXT2VEC), PERO PODEMOS COGER DIRECTAMENTE T2V PQ LA MATARIZ LA HACEMOS CON EL MISMO PAQUETE
+
+  \item DTM: TEX2VEC
+
+  \item TF-IDF: TEX2VEC
+  
+  \item EDA > TAU > TEXTSTEM > CLEANNLP/TEXT2VEC > TEXT2VEC > TEX2VEC > CLUSTERING
+
+  \item FEATHER para almacenar los resultados
+
+\end{itemize}
 
 
+\subsection{Carga de datos}
 
+Como se ha mencionado, vamos a trabajar con el conjunto de artículos ofrecidos por Kaggle relacionados con la enfermedad COVID-19. 
 
 
 %====================================================================================================================================================%
@@ -1599,6 +1710,8 @@ Dando por finalizado el marco teórico en el que se ha expuesto el método de cl
 
 \renewcommand{\listfigurename}{\subsection{\textbf{Imágenes y figuras}}}
 \listoffigures
+
+\clearpage
 
 \section{Referencias}
 \renewcommand{\section}[2]{}
@@ -1704,6 +1817,25 @@ Dando por finalizado el marco teórico en el que se ha expuesto el método de cl
 
 \bibitem{Document clustering tfidf approach} Bafna, P., Pramod, D.,  \& Vaidya, A. (2016, March). Document clustering: TF-IDF approach. In 2016 International Conference on Electrical, Electronics, and Optimization Techniques (ICEEOT) (pp. 61-66). IEEE.
 
+\bibitem{som} Kohonen, T. (1990). The self-organizing map. Proceedings of the IEEE, 78(9), 1464-1480.
+
+\bibitem{som foto} Rosli, N. R. M., \& Yahya, K. (2017). Using Non-supervised Artificial Neural Network for Determination of Anthropogenic Disturbance in a River System. Tropical Life Sciences Research, 28(2), 189.
+
+\bibitem{em} Tatiraju, S., \& Mehta, A. (2008). Image Segmentation using k-means clustering, EM and Normalized Cuts. Department of EECS, 1, 1-7.
+
+\bibitem{oms} OMS | Nuevo coronavirus - China. (2020, January 15). Retrieved September 21, 2020, from https://www.who.int/csr/don/12-january-2020-novel-coronavirus-china/es/
+
+\bibitem{coronavirus imagen} Eckert, A., \& Higgins, D. (n.d.). Details - Public Health Image Library(PHIL). Retrieved September 21, 2020, from https://phil.cdc.gov/Details.aspx?pid=23311
+
+\bibitem{mas coronavirus} Suárez, R. (2020, March 11). Atención: La OMS declara pandemia por el nuevo coronavirus. Retrieved September 21, 2020, from https://www.eltiempo.com/salud/coronavirus-ya-es-una-pandemia-declara-la-oms-471524
+ 
+\bibitem{coronavirus mapa} COVID-19 situation update worldwide, as of 17 September 2020. (2020, September 17). Retrieved September 21, 2020, from https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases 
+ 
+\bibitem{mas mas coronavirus} Mapa de la enfermedad por coronavirus (COVID-19). (n.d.). Retrieved September 21, 2020, from https://google.com/covid19-map/?hl=en-ES
+
+\bibitem{kaggle} AI, A. (2020, September 17). COVID-19 Open Research Dataset Challenge (CORD-19). Retrieved September 21, 2020, from https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge
+
+\bibitem{R} What is R? (n.d.). Retrieved September 21, 2020, from https://www.r-project.org/about.html
  
 
 \end{thebibliography}    

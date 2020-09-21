@@ -1,4 +1,5 @@
-\contentsline {algocf}{\numberline {1}{\ignorespaces $k$-Means, basado en la media}}{14}{algocf.1}%
-\contentsline {algocf}{\numberline {2}{\ignorespaces PAM, basado en representantes}}{17}{algocf.2}%
-\contentsline {algocf}{\numberline {3}{\ignorespaces DBSCAN, basado en densidad}}{24}{algocf.3}%
-\contentsline {algocf}{\numberline {4}{\ignorespaces STING, basado en rejilla}}{27}{algocf.4}%
+\contentsline {algocf}{\numberline {1}{\ignorespaces $k$-Means, basado en la media}}{20}{algocf.1}%
+\contentsline {algocf}{\numberline {2}{\ignorespaces PAM, basado en representantes}}{24}{algocf.2}%
+\contentsline {algocf}{\numberline {3}{\ignorespaces DBSCAN, basado en densidad}}{34}{algocf.3}%
+\contentsline {algocf}{\numberline {4}{\ignorespaces STING, basado en rejilla}}{38}{algocf.4}%
+\contentsline {algocf}{\numberline {5}{\ignorespaces SOM, basado en redes neuronales}}{60}{algocf.5}%
