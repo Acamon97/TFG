@@ -44,8 +44,9 @@
 \contentsline {section}{\numberline {12}Consolidadción}{60}{section.12}%
 \contentsline {section}{\numberline {13}COVID-19}{61}{section.13}%
 \contentsline {subsection}{\numberline {13.1}Objetivo de la parte práctica}{62}{subsection.13.1}%
-\contentsline {section}{\numberline {14}Anexo}{65}{section.14}%
-\contentsline {subsection}{\numberline {14.1}\textbf {Algoritmos}}{65}{subsection.14.1}%
-\contentsline {subsection}{\numberline {14.2}\textbf {Tablas}}{65}{subsection.14.2}%
-\contentsline {subsection}{\numberline {14.3}\textbf {Imágenes y figuras}}{65}{subsection.14.3}%
-\contentsline {section}{\numberline {15}Referencias}{67}{section.15}%
+\contentsline {subsection}{\numberline {13.2}Carga y exploración de los datos}{64}{subsection.13.2}%
+\contentsline {section}{\numberline {14}Anexo}{68}{section.14}%
+\contentsline {subsection}{\numberline {14.1}\textbf {Algoritmos}}{68}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}\textbf {Tablas}}{68}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}\textbf {Imágenes y figuras}}{68}{subsection.14.3}%
+\contentsline {section}{\numberline {15}Referencias}{70}{section.15}%

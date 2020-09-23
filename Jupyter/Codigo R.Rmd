@@ -3,7 +3,466 @@ title: "Pruebas R"
 output: html_notebook
 ---
 
+
 ```{r}
+# Instalamos los paquetes 
+install.packages('rjson')
+install.packages('tidyverse')
+install.packages('quanteda')
+install.packages('feather')
+install.packages('cld2')
+install.packages('ggplot2')
+install.packages('plotly')
+install.packages('scales')
+install.packages('cowplot')
+install.packages('tau')
+install.packages('stopwords')
+install.packages('tm')
+install.packages('textstem')
+install.packages('pbapply’)
+```
+
+
+
+
+```{r}
+# Cargamos los paquetes pertinenter
+library(rjson); library(tidyverse); library(quanteda); library(feather); library(cld2); library(ggplot2); library(plotly); library(scales); library(cowplot); library(tau); library(stopwords); library(tm); library(textstem)
 
 ```
+
+
+
+CODIGO PARA CARGAR METADATA Y VER SU ESTRUCTURA
+
+```{r}
+# Cargamos los datos del archivo "metadata.csv"
+# stringAsFactors evita que las cadenas de texto se conviertan en factores
+# na.strings indica qué consideramos valores nulos. En este caso celdas vacías y "NA"
+metadata_df <- read.csv("D:/COVID/metadata.csv", stringsAsFactors = FALSE, na.strings = c("", "NA"))
+# str() permite ver la estructura del archivo: número de filas, columnas y muestra el primero objeto almacenado
+str(metadata_df)
+
+```
+
+
+FUNCIÓN PARA EXTRAER INFORMACIÓN
+
+```{r}
+# Función de ayuda  para extraer información de JSON
+leer_json <- function(json){
+  # Obtenemos el identificador del texto
+  paper_id <- json$paper_id
+  # Obtenemos sus autores
+  authors <- json$metadata$authors
+  author_list <- list()
+  # Separamos cada autor
+  for (author in authors) {
+      name <- paste0(author$first," ", author$last, ";")
+      author_list <- paste0(author_list, as.character(name))
+  }
+  # Obtenemos el título del artículo
+  title_text <- json$metadata$title
+  # Obtenemos todo el abstract o resumen
+  abstract_text <- ''
+  for (each_abstract in json$abstract) {
+      abstract_text <- paste(abstract_text, each_abstract$text)
+  }
+  # Obtenemos el cuerpo del artículo
+  body_text <- ''
+  for (each_body in json$body_text) {
+      body_text <- paste(body_text, each_body$text)
+  }
+
+  # Devolvemos el resultado en forma de Data Frame
+  return(tibble(paper_id, author_list, title_text, abstract_text, body_text, all_text))
+}
+
+
+```
+
+DIRECTORIO DE LOS ARCHIVOS
+
+```{r}
+
+# Identificamos la carpeta que contiene los JSON
+directorio <- 'D:/COVID/document_parses/pdf_json/'
+#Cogemos todos los archivos del directorio
+archivos <- list.files(directorio)
+# Mostramos el número de archivos
+length(archivos)
+
+```
+
+PROCESAMIENTO DE LOS ARHIVOS (covid_df.csv)
+
+30 minutos
+
+```{r}
+# Inicializamos el contenido del artíuculo en formato lista
+articulos <- list()
+# Inicializamos el índice de artículos
+indice <- 0
+
+# Iteramos cada uno de los archivos
+for (archivo in archivos) {
+  # Actualizamos el puntero
+  indice <- indice + 1
+  # Breve comprobación para mostrar el estado de carga
+  if (indice %% (length(archivos) %/% 10) == 0) {
+    cat("Artículos procesados:  ", indice, " de ", length(archivos), "\n")
+  }
+  
+  # Modificamos el camino o PATH hacia el archivo actual
+  ruta_archivo <- paste0(directorio, '/', archivo)
+  # Convertimos el archivo JSON a objeto de R para poder tratarlo
+  json <- fromJSON(file = ruta_archivo)
+  # Aplicamos la función para extraer la informaciópn del archivo
+  contenido <- leer_json(json)
+  
+  # Comprobamos si el formato del archivo es el correcto
+  if(length(contenido$paper_id) > 0){
+    # Si se ha obtenido información del archivo
+    # Buscamos el artículo en el archivo "metadata.csv"
+    meta <- metadata_df[which(metadata_df$sha == contenido$paper_id), ] 
+    # Si no hay información en metadata.csv o el cuerpo del artículo está vacío saltamos el artículo
+    if (length(meta) > 0 | length(contenido$body_text) <= 0) {
+      # Si no se encuentra autor en el JSON buscamos en metadata      
+      if (length(contenido$author_list) <= 0) {
+        authors <- metadata_df$authors
+        author_list <- list()
+        # Separamos cada autor
+        for (author in authors) {
+            name <- paste0(author$first," ", author$last, ";")
+            author_list <- paste0(author_list, as.character(name))
+        }
+        # Sustituimos los autores
+        contenido$author_list <- author_list
+      }
+      
+      # Si no se encuentra el título en el JSON lo buscamos en metadata
+      if (contenido$title_text == '') {
+        contenido$title_text <- 'NoIncluido'
+      }
+      
+      # Si no se encuentra el abstract lo dejamos como 'No incluido'
+      if (nchar(contenido$abstract_text) <= 0) {
+        contenido$abstract_text <- 'NoIncluido'
+      }
+
+      # Añadimos la revista de publicación
+      if (length(meta$journal) > 0) {
+        contenido$journal <- meta$journal[1]
+      }
+      else {
+        contenido$journal <- 'NoIncluido'
+      }
+      # Añadimos el DOI
+      if (length(meta$doi) > 0) {
+        contenido$doi <- meta$doi[1]
+      }
+      else {
+        contenido$doi <- 'NoIncluido'
+      }
+   
+      # Incluimos el contenido al conjunto de artículos
+      articulos[[indice]] <- contenido
+    }
+  }
+}
+
+# Enlazamos todas las filas generadas en un único Data Frame
+covid_df <- bind_rows(articulos)
+
+```
+
+```{r}
+# Observamos las cinco primeras filas del nuevo Data Frame
+view(head(covid_df,5))
+# Comprobamos el número de artículos existentes
+nrow(covid_df)
+
+```
+
+6 minutos
+
+```{r}
+write.csv(covid_df, "D:/COVID/covid_df.csv", row.names = FALSE)
+```
+
+```{r}
+covid_df <- read.csv("D:/COVID/covid_df.csv", stringsAsFactors = FALSE, na.strings = c("", "NA"))
+```
+
+30 segundos
+```{r}
+write_feather(covid_df, "D:/COVID/covid_df_feather_prelematizacion.csv")
+
+```
+
+20 segundos
+```{r}
+covid_df <- read_feather("D:/COVID/covid_df_feather_prelematizacion.csv")
+```
+
+(covid_df_feather_sin_todo.csv)
+
+```{r}
+covid_df <- select(covid_df, -all_text)
+```
+
+
+¡¡¡¡CONTADOR DE PALABRAS!!!! (/covid_df_feather_palabras)
+1 minutos
+```{r}
+# Contamos el número de palabras para el abstracto ...
+covid_df$words_abstract <- apply(covid_df['abstract_text'], 2, function(s) str_count(s, '\\w+'))
+# ... y el cuerpo del texto
+covid_df$words_body <- apply(covid_df['body_text'], 2, function(s) str_count(s, '\\w+'))
+
+```
+
+
+
+¡¡¡¡DUPLICADOS!!! (covid_df_feather_duplicados)
+5 segundos
+```{r}
+# Comprobamos cuantos objetos tienen el mismo cuerpo
+duplicados <- duplicated(covid_df$body_text)
+# Mostramos la información obtenida
+summary(duplicados)
+# Obtenemos los 5 primeros objetos detectados como duplicados 
+head(which(duplicados==TRUE))
+
+```
+
+```{r}
+# Mostramos los cinco primeros duplicados
+view(covid_df[c(2176,2590,4426,5000,5018),])
+
+```
+
+¡¡¡¡MOSTRAR DUPLICADOS!!!!
+
+```{r}
+length(which(covid_df$title_text=='Autoantibodies in Patients with Rheumatoid Arthritis'))
+length(which(covid_df$title_text=='Remdesivir in Treatment of COVID-19: A Systematic Benefit-Risk Assessment'))
+length(which(covid_df$title_text=='Extracellular superoxide dismutase, a molecular transducer of health benefits of exercise'))
+length(which(covid_df$title_text=='COVID-19 pneumonia: different respiratory treatments for different phenotypes?'))
+
+```
+
+¡¡¡¡ELIMINAR DUPLICADOS!!!!
+
+```{r}
+# Eliminamos duplicados
+covid_df <- covid_df[!duplicated(covid_df$body_text),]
+nrow(covid_df)
+
+```
+
+
+¡¡¡¡DETECCION LENGUAJE!!!! (covid_df_feather_idioma.csv)
+
+```{r}
+# Añadimos una nueva columna con el idioma de cada texto
+covid_df$language <- apply(covid_df['body_text'], 2, function(s) detect_language(substring(s, 1,  2000)))
+# Información
+summary(covid_df$language)
+
+
+```
+
+Mirar de hacerlo con ggplot
+
+```{r}
+# Creación de matriz con los datos
+idiomas <- matrix(c(842, 92212, 658, 517, 130, 71, 88), ncol = 7, byrow = TRUE)
+colnames(idiomas) <- (c('Alemán','Inglés', 'Español', 'Francés', 'Holandés', 'Otros', 'NA'))
+# Generación de gráfico 
+barplot(idiomas, main = 'Distribución de idiomas', xlab = 'Idiomas', ylab = 'Número de artículos', col = '#69b3a2', axes = FALSE)
+usr <- par("usr")
+par(usr=c(usr[1:2], 0, 100000))
+axis(2, at=seq(0, 100000,25000))
+
+
+```
+
+¡¡¡¡FILTRADO DE INGLES!!!! (covid_df_feather_ingles.csv)
+
+```{r}
+# Nos quedamos únicamente con textos en inglés
+covid_df <- covid_df[which(covid_df$language=='en'),]
+```
+
+¡¡¡¡INFORMACION PALABRAS!!!!
+```{r}
+# Información sobre el número de palabras
+summary(covid_df[,c('words_abstract','words_body')])
+
+```
+
+
+```{r}
+# Generación del grafo para el resumen con histograma y densidad
+palabras_abstract <- ggplot(covid_df, aes(x=words_abstract)) + geom_histogram(aes(y=..density..), alpha=.3, fill="cyan", bins=80) + geom_density( colour="blue") + theme_classic() + ggtitle('Distribución del número de palabras en el resumen') +  xlab('Número de palabras del resumen') + ylab('Densidad')
+# Misma operación para el cuerpo del texto
+palabras_cuerpo <- ggplot(covid_df, aes(x=words_body)) + geom_histogram(aes(y=..density..), alpha=.3, fill="cyan", bins=80) + geom_density( colour="blue") + theme_classic() + scale_x_continuous(labels = comma) + ggtitle('Distribución del número de palabras en el cuerpo')  +  xlab('Número de palabras del cuerpo') + ylab('Densidad')
+# Mostramos los gráficos
+palabras_abstract
+palabras_cuerpo
+
+```
+
+¡¡¡¡MAS INFORMACION PALABRAS!!!!
+
+```{r}
+# Cinco primeros artículos con menos de diez palabras en el abstracto
+view(covid_df[head(which(covid_df$words_abstract < 10 & covid_df$abstract_text != 'NoIncluido')),])
+# Y menos de diez palabras en el cuerpo
+view(covid_df[head(which(covid_df$words_body < 10)),])
+
+```
+
+
+¡¡¡¡ELIMINACION DE PALABRAS!!!!
+
+
+```{r}
+# Cargamos la lista del paquete stopwords
+p_vacias <- stopwords::stopwords("en",source = "stopwords-iso")
+# Añadimos más palabrasa 
+p_propias <- c('doi', 'preprint', 'copyright', 'org', 'https', 'et', 'al', 'author', 'figure', 'table',
+    'rights', 'reserved', 'permission', 'use', 'used', 'using', 'biorxiv', 'medrxiv', 'license', 'fig', 'fig.', 'al.', 'Elsevier', 'PMC', 'CZI',
+    '-PRON-', 'usually')
+# Y las juntamos
+p_vacias <- append(p_vacias, p_propias)
+# Eliminamos cualquier posible duplicado
+p_vacias <- unique(p_vacias)
+# Vemos información al respecto
+length(p_vacias)
+sample(p_vacias, 10)
+
+```
+
+
+3 minutos (covid_df_feather_abstract.csv)
+
+```{r}
+# Almacenamos el primer resumen para comparar
+resumen <- covid_df$abstract_text[1]
+# Conversión del resumen a minúsculas
+covid_df$abstract_text <- apply(covid_df['abstract_text'], 2, function(s) tolower(s))
+# Eliminación de signos de puntuación
+covid_df$abstract_text <- apply(covid_df['abstract_text'], 2, function(s) removePunctuation(s, preserve_intra_word_contractions = TRUE, preserve_intra_word_dashes = TRUE))
+# Eliminación de palabras vacías
+covid_df$abstract_text <- apply(covid_df['abstract_text'], 2, function(s) remove_stopwords(s, p_vacias, lines = TRUE))
+# Añadimos nueva columna con número de palabras actuales
+covid_df$new_word_abstract <- apply(covid_df['abstract_text'], 2, function(s) str_count(s, '\\w+'))
+```      
+
+
+```{r}
+substring(covid_df$body_text[1], 1, 2000)
+```
+
+10 minutos
+
+```{r message=TRUE, warning=TRUE}
+# Repetimos la operación con el cuerpo
+# Conversión del cuerpo a minúsculas
+covid_df$body_text <- apply(covid_df['body_text'], 2, function(s) tolower(s))
+# Eliminación de signos de puntuación
+covid_df$body_text <- apply(covid_df['body_text'], 2, function(s) removePunctuation(s, preserve_intra_word_contractions = TRUE, preserve_intra_word_dashes = TRUE))
+```
+
+3 horas (covid_df_feather_stopwords.csv)
+
+```{r}
+# Eliminación de palabras vacías
+covid_df$body_text <- apply(covid_df['body_text'], 2, function(s) remove_stopwords(s, p_vacias, lines = TRUE))
+
+```
+
+```{r}
+# Añadimos nueva columna con número de palabras actuales
+covid_df$new_word_body <- apply(covid_df['body_text'], 2, function(s) str_count(s, '\\w+'))
+```
+
+¡¡¡¡COMPARAMPOS NUMERO DE PALABRAS!!!!
+
+```{r}
+# Creamos dos nuevas columnas con la resta de palabras originales y actuales
+covid_df$abstract_comparative <- covid_df$words_abstract - covid_df$new_word_abstract
+covid_df$body_comparative <- covid_df$words_body - covid_df$new_word_body
+```
+
+```{r}
+# Mostramos un resumen de la información
+summary(covid_df[c('new_word_abstract', 'new_word_body', 'abstract_comparative', 'body_comparative')])
+# Calculamos el total de palabras iniciales
+inicial_resumen <- sum(covid_df$words_abstract)
+inicial_cuerpo <- sum(covid_df$words_body)
+inicial <- inicial_resumen + inicial_cuerpo
+# Calculamos el total de palabras finales
+final_resumen <- sum(covid_df$new_word_abstract)
+final_cuerpo <- sum(covid_df$new_word_body)
+final <- final_resumen + final_cuerpo
+# Calculamos las palabras eliminadas
+quitadas_resumen <- sum(covid_df$abstract_comparative)
+quitadas_cuerpo <- sum(covid_df$body_comparative)
+quitadas <- quitadas_resumen + quitadas_cuerpo
+# Mostramos los datos
+datos <- matrix(c(inicial_resumen, inicial_cuerpo, inicial, final_resumen, final_cuerpo, final, quitadas_resumen, quitadas_cuerpo, quitadas), nrow = 3, dimnames = list(c("Resumen", "Cuerpo", "Total"), c("Inicial", "Final", "Eliminadas")))
+datos
+
+
+```
+
+
+¡¡¡¡GRAFICOS PARA LAS PALABRAS!!!!
+
+```{r}
+# Generación del grafo para el resumen con histograma y densidad
+nuevas_palabras_abstract <- ggplot(covid_df, aes(x=new_word_abstract)) + geom_histogram(aes(y=..density..), alpha=.3, fill="cyan", bins=80) + geom_density( colour="blue") + theme_classic() + ggtitle('Distribución del número de palabras en el resumen') + xlab('Número actual de palabras del resumen') + ylab('Densidad')
+# Misma operación para el cuerpo del texto
+nuevas_palabras_cuerpo <- ggplot(covid_df, aes(x=new_word_body)) + geom_histogram(aes(y=..density..), alpha=.3, fill="cyan", bins=80) + geom_density( colour="blue") + theme_classic() + scale_x_continuous(labels = comma) + ggtitle('Distribución del número de palabras en el cuerpo') + xlab('Número actual de palabras del cuerpo') + ylab('Densidad')
+# Generamos grafo para ver cuantas palabras se han quitado
+comparacion_abstract<-ggplot(covid_df, aes(x=abstract_comparative)) + geom_histogram(aes(y=..density..), alpha=.3, fill="red", bins=80) + geom_density( colour="red") + theme_classic() + ggtitle('Palabras eliminadas del resumen') +  xlab('Número de palabras retiradas del resumen') + ylab('Densidad') + geom_vline(aes(xintercept= mean(abstract_comparative)), linetype="dashed")
+# Misma operaciópn para el cuerpo del texto
+comparacion_cuerpo <- ggplot(covid_df, aes(x=body_comparative)) + geom_histogram(aes(y=..density..), alpha=.3, fill="red", bins=80) + geom_density( colour="red") + theme_classic() + scale_x_continuous(labels = comma) + ggtitle('Palabras eliminadas del resumen') + xlab('Número de palabras retiradas del cuerpo') + ylab('Densidad') + geom_vline(aes(xintercept= mean(body_comparative)), linetype="dashed")
+
+# Mostramos los gráficos
+nuevas_palabras_abstract
+nuevas_palabras_cuerpo
+comparacion_abstract
+comparacion_cuerpo
+```
+
+(covid_df_feather_prelematizacion.csv)
+
+¡¡¡¡LEMATIZACION!!!!
+
+```{r}
+prueba <- head(covid_df, 10000)
+prueba$abstract_text <- apply(prueba['abstract_text'], 2, function(s) lemmatize_strings(s))
+
+```
+
+
+
+
+```{r}
+# Lematizamos los resúmenes
+covid_df$abstract_text <-  lemmatize_strings(covid_df$abstract_text)
+```
+
+
+
+
+
+
+
+
+
 

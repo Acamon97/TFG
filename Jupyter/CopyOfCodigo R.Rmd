@@ -1,0 +1,134 @@
+---
+title: "Pruebas R"
+output: html_notebook
+---
+
+
+```{r}
+# Cargamos los datos del archivo "metadata.csv"
+# stringAsFactors evita que las cadenas de texto se conviertan en factores
+# na.strings indica qué consideramos valores nulos. En este caso celdas vacías y "NA"
+metadata_df <- read.csv("D:/COVID/metadata.csv", stringsAsFactors = FALSE, na.strings = c("", "NA"))
+# str() permite ver la estructura del archivo: número de filas, columnas y muestra el primero objeto almacenado
+str(metadata_df)
+
+```
+
+
+```{r}
+# Instalamos los paquetes 
+install.packages('rjson')
+install.packages('tidyverse')
+install.packages('quanteda')
+```
+
+
+```{r}
+# Cargamos los paquetes pertinenter
+library(rjson); library(tidyverse); library(quanteda);
+
+```
+
+```{r}
+# Función de ayuda  para extraer información de JSON
+leer_json <- function(json){
+  # Obtenemos el identificador del texto
+  paper_id <- json$paper_id
+  # Obtenemos sus autores
+  authors <- json$metadata$authors
+  author_list <- list()
+  # Separamos cada autor
+  for (author in authors) {
+      name <- paste0(author$first," ", author$last, ";")
+      author_list <- paste0(author_list, as.character(name))
+  }
+  # Obtenemos el título del artículo
+  title_text <- json$metadata$title
+  # Obtenemos todo el abstract o resumen
+  abstract_text <- ''
+  for (each_abstract in json$abstract) {
+      abstract_text <- paste(abstract_text, each_abstract$text)
+  }
+  # Obtenemos el cuerpo del artículo
+  body_text <- ''
+  for (each_body in json$body_text) {
+      body_text <- paste(body_text, each_body$text)
+  }
+  # Unimos título, abstracto y cuerpo 
+    all_text <- paste(list(title_text, abstract_text, body_text), collapse = ' ')
+  
+  # Devolvemos el resultado en forma de Data Frame
+  return(tibble(paper_id, author_list, title_text, abstract_text, body_text, all_text))
+}
+
+
+```
+
+```{r}
+
+# Identificamos la carpeta que contiene los JSON
+directorio <- 'D:/COVID/document_parses/pdf_json/'
+#Cogemos todos los archivos del directorio
+#archivos <- list.files(directorio)
+archivos <- head(list.files(directorio), 3)
+# Mostramos el número de archivos
+length(archivos)
+
+```
+
+```{r}
+# Inicializamos el contenido del artíuculo en formato lista
+articulo <- list()
+# Inicializamos el índice de artículos
+indice <- 0
+
+# Iteramos cada uno de los archivos
+for (archivo in archivos) {
+  # Actualizamos el puntero
+  indice <- indice + 1
+  # Breve comprobación para mostrar el estado de carga
+  if (indice %% (length(archivos) %/% 1) == 0) {
+    cat("Artículos procesados:  ", indice, " de ", length(archivos), "\n")
+  }
+  # Modificamos el camino o PATH hacia el archivo actual
+  ruta_archivo <- paste0(directorio, '/', archivo)
+  # Convertimos el archivo JSON a objeto de R para poder tratarlo
+  json <- fromJSON(file = ruta_archivo)
+  # Aplicamos la función para extraer la informaciópn del archivo
+  contenido <- leer_json(json)
+  # Comprobamos si el formato del archivo es el correcto
+  if(length(contenido$paper_id) > 0){
+    # Si se ha obtenido información del archivo
+    # Buscamos el artículo en el archivo "metadata.csv"
+    #meta <- metadata_df[which(metadata_df$sha == contenido$paper_id)] 
+    
+    #meta
+    
+    
+    
+    
+    
+    
+    
+    
+    articulo[[indice]] <- contenido
+  }
+}
+
+# Enlazamos todas las filas generadas en un único Data Frame
+covid_df <- bind_rows(articulo)
+view(head(covid_df,5))
+nrow(covid_df)
+
+```
+
+
+
+
+
+
+
+
+
+
+

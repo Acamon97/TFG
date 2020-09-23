@@ -1485,7 +1485,7 @@ Es por estos motivos, y el hecho de que trabajamos con cadenas de texto y no con
 %====================================================================================================================================================%
 
 
-\subsection{Preparación de datos}
+\subsection{Preparación de datos} \label{subsec:preparación de datos}
 
 Uno de los principales problemas a la hora de procesar datos de tipo texto, es la gran cantidad de atributos que estos contienen, por lo que una de las tareas principales antes de trabar con ellos es procesarlos de manera que podamos reducir dicha cantidad mediante la eliminación de todas aquellas palabras que no aportan significado o son demasiado comunes como para ser relevantes, así como la reducción de las palabras a su raiz o lexema. Estos dos procesos reciben los nombres de eliminación de \textit{palabras vacías} y \textit{normalización}.
 
@@ -1666,17 +1666,22 @@ El conjunto de datos con el que trabajaremos se encuentra en la plataforma Kaggl
 
 Para el procesamiento de dichos datos utilizaremos R \cite{R}, un entorno lenguaje de programación enfocado al análisis estadístico de datos, siendo uno de los más populares dentro del ámbito de la investigación científica, minería de datos, matemáticas, minería de datos, etc. Escogemos R sobre otros lenguajes por ser gratuito, de software libre, por su capacidad de alta escalabilidad y por su compatibilidad con todos los sistemas operativos. Otra alternativa que presenta las mismas características sería Python, otro de los lenguajes de programación más populares y que se caracteriza por su capacidad para emplearse en cualquier ámbito. Sin embargo, la familiaridad obtenida con R para este tipo de taréas hace que me decante por dicho lenguaje. Como entornos de trabajo se utilizarán RStudio, el IDE\footnote{Se denominan así a los entornos de desarrollo integrado, aplicaciones informáticas que ofrecen servicios para ayudar a los programadores en el desarrollo de software.} por defecto para trabajar con R y JupyterNotebook, un entorno informático basado en web que permite crear documentos donde ejecutar código ofreciendo ayuda al usuario a la hora de mostrar gráfos y código, permitiendo exportar su contenido en diferentes formatos.
 
-Por consiguiente, se planea aplicar diversos métodos de clusterización al conjunto de artículos relacionados con el COVID-19 ofrecidos por Kaggle utilizando R. El orden de operaciones se muestra a continuación y dentro de cada paso se expondrán los requisitos y más información al respecto.
+Por consiguiente, se planea aplicar diversos métodos de clusterización al conjunto de artículos relacionados con el COVID-19 ofrecidos por Kaggle utilizando R. El orden de operaciones se muestra a continuación, realizando una exploraración de los datos y reduciendo con técnicas de NLP la cantidad de atributos.
 
 \begin{itemize}
-  \item EDA
+  \item Carga y exploración de los datos
   
-  \item STOPWORDS: SI USAMOS TAU SERÍA CONVENIENTE QUITAR LAS PALABRAS VACÍAS ANTES DE LA TOKENIZACIÓN. 
-
-  \item LENMATIZACIÓN: USAMOS TEXTSTEM
-
-  \item TOKENIZACIÓN: CLEANNLP (SEGUN JORGE TRABAJA MEJOR CON MÁS DOCUMENTOS QUE TEXT2VEC), PERO PODEMOS COGER DIRECTAMENTE T2V PQ LA MATARIZ LA HACEMOS CON EL MISMO PAQUETE
-
+  \item Preparación de los datos con NLP
+  
+  \begin{itemize}
+  
+    \item STOPWORDS: SI USAMOS TAU SERÍA CONVENIENTE QUITAR LAS PALABRAS VACÍAS ANTES DE LA TOKENIZACIÓN. 
+  
+    \item LENMATIZACIÓN: USAMOS TEXTSTEM
+  
+    \item TOKENIZACIÓN: CLEANNLP (SEGUN JORGE TRABAJA MEJOR CON MÁS DOCUMENTOS QUE TEXT2VEC), PERO PODEMOS COGER DIRECTAMENTE T2V PQ LA MATARIZ LA HACEMOS CON EL MISMO PAQUETE
+  \end{itemize}
+  
   \item DTM: TEX2VEC
 
   \item TF-IDF: TEX2VEC
@@ -1687,11 +1692,101 @@ Por consiguiente, se planea aplicar diversos métodos de clusterización al conj
 
 \end{itemize}
 
+%====================================================================================================================================================%
 
-\subsection{Carga de datos}
+\subsection{Carga y exploración de los datos}
 
-Como se ha mencionado, vamos a trabajar con el conjunto de artículos ofrecidos por Kaggle relacionados con la enfermedad COVID-19. 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{directorio}
+\caption{Conjunto de archivos del conjunto de datos ofrecido por Kaggle.}
+\label{fig:directorio}
+\end{figure}
 
+Como se ha mencionado, vamos a trabajar con el conjunto de artículos ofrecidos por Kaggle relacionados con la enfermedad COVID-19. Dentro de este paquete cuyo contenido se puede ver en la Figura \ref{fig:directorio} se encuentra un archivo .csv\footnote{Tipo de archivo que se puede crear o editar en Excel que en vez de almacenar información en columnas estos guardan los datos separados por comas o puntos y comas.} ``metadata.csv'' que contiene los datos de más de 200.000 artículos tales como su título, DOI\footnote{El DOI (Digital Objetc Identifier es una forma de identificación de objetos digitales permanente.}, resumen, autores, fecha de publicación, etc. Para cargar este archivo y poder ver sus datos utilizaremos la siguiente función:
+
+¡¡¡¡CODIGO PARA CARGAR METADATA Y VER SU ESTRUCTURA!!!!
+
+Como se puede ver, contamos con 253.454 artículos y 19 atributos para cada uno de ellos. Sin embargo, dentro de este archivo no se encuentra el texto completo de los artículos, que se han almacenado de forma independiente en formato JSON (JavaScript Object Notation) en la carpeta ``document\_parses''. Dentro de esta carpeta se hace distinción entre los JSON de artículos en formato PDF y formato PMC, donde utilizaremos los de PDF puesto que PMC puede contener más de un documento en su estructura, que se encuentra separado en PDFs. Es decir, existen PDFs distintos que aparecen en el mismo PMC. De esta forma, vamos a procesar todos los archivos JSON de los documentos en PDF y utilizar la información que estos contienen para generar nuestra propia tabla de datos con la que trabajar.
+
+Para ello, vamos a generar una función que se encargue de sacar de la estructura JSON aquellos datos que queremos, que en este caso son el título, autores, resumen y cuerpo del texto.
+
+¡¡¡¡FUNCIÓN PARA EXTRAER INFORMACIÓN!!!!
+
+Posteriormente, debemos localizar en nuestro equipo la direccion de los archivos JSON de los PDFs y almacenarlos en una lista llamada \textit{archivos}.
+
+¡¡¡¡DIRECOTORIO DE LOS ARCHIVOS!!!!
+
+Como se puede apreciar, contamos con 106.137 archivos para procesar. De esta forma, iteraremos cada archivo de la lista y abriremos su contenido dento del entorno de trabajo para aplicar la función \textit{leer\_json} y extraer la información mencionada previamente. Se han tomado algunas precauciones por si el formato del archivo no es el correcto o faltasen datos en el archivo de manera que se evite cualquier problema a la hora de procesar los archivos. Asimismo, se van a añadir como campos la revista de publicación y el DOI que se obtienen del archivo ``metadata.csv'' buscando la información existente para el archivo que se esté procesando. Los datos extraidos de cada artículo se van almacenando en vectores que son unidos al final para formar el Data Frame final.
+
+¡¡¡¡PROCESAMIENTO DE LOS ARCHIVOS!!!!
+
+Una vez realizado este proceso, podemos ver que 10.157 archivos no cumplían con los requisitos y el número total de documentos con el que se va a trabajar desciende hasta los 95.980. Con motivo de obtener información extra, calcularemos el número total de palabras para el resumen y el cuerpo de cada artículo. 
+
+¡¡¡¡CONTADOR DE PALABRAS!!!!
+
+Antes de entrar más en profundidad a trabajar con los datos, veamos si hay algún duplicado. Para ello, utilizaremos una función integrada en R que detecta este tipo de situaciones.
+
+¡¡¡¡DUPLICADOS!!!!
+
+De este proceso se obtiene que hay más de mil objetos con el mismo contenido en el cuerpo, y como este campo no puede ser nulo por la extracción realizada a la hora de leer los JSON, la única posibilidad es que sean, en efecto, duplicados. Uno de los principales motivos por lo que esto ocurre es que en gran cantidad de ocasiones el mismo artículo es publicado en diferentes revistas.
+
+¡¡¡¡MOSTRAR DUPLICADOS!!!!
+
+Como se puede observar, de entre estos cinco primeros objetos detectados como duplicados, dos de ellos con el título ``Autoantibodies in Patients with Rheumatoid Arthritis'', coinciden en todos y cada uno de los campos. Y si comprobamos la cantidad de veces que aparecen estos cuatro objetos dentro del conjunto de datos, vemos que el título mencionado antes es idéntico en un total de 69 filas, siendo 68 de ellas duplicados de la primera. El resto de títulos solo tienen un duplicado. De esta manera, lo correcto es eliminar todos los duplicados para trabajar con una muestra lo más limpia posible.
+
+¡¡¡¡ELIMINAR DUPLICADOS!!!!
+
+A continuación, identificaremos el lenguaje principal de cada artículo comprobando los primeros 2000 caracteres del cuerpo y utilizando la librería \textit{cld2}, que enlaza con la detección de idioma de Google para entornos Chromium, siendo capaz de detectar más de 80 idiomas. 
+
+¡¡¡¡DETECCION LENGUAJE!!!!
+
+Más del noventa y siete por ciento de los artículos están escritos en inglés, siendo el alemán el segundo idioma más utilizado, no llegando ni siquiera al uno por ciento del total. En la mayoría de los casos en que no se ha podido detectar el idioma el motivo es la falta de texto en el cuerpo. La traducción de estos artículos al inglés podría ocasionar distorsiones en el significado del documento y una pérdida de su valor, por lo que la opción más segura es descartar cualquier archivo cuyo idioma no sea en inglés. 
+
+Por último dentro de esta exploración de datos, sería interesante poder eliminar cualquier artículo cuya cantidad de palabras sea ínfima, puesto que sería prácticamente imposible obtener un buen concepto de la temática de un documento con menos de 200 palabras. Para ello, vamos a utilizar las columnas que se han calculado previamente que contienen la cantidad de palabras del resumen y el cuerpo del texto. Sumaremos ambos número y si el resultado es inferior, se descartará. Este proceso se realizará posteriormente, una vez eliminadas las palabras vacías, el siguiente paso.
+
+
+%====================================================================================================================================================%
+
+\subsection{Preparación de datos con NLP}
+
+Como se ha mencionado en la sección \ref{subsec:preparación de datos}, el principal problema al que nos enfrentamos con la clusterización de textos es el número elevado de atributos con el que se trabaja. Para reducir dicha cantidad eliminaremos las palabras vacías y lematizaremos los términos restantes. El proceso seguido en esta sección y los paquetes elegidos para llevar esta preparación de dato a cabo han sido elegidos en base a \cite[TFG Jorge} junto con ayuda de su autor, Jorge Montero Guillamón. En este trabajo se realiza un estudio intensivo sobre diferentes métodos de text mining tanto para R como para Python en los que compara su rendimiento y consumo de recursos para muestras de diferentes tamaños.
+
+Para la eliminación de palabras vacías o stopwords se utilizará \textit{TAU}, un paquete que ofrece una variedad de utilidades para el análisis de texto como la carga y preprocesado de documentos o el conteo de términos o patrones en documentos \cite{TFG Jorge}. Este trabaja sobre texto plano, motivo por el cual no se ha realizado todavía la tokenización de los documentos. Junto con el paquete \textit{text2vec}, TAU es el que mejor rendimiento ha obtenido en las pruebas realizadas en \cite{TFG Jorge}.
+
+Para el proceso de lematización se usará el paquete \textit{textstem}, que provee un conjunto de herramientas para poder realizar stemming o lematización sobre textos. En este caso se utilizará la lematización para conservar todo lo posible la identidad y significado de las palabras originales. Este también trabaja con texto plano, por lo que la combinación con TAU es idónea. Asimismo, el rendimiento de este paquete es el que mejor resultados ha dado, otro motivo por el que se ha elegido.
+
+Posteriormente a estos pasos, se llevará a cabo la tokenización del texto con el paquete text2vec, que ofrece multitud de métodos para la minería de texto. A parte de su excelente rendimiento, el otro motivo para su utilización es precisamente la gran oferta de funciones con la que cuenta y que utilizaremos para la reducción de dimensionalidad, siendo más facil así la integracion de los resultados entre ellos.
+
+%====================================================================================================================================================%
+
+\subsubsection{Eliminación de palabras vacías}
+
+Antes de realizar este proceso, echemos un vistazo a los datos relativos al conteo de palabras que se ha realizado con la totalidad de los términos de los textos.
+
+¡¡¡¡INFORMACION PALABRAS!!!!
+
+Gracias a esta información nos hacemos una idea del volumen de datos con el que estamos trabajando, ya que la gran mayoría de los artículos tiene alrededor de 4000 palabras en el cuerpo, existiendo excepciones con casi 300000. Por otro lado, el tamaño del resumen es considerablemente menor, con unas 200 palabras de medía. Además. se puede ver que existen artículos cuyo número de palabras en el resumen y el cuerpo es de 1. En el caso del resumen es muy probable que se la palabra ``NoIncluido'', indicando que no existe información sobre ese campo. A continuación se muestran aquellos documentos con menos de diez palabras en el resumen y el cuerpo del texto.
+
+¡¡¡¡MAS INFORMACION PALABRAS!!!!
+
+Para la eliminación de palabras vacías se utilizará tambíen el paquete \textit{stopwords}, que ofrece una gran fuente palabras en varios idiomas que son utilizadas de forma común y dearlas en el texto solo serviría para aumentar los niveles de impureza, por lo que deben se detectadas y retiradas del texto. Además, se va a añadir a esta lista un conjunto extra de palabras anglosajonas que suelen ser usadas en artículos científicos. Previamente a este paso se transformarán todas las palabras a minúscula y se eliminarán los signos de puntuación con ayuda del paquete \textit{tm}, que provee un entorno de trabajo donde permite aplicar una gran cantidad de métodod de text mining y métodos propios de R. Los números se van a dejar en este caso por su posible relevancia dentro del contexto de la enfermedad así como simbología entre palabras como guiones. 
+
+¡¡¡¡ELIMINACION DE PALABRAS!!!!
+
+Ahora veremos el número nuevo de palabras y cuántas se han eliminado.
+
+¡¡¡¡COMPARAMOS NUMERO DE PALABRAS!!!!
+
+Como se puede ver, se han eliminado un gran número de palabras: 186.687.759, de las cuales el 96\% han sido retiradas del cuerpo de los artículos, como cabía de esperar. Ahora el número de palabras máximo de un cuerpo es de 162073, la mitad de lo que era antes el máximo. De media se han retirado 2.024 palabras de cada artículo haciendo que el número total de palabras se reduzca a algo más de la mitad, siendo este un muy buen resultado de eliminación de stopwords tal y como se puede ver en las siguientes gráficas.
+
+¡¡¡¡GRAFICOS PARA LAS PALABRAS!!!!
+
+%====================================================================================================================================================%
+
+\subsection{Lematización}
+
+El siguiente paso a seguir es la lematización de las palabras, que como se ha mencionado previamente es escogido por encima del proceso de stemming por su capacidad de mantener gran parte de su valor semántico. 
 
 %====================================================================================================================================================%
                                               %============================================================%
