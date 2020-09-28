@@ -19,7 +19,7 @@ install.packages('tau')
 install.packages('stopwords')
 install.packages('tm')
 install.packages('textstem')
-install.packages('pbapply’)
+install.packages('pbapply')
 ```
 
 
@@ -27,7 +27,7 @@ install.packages('pbapply’)
 
 ```{r}
 # Cargamos los paquetes pertinenter
-library(rjson); library(tidyverse); library(quanteda); library(feather); library(cld2); library(ggplot2); library(plotly); library(scales); library(cowplot); library(tau); library(stopwords); library(tm); library(textstem)
+library(rjson); library(tidyverse); library(quanteda); library(feather); library(cld2); library(ggplot2); library(plotly); library(scales); library(cowplot); library(tau); library(stopwords); library(tm); library(textstem); library(pbapply)
 
 ```
 
@@ -196,7 +196,7 @@ covid_df <- read.csv("D:/COVID/covid_df.csv", stringsAsFactors = FALSE, na.strin
 
 30 segundos
 ```{r}
-write_feather(covid_df, "D:/COVID/covid_df_feather_prelematizacion.csv")
+write_feather(covid_df, "D:/COVID/covid_df_feather_lema_abs.csv")
 
 ```
 
@@ -443,9 +443,14 @@ comparacion_cuerpo
 
 ¡¡¡¡LEMATIZACION!!!!
 
+4 y media horas- (covid_df_feather_lema_abs.csv)
 ```{r}
-prueba <- head(covid_df, 10000)
-prueba$abstract_text <- apply(prueba['abstract_text'], 2, function(s) lemmatize_strings(s))
+covid_df$abstract_text <- apply(covid_df['abstract_text'], 2, function(s) lemmatize_strings(s))
+```
+
+```{r}
+covid_df$body_text <- pbapply(covid_df['body_text'], 2, function(s) lemmatize_strings(s))
+write_feather(covid_df, "D:/COVID/covid_df_feather_lematización.csv")
 
 ```
 
