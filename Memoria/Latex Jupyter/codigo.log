@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.5)  7 SEP 2020 16:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.13)  25 NOV 2020 01:03
 entering extended mode
 **./codigo.tex
 (codigo.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-08-07>
+L3 programming layer <2020-09-03>
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size10.clo"
-File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size11.clo"
+File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count168
 \c@section=\count169
@@ -78,7 +78,7 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdfte
 x.def"
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+File: pdftex.def 2020/08/26 v1.2 Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen137
 \Gin@req@width=\dimen138
@@ -394,12 +394,11 @@ Package: mathpazo 2020/03/25 PSNFSS-v9.3 Palatino w/ Pazo Math (D.Puga, WaS)
 )
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.st
 y"
-Package: caption 2020/05/30 v3.4k Customizing captions (AR)
+Package: caption 2020/09/02 v3.5a Customizing captions (AR)
 
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.s
 ty"
-Package: caption3 2020/07/20 v1.12b caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 61.
+Package: caption3 2020/08/30 v2.0 caption3 kernel (AR)
 \captionmargin=\dimen176
 \captionmargin@=\dimen177
 \captionwidth=\dimen178
@@ -412,82 +411,18 @@ Package caption Info: Standard document class detected.
 \c@caption@flags=\count192
 \c@continuedfloat=\count193
 )
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\adjustbo
-x.sty"
-Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xkeyval\xkeyval.st
-y"
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkeyval.
-tex"
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkvutils
-.tex"
-\XKV@toks=\toks29
-\XKV@tempa@toks=\toks30
-)
-\XKV@depth=\count194
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\adjcalc.
-sty"
-Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
--ends (calc, etex, pgfmath)
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\trimclip
-.sty"
-Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/collectbox\collect
-box.sty"
-Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box63
-)
-\tc@llx=\dimen183
-\tc@lly=\dimen184
-\tc@urx=\dimen185
-\tc@ury=\dimen186
-Package trimclip Info: Using driver 'tc-pdftex.def'.
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\tc-pdfte
-x.def"
-File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
-))
-\adjbox@Width=\dimen187
-\adjbox@Height=\dimen188
-\adjbox@Depth=\dimen189
-\adjbox@Totalheight=\dimen190
-\adjbox@pwidth=\dimen191
-\adjbox@pheight=\dimen192
-\adjbox@pdepth=\dimen193
-\adjbox@ptotalheight=\dimen194
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ifoddpage\ifoddpag
-e.sty"
-Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count195
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/varwidth\varwidth.
-sty"
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box64
-\sift@deathcycles=\count196
-\@vwid@loff=\dimen195
-\@vwid@roff=\dimen196
-))
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count197
-\float@exts=\toks31
-\float@box=\box65
-\@float@everytoks=\toks32
-\@floatcapt=\box66
+\c@float@type=\count194
+\float@exts=\toks29
+\float@box=\box63
+\@float@everytoks=\toks30
+\@floatcapt=\box64
 )
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\enumerate.st
 y"
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
-\@enLab=\toks33
+\@enLab=\toks31
 )
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
 sty"
@@ -497,18 +432,18 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 "
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count198
-\Gm@cntv=\count199
-\c@Gm@tempcnt=\count266
-\Gm@bindingoffset=\dimen197
-\Gm@wd@mp=\dimen198
-\Gm@odd@mp=\dimen199
-\Gm@even@mp=\dimen256
-\Gm@layoutwidth=\dimen257
-\Gm@layoutheight=\dimen258
-\Gm@layouthoffset=\dimen259
-\Gm@layoutvoffset=\dimen260
-\Gm@dimlist=\toks34
+\Gm@cnth=\count195
+\Gm@cntv=\count196
+\c@Gm@tempcnt=\count197
+\Gm@bindingoffset=\dimen183
+\Gm@wd@mp=\dimen184
+\Gm@odd@mp=\dimen185
+\Gm@even@mp=\dimen186
+\Gm@layoutwidth=\dimen187
+\Gm@layoutheight=\dimen188
+\Gm@layouthoffset=\dimen189
+\Gm@layoutvoffset=\dimen190
+\Gm@dimlist=\toks32
 
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
 cfg"))
@@ -526,53 +461,53 @@ Package: amstext 2000/06/29 v2.01 AMS text
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty
 "
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks35
-\ex@=\dimen261
+\@emptytoks=\toks33
+\ex@=\dimen191
 ))
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty
 "
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen262
+\pmbraise@=\dimen192
 )
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty
 "
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count267
+\inf@bad=\count198
 LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count268
-\leftroot@=\count269
+\uproot@=\count199
+\leftroot@=\count266
 LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count270
-\DOTSCASE@=\count271
+\classnum@=\count267
+\DOTSCASE@=\count268
 LaTeX Info: Redefining \ldots on input line 486.
 LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box67
-\strutbox@=\box68
-\big@size=\dimen263
+\Mathstrutbox@=\box65
+\strutbox@=\box66
+\big@size=\dimen193
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count272
-\c@MaxMatrixCols=\count273
+\macc@depth=\count269
+\c@MaxMatrixCols=\count270
 \dotsspace@=\muskip16
-\c@parentequation=\count274
-\dspbrk@lvl=\count275
-\tag@help=\toks36
-\row@=\count276
-\column@=\count277
-\maxfields@=\count278
-\andhelp@=\toks37
-\eqnshift@=\dimen264
-\alignsep@=\dimen265
-\tagshift@=\dimen266
-\tagwidth@=\dimen267
-\totwidth@=\dimen268
-\lineht@=\dimen269
-\@envbody=\toks38
+\c@parentequation=\count271
+\dspbrk@lvl=\count272
+\tag@help=\toks34
+\row@=\count273
+\column@=\count274
+\maxfields@=\count275
+\andhelp@=\toks35
+\eqnshift@=\dimen194
+\alignsep@=\dimen195
+\tagshift@=\dimen196
+\tagwidth@=\dimen197
+\totwidth@=\dimen198
+\lineht@=\dimen199
+\@envbody=\toks36
 \multlinegap=\skip50
 \multlinetaggap=\skip51
-\mathdisplay@stack=\toks39
+\mathdisplay@stack=\toks37
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
@@ -600,7 +535,7 @@ tim
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/eurosym\eurosym.st
 y"
 Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
-\@eurobox=\box69
+\@eurobox=\box67
 ) ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ucs\ucs.sty"
 Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 
@@ -608,19 +543,19 @@ Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 "
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
-\uc@secondtry=\count279
-\uc@combtoks=\toks40
-\uc@combtoksb=\toks41
-\uc@temptokena=\toks42
+\uc@secondtry=\count276
+\uc@combtoks=\toks38
+\uc@combtoksb=\toks39
+\uc@temptokena=\toks40
 )
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyvrb\fancyvrb.
 sty"
 Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count280
+\FV@CodeLineNo=\count277
 \FV@InFile=\read4
-\FV@TabBox=\box70
-\c@FancyVerbLine=\count281
-\FV@StepNumber=\count282
+\FV@TabBox=\box68
+\c@FancyVerbLine=\count278
+\FV@StepNumber=\count279
 \FV@OutFile=\write6
 )
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/grffile\grffile.st
@@ -630,6 +565,70 @@ y)
 Package grffile Info: This package is an empty stub for compatibility on input 
 line 40.
 )
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\adjustbo
+x.sty"
+Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
+
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xkeyval\xkeyval.st
+y"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkeyval.
+tex"
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkvutils
+.tex"
+\XKV@toks=\toks41
+\XKV@tempa@toks=\toks42
+)
+\XKV@depth=\count280
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\adjcalc.
+sty"
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\trimclip
+.sty"
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/collectbox\collect
+box.sty"
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box69
+)
+\tc@llx=\dimen256
+\tc@lly=\dimen257
+\tc@urx=\dimen258
+\tc@ury=\dimen259
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\tc-pdfte
+x.def"
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen260
+\adjbox@Height=\dimen261
+\adjbox@Depth=\dimen262
+\adjbox@Totalheight=\dimen263
+\adjbox@pwidth=\dimen264
+\adjbox@pheight=\dimen265
+\adjbox@pdepth=\dimen266
+\adjbox@ptotalheight=\dimen267
+
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ifoddpage\ifoddpag
+e.sty"
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count281
+)
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/varwidth\varwidth.
+sty"
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box70
+\sift@deathcycles=\count282
+\@vwid@loff=\dimen268
+\@vwid@roff=\dimen269
+))
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hyperref.
 sty"
 Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
@@ -832,241 +831,54 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 )
 \Wrappedcontinuationbox=\box79
 \Wrappedvisiblespacebox=\box80
-Package hyperref Info: Option `breaklinks' set `true' on input line 359.
-Package hyperref Info: Option `colorlinks' set `true' on input line 359.
+Package hyperref Info: Option `breaklinks' set `true' on input line 368.
+Package hyperref Info: Option `colorlinks' set `true' on input line 368.
 
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.sty"
-Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks46
-\inpenc@posthook=\toks47
-) ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.st
-y"
-Package: babel 2020/07/13 3.47 The Babel package
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def"
-File: babel.def 2020/07/13 3.47 Babel common definitions
-\babel@savecnt=\count305
-\U@D=\dimen292
-\l@babelnohyphens=\language83
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.d
-ef")
-\bbl@readstream=\read5
-)
-\bbl@dirlevel=\count306
-
-*************************************
-* Local config file bblopts.cfg used
-*
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
- babel
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-spanish\span
-ish.ldf"
-Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
-\es@quottoks=\toks48
-\es@quotdepth=\count307
-Package babel Info: Making " an active character on input line 561.
-Package babel Info: Making . an active character on input line 662.
-Package babel Info: Making < an active character on input line 707.
-Package babel Info: Making > an active character on input line 707.
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-english\engl
-ish.ldf"
-Language: english 2017/06/06 v3.3r English support from the babel system
-Package babel Info: \l@canadian = using hyphenrules for english
-(babel)             (\language0) on input line 102.
-Package babel Info: \l@australian = using hyphenrules for ukenglish
-(babel)             (\language77) on input line 105.
-Package babel Info: \l@newzealand = using hyphenrules for ukenglish
-(babel)             (\language77) on input line 108.
-))
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/preprint\authblk.s
-ty"
-Package: authblk 2001/02/27 1.3 (PWD)
-\affilsep=\skip62
-\@affilsep=\skip63
-\c@Maxaffil=\count308
-\c@authors=\count309
-\c@affil=\count310
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/natbib\natbib.sty"
-Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip64
-\bibsep=\skip65
-LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count311
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/algorithm2e\algori
-thm2e.sty"
-Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count312
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-\algocf@hangindent=\skip66
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\xspace.sty"
-Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/relsize\relsize.st
-y"
-Package: relsize 2013/03/29 ver 4.1
-)
-\skiptotal=\skip67
-\skiplinenumber=\skip68
-\skiprule=\skip69
-\skiphlne=\skip70
-\skiptext=\skip71
-\skiplength=\skip72
-\algomargin=\skip73
-\skipalgocfslide=\skip74
-\algowidth=\dimen293
-\inoutsize=\dimen294
-\inoutindent=\dimen295
-\interspacetitleruled=\dimen296
-\interspacealgoruled=\dimen297
-\interspacetitleboxruled=\dimen298
-\algocf@ruledwidth=\skip75
-\algocf@inoutbox=\box81
-\algocf@inputbox=\box82
-\AlCapSkip=\skip76
-\AlCapHSkip=\skip77
-\algoskipindent=\skip78
-\algocf@nlbox=\box83
-\algocf@hangingbox=\box84
-\algocf@untilbox=\box85
-\algocf@skipuntil=\skip79
-\algocf@capbox=\box86
-\algocf@lcaptionbox=\skip80
-\algoheightruledefault=\skip81
-\algoheightrule=\skip82
-\algotitleheightruledefault=\skip83
-\algotitleheightrule=\skip84
-\c@algocfline=\count313
-\c@algocfproc=\count314
-\c@algocf=\count315
-\algocf@algoframe=\box87
-\algocf@algobox=\box88
-) ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\lmodern.sty"
-Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/ppl/m/n --> OT1/lmr/m/n on input line 22.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/zplm/m/it --> OML/lmm/m/it on input line 23.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/zplm/m/n --> OMS/lmsy/m/n on input line 24.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/zplm/m/n --> OMX/lmex/m/n on input line 25.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/ppl/b/n --> OT1/lmr/bx/n on input line 26.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/zplm/b/it --> OML/lmm/b/it on input line 27.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/zplm/b/n --> OMS/lmsy/b/n on input line 28.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/zplm/m/n --> OMX/lmex/m/n on input line 29.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/zplm/b/n --> OT1/lmr/bx/n on input line 31.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/ppl/m/it --> OT1/lmr/m/it on input line 33.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/zplm/b/n --> OT1/lmr/bx/n on input line 35.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/ppl/b/it --> OT1/lmr/bx/it on input line 37.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdfpages\pdfpages.
-sty"
-Package: pdfpages 2020/01/28 v0.5q Insert pages of external PDF documents (AM)
- ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\calc.sty"
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count316
-\calc@Bcount=\count317
-\calc@Adimen=\dimen299
-\calc@Bdimen=\dimen300
-\calc@Askip=\skip85
-\calc@Bskip=\skip86
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count318
-\calc@Cskip=\skip87
-)
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/eso-pic\eso-pic.st
-y"
-Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
-)
-\AM@pagewidth=\dimen301
-\AM@pageheight=\dimen302
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdfpages\pppdftex.
-def"
-File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
-)
-\AM@pagebox=\box89
-\AM@global@opts=\toks49
-\AM@pagecnt=\count319
-\AM@toc@title=\toks50
-\c@AM@survey=\count320
-\AM@templatesizebox=\box90
-)
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backen
-d-pdfmode.def"
-File: l3backend-pdfmode.def 2020-08-07 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count321
-\l__pdf_internal_box=\box91
-) (codigo.aux
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
-)
+d-pdftex.def"
+File: l3backend-pdftex.def 2020-09-01 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count305
+\l__pdf_internal_box=\box81
+) (codigo.aux)
 \openout1 = `codigo.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 400.
-LaTeX Font Info:    ... okay on input line 400.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 400.
-LaTeX Font Info:    ... okay on input line 400.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 400.
-LaTeX Font Info:    ... okay on input line 400.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 400.
-LaTeX Font Info:    ... okay on input line 400.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 400.
-LaTeX Font Info:    ... okay on input line 400.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 400.
-LaTeX Font Info:    ... okay on input line 400.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 400.
-LaTeX Font Info:    ... okay on input line 400.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 400.
-LaTeX Font Info:    ... okay on input line 400.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 40
-0.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 375.
+LaTeX Font Info:    ... okay on input line 375.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 375.
+LaTeX Font Info:    ... okay on input line 375.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 375.
+LaTeX Font Info:    ... okay on input line 375.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 375.
+LaTeX Font Info:    ... okay on input line 375.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 375.
+LaTeX Font Info:    ... okay on input line 375.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 375.
+LaTeX Font Info:    ... okay on input line 375.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 375.
+LaTeX Font Info:    ... okay on input line 375.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 375.
+LaTeX Font Info:    ... okay on input line 375.
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 37
+5.
 
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
-File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\t1ppl.fd"
+File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
 ABD: EveryShipout initializing macros
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
 df.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count322
-\scratchdimen=\dimen303
-\scratchbox=\box92
-\nofMPsegments=\count323
-\nofMParguments=\count324
-\everyMPshowfont=\toks51
-\MPscratchCnt=\count325
-\MPscratchDim=\dimen304
-\MPnumerator=\count326
-\makeMPintoPDFobject=\count327
-\everyMPtoPDFconversion=\toks52
+\scratchcounter=\count306
+\scratchdimen=\dimen292
+\scratchbox=\box82
+\nofMPsegments=\count307
+\nofMParguments=\count308
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count309
+\MPscratchDim=\dimen293
+\MPnumerator=\count310
+\makeMPintoPDFobject=\count311
+\everyMPtoPDFconversion=\toks47
 )
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epsto
 pdf-base.sty"
@@ -1089,27 +901,27 @@ Package caption Info: End \AtBeginDocument code.
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: a4paper
+* paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(86.72377pt, 424.06033pt, 86.72377pt)
-* v-part:(T,H,B)=(86.72377pt, 664.37186pt, 93.95122pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=424.06033pt
-* \textheight=664.37186pt
-* \oddsidemargin=14.45378pt
-* \evensidemargin=14.45378pt
-* \topmargin=-22.54622pt
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=10.0pt
+* \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=57.0pt
-* \marginparsep=11.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1122,8 +934,8 @@ Package caption Info: End \AtBeginDocument code.
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ucs\ucsencs.def"
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-\AtBeginShipoutBox=\box93
-Package hyperref Info: Link coloring ON on input line 400.
+\AtBeginShipoutBox=\box83
+Package hyperref Info: Link coloring ON on input line 375.
 
 ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
 ty"
@@ -1137,511 +949,307 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count328
+\c@section@level=\count312
 )
-LaTeX Info: Redefining \ref on input line 400.
-LaTeX Info: Redefining \pageref on input line 400.
-LaTeX Info: Redefining \nameref on input line 400.
+LaTeX Info: Redefining \ref on input line 375.
+LaTeX Info: Redefining \pageref on input line 375.
+LaTeX Info: Redefining \nameref on input line 375.
  (codigo.out) (codigo.out)
 \@outlinefile=\write7
 \openout7 = `codigo.out'.
 
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 3
+77.
 
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdflscape\pdflscap
-e.sty"
-Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\lscape.st
-y"
-Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1ppl.fd"
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
+377.
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omlzplm.fd"
+File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Info: Redefining \. on input line 402.
-LaTeX Info: Redefining \% on input line 402.
-
-
-pdfTeX warning: pdflatex.exe (file ./Recursos/portada.pdf): PDF inclusion: foun
-d PDF version <1.7>, but at most version <1.5> allowed
-<Recursos/portada.pdf, id=138, 597.55246pt x 845.07718pt>
-File: Recursos/portada.pdf Graphic file (type pdf)
-<use Recursos/portada.pdf>
-Package pdftex.def Info: Recursos/portada.pdf  used on input line 406.
-(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-
-
-pdfTeX warning: pdflatex.exe (file ./Recursos/portada.pdf): PDF inclusion: foun
-d PDF version <1.7>, but at most version <1.5> allowed
-File: Recursos/portada.pdf Graphic file (type pdf)
-<use Recursos/portada.pdf>
-Package pdftex.def Info: Recursos/portada.pdf  used on input line 406.
-(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-
-
-pdfTeX warning: pdflatex.exe (file ./Recursos/portada.pdf): PDF inclusion: foun
-d PDF version <1.7>, but at most version <1.5> allowed
-
-
-pdfTeX warning: pdflatex.exe (file ./Recursos/portada.pdf): PDF inclusion: foun
-d PDF version <1.7>, but at most version <1.5> allowed
-<Recursos/portada.pdf, id=141, page=1, 597.55246pt x 845.07718pt>
-File: Recursos/portada.pdf Graphic file (type pdf)
-<use Recursos/portada.pdf, page 1>
-Package pdftex.def Info: Recursos/portada.pdf , page1 used on input line 406.
-(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-File: Recursos/portada.pdf Graphic file (type pdf)
-<use Recursos/portada.pdf, page 1>
-Package pdftex.def Info: Recursos/portada.pdf , page1 used on input line 406.
-(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-File: Recursos/portada.pdf Graphic file (type pdf)
-<use Recursos/portada.pdf, page 1>
-Package pdftex.def Info: Recursos/portada.pdf , page1 used on input line 406.
-(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-File: Recursos/portada.pdf Graphic file (type pdf)
-<use Recursos/portada.pdf, page 1>
-Package pdftex.def Info: Recursos/portada.pdf , page1 used on input line 406.
-(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-File: Recursos/portada.pdf Graphic file (type pdf)
-<use Recursos/portada.pdf, page 1>
-Package pdftex.def Info: Recursos/portada.pdf , page1 used on input line 406.
-(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-[1
-
- <./Recursos/portada.pdf>] [2{C:/Users/acamo/AppData/Local/MiKTeX/2.9/pdftex/co
-nfig/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
-27.
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd"
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
+377.
+ ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omszplm.fd
+"
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-27.
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
+377.
 
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omllmm.fd"
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omxzplm.fd"
+File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-427.
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omslmsy.fd"
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-427.
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omxlmex.fd"
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 427.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 427.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 427.
 LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
-427.
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1zplm.fd"
+377.
+ ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1zplm.fd
+"
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 427.
+(Font)              scaled to size 12.50409pt on input line 377.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 427.
+(Font)              scaled to size 9.37807pt on input line 377.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 427.
+(Font)              scaled to size 7.29405pt on input line 377.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 427.
+(Font)              scaled to size 12.50409pt on input line 377.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 427.
+(Font)              scaled to size 9.37807pt on input line 377.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 427.
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 42
+(Font)              scaled to size 7.29405pt on input line 377.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 37
 7.
- ("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd
-"
+
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 427.
+
+LaTeX Warning: No \author given.
+
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
+83.
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\t1cmtt.fd"
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 427.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 427.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 437.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 437.
+(Font)              scaled to size 6.25204pt on input line 384.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 437.
+(Font)              scaled to size 5.21004pt on input line 384.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 6.25204pt on input line 384.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 384.
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
+385.
+
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmtt.fd"
+File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 394.
+
+[1
+
+{C:/Users/acamo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+[3] [4] [5] [6] [7] [8] [9]
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 8
+44.
+
+("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ts1ppl.fd"
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
+)
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 437.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 437.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 437.
- [3] [4] [5]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg, id=236, 503.8825pt 
-x 182.6825pt>
-File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg Graphic file (t
-ype jpg)
-<use C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg>
-Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.
-jpg  used on input line 495.
-(pdftex.def)             Requested size: 503.88127pt x 182.68204pt.
- [6 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/flowchart.jpg>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
-25.
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-[7]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png, id=264, 503.8825pt x 50
-2.87875pt>
-File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png Graphic file (type 
-png)
-<use C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png>
-Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png 
- used on input line 559.
-(pdftex.def)             Requested size: 503.88127pt x 502.87752pt.
- [8 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/fuzzy.png>] [9]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png, id=288, 655.44875pt x 2
-99.1175pt>
-File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png Graphic file (type 
-png)
-<use C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png>
-Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png 
- used on input line 628.
-(pdftex.def)             Requested size: 655.44714pt x 299.11676pt.
- [10]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 657.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.6> on input line 657.
+(Font)              scaled to size 11.40997pt on input line 845.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 657.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 657.
+(Font)              scaled to size 8.33606pt on input line 845.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 657.
+(Font)              scaled to size 11.40997pt on input line 845.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 657.
+(Font)              scaled to size 8.33606pt on input line 845.
 
-[11 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/grafo.png>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png, id=312, 665.48625pt x 
-578.16pt>
-File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png Graphic file (type
- png)
-<use C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png>
-Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png
-  used on input line 717.
-(pdftex.def)             Requested size: 665.48462pt x 578.15858pt.
- [12] [13] [14 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/kmeans.png>] [15]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png, id=391, 985.6825pt
- x 546.04pt>
-File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png Graphic file (
-type png)
-<use C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png>
-Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias
-.png  used on input line 844.
-(pdftex.def)             Requested size: 985.68008pt x 546.03867pt.
- [16]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png, id=400, 1097.09875
-pt x 551.05875pt>
-File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png Graphic file (
-type png)
-<use C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma.png>
-Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dendograma
-.png  used on input line 876.
-(pdftex.def)             Requested size: 1097.09608pt x 551.05739pt.
- [17 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/distancias.png>] [18 <C:/User
-s/acamo/Documents/TFG/Recursos/Fotos/dendograma.png>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png, id=427, 675.52374pt x 3
-62.35374pt>
-File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png Graphic file (type 
-png)
-<use C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png>
-Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png 
- used on input line 927.
-(pdftex.def)             Requested size: 675.5221pt x 362.35286pt.
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png, id=429, 1037.8775pt
- x 240.9pt>
-File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png Graphic file (t
-ype png)
-<use C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.png>
-Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/chameleon.
-png  used on input line 952.
-(pdftex.def)             Requested size: 1037.87498pt x 240.8994pt.
- [19 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/birch.png>] [20 <C:/Users/aca
-mo/Documents/TFG/Recursos/Fotos/chameleon.png>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png, id=455, 453.695pt x 1
-11.41624pt>
-File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png Graphic file (typ
-e png)
-<use C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png>
-Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.pn
-g  used on input line 1014.
-(pdftex.def)             Requested size: 453.6939pt x 111.41597pt.
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png, id=457, 598.235pt x 2
-66.9975pt>
-File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png Graphic file (typ
-e png)
-<use C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.png>
-Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan2.pn
-g  used on input line 1027.
-(pdftex.def)             Requested size: 598.23354pt x 266.99683pt.
- [21 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/dbscan1.png>] [22 <C:/Users/a
-camo/Documents/TFG/Recursos/Fotos/dbscan2.png (PNG copy)>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png, id=500, 764.8575pt x 3
-77.41pt>
-File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png Graphic file (type
- png)
-<use C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png>
-Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png
-  used on input line 1093.
-(pdftex.def)             Requested size: 764.85562pt x 377.40907pt.
- [23 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/optics.png (PNG copy)>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg, id=516, 120.45pt x 52.2
-753pt>
-File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg Graphic file (type 
-jpg)
-<use C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg>
-Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg 
- used on input line 1144.
-(pdftex.def)             Requested size: 120.44969pt x 52.27516pt.
- [24 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/sting.jpg>] [25]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png, id=552, 317.185pt x 67
-0.505pt>
-File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png Graphic file (type
- png)
-<use C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png>
-Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png
-  used on input line 1199.
-(pdftex.def)             Requested size: 317.1842pt x 670.50337pt.
- [26 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/clique.png>]
-<C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png, id=562, 528.97626pt x 3
-98.48875pt>
-File: C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png Graphic file (type 
-png)
-<use C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png>
-Package pdftex.def Info: C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png 
- used on input line 1224.
-(pdftex.def)             Requested size: 528.97496pt x 398.48778pt.
- [27 <C:/Users/acamo/Documents/TFG/Recursos/Fotos/elbow.png>] [28]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-275.
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd"
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-1278.
-
-("C:\Users\acamo\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmtt.fd"
-File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1311.
-<output_3_1.png, id=585, 843.15pt x 843.15pt>
-File: output_3_1.png Graphic file (type png)
-<use output_3_1.png>
-Package pdftex.def Info: output_3_1.png  used on input line 1355.
-(pdftex.def)             Requested size: 843.14793pt x 843.14793pt.
-
-[29
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1357--1358
-
- []
-
-<output_5_0.png, id=593, 843.15pt x 843.15pt>
-File: output_5_0.png Graphic file (type png)
-<use output_5_0.png>
-Package pdftex.def Info: output_5_0.png  used on input line 1391.
-(pdftex.def)             Requested size: 843.14793pt x 843.14793pt.
-[30 <./output_3_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1393--1394
-
- []
-
-<output_6_0.png, id=598, 843.15pt x 843.15pt>
-File: output_6_0.png Graphic file (type png)
-<use output_6_0.png>
-Package pdftex.def Info: output_6_0.png  used on input line 1406.
-(pdftex.def)             Requested size: 843.14793pt x 843.14793pt.
-[31 <./output_5_0.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1408--1409
-
- []
-
-<output_7_1.png, id=604, 843.15pt x 843.15pt>
-File: output_7_1.png Graphic file (type png)
-<use output_7_1.png>
-Package pdftex.def Info: output_7_1.png  used on input line 1427.
-(pdftex.def)             Requested size: 843.14793pt x 843.14793pt.
-[32 <./output_6_0.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1429--1430
-
- []
-
-[33 <./output_7_1.png>] (codigo.toc
-LaTeX Info: Redefining \. on input line 2.
-LaTeX Info: Redefining \% on input line 2.
-)
-\tf@toc=\write8
-\openout8 = `codigo.toc'.
-
- (codigo.loa)
-\tf@loa=\write9
-\openout9 = `codigo.loa'.
-
- [34
-
-] (codigo.lot
-LaTeX Info: Redefining \. on input line 2.
-LaTeX Info: Redefining \% on input line 2.
-)
-\tf@lot=\write10
-\openout10 = `codigo.lot'.
-
- (codigo.lof
-LaTeX Info: Redefining \. on input line 2.
-LaTeX Info: Redefining \% on input line 2.
-
-Underfull \hbox (badness 1796) in paragraph at lines 14--14
- [][] [][][]\T1/lmr/m/n/9 OPTICS: con-cep-tos de dis-tan-cia al nú-cleo (core-d
-istance) y dis-tan-cia de al-cance 
- []
-
-)
-\tf@lof=\write11
-\openout11 = `codigo.lof'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1459--1460
-[]\T1/lmr/m/n/9 Becoming A Data-Driven CEO | Domo. (2018). Data never sleeps 6.
-0
- []
-
-[35]
-Underfull \hbox (badness 5231) in paragraph at lines 1481--1482
-[]\T1/lmr/m/n/9 Li, J., & Chen, P. (2008). [][]The ap-pli-ca-tion of Clus-ter a
-nal-y-sis in Li-brary sys-tem[][].
+Overfull \hbox (376.89452pt too wide) in paragraph at lines 844--856
+[]\T1/ppl/m/n/10.95 A tib-ble: 6 \TS1/ppl/m/n/10.95 Ö \T1/ppl/m/n/10.95 3 [] 
  []
 
 
-Underfull \hbox (badness 3323) in paragraph at lines 1481--1482
-\T1/lmr/m/n/9 2008 IEEE In-ter-na-tional Sym-po-sium on Knowl-edge Ac-qui-si-ti
-on and Mod-el-ing Work-shop.
+Overfull \hbox (293.45868pt too wide) in paragraph at lines 899--911
+[]\T1/ppl/m/n/10.95 A tib-ble: 6 \TS1/ppl/m/n/10.95 Ö \T1/ppl/m/n/10.95 1 [] 
  []
 
-[36] [37]
-File: Recursos/portada.pdf Graphic file (type pdf)
-<use Recursos/portada.pdf>
-Package pdftex.def Info: Recursos/portada.pdf  used on input line 1533.
-(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
+[10] [11]
+
+LaTeX Warning: File `output_22_0.png' not found on input line 996.
 
 
-pdfTeX warning: pdflatex.exe (file ./Recursos/portada.pdf): PDF inclusion: foun
-d PDF version <1.7>, but at most version <1.5> allowed
-File: Recursos/portada.pdf Graphic file (type pdf)
-<use Recursos/portada.pdf>
-Package pdftex.def Info: Recursos/portada.pdf  used on input line 1533.
-(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
+! Package pdftex.def Error: File `output_22_0.png' not found: using draft setti
+ng.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.996 ...width}{0.9\paperheight}}{output_22_0.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-pdfTeX warning: pdflatex.exe (file ./Recursos/portada.pdf): PDF inclusion: foun
-d PDF version <1.7>, but at most version <1.5> allowed
+Underfull \hbox (badness 10000) in paragraph at lines 998--999
+
+ []
+
+[12]
+
+LaTeX Warning: File `output_27_0.png' not found on input line 1051.
 
 
-pdfTeX warning: pdflatex.exe (file ./Recursos/portada.pdf): PDF inclusion: foun
-d PDF version <1.7>, but at most version <1.5> allowed
-<Recursos/portada.pdf, id=730, page=2, 597.55246pt x 845.07718pt>
-File: Recursos/portada.pdf Graphic file (type pdf)
-<use Recursos/portada.pdf, page 2>
-Package pdftex.def Info: Recursos/portada.pdf , page2 used on input line 1533.
-(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-File: Recursos/portada.pdf Graphic file (type pdf)
-<use Recursos/portada.pdf, page 2>
-Package pdftex.def Info: Recursos/portada.pdf , page2 used on input line 1533.
-(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-File: Recursos/portada.pdf Graphic file (type pdf)
-<use Recursos/portada.pdf, page 2>
-Package pdftex.def Info: Recursos/portada.pdf , page2 used on input line 1533.
-(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-File: Recursos/portada.pdf Graphic file (type pdf)
-<use Recursos/portada.pdf, page 2>
-Package pdftex.def Info: Recursos/portada.pdf , page2 used on input line 1533.
-(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-File: Recursos/portada.pdf Graphic file (type pdf)
-<use Recursos/portada.pdf, page 2>
-Package pdftex.def Info: Recursos/portada.pdf , page2 used on input line 1533.
-(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-[38
+! Package pdftex.def Error: File `output_27_0.png' not found: using draft setti
+ng.
 
- <./Recursos/portada.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1536.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1536.
- (codigo.aux
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
-)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1536.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1536.
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1051 ...idth}{0.9\paperheight}}{output_27_0.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1053--1054
+
+ []
+
+
+LaTeX Warning: File `output_27_1.png' not found on input line 1056.
+
+
+! Package pdftex.def Error: File `output_27_1.png' not found: using draft setti
+ng.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1056 ...idth}{0.9\paperheight}}{output_27_1.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1058--1059
+
+ []
+
+
+Overfull \hbox (980.40854pt too wide) in paragraph at lines 1070--1082
+[]\T1/ppl/m/n/10.95 A tib-ble: 6 \TS1/ppl/m/n/10.95 Ö \T1/ppl/m/n/10.95 3 [] 
+ []
+
+[13]
+Overfull \hbox (1065.4782pt too wide) in paragraph at lines 1093--1105
+[]\T1/ppl/m/n/10.95 A tib-ble: 6 \TS1/ppl/m/n/10.95 Ö \T1/ppl/m/n/10.95 3 [] 
+ []
+
+[14] [15] [16]
+
+LaTeX Warning: File `output_40_0.png' not found on input line 1275.
+
+
+! Package pdftex.def Error: File `output_40_0.png' not found: using draft setti
+ng.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1275 ...idth}{0.9\paperheight}}{output_40_0.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1277--1278
+
+ []
+
+
+LaTeX Warning: File `output_40_1.png' not found on input line 1280.
+
+
+! Package pdftex.def Error: File `output_40_1.png' not found: using draft setti
+ng.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1280 ...idth}{0.9\paperheight}}{output_40_1.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1282--1283
+
+ []
+
+
+LaTeX Warning: File `output_40_2.png' not found on input line 1285.
+
+
+! Package pdftex.def Error: File `output_40_2.png' not found: using draft setti
+ng.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1285 ...idth}{0.9\paperheight}}{output_40_2.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1287--1288
+
+ []
+
+
+LaTeX Warning: File `output_40_3.png' not found on input line 1290.
+
+
+! Package pdftex.def Error: File `output_40_3.png' not found: using draft setti
+ng.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1290 ...idth}{0.9\paperheight}}{output_40_3.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1292--1293
+
+ []
+
+[17] [18]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1411.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1411.
+ (codigo.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1411.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1411.
 
 Package rerunfilecheck Info: File `codigo.out' has not changed.
-(rerunfilecheck)             Checksum: AFDE7EE4DC4403C828949C934E3AC3E4;2033.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25191 strings out of 481178
- 457302 string characters out of 2902470
- 749969 words of memory out of 3000000
- 39990 multiletter control sequences out of 15000+200000
- 638719 words of font info for 117 fonts, out of 3000000 for 9000
+ 21370 strings out of 481165
+ 397178 string characters out of 2902091
+ 718003 words of memory out of 3000000
+ 36436 multiletter control sequences out of 15000+200000
+ 564940 words of font info for 109 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,27n,77p,1460b,885s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
-c}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.e
-nc}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-math
-sy.enc}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-
-mathit.enc}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm
-/lm-mathex.enc}{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvip
-s/lm/lm-rm.enc}<C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr10.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/lm/lmbx10.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/lm/lmbx7.pfb><C:/Users/acamo/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/lm/lmbx9.pfb><C:/Users/acamo/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/acamo/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/acamo/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/acamo/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/acamo/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi5.pfb><C:/Users/acamo/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Users/acam
-o/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/a
-camo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi9.pfb><C:/User
-s/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/U
-sers/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C
-:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb
-><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr6.p
-fb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr7
-.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lm
-r8.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/
-lmr9.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/l
-m/lmri10.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/lm/lmri9.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/lm/lmsy10.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/lm/lmsy5.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/lm/lmsy7.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/lm/lmsy8.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/lm/lmsy9.pfb><C:/Users/acamo/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/lm/lmtk10.pfb><C:/Users/acamo/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/lm/lmtt9.pfb>
-Output written on codigo.pdf (38 pages, 1349515 bytes).
+ 59i,7n,75p,1410b,606s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
+} <C:\Users\acamo\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\t
+ctt1095.pk> <C:\Users\acamo\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/e
+c/dpi600\tcit1095.pk> <C:\Users\acamo\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/
+jknappen/ec/dpi600\ecit1095.pk> <C:\Users\acamo\AppData\Local\MiKTeX\2.9\fonts/
+pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Users/acamo/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/acamo/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ac
+amo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/U
+sers/acamo/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pf
+b>
+Output written on codigo.pdf (18 pages, 162206 bytes).
 PDF statistics:
- 889 PDF objects out of 1000 (max. 8388607)
- 229 named destinations out of 1000 (max. 500000)
- 402 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 348 PDF objects out of 1000 (max. 8388607)
+ 75 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -20,6 +20,10 @@ install.packages('stopwords')
 install.packages('tm')
 install.packages('textstem')
 install.packages('pbapply')
+install.packages('text2vec')
+install.packages('rlist')
+install.packages('wordcloud')
+install.packages('dbscan')
 ```
 
 
@@ -27,7 +31,8 @@ install.packages('pbapply')
 
 ```{r}
 # Cargamos los paquetes pertinenter
-library(rjson); library(tidyverse); library(quanteda); library(feather); library(cld2); library(ggplot2); library(plotly); library(scales); library(cowplot); library(tau); library(stopwords); library(tm); library(textstem); library(pbapply)
+library(rjson); library(tidyverse); library(quanteda); library(feather); library(cld2); library(ggplot2); library(plotly); library(scales); library(cowplot); library(tau); library(stopwords); library(tm); library(textstem); library(pbapply); library(text2vec); library(rlist); library(wordcloud); library(dbscan)
+
 
 ```
 
@@ -187,7 +192,7 @@ nrow(covid_df)
 6 minutos
 
 ```{r}
-write.csv(covid_df, "D:/COVID/covid_df.csv", row.names = FALSE)
+write.csv(covid_df, "D:/COVID/covid_df_prelematizacion.csv", row.names = FALSE)
 ```
 
 ```{r}
@@ -196,13 +201,13 @@ covid_df <- read.csv("D:/COVID/covid_df.csv", stringsAsFactors = FALSE, na.strin
 
 30 segundos
 ```{r}
-write_feather(covid_df, "D:/COVID/covid_df_feather_lema_abs.csv")
+write_feather(covid_df, "D:/COVID/covid_df_feather_postlematizacion.csv")
 
 ```
 
 20 segundos
 ```{r}
-covid_df <- read_feather("D:/COVID/covid_df_feather_prelematizacion.csv")
+covid_df <- read_feather("D:/COVID/covid_df_feather_pretokenizacion.csv")
 ```
 
 (covid_df_feather_sin_todo.csv)
@@ -219,6 +224,9 @@ covid_df <- select(covid_df, -all_text)
 covid_df$words_abstract <- apply(covid_df['abstract_text'], 2, function(s) str_count(s, '\\w+'))
 # ... y el cuerpo del texto
 covid_df$words_body <- apply(covid_df['body_text'], 2, function(s) str_count(s, '\\w+'))
+
+#covid_df['words_abstract'] <- apply(covid_df['abstract_text'], 2, function(s) str_count(s, '\\w+'))
+#covid_df['words_body'] <- apply(covid_df['body_text'], 2, function(s) str_count(s, '\\w+'))
 
 ```
 
@@ -354,11 +362,17 @@ resumen <- covid_df$abstract_text[1]
 # Conversión del resumen a minúsculas
 covid_df$abstract_text <- apply(covid_df['abstract_text'], 2, function(s) tolower(s))
 # Eliminación de signos de puntuación
-covid_df$abstract_text <- apply(covid_df['abstract_text'], 2, function(s) removePunctuation(s, preserve_intra_word_contractions = TRUE, preserve_intra_word_dashes = TRUE))
+covid_df$abstract_text <- apply(covid_df['abstract_text'], 2, function(s) removePunctuation(s))
 # Eliminación de palabras vacías
 covid_df$abstract_text <- apply(covid_df['abstract_text'], 2, function(s) remove_stopwords(s, p_vacias, lines = TRUE))
 # Añadimos nueva columna con número de palabras actuales
 covid_df$new_word_abstract <- apply(covid_df['abstract_text'], 2, function(s) str_count(s, '\\w+'))
+
+
+#covid_df['abstract_text'] <- apply(covid_df['abstract_text'], 2, function(s) tolower(s))
+#covid_df['abstract_text'] <- apply(covid_df['abstract_text'], 2, function(s) removePunctuation(s, preserve_intra_word_contractions = TRUE, preserve_intra_word_dashes = TRUE))
+#covid_df['abstract_text'] <- apply(covid_df['abstract_text'], 2, function(s) remove_stopwords(s, p_vacias, lines = TRUE))
+#covid_df['new_word_abstract'] <- apply(covid_df['abstract_text'], 2, function(s) str_count(s, '\\w+'))
 ```      
 
 
@@ -373,7 +387,7 @@ substring(covid_df$body_text[1], 1, 2000)
 # Conversión del cuerpo a minúsculas
 covid_df$body_text <- apply(covid_df['body_text'], 2, function(s) tolower(s))
 # Eliminación de signos de puntuación
-covid_df$body_text <- apply(covid_df['body_text'], 2, function(s) removePunctuation(s, preserve_intra_word_contractions = TRUE, preserve_intra_word_dashes = TRUE))
+covid_df$body_text <- apply(covid_df['body_text'], 2, function(s) removePunctuation(s))
 ```
 
 3 horas (covid_df_feather_stopwords.csv)
@@ -387,9 +401,10 @@ covid_df$body_text <- apply(covid_df['body_text'], 2, function(s) remove_stopwor
 ```{r}
 # Añadimos nueva columna con número de palabras actuales
 covid_df$new_word_body <- apply(covid_df['body_text'], 2, function(s) str_count(s, '\\w+'))
+
 ```
 
-¡¡¡¡COMPARAMPOS NUMERO DE PALABRAS!!!!
+¡¡¡¡COMPARAMOS NUMERO DE PALABRAS!!!!
 
 ```{r}
 # Creamos dos nuevas columnas con la resta de palabras originales y actuales
@@ -439,30 +454,159 @@ comparacion_abstract
 comparacion_cuerpo
 ```
 
-(covid_df_feather_prelematizacion.csv)
+
+
+
+(covid_df_feather_pretokenizacion.csv)
+¡¡¡¡TOKENIZACION!!!!
+
+```{r}
+# Tokenizamos tanto abstracto como texto completo
+covid_df['abstract_text'] <- apply(covid_df['abstract_text'], 2, function(s) word_tokenizer(s, xptr = TRUE, pos_keep = character('-')))
+covid_df['body_text'] <- apply(covid_df['body_text'], 2, function(s) word_tokenizer (s, xptr = TRUE))
+
+```
+
+```{r}
+# Mostramos los primeros cinco términos de los resúmenes y el cuerpo
+covid_df$abstract_text[[1]][1:5]
+covid_df$body_text[[1]][1:5]
+
+```
+
+Resultado de la tokenización:
+Dos mins
+```{r}
+# Guardar listas tokens
+list.save(covid_df$abstract_text, file="D:/COVID/tokens_abs.RData")
+list.save(covid_df$body_text, file="D:/COVID/tokens_body.RData")
+
+```
+
+Listas de tokens cargarlas en sus columnas
+
+```{r}
+# Cargar listas tokens
+covid_df$abstract_text <- list.load("D:/COVID/tokens_abs.RData")
+covid_df$body_text <- list.load("D:/COVID/tokens_body.RData")
+```
+
+
 
 ¡¡¡¡LEMATIZACION!!!!
-
-4 y media horas- (covid_df_feather_lema_abs.csv)
+Cargar (covid_df_feather_pretokenizacion.csv) y meter las listas en las columnas
+4 y media horas
 ```{r}
-covid_df$abstract_text <- apply(covid_df['abstract_text'], 2, function(s) lemmatize_strings(s))
-```
-
-```{r}
-covid_df$body_text <- pbapply(covid_df['body_text'], 2, function(s) lemmatize_strings(s))
-write_feather(covid_df, "D:/COVID/covid_df_feather_lematización.csv")
+# Haciendo esto apply <- lapply conseguimos una paralelización del trabajo gracias a la lista que genera la tokenización de los textos
+system.time(covid_df['abstract_text'] <- apply(covid_df['abstract_text'], 2, function(s) lapply(s, function(t) lemmatize_words(t))))
+system.time(covid_df['body_text'] <- apply(covid_df['body_text'], 2, function(s) lapply(s, function(t) lemmatize_words(t))))
 
 ```
 
+!!MOSTRAR LEMATIZACION!!
 
-
-
+Algo para comparar y ver que en efecto, se han lematizado las palabras
 ```{r}
-# Lematizamos los resúmenes
-covid_df$abstract_text <-  lemmatize_strings(covid_df$abstract_text)
+# Mostramos los primeros cinco términos de los resúmenes y el cuerpo
+covid_df$abstract_text[[1]][1:5]
+covid_df$body_text[[1]][1:5]
+```
+
+!!!Comparación palabras únicas!!
+```{r}
+iniciales <- covid_df$words_body[1:5]
+# Calculamos el total de palabras del cuerpo de los cinco primeros artículos...
+finales <- c(length(covid_df$body_text[[1]]), length(covid_df$body_text[[2]]), length(covid_df$body_text[[3]]), length(covid_df$body_text[[4]]), length(covid_df$body_text[[5]]))
+#... y las palabras únicas de los mismos
+unicas <- c(length(unique(covid_df$body_text[[1]])), length(unique(covid_df$body_text[[2]])), length(unique(covid_df$body_text[[3]])), length(unique(covid_df$body_text[[4]])), length(unique(covid_df$body_text[[5]])))
+# Creamos una matriz para comparar los valores y damos nombre a filas y columnas
+comparacion <- matrix(c(iniciales, finales, unicas), nrow = 3, byrow = T)
+dimnames(comparacion)<-list(c("Iniciales", "Finales","Unicas"), c("Artículo 1","Artículo 2","Artículo 3","Artículo 4","Artículo 5"))
+comparacion
 ```
 
 
+Para guardar las listas de palabras lemmatizadas
+
+Dos mins
+```{r}
+# Guardar listas tokens
+list.save(covid_df$abstract_text, file="D:/COVID/lemas_abs.RData")
+list.save(covid_df$body_text, file="D:/COVID/lemas_body.RData")
+
+```
+
+Listas de lemas cargarlas en sus columnas
+
+```{r}
+# Cargar listas lemas
+covid_df$abstract_text <- list.load("D:/COVID/lemas_abs.RData")
+covid_df$body_text <- list.load("D:/COVID/lemas_body.RData")
+```
+
+
+¡MATRIZ DTM!
+
+```{r}
+covid <- head(covid_df, 1000)
+```
+
+```{r}
+it <- itoken(covid$body_text, ids = covid$paper_id)
+vocab <- create_vocabulary(it)
+vocab <- prune_vocabulary(vocab, vocab_term_max = 2^12)
+vect <- vocab_vectorizer(vocab) 
+dtm <- create_dtm(it, vect)
+
+tfidf = TfIdf$new()
+tfidf <- as.matrix(fit_transform(dtm, tfidf))
+
+#tfidf = sim2(x = dtm, method = "cosine", norm = "l2")
+
+#tfidf = as.DocumentTermMatrix(dtm, weighting = weightTfIdf)
+
+
+```
+
+
+```{r}
+tst = round(ncol(tfidf)/1000)
+a = rep(tst, 999)
+b = cumsum(a);rm(a)
+b = c(0,b,ncol(tfidf))
+
+ss.col = c(NULL)
+for (i in 1:(length(b)-1)) {
+  tempdtm = tfidf[,(b[i]+1):(b[i+1])]
+  s = colSums(as.matrix(tempdtm))
+  ss.col = c(ss.col,s)
+}
+
+tsum = ss.col
+
+tsum = tsum[order(tsum, decreasing = T)]       #terms in decreasing order of freq
+head(tsum)
+
+
+tail(tsum)
+```
+
+```{r}
+wordcloud(names(tsum), tsum, scale=c(4,0.5),1, max.words=50,colors=brewer.pal(8, "Dark2")) # Plot results in a word cloud 
+title(sub = "Term Frequency Inverse Document Frequency - Wordcloud")
+```
+
+
+```{r}
+dbscan_1 <- dbscan(tfidf, minPts = 5, eps = 5)
+summary(dbscan_1)
+```
+
+
+```{r}
+plot(dbscan_1$cluster, tfidf)
+
+```
 
 
 

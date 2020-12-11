@@ -44,9 +44,14 @@
 \contentsline {section}{\numberline {12}Consolidadción}{60}{section.12}%
 \contentsline {section}{\numberline {13}COVID-19}{61}{section.13}%
 \contentsline {subsection}{\numberline {13.1}Objetivo de la parte práctica}{62}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}Carga y exploración de los datos}{64}{subsection.13.2}%
-\contentsline {section}{\numberline {14}Anexo}{68}{section.14}%
-\contentsline {subsection}{\numberline {14.1}\textbf {Algoritmos}}{68}{subsection.14.1}%
-\contentsline {subsection}{\numberline {14.2}\textbf {Tablas}}{68}{subsection.14.2}%
-\contentsline {subsection}{\numberline {14.3}\textbf {Imágenes y figuras}}{68}{subsection.14.3}%
-\contentsline {section}{\numberline {15}Referencias}{70}{section.15}%
+\contentsline {subsection}{\numberline {13.2}Carga y exploración de los datos}{65}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Preparación de datos con NLP}{75}{subsection.13.3}%
+\contentsline {subsubsection}{\numberline {13.3.1}Eliminación de palabras vacías}{76}{subsubsection.13.3.1}%
+\contentsline {subsection}{\numberline {13.4}Tokenización}{86}{subsection.13.4}%
+\contentsline {subsection}{\numberline {13.5}Lematización}{87}{subsection.13.5}%
+\contentsline {section}{\numberline {14}Reducción de dimensionalidad}{88}{section.14}%
+\contentsline {section}{\numberline {15}Anexo}{90}{section.15}%
+\contentsline {subsection}{\numberline {15.1}\textbf {Algoritmos}}{90}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}\textbf {Tablas}}{90}{subsection.15.2}%
+\contentsline {subsection}{\numberline {15.3}\textbf {Imágenes y figuras}}{90}{subsection.15.3}%
+\contentsline {section}{\numberline {16}Referencias}{92}{section.16}%

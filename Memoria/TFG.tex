@@ -1520,7 +1520,7 @@ En el ámbito matemático, el problema de la reducción de dimensión puede ser 
 
 Dentro del ámbito de Text Mining existen dos tipos principales de técnicas: \textit{Selección de Características} y \textit{Transformación de Características}.
 
-\subsubsection{Selección de Características}
+\subsubsection{Selección de Características} \label{subsubsec:Selección de Características}
 
 La selección de características o \textit{Feature Selection} es un proceso mediante el cual se escoge un subconjunto de los atributos originales de acuerdo a cierto criterio ordenando los términos en base a una variable numérica calculada a partir del conjunto de documentos y seleccionando aquellas palabras que sobrepasen el umbral. Los términos seleccionados mantienen gran parte de su valor original y ayudan a comprender mejor el conjunto de datos \cite{An Evaluation on Feature Selection for Text Clustering, Comparing and Combining Dimension Reduction Techniques for Efficient Text}. 
 
@@ -1677,20 +1677,24 @@ Por consiguiente, se planea aplicar diversos métodos de clusterización al conj
   
     \item STOPWORDS: SI USAMOS TAU SERÍA CONVENIENTE QUITAR LAS PALABRAS VACÍAS ANTES DE LA TOKENIZACIÓN. 
   
-    \item LENMATIZACIÓN: USAMOS TEXTSTEM
-  
     \item TOKENIZACIÓN: CLEANNLP (SEGUN JORGE TRABAJA MEJOR CON MÁS DOCUMENTOS QUE TEXT2VEC), PERO PODEMOS COGER DIRECTAMENTE T2V PQ LA MATARIZ LA HACEMOS CON EL MISMO PAQUETE
+    
+    \item LENMATIZACIÓN: USAMOS TEXTSTEM
   \end{itemize}
   
   \item DTM: TEX2VEC
 
   \item TF-IDF: TEX2VEC
   
-  \item EDA > TAU > TEXTSTEM > CLEANNLP/TEXT2VEC > TEXT2VEC > TEX2VEC > CLUSTERING
+  \item EDA > TAU > TEXT2VEC > TEXTSTEM > TEXT2VEC > TEX2VEC > CLUSTERING
 
   \item FEATHER para almacenar los resultados
 
 \end{itemize}
+
+Lo primero que haremos será cargar los diferentes paquetes que vamos a utilizar para la realización de este proceso.
+
+¡¡¡¡CARGA PAQUEtES!!!!
 
 %====================================================================================================================================================%
 
@@ -1705,43 +1709,434 @@ Por consiguiente, se planea aplicar diversos métodos de clusterización al conj
 
 Como se ha mencionado, vamos a trabajar con el conjunto de artículos ofrecidos por Kaggle relacionados con la enfermedad COVID-19. Dentro de este paquete cuyo contenido se puede ver en la Figura \ref{fig:directorio} se encuentra un archivo .csv\footnote{Tipo de archivo que se puede crear o editar en Excel que en vez de almacenar información en columnas estos guardan los datos separados por comas o puntos y comas.} ``metadata.csv'' que contiene los datos de más de 200.000 artículos tales como su título, DOI\footnote{El DOI (Digital Objetc Identifier es una forma de identificación de objetos digitales permanente.}, resumen, autores, fecha de publicación, etc. Para cargar este archivo y poder ver sus datos utilizaremos la siguiente función:
 
-¡¡¡¡CODIGO PARA CARGAR METADATA Y VER SU ESTRUCTURA!!!!
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{2}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Cargamos los datos del archivo \PYZdq{}metadata.csv\PYZdq{}}
+\PY{c+c1}{\PYZsh{} stringAsFactors evita que las cadenas de texto se conviertan en factores}
+\PY{c+c1}{\PYZsh{} na.strings indica qué consideramos valores nulos. En este caso celdas vacías y \PYZdq{}NA\PYZdq{}}
+\PY{n}{metadata\PYZus{}df} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{read.csv}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{D:/COVID/metadata.csv\PYZdq{}}\PY{p}{,} \PY{n}{stringsAsFactors} \PY{o}{=} \PY{k+kc}{FALSE}\PY{p}{,} \PY{n}{na.strings} \PY{o}{=} \PY{n+nf}{c}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{NA\PYZdq{}}\PY{p}{)}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} str() permite ver la estructura del archivo: número de filas, columnas y muestra el primero objeto almacenado}
+\PY{n+nf}{str}\PY{p}{(}\PY{n}{metadata\PYZus{}df}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+'data.frame':   253454 obs. of  19 variables:
+ \$ cord\_uid        : chr  "ug7v899j" "02tnwd4m" "ejv2xln0" "2b73a28n" {\ldots}
+ \$ sha             : chr  "d1aafb70c066a2068b02786f8929fd9c900897fb"
+"6b0567729c2143a66d737eb0a2f63f2dce2e5a7d"
+"06ced00a5fc04215949aa72528f2eeaae1d58927"
+"348055649b6b8cf2b9a376498df9bf41f7123605" {\ldots}
+ \$ source\_x        : chr  "PMC" "PMC" "PMC" "PMC" {\ldots}
+ \$ title           : chr  "Clinical features of culture-proven Mycoplasma
+pneumoniae infections at King Abdulaziz University Hospital, Jed"| \_\_truncated\_\_
+"Nitric oxide: a pro-inflammatory mediator in lung disease?" "Surfactant
+protein-D and pulmonary host defense" "Role of endothelin-1 in lung disease" {\ldots}
+ \$ doi             : chr  "10.1186/1471-2334-1-6" "10.1186/rr14" "10.1186/rr19"
+"10.1186/rr44" {\ldots}
+ \$ pmcid           : chr  "PMC35282" "PMC59543" "PMC59549" "PMC59574" {\ldots}
+ \$ pubmed\_id       : chr  "11472636" "11667967" "11667972" "11686871" {\ldots}
+ \$ license         : chr  "no-cc" "no-cc" "no-cc" "no-cc" {\ldots}
+ \$ abstract        : chr  "OBJECTIVE: This retrospective chart review describes
+the epidemiology and clinical features of 40 patients with"| \_\_truncated\_\_
+"Inflammatory diseases of the respiratory tract are commonly associated with
+elevated production of nitric oxide"| \_\_truncated\_\_ "Surfactant protein-D (SP-D)
+participates in the innate response to inhaled microorganisms and organic
+antigens,"| \_\_truncated\_\_ "Endothelin-1 (ET-1) is a 21 amino acid peptide with
+diverse biological activity that has been implicated in num"| \_\_truncated\_\_ {\ldots}
+ \$ publish\_time    : chr  "2001-07-04" "2000-08-15" "2000-08-25" "2001-02-22"
+{\ldots}
+ \$ authors         : chr  "Madani, Tariq A; Al-Ghamdi, Aisha A" "Vliet, Albert
+van der; Eiserich, Jason P; Cross, Carroll E" "Crouch, Erika C" "Fagan, Karen A;
+McMurtry, Ivan F; Rodman, David M" {\ldots}
+ \$ journal         : chr  "BMC Infect Dis" "Respir Res" "Respir Res" "Respir
+Res" {\ldots}
+ \$ mag\_id          : logi  NA NA NA NA NA NA {\ldots}
+ \$ who\_covidence\_id: chr  NA NA NA NA {\ldots}
+ \$ arxiv\_id        : chr  NA NA NA NA {\ldots}
+ \$ pdf\_json\_files  : chr
+"document\_parses/pdf\_json/d1aafb70c066a2068b02786f8929fd9c900897fb.json"
+"document\_parses/pdf\_json/6b0567729c2143a66d737eb0a2f63f2dce2e5a7d.json"
+"document\_parses/pdf\_json/06ced00a5fc04215949aa72528f2eeaae1d58927.json"
+"document\_parses/pdf\_json/348055649b6b8cf2b9a376498df9bf41f7123605.json" {\ldots}
+ \$ pmc\_json\_files  : chr  "document\_parses/pmc\_json/PMC35282.xml.json"
+"document\_parses/pmc\_json/PMC59543.xml.json"
+"document\_parses/pmc\_json/PMC59549.xml.json"
+"document\_parses/pmc\_json/PMC59574.xml.json" {\ldots}
+ \$ url             : chr  "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC35282/"
+"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC59543/"
+"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC59549/"
+"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC59574/" {\ldots}
+ \$ s2\_id           : int  NA NA NA NA NA NA NA NA NA NA {\ldots}
+    \end{Verbatim}
+    
+    
+
 
 Como se puede ver, contamos con 253.454 artículos y 19 atributos para cada uno de ellos. Sin embargo, dentro de este archivo no se encuentra el texto completo de los artículos, que se han almacenado de forma independiente en formato JSON (JavaScript Object Notation) en la carpeta ``document\_parses''. Dentro de esta carpeta se hace distinción entre los JSON de artículos en formato PDF y formato PMC, donde utilizaremos los de PDF puesto que PMC puede contener más de un documento en su estructura, que se encuentra separado en PDFs. Es decir, existen PDFs distintos que aparecen en el mismo PMC. De esta forma, vamos a procesar todos los archivos JSON de los documentos en PDF y utilizar la información que estos contienen para generar nuestra propia tabla de datos con la que trabajar.
 
 Para ello, vamos a generar una función que se encargue de sacar de la estructura JSON aquellos datos que queremos, que en este caso son el título, autores, resumen y cuerpo del texto.
 
-¡¡¡¡FUNCIÓN PARA EXTRAER INFORMACIÓN!!!!
+ \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{6}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Función de ayuda  para extraer información de JSON}
+\PY{n}{leer\PYZus{}json} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{function}\PY{p}{(}\PY{n}{json}\PY{p}{)}\PY{p}{\PYZob{}}
+  \PY{c+c1}{\PYZsh{} Obtenemos el identificador del texto}
+  \PY{n}{paper\PYZus{}id} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{json}\PY{o}{\PYZdl{}}\PY{n}{paper\PYZus{}id}
+  \PY{c+c1}{\PYZsh{} Obtenemos sus autores}
+  \PY{n}{authors} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{json}\PY{o}{\PYZdl{}}\PY{n}{metadata}\PY{o}{\PYZdl{}}\PY{n}{authors}
+  \PY{n}{author\PYZus{}list} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{list}\PY{p}{(}\PY{p}{)}
+  \PY{c+c1}{\PYZsh{} Separamos cada autor}
+  \PY{n+nf}{for }\PY{p}{(}\PY{n}{author} \PY{n}{in} \PY{n}{authors}\PY{p}{)} \PY{p}{\PYZob{}}
+      \PY{n}{name} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{paste0}\PY{p}{(}\PY{n}{author}\PY{o}{\PYZdl{}}\PY{n}{first}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{ \PYZdq{}}\PY{p}{,} \PY{n}{author}\PY{o}{\PYZdl{}}\PY{n}{last}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{;\PYZdq{}}\PY{p}{)}
+      \PY{n}{author\PYZus{}list} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{paste0}\PY{p}{(}\PY{n}{author\PYZus{}list}\PY{p}{,} \PY{n+nf}{as.character}\PY{p}{(}\PY{n}{name}\PY{p}{)}\PY{p}{)}
+  \PY{p}{\PYZcb{}}
+  \PY{c+c1}{\PYZsh{} Obtenemos el título del artículo}
+  \PY{n}{title\PYZus{}text} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{json}\PY{o}{\PYZdl{}}\PY{n}{metadata}\PY{o}{\PYZdl{}}\PY{n}{title}
+  \PY{c+c1}{\PYZsh{} Obtenemos todo el abstract o resumen}
+  \PY{n}{abstract\PYZus{}text} \PY{o}{\PYZlt{}\PYZhy{}} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}
+  \PY{n+nf}{for }\PY{p}{(}\PY{n}{each\PYZus{}abstract} \PY{n}{in} \PY{n}{json}\PY{o}{\PYZdl{}}\PY{n}{abstract}\PY{p}{)} \PY{p}{\PYZob{}}
+      \PY{n}{abstract\PYZus{}text} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{paste}\PY{p}{(}\PY{n}{abstract\PYZus{}text}\PY{p}{,} \PY{n}{each\PYZus{}abstract}\PY{o}{\PYZdl{}}\PY{n}{text}\PY{p}{)}
+  \PY{p}{\PYZcb{}}
+  \PY{c+c1}{\PYZsh{} Obtenemos el cuerpo del artículo}
+  \PY{n}{body\PYZus{}text} \PY{o}{\PYZlt{}\PYZhy{}} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}
+  \PY{n+nf}{for }\PY{p}{(}\PY{n}{each\PYZus{}body} \PY{n}{in} \PY{n}{json}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text}\PY{p}{)} \PY{p}{\PYZob{}}
+      \PY{n}{body\PYZus{}text} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{paste}\PY{p}{(}\PY{n}{body\PYZus{}text}\PY{p}{,} \PY{n}{each\PYZus{}body}\PY{o}{\PYZdl{}}\PY{n}{text}\PY{p}{)}
+  \PY{p}{\PYZcb{}}
+
+  \PY{c+c1}{\PYZsh{} Devolvemos el resultado en forma de Data Frame}
+  \PY{n+nf}{return}\PY{p}{(}\PY{n+nf}{tibble}\PY{p}{(}\PY{n}{paper\PYZus{}id}\PY{p}{,} \PY{n}{author\PYZus{}list}\PY{p}{,} \PY{n}{title\PYZus{}text}\PY{p}{,} \PY{n}{abstract\PYZus{}text}\PY{p}{,} \PY{n}{body\PYZus{}text}\PY{p}{)}\PY{p}{)}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+
+
 
 Posteriormente, debemos localizar en nuestro equipo la direccion de los archivos JSON de los PDFs y almacenarlos en una lista llamada \textit{archivos}.
 
-¡¡¡¡DIRECOTORIO DE LOS ARCHIVOS!!!!
+ \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{4}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Identificamos la carpeta que contiene los JSON}
+\PY{n}{directorio} \PY{o}{\PYZlt{}\PYZhy{}} \PY{l+s}{\PYZsq{}}\PY{l+s}{D:/COVID/document\PYZus{}parses/pdf\PYZus{}json/\PYZsq{}}
+\PY{c+c1}{\PYZsh{}Cogemos todos los archivos del directorio}
+\PY{n}{archivos} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{list.files}\PY{p}{(}\PY{n}{directorio}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Mostramos el número de archivos}
+\PY{n+nf}{length}\PY{p}{(}\PY{n}{archivos}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
 
+    106137
+    
+    
+    
+    
 Como se puede apreciar, contamos con 106.137 archivos para procesar. De esta forma, iteraremos cada archivo de la lista y abriremos su contenido dento del entorno de trabajo para aplicar la función \textit{leer\_json} y extraer la información mencionada previamente. Se han tomado algunas precauciones por si el formato del archivo no es el correcto o faltasen datos en el archivo de manera que se evite cualquier problema a la hora de procesar los archivos. Asimismo, se van a añadir como campos la revista de publicación y el DOI que se obtienen del archivo ``metadata.csv'' buscando la información existente para el archivo que se esté procesando. Los datos extraidos de cada artículo se van almacenando en vectores que son unidos al final para formar el Data Frame final.
 
-¡¡¡¡PROCESAMIENTO DE LOS ARCHIVOS!!!!
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Inicializamos el contenido del artíuculo en formato lista}
+\PY{n}{articulos} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{list}\PY{p}{(}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Inicializamos el índice de artículos}
+\PY{n}{indice} \PY{o}{\PYZlt{}\PYZhy{}} \PY{l+m}{0}
 
+\PY{c+c1}{\PYZsh{} Iteramos cada uno de los archivos}
+\PY{n+nf}{for }\PY{p}{(}\PY{n}{archivo} \PY{n}{in} \PY{n}{archivos}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{c+c1}{\PYZsh{} Actualizamos el puntero}
+  \PY{n}{indice} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{indice} \PY{o}{+} \PY{l+m}{1}
+  \PY{c+c1}{\PYZsh{} Breve comprobación para mostrar el estado de carga}
+  \PY{n+nf}{if }\PY{p}{(}\PY{n}{indice} \PY{o}{\PYZpc{}\PYZpc{}} \PY{p}{(}\PY{n+nf}{length}\PY{p}{(}\PY{n}{archivos}\PY{p}{)} \PY{o}{\PYZpc{}/\PYZpc{}} \PY{l+m}{10}\PY{p}{)} \PY{o}{==} \PY{l+m}{0}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n+nf}{cat}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Artículos procesados:  \PYZdq{}}\PY{p}{,} \PY{n}{indice}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{ de \PYZdq{}}\PY{p}{,} \PY{n+nf}{length}\PY{p}{(}\PY{n}{archivos}\PY{p}{)}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZbs{}n\PYZdq{}}\PY{p}{)}
+  \PY{p}{\PYZcb{}}
+  
+  \PY{c+c1}{\PYZsh{} Modificamos el camino o PATH hacia el archivo actual}
+  \PY{n}{ruta\PYZus{}archivo} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{paste0}\PY{p}{(}\PY{n}{directorio}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{/\PYZsq{}}\PY{p}{,} \PY{n}{archivo}\PY{p}{)}
+  \PY{c+c1}{\PYZsh{} Convertimos el archivo JSON a objeto de R para poder tratarlo}
+  \PY{n}{json} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{fromJSON}\PY{p}{(}\PY{n}{file} \PY{o}{=} \PY{n}{ruta\PYZus{}archivo}\PY{p}{)}
+  \PY{c+c1}{\PYZsh{} Aplicamos la función para extraer la informaciópn del archivo}
+  \PY{n}{contenido} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{leer\PYZus{}json}\PY{p}{(}\PY{n}{json}\PY{p}{)}
+  
+  \PY{c+c1}{\PYZsh{} Comprobamos si el formato del archivo es el correcto}
+  \PY{n+nf}{if}\PY{p}{(}\PY{n+nf}{length}\PY{p}{(}\PY{n}{contenido}\PY{o}{\PYZdl{}}\PY{n}{paper\PYZus{}id}\PY{p}{)} \PY{o}{\PYZgt{}} \PY{l+m}{0}\PY{p}{)}\PY{p}{\PYZob{}}
+    \PY{c+c1}{\PYZsh{} Si se ha obtenido información del archivo}
+    \PY{c+c1}{\PYZsh{} Buscamos el artículo en el archivo \PYZdq{}metadata.csv\PYZdq{}}
+    \PY{n}{meta} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{metadata\PYZus{}df}\PY{p}{[}\PY{n+nf}{which}\PY{p}{(}\PY{n}{metadata\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{sha} \PY{o}{==} \PY{n}{contenido}\PY{o}{\PYZdl{}}\PY{n}{paper\PYZus{}id}\PY{p}{)}\PY{p}{,} \PY{p}{]} 
+    \PY{c+c1}{\PYZsh{} Si no hay información en metadata.csv o el cuerpo del artículo está vacío saltamos el artículo}
+    \PY{n+nf}{if }\PY{p}{(}\PY{n+nf}{length}\PY{p}{(}\PY{n}{meta}\PY{p}{)} \PY{o}{\PYZgt{}} \PY{l+m}{0} \PY{o}{|} \PY{n+nf}{length}\PY{p}{(}\PY{n}{contenido}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text}\PY{p}{)} \PY{o}{\PYZlt{}=} \PY{l+m}{0}\PY{p}{)} \PY{p}{\PYZob{}}
+      \PY{c+c1}{\PYZsh{} Si no se encuentra autor en el JSON buscamos en metadata      }
+      \PY{n+nf}{if }\PY{p}{(}\PY{n+nf}{length}\PY{p}{(}\PY{n}{contenido}\PY{o}{\PYZdl{}}\PY{n}{author\PYZus{}list}\PY{p}{)} \PY{o}{\PYZlt{}=} \PY{l+m}{0}\PY{p}{)} \PY{p}{\PYZob{}}
+        \PY{n}{authors} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{metadata\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{authors}
+        \PY{n}{author\PYZus{}list} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{list}\PY{p}{(}\PY{p}{)}
+        \PY{c+c1}{\PYZsh{} Separamos cada autor}
+        \PY{n+nf}{for }\PY{p}{(}\PY{n}{author} \PY{n}{in} \PY{n}{authors}\PY{p}{)} \PY{p}{\PYZob{}}
+            \PY{n}{name} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{paste0}\PY{p}{(}\PY{n}{author}\PY{o}{\PYZdl{}}\PY{n}{first}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{ \PYZdq{}}\PY{p}{,} \PY{n}{author}\PY{o}{\PYZdl{}}\PY{n}{last}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{;\PYZdq{}}\PY{p}{)}
+            \PY{n}{author\PYZus{}list} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{paste0}\PY{p}{(}\PY{n}{author\PYZus{}list}\PY{p}{,} \PY{n+nf}{as.character}\PY{p}{(}\PY{n}{name}\PY{p}{)}\PY{p}{)}
+        \PY{p}{\PYZcb{}}
+        \PY{c+c1}{\PYZsh{} Sustituimos los autores}
+        \PY{n}{contenido}\PY{o}{\PYZdl{}}\PY{n}{author\PYZus{}list} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{author\PYZus{}list}
+      \PY{p}{\PYZcb{}}
+      
+      \PY{c+c1}{\PYZsh{} Si no se encuentra el título en el JSON lo buscamos en metadata}
+      \PY{n+nf}{if }\PY{p}{(}\PY{n}{contenido}\PY{o}{\PYZdl{}}\PY{n}{title\PYZus{}text} \PY{o}{==} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{p}{)} \PY{p}{\PYZob{}}
+        \PY{n}{contenido}\PY{o}{\PYZdl{}}\PY{n}{title\PYZus{}text} \PY{o}{\PYZlt{}\PYZhy{}} \PY{l+s}{\PYZsq{}}\PY{l+s}{NoIncluido\PYZsq{}}
+      \PY{p}{\PYZcb{}}
+      
+      \PY{c+c1}{\PYZsh{} Si no se encuentra el abstract lo dejamos como \PYZsq{}No incluido\PYZsq{}}
+      \PY{n+nf}{if }\PY{p}{(}\PY{n+nf}{nchar}\PY{p}{(}\PY{n}{contenido}\PY{o}{\PYZdl{}}\PY{n}{abstract\PYZus{}text}\PY{p}{)} \PY{o}{\PYZlt{}=} \PY{l+m}{0}\PY{p}{)} \PY{p}{\PYZob{}}
+        \PY{n}{contenido}\PY{o}{\PYZdl{}}\PY{n}{abstract\PYZus{}text} \PY{o}{\PYZlt{}\PYZhy{}} \PY{l+s}{\PYZsq{}}\PY{l+s}{NoIncluido\PYZsq{}}
+      \PY{p}{\PYZcb{}}
+
+      \PY{c+c1}{\PYZsh{} Añadimos la revista de publicación}
+      \PY{n+nf}{if }\PY{p}{(}\PY{n+nf}{length}\PY{p}{(}\PY{n}{meta}\PY{o}{\PYZdl{}}\PY{n}{journal}\PY{p}{)} \PY{o}{\PYZgt{}} \PY{l+m}{0}\PY{p}{)} \PY{p}{\PYZob{}}
+        \PY{n}{contenido}\PY{o}{\PYZdl{}}\PY{n}{journal} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{meta}\PY{o}{\PYZdl{}}\PY{n}{journal}\PY{p}{[}\PY{l+m}{1}\PY{p}{]}
+      \PY{p}{\PYZcb{}}
+      \PY{n}{else} \PY{p}{\PYZob{}}
+        \PY{n}{contenido}\PY{o}{\PYZdl{}}\PY{n}{journal} \PY{o}{\PYZlt{}\PYZhy{}} \PY{l+s}{\PYZsq{}}\PY{l+s}{NoIncluido\PYZsq{}}
+      \PY{p}{\PYZcb{}}
+      \PY{c+c1}{\PYZsh{} Añadimos el DOI}
+      \PY{n+nf}{if }\PY{p}{(}\PY{n+nf}{length}\PY{p}{(}\PY{n}{meta}\PY{o}{\PYZdl{}}\PY{n}{doi}\PY{p}{)} \PY{o}{\PYZgt{}} \PY{l+m}{0}\PY{p}{)} \PY{p}{\PYZob{}}
+        \PY{n}{contenido}\PY{o}{\PYZdl{}}\PY{n}{doi} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{meta}\PY{o}{\PYZdl{}}\PY{n}{doi}\PY{p}{[}\PY{l+m}{1}\PY{p}{]}
+      \PY{p}{\PYZcb{}}
+      \PY{n}{else} \PY{p}{\PYZob{}}
+        \PY{n}{contenido}\PY{o}{\PYZdl{}}\PY{n}{doi} \PY{o}{\PYZlt{}\PYZhy{}} \PY{l+s}{\PYZsq{}}\PY{l+s}{NoIncluido\PYZsq{}}
+      \PY{p}{\PYZcb{}}
+   
+      \PY{c+c1}{\PYZsh{} Incluimos el contenido al conjunto de artículos}
+      \PY{n}{articulos}\PY{p}{[[}\PY{n}{indice}\PY{p}{]]} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{contenido}
+    \PY{p}{\PYZcb{}}
+  \PY{p}{\PYZcb{}}
+\PY{p}{\PYZcb{}}
+
+\PY{c+c1}{\PYZsh{} Enlazamos todas las filas generadas en un único Data Frame}
+\PY{n}{covid\PYZus{}df} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{bind\PYZus{}rows}\PY{p}{(}\PY{n}{articulos}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Artículos procesados:   10613  de  106137
+Artículos procesados:   21226  de  106137
+Artículos procesados:   31839  de  106137
+Artículos procesados:   42452  de  106137
+Artículos procesados:   53065  de  106137
+Artículos procesados:   63678  de  106137
+Artículos procesados:   74291  de  106137
+Artículos procesados:   84904  de  106137
+Artículos procesados:   95517  de  106137
+Artículos procesados:   106130  de  106137
+    \end{Verbatim}
+
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{10}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Observamos la primera fila del nuevo Data Frame menos el cuerpo}
+\PY{n+nf}{as.list}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+m}{1}\PY{p}{,} \PY{l+m}{\PYZhy{}5}\PY{p}{]}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Comprobamos el número de artículos existentes}
+\PY{n+nf}{nrow}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{description}
+\item[\$paper\_id] '0001418189999fea7f7cbe3e82703d71c85a6fe5'
+\item[\$author\_list] 'E Cornelissen;H Dewerchin;E Hamme;H Nauwynck;'
+\item[\$title\_text] 'Absence of surface expression of feline infectious peritonitis virus (FIPV) antigens on infected cells isolated from cats with FIP'
+\item[\$abstract\_text] ' Feline infectious peritonitis virus (FIPV) positive cells are present in pyogranulomas and exudates from cats with FIP. These cells belong mainly to the monocyte/macrophage lineage. How these cells survive in immune cats is not known. In this study, FIPV positive cells were isolated from pyogranulomas and exudates of 12 naturally FIPV-infected cats and the presence of two immunologic targets, viral antigens and MHC I, on their surface was determined. The majority of the infected cells were confirmed to be cells from the monocyte/macrophage lineage. No surface expression of viral antigens was detected on FIPV positive cells. MHC I molecules were present on all the FIPV positive cells. After cultivation of the isolated infected cells, 52 AE 10\% of the infected cells re-expressed viral antigens on the plasma membrane. In conclusion, it can be stated that in FIP cats, FIPV replicates in cells of the monocyte/macrophage lineage without carrying viral antigens in their plasma membrane, which could allow them to escape from antibody-dependent cell lysis. \#'
+\item[\$journal] 'Veterinary Microbiology'
+\item[\$doi] '10.1016/j.vetmic.2006.11.026'
+\end{description}
+
+
+    
+    95980
+    
+    
+    
 Una vez realizado este proceso, podemos ver que 10.157 archivos no cumplían con los requisitos y el número total de documentos con el que se va a trabajar desciende hasta los 95.980. Con motivo de obtener información extra, calcularemos el número total de palabras para el resumen y el cuerpo de cada artículo. 
 
-¡¡¡¡CONTADOR DE PALABRAS!!!!
+ \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{17}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Contamos el número de palabras para el abstracto ...}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{words\PYZus{}abstract} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{apply}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{abstract\PYZus{}text\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m}{2}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{n+nf}{str\PYZus{}count}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZbs{}\PYZbs{}w+\PYZsq{}}\PY{p}{)}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} ... y el cuerpo del texto}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{words\PYZus{}body} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{apply}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{body\PYZus{}text\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m}{2}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{n+nf}{str\PYZus{}count}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZbs{}\PYZbs{}w+\PYZsq{}}\PY{p}{)}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Mostramos el número de palabras de los primeros textos}
+\PY{n+nf}{head}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{p}{,}\PY{n+nf}{c}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{title\PYZus{}text\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{words\PYZus{}abstract\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{words\PYZus{}body\PYZsq{}}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{tabular}{lll}
+ title\_text & words\_abstract & words\_body\\
+\hline
+	 Absence of surface expression of feline [...]      & 170 & 2120\\
+	 Detection of Severe Acute Respiratory [...]        & 267 & 2022\\
+	 Title: Rethinking high-risk groups in [...]        &   1 &  977\\
+	 ScienceDirect ScienceDirect Effect of [...]        & 336 & 3316\\
+	 Plasma inflammatory cytokines and chemokines [...] & 203 & 2965\\
+	 Journal Pre-proofs The Fire This Time[...]         &   1 & 1020\\
+\end{tabular}
+
 
 Antes de entrar más en profundidad a trabajar con los datos, veamos si hay algún duplicado. Para ello, utilizaremos una función integrada en R que detecta este tipo de situaciones.
 
-¡¡¡¡DUPLICADOS!!!!
+ \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{18}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Comprobamos cuantos objetos tienen el mismo cuerpo}
+\PY{n}{duplicados} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{duplicated}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Mostramos la información obtenida}
+\PY{n+nf}{summary}\PY{p}{(}\PY{n}{duplicados}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Obtenemos los 5 primeros objetos detectados como duplicados }
+\PY{n+nf}{head}\PY{p}{(}\PY{n+nf}{which}\PY{p}{(}\PY{n}{duplicados}\PY{o}{==}\PY{k+kc}{TRUE}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+   Mode   FALSE    TRUE 
+logical   94519    1461 
+    \end{Verbatim}
+
+    
+    \begin{enumerate*}
+\item 2176
+\item 2590
+\item 3334
+\item 4426
+\item 5000
+\item 5018
+\end{enumerate*}
+
+
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{20}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Mostramos los seis primeros duplicados}
+\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{n+nf}{c}\PY{p}{(}\PY{l+m}{2176}\PY{p}{,}\PY{l+m}{2590}\PY{p}{,}\PY{l+m}{3334}\PY{p}{,}\PY{l+m}{4426}\PY{p}{,}\PY{l+m}{5000}\PY{p}{,}\PY{l+m}{5018}\PY{p}{)}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{title\PYZus{}text\PYZsq{}}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{tabular}{l}
+ title\_text\\
+\hline
+	 Remdesivir in Treatment of COVID-19: A Systematic Benefit-Risk Assessment                                                               \\
+	 Autoantibodies in Patients with Rheumatoid Arthritis                                                                                    \\
+	 Initial High Viral Load Is Associated with Prolonged Shedding of Human Rhinovirus in [...]                                              \\
+	 Autoantibodies in Patients with Rheumatoid Arthritis                                                                                    \\
+	 Extracellular superoxide dismutase, a molecular transducer of health benefits of exercise                                               \\
+	 COVID-19 pneumonia: different respiratory treatments for different phenotypes?                                                          \\
+\end{tabular}
+
 
 De este proceso se obtiene que hay más de mil objetos con el mismo contenido en el cuerpo, y como este campo no puede ser nulo por la extracción realizada a la hora de leer los JSON, la única posibilidad es que sean, en efecto, duplicados. Uno de los principales motivos por lo que esto ocurre es que en gran cantidad de ocasiones el mismo artículo es publicado en diferentes revistas.
 
-¡¡¡¡MOSTRAR DUPLICADOS!!!!
+ \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{21}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nf}{length}\PY{p}{(}\PY{n+nf}{which}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{title\PYZus{}text}\PY{o}{==}\PY{l+s}{\PYZsq{}}\PY{l+s}{Autoantibodies in Patients with Rheumatoid Arthritis\PYZsq{}}\PY{p}{)}\PY{p}{)}
+\PY{n+nf}{length}\PY{p}{(}\PY{n+nf}{which}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{title\PYZus{}text}\PY{o}{==}\PY{l+s}{\PYZsq{}}\PY{l+s}{Remdesivir in Treatment of COVID\PYZhy{}19: A Systematic Benefit\PYZhy{}Risk Assessment\PYZsq{}}\PY{p}{)}\PY{p}{)}
+\PY{n+nf}{length}\PY{p}{(}\PY{n+nf}{which}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{title\PYZus{}text}\PY{o}{==}\PY{l+s}{\PYZsq{}}\PY{l+s}{Initial High Viral Load Is Associated with Prolonged Shedding of Human Rhinovirus in Allogeneic Hematopoietic Cell Transplant Recipients\PYZsq{}}\PY{p}{)}\PY{p}{)}
+\PY{n+nf}{length}\PY{p}{(}\PY{n+nf}{which}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{title\PYZus{}text}\PY{o}{==}\PY{l+s}{\PYZsq{}}\PY{l+s}{Extracellular superoxide dismutase, a molecular transducer of health benefits of exercise\PYZsq{}}\PY{p}{)}\PY{p}{)}
+\PY{n+nf}{length}\PY{p}{(}\PY{n+nf}{which}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{title\PYZus{}text}\PY{o}{==}\PY{l+s}{\PYZsq{}}\PY{l+s}{COVID\PYZhy{}19 pneumonia: different respiratory treatments for different phenotypes?\PYZsq{}}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
 
+    69
+
+    
+    2
+
+    
+    2
+
+    
+    2
+
+    
+    2
+    
+    
 Como se puede observar, de entre estos cinco primeros objetos detectados como duplicados, dos de ellos con el título ``Autoantibodies in Patients with Rheumatoid Arthritis'', coinciden en todos y cada uno de los campos. Y si comprobamos la cantidad de veces que aparecen estos cuatro objetos dentro del conjunto de datos, vemos que el título mencionado antes es idéntico en un total de 69 filas, siendo 68 de ellas duplicados de la primera. El resto de títulos solo tienen un duplicado. De esta manera, lo correcto es eliminar todos los duplicados para trabajar con una muestra lo más limpia posible.
 
-¡¡¡¡ELIMINAR DUPLICADOS!!!!
+ \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{22}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Eliminamos duplicados}
+\PY{n}{covid\PYZus{}df} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{o}{!}\PY{n+nf}{duplicated}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text}\PY{p}{)}\PY{p}{,}\PY{p}{]}
+\PY{n+nf}{nrow}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
 
+    94519
+    
+    
 A continuación, identificaremos el lenguaje principal de cada artículo comprobando los primeros 2000 caracteres del cuerpo y utilizando la librería \textit{cld2}, que enlaza con la detección de idioma de Google para entornos Chromium, siendo capaz de detectar más de 80 idiomas. 
 
-¡¡¡¡DETECCION LENGUAJE!!!!
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{23}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Añadimos una nueva columna con el idioma de cada texto}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{language} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{apply}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{body\PYZus{}text\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m}{2}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{n+nf}{detect\PYZus{}language}\PY{p}{(}\PY{n+nf}{substring}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{l+m}{1}\PY{p}{,}  \PY{l+m}{2000}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Información}
+\PY{n+nf}{summary}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{language}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
 
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+   body\_text    
+ en     :92213  
+ de     :  842  
+ es     :  658  
+ fr     :  517  
+ nl     :  130  
+ (Other):   87  
+ NA's   :   72  
+    \end{Verbatim}
+
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{24}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Creación de matriz con los datos}
+\PY{n}{idiomas} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{matrix}\PY{p}{(}\PY{n+nf}{c}\PY{p}{(}\PY{l+m}{842}\PY{p}{,} \PY{l+m}{92212}\PY{p}{,} \PY{l+m}{658}\PY{p}{,} \PY{l+m}{517}\PY{p}{,} \PY{l+m}{130}\PY{p}{,} \PY{l+m}{71}\PY{p}{,} \PY{l+m}{88}\PY{p}{)}\PY{p}{,} \PY{n}{ncol} \PY{o}{=} \PY{l+m}{7}\PY{p}{,} \PY{n}{byrow} \PY{o}{=} \PY{k+kc}{TRUE}\PY{p}{)}
+\PY{n+nf}{colnames}\PY{p}{(}\PY{n}{idiomas}\PY{p}{)} \PY{o}{\PYZlt{}\PYZhy{}} \PY{p}{(}\PY{n+nf}{c}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Alemán\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{Inglés\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Español\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Francés\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Holandés\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Otros\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{NA\PYZsq{}}\PY{p}{)}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Generación de gráfico }
+\PY{n+nf}{barplot}\PY{p}{(}\PY{n}{idiomas}\PY{p}{,} \PY{n}{main} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Distribución de idiomas\PYZsq{}}\PY{p}{,} \PY{n}{xlab} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Idiomas\PYZsq{}}\PY{p}{,} \PY{n}{ylab} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Número de artículos\PYZsq{}}\PY{p}{,} \PY{n}{col} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsh{}69b3a2\PYZsq{}}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{k+kc}{FALSE}\PY{p}{)}
+\PY{n}{usr} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{par}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{usr\PYZdq{}}\PY{p}{)}
+\PY{n+nf}{par}\PY{p}{(}\PY{n}{usr}\PY{o}{=}\PY{n+nf}{c}\PY{p}{(}\PY{n}{usr}\PY{p}{[}\PY{l+m}{1}\PY{o}{:}\PY{l+m}{2}\PY{p}{]}\PY{p}{,} \PY{l+m}{0}\PY{p}{,} \PY{l+m}{100000}\PY{p}{)}\PY{p}{)}
+\PY{n+nf}{axis}\PY{p}{(}\PY{l+m}{2}\PY{p}{,} \PY{n}{at}\PY{o}{=}\PY{n+nf}{seq}\PY{p}{(}\PY{l+m}{0}\PY{p}{,} \PY{l+m}{100000}\PY{p}{,}\PY{l+m}{25000}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_21_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    
 Más del noventa y siete por ciento de los artículos están escritos en inglés, siendo el alemán el segundo idioma más utilizado, no llegando ni siquiera al uno por ciento del total. En la mayoría de los casos en que no se ha podido detectar el idioma el motivo es la falta de texto en el cuerpo. La traducción de estos artículos al inglés podría ocasionar distorsiones en el significado del documento y una pérdida de su valor, por lo que la opción más segura es descartar cualquier archivo cuyo idioma no sea en inglés. 
+
+
+ \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{27}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Nos quedamos únicamente con textos en inglés}
+\PY{n}{covid\PYZus{}df} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{n+nf}{which}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{language}\PY{o}{==}\PY{l+s}{\PYZsq{}}\PY{l+s}{en\PYZsq{}}\PY{p}{)}\PY{p}{,}\PY{p}{]}
+\PY{c+c1}{\PYZsh{} Mostramos el número de artículos restantes}
+\PY{n+nf}{nrow}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    92213
+
+
 
 Por último dentro de esta exploración de datos, sería interesante poder eliminar cualquier artículo cuya cantidad de palabras sea ínfima, puesto que sería prácticamente imposible obtener un buen concepto de la temática de un documento con menos de 200 palabras. Para ello, vamos a utilizar las columnas que se han calculado previamente que contienen la cantidad de palabras del resumen y el cuerpo del texto. Sumaremos ambos número y si el resultado es inferior, se descartará. Este proceso se realizará posteriormente, una vez eliminadas las palabras vacías, el siguiente paso.
 
@@ -1750,43 +2145,434 @@ Por último dentro de esta exploración de datos, sería interesante poder elimi
 
 \subsection{Preparación de datos con NLP}
 
-Como se ha mencionado en la sección \ref{subsec:preparación de datos}, el principal problema al que nos enfrentamos con la clusterización de textos es el número elevado de atributos con el que se trabaja. Para reducir dicha cantidad eliminaremos las palabras vacías y lematizaremos los términos restantes. El proceso seguido en esta sección y los paquetes elegidos para llevar esta preparación de dato a cabo han sido elegidos en base a \cite[TFG Jorge} junto con ayuda de su autor, Jorge Montero Guillamón. En este trabajo se realiza un estudio intensivo sobre diferentes métodos de text mining tanto para R como para Python en los que compara su rendimiento y consumo de recursos para muestras de diferentes tamaños.
+Como se ha mencionado en la sección \ref{subsec:preparación de datos}, el principal problema al que nos enfrentamos con la clusterización de textos es el número elevado de atributos con el que se trabaja. Para reducir dicha cantidad eliminaremos las palabras vacías y lematizaremos los términos restantes. El proceso seguido en esta sección y los paquetes elegidos para llevar esta preparación de dato a cabo han sido elegidos en base a \cite{TFG Jorge} junto con ayuda de su autor, Jorge Montero Guillamón. En este trabajo se realiza un estudio intensivo sobre diferentes métodos de text mining tanto para R como para Python en los que compara su rendimiento y consumo de recursos para muestras de diferentes tamaños.
 
 Para la eliminación de palabras vacías o stopwords se utilizará \textit{TAU}, un paquete que ofrece una variedad de utilidades para el análisis de texto como la carga y preprocesado de documentos o el conteo de términos o patrones en documentos \cite{TFG Jorge}. Este trabaja sobre texto plano, motivo por el cual no se ha realizado todavía la tokenización de los documentos. Junto con el paquete \textit{text2vec}, TAU es el que mejor rendimiento ha obtenido en las pruebas realizadas en \cite{TFG Jorge}.
 
-Para el proceso de lematización se usará el paquete \textit{textstem}, que provee un conjunto de herramientas para poder realizar stemming o lematización sobre textos. En este caso se utilizará la lematización para conservar todo lo posible la identidad y significado de las palabras originales. Este también trabaja con texto plano, por lo que la combinación con TAU es idónea. Asimismo, el rendimiento de este paquete es el que mejor resultados ha dado, otro motivo por el que se ha elegido.
+Posteriormente, se llevará a cabo la tokenización del texto con el paquete \textit{text2vec}, que ofrece multitud de métodos para la minería de texto. A parte de su excelente rendimiento, el otro motivo para su utilización es precisamente la gran oferta de funciones con la que cuenta y que utilizaremos para la reducción de dimensionalidad, siendo más facil así la integracion de los resultados entre ellos.
 
-Posteriormente a estos pasos, se llevará a cabo la tokenización del texto con el paquete text2vec, que ofrece multitud de métodos para la minería de texto. A parte de su excelente rendimiento, el otro motivo para su utilización es precisamente la gran oferta de funciones con la que cuenta y que utilizaremos para la reducción de dimensionalidad, siendo más facil así la integracion de los resultados entre ellos.
-
+Para el proceso de lematización se usará el paquete \textit{textstem}, que provee un conjunto de herramientas para poder realizar stemming o lematización sobre textos. En este caso se utilizará la lematización para conservar todo lo posible la identidad y significado de las palabras originales. Este puede trabajar con texto plano o con tokens, por lo que la combinación con TAU y text2vec es idónea. Asimismo, el rendimiento de este paquete es el que mejor resultados ha dado, otro motivo por el que se ha elegido.
 %====================================================================================================================================================%
 
 \subsubsection{Eliminación de palabras vacías}
 
 Antes de realizar este proceso, echemos un vistazo a los datos relativos al conteo de palabras que se ha realizado con la totalidad de los términos de los textos.
 
-¡¡¡¡INFORMACION PALABRAS!!!!
+ \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{28}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Información sobre el número de palabras}
+\PY{n+nf}{summary}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{p}{,}\PY{n+nf}{c}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{words\PYZus{}abstract\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{words\PYZus{}body\PYZsq{}}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
 
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+ words\_abstract.abstract\_text words\_body.body\_text
+ Min.   :   1.000             Min.   :     1.00   
+ 1st Qu.:   1.000             1st Qu.:  1658.00   
+ Median : 162.000             Median :  3119.00   
+ Mean   : 174.521             Mean   :  4022.11   
+ 3rd Qu.: 249.000             3rd Qu.:  4834.00   
+ Max.   :7922.000             Max.   :293299.00   
+    \end{Verbatim}
+
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{29}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Generación del grafo para el resumen con histograma y densidad}
+\PY{n}{palabras\PYZus{}abstract} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{ggplot}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{,} \PY{n+nf}{aes}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{words\PYZus{}abstract}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{n+nf}{geom\PYZus{}histogram}\PY{p}{(}\PY{n+nf}{aes}\PY{p}{(}\PY{n}{y}\PY{o}{=}\PY{n}{..density..}\PY{p}{)}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{n}{.}\PY{l+m}{3}\PY{p}{,} \PY{n}{fill}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{cyan\PYZdq{}}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m}{80}\PY{p}{)} \PY{o}{+} \PY{n+nf}{geom\PYZus{}density}\PY{p}{(} \PY{n}{colour}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{blue\PYZdq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{theme\PYZus{}classic}\PY{p}{(}\PY{p}{)} \PY{o}{+} \PY{n+nf}{ggtitle}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Distribución del número de palabras en el resumen\PYZsq{}}\PY{p}{)} \PY{o}{+}  \PY{n+nf}{xlab}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Número de palabras del resumen\PYZsq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{ylab}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Densidad\PYZsq{}}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Misma operación para el cuerpo del texto}
+\PY{n}{palabras\PYZus{}cuerpo} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{ggplot}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{,} \PY{n+nf}{aes}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{words\PYZus{}body}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{n+nf}{geom\PYZus{}histogram}\PY{p}{(}\PY{n+nf}{aes}\PY{p}{(}\PY{n}{y}\PY{o}{=}\PY{n}{..density..}\PY{p}{)}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{n}{.}\PY{l+m}{3}\PY{p}{,} \PY{n}{fill}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{cyan\PYZdq{}}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m}{80}\PY{p}{)} \PY{o}{+} \PY{n+nf}{geom\PYZus{}density}\PY{p}{(} \PY{n}{colour}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{blue\PYZdq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{theme\PYZus{}classic}\PY{p}{(}\PY{p}{)} \PY{o}{+} \PY{n+nf}{scale\PYZus{}x\PYZus{}continuous}\PY{p}{(}\PY{n}{labels} \PY{o}{=} \PY{n}{comma}\PY{p}{)} \PY{o}{+} \PY{n+nf}{ggtitle}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Distribución del número de palabras en el cuerpo\PYZsq{}}\PY{p}{)}  \PY{o}{+}  \PY{n+nf}{xlab}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Número de palabras del cuerpo\PYZsq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{ylab}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Densidad\PYZsq{}}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Mostramos los gráficos}
+\PY{n}{palabras\PYZus{}abstract}
+\PY{n}{palabras\PYZus{}cuerpo}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_27_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_27_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    
 Gracias a esta información nos hacemos una idea del volumen de datos con el que estamos trabajando, ya que la gran mayoría de los artículos tiene alrededor de 4000 palabras en el cuerpo, existiendo excepciones con casi 300000. Por otro lado, el tamaño del resumen es considerablemente menor, con unas 200 palabras de medía. Además. se puede ver que existen artículos cuyo número de palabras en el resumen y el cuerpo es de 1. En el caso del resumen es muy probable que se la palabra ``NoIncluido'', indicando que no existe información sobre ese campo. A continuación se muestran aquellos documentos con menos de diez palabras en el resumen y el cuerpo del texto.
 
-¡¡¡¡MAS INFORMACION PALABRAS!!!!
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{34}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Cinco primeros artículos con menos de diez palabras en el abstracto}
+\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{n+nf}{head}\PY{p}{(}\PY{n+nf}{which}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{words\PYZus{}abstract} \PY{o}{\PYZlt{}} \PY{l+m}{10} \PY{o}{\PYZam{}} \PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{abstract\PYZus{}text} \PY{o}{!=} \PY{l+s}{\PYZsq{}}\PY{l+s}{NoIncluido\PYZsq{}}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n+nf}{c}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{title\PYZus{}text\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{abstract\PYZus{}text\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{words\PYZus{}abstract\PYZsq{}}\PY{p}{)}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
 
-Para la eliminación de palabras vacías se utilizará tambíen el paquete \textit{stopwords}, que ofrece una gran fuente palabras en varios idiomas que son utilizadas de forma común y dearlas en el texto solo serviría para aumentar los niveles de impureza, por lo que deben se detectadas y retiradas del texto. Además, se va a añadir a esta lista un conjunto extra de palabras anglosajonas que suelen ser usadas en artículos científicos. Previamente a este paso se transformarán todas las palabras a minúscula y se eliminarán los signos de puntuación con ayuda del paquete \textit{tm}, que provee un entorno de trabajo donde permite aplicar una gran cantidad de métodod de text mining y métodos propios de R. Los números se van a dejar en este caso por su posible relevancia dentro del contexto de la enfermedad así como simbología entre palabras como guiones. 
+\begin{tabular}{lll}
+ title\_text & abstract\_text & words\_abstract\\
+\hline
+	 Loss of IKK subunits limits [...]                  &   18                                                                      & 1\\
+	 Title: Piloting Forensic Tele-Mental [...]         &  Problem                                                                  & 1\\ 
+	 NoIncluido                                         &  This article examines [...]                                              & 6\\
+	 A Cluster-Randomized Trial of [...]                &  Background 49                                                            & 2\\
+	 Early View Sleep apnoea management [...]           &  on behalf of the ESADA [...]                                             & 7\\
+	 Initial characterisation of ELISA [...]            &  Background To accurately [...]                                           & 9\\
+\end{tabular}
 
-¡¡¡¡ELIMINACION DE PALABRAS!!!!
 
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{36}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Y menos de diez palabras en el cuerpo}
+\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{n+nf}{head}\PY{p}{(}\PY{n+nf}{which}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{words\PYZus{}body} \PY{o}{\PYZlt{}} \PY{l+m}{10}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n+nf}{c}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{title\PYZus{}text\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{body\PYZus{}text\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{words\PYZus{}body\PYZsq{}}\PY{p}{)}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{tabular}{lll}
+ title\_text & body\_text & words\_body\\
+\hline
+	 Severe SARS-CoV-2 infection in humans [...]      &  Supplemental Figure 15                       & 3\\
+	 Journal Pre-proof How to optimize the [...]      &  The authors report no [...]                  & 7\\
+	 NoIncluido                                       &  Journal Pre-proof Should                     & 4\\
+	 Journal Pre-proof Are healthcare [...]           &  results of a scoping review.                 & 5\\
+	 Der Chirurg Journal Club                         &  Originalpublikation Sud                      & 2\\
+	 Journal Pre-proof THORACIC SURGERY [...]         &  To the Editor:                               & 3\\
+\end{tabular}
+
+
+
+Para la eliminación de palabras vacías se utilizará tambíen el paquete \textit{stopwords}, que ofrece una gran fuente palabras en varios idiomas que son utilizadas de forma común y dearlas en el texto solo serviría para aumentar los niveles de impureza, por lo que deben se detectadas y retiradas del texto. Además, se va a añadir a esta lista un conjunto extra de palabras anglosajonas que suelen ser usadas en artículos científicos. Previamente a este paso se transformarán todas las palabras a minúscula y se eliminarán los signos de puntuación con ayuda del paquete \textit{tm}, que provee un entorno de trabajo donde permite aplicar una gran cantidad de métodod de text mining y métodos propios de R. Los números se van a dejar en este caso por su posible relevancia dentro del contexto de la enfermedad. 
+
+ \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{37}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Cargamos la lista del paquete stopwords}
+\PY{n}{p\PYZus{}vacias} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{stopwords}\PY{o}{::}\PY{n+nf}{stopwords}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{en\PYZdq{}}\PY{p}{,}\PY{n}{source} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{stopwords\PYZhy{}iso\PYZdq{}}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Añadimos más palabrasa }
+\PY{n}{p\PYZus{}propias} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{c}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{doi\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{preprint\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{copyright\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{org\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{https\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{et\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{al\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{author\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{figure\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{table\PYZsq{}}\PY{p}{,}
+    \PY{l+s}{\PYZsq{}}\PY{l+s}{rights\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{reserved\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{permission\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{use\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{used\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{using\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{biorxiv\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{medrxiv\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{license\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{fig\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{fig.\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{al.\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Elsevier\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{PMC\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{CZI\PYZsq{}}\PY{p}{,}
+    \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZhy{}PRON\PYZhy{}\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{usually\PYZsq{}}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Y las juntamos}
+\PY{n}{p\PYZus{}vacias} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{append}\PY{p}{(}\PY{n}{p\PYZus{}vacias}\PY{p}{,} \PY{n}{p\PYZus{}propias}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Eliminamos cualquier posible duplicado}
+\PY{n}{p\PYZus{}vacias} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{unique}\PY{p}{(}\PY{n}{p\PYZus{}vacias}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Vemos información al respecto}
+\PY{n+nf}{length}\PY{p}{(}\PY{n}{p\PYZus{}vacias}\PY{p}{)}
+\PY{n+nf}{sample}\PY{p}{(}\PY{n}{p\PYZus{}vacias}\PY{p}{,} \PY{l+m}{10}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    1317
+
+    
+    \begin{enumerate*}
+\item 'trying'
+\item 'grouping'
+\item 'resulting'
+\item 'ge'
+\item 'following'
+\item 'sy'
+\item 'primarily'
+\item 'kw'
+\item 'one\textbackslash{}'s'
+\item 'arent'
+\end{enumerate*}
+
+
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{38}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Almacenamos el primer resumen para comparar}
+\PY{n}{resumen} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{abstract\PYZus{}text}\PY{p}{[}\PY{l+m}{1}\PY{p}{]}
+\PY{c+c1}{\PYZsh{} Conversión del resumen a minúsculas}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{abstract\PYZus{}text} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{apply}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{abstract\PYZus{}text\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m}{2}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{n+nf}{tolower}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Eliminación de signos de puntuación}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{abstract\PYZus{}text} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{apply}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{abstract\PYZus{}text\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m}{2}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{n+nf}{removePunctuation}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{n}{preserve\PYZus{}intra\PYZus{}word\PYZus{}contractions} \PY{o}{=} \PY{k+kc}{TRUE}\PY{p}{,} \PY{n}{preserve\PYZus{}intra\PYZus{}word\PYZus{}dashes} \PY{o}{=} \PY{k+kc}{TRUE}\PY{p}{)}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Eliminación de palabras vacías}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{abstract\PYZus{}text} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{apply}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{abstract\PYZus{}text\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m}{2}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{n+nf}{remove\PYZus{}stopwords}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{n}{p\PYZus{}vacias}\PY{p}{,} \PY{n}{lines} \PY{o}{=} \PY{k+kc}{TRUE}\PY{p}{)}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Añadimos nueva columna con número de palabras actuales}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{new\PYZus{}word\PYZus{}abstract} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{apply}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{abstract\PYZus{}text\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m}{2}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{n+nf}{str\PYZus{}count}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZbs{}\PYZbs{}w+\PYZsq{}}\PY{p}{)}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Repetimos la operación con el cuerpo}
+\PY{c+c1}{\PYZsh{} Conversión del cuerpo a minúsculas}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{apply}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{body\PYZus{}text\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m}{2}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{n+nf}{tolower}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Eliminación de signos de puntuación}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{apply}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{body\PYZus{}text\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m}{2}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{n+nf}{removePunctuation}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Eliminación de palabras vacías}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{apply}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{body\PYZus{}text\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m}{2}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{n+nf}{remove\PYZus{}stopwords}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{n}{p\PYZus{}vacias}\PY{p}{,} \PY{n}{lines} \PY{o}{=} \PY{k+kc}{TRUE}\PY{p}{)}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Añadimos nueva columna con número de palabras actuales}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{new\PYZus{}word\PYZus{}body} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{apply}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{body\PYZus{}text\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m}{2}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{n+nf}{str\PYZus{}count}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZbs{}\PYZbs{}w+\PYZsq{}}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{41}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Comparamos el resumen original con el actual}
+\PY{n+nf}{substring}\PY{p}{(}\PY{n}{resumen}\PY{p}{,} \PY{l+m}{1}\PY{p}{,} \PY{l+m}{100}\PY{p}{)}
+\PY{n+nf}{substring}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+m}{1}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{abstract\PYZus{}text\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m}{1}\PY{p}{,} \PY{l+m}{100}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    ' Feline infectious peritonitis virus (FIPV) positive cells are present in pyogranulomas and exudates'
+
+    
+    ' feline infectious peritonitis virus fipv positive cells    pyogranulomas  exudates  cats  fip  cell'
+
+    
+
+
+Como se aprecia, se han eliminado aquellas palabras comunes que no aportan nada al artículo como "and", o "in".
 Ahora veremos el número nuevo de palabras y cuántas se han eliminado.
 
-¡¡¡¡COMPARAMOS NUMERO DE PALABRAS!!!!
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{45}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Creamos dos nuevas columnas con la resta de palabras originales y actuales}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{abstract\PYZus{}comparative} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{words\PYZus{}abstract} \PY{o}{\PYZhy{}} \PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{new\PYZus{}word\PYZus{}abstract}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}comparative} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{words\PYZus{}body} \PY{o}{\PYZhy{}} \PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{new\PYZus{}word\PYZus{}body}
+\PY{c+c1}{\PYZsh{} Mostramos un resumen de la información}
+\PY{n+nf}{summary}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{n+nf}{c}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{new\PYZus{}word\PYZus{}abstract\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{new\PYZus{}word\PYZus{}body\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{abstract\PYZus{}comparative\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{body\PYZus{}comparative\PYZsq{}}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Calculamos el total de palabras iniciales}
+\PY{n}{inicial\PYZus{}resumen} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{sum}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{words\PYZus{}abstract}\PY{p}{)}
+\PY{n}{inicial\PYZus{}cuerpo} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{sum}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{words\PYZus{}body}\PY{p}{)}
+\PY{n}{inicial} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{inicial\PYZus{}resumen} \PY{o}{+} \PY{n}{inicial\PYZus{}cuerpo}
+\PY{c+c1}{\PYZsh{} Calculamos el total de palabras finales}
+\PY{n}{final\PYZus{}resumen} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{sum}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{new\PYZus{}word\PYZus{}abstract}\PY{p}{)}
+\PY{n}{final\PYZus{}cuerpo} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{sum}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{new\PYZus{}word\PYZus{}body}\PY{p}{)}
+\PY{n}{final} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{final\PYZus{}resumen} \PY{o}{+} \PY{n}{final\PYZus{}cuerpo}
+\PY{c+c1}{\PYZsh{} Calculamos las palabras eliminadas}
+\PY{n}{quitadas\PYZus{}resumen} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{sum}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{abstract\PYZus{}comparative}\PY{p}{)}
+\PY{n}{quitadas\PYZus{}cuerpo} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{sum}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}comparative}\PY{p}{)}
+\PY{n}{quitadas} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{quitadas\PYZus{}resumen} \PY{o}{+} \PY{n}{quitadas\PYZus{}cuerpo}
+\PY{c+c1}{\PYZsh{} Mostramos los datos}
+\PY{n}{datos} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{matrix}\PY{p}{(}\PY{n+nf}{c}\PY{p}{(}\PY{n}{inicial\PYZus{}resumen}\PY{p}{,} \PY{n}{inicial\PYZus{}cuerpo}\PY{p}{,} \PY{n}{inicial}\PY{p}{,} \PY{n}{final\PYZus{}resumen}\PY{p}{,} \PY{n}{final\PYZus{}cuerpo}\PY{p}{,} \PY{n}{final}\PY{p}{,} \PY{n}{quitadas\PYZus{}resumen}\PY{p}{,} \PY{n}{quitadas\PYZus{}cuerpo}\PY{p}{,} \PY{n}{quitadas}\PY{p}{)}\PY{p}{,} \PY{n}{nrow} \PY{o}{=} \PY{l+m}{3}\PY{p}{,} \PY{n}{dimnames} \PY{o}{=} \PY{n+nf}{list}\PY{p}{(}\PY{n+nf}{c}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Resumen\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{Cuerpo\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{Total\PYZdq{}}\PY{p}{)}\PY{p}{,} \PY{n+nf}{c}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Inicial\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{Final\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{Eliminadas\PYZdq{}}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n}{datos}
+\end{Verbatim}
+\end{tcolorbox}
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+ new\_word\_abstract new\_word\_body    abstract\_comparative body\_comparative
+ Min.   :   0.00   Min.   :     1   Min.   :   0.00      Min.   :     0  
+ 1st Qu.:   1.00   1st Qu.:   848   1st Qu.:   0.00      1st Qu.:   798  
+ Median :  88.00   Median :  1590   Median :  73.00      Median :  1504  
+ Mean   :  95.74   Mean   :  2085   Mean   :  79.24      Mean   :  1945  
+ 3rd Qu.: 136.00   3rd Qu.:  2495   3rd Qu.: 111.00      3rd Qu.:  2343  
+ Max.   :4696.00   Max.   :162073   Max.   :5126.00      Max.   :131565  
+    \end{Verbatim}
+
+    
+\begin{tabular}{r|lll}
+  & Inicial & Final & Eliminadas\\
+\hline
+	Resumen &  16134914 &   8828313 &   7306601\\
+	Cuerpo & 371628162 & 192247004 & 179381158\\
+	Total & 387763076 & 201075317 & 186687759\\
+\end{tabular}
+
 
 Como se puede ver, se han eliminado un gran número de palabras: 186.687.759, de las cuales el 96\% han sido retiradas del cuerpo de los artículos, como cabía de esperar. Ahora el número de palabras máximo de un cuerpo es de 162073, la mitad de lo que era antes el máximo. De media se han retirado 2.024 palabras de cada artículo haciendo que el número total de palabras se reduzca a algo más de la mitad, siendo este un muy buen resultado de eliminación de stopwords tal y como se puede ver en las siguientes gráficas.
 
-¡¡¡¡GRAFICOS PARA LAS PALABRAS!!!!
+ \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{46}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Generación del grafo para el resumen con histograma y densidad}
+\PY{n}{nuevas\PYZus{}palabras\PYZus{}abstract} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{ggplot}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{,} \PY{n+nf}{aes}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{new\PYZus{}word\PYZus{}abstract}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{n+nf}{geom\PYZus{}histogram}\PY{p}{(}\PY{n+nf}{aes}\PY{p}{(}\PY{n}{y}\PY{o}{=}\PY{n}{..density..}\PY{p}{)}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{n}{.}\PY{l+m}{3}\PY{p}{,} \PY{n}{fill}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{cyan\PYZdq{}}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m}{80}\PY{p}{)} \PY{o}{+} \PY{n+nf}{geom\PYZus{}density}\PY{p}{(} \PY{n}{colour}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{blue\PYZdq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{theme\PYZus{}classic}\PY{p}{(}\PY{p}{)} \PY{o}{+} \PY{n+nf}{ggtitle}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Distribución del número de palabras en el resumen\PYZsq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{xlab}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Número actual de palabras del resumen\PYZsq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{ylab}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Densidad\PYZsq{}}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Misma operación para el cuerpo del texto}
+\PY{n}{nuevas\PYZus{}palabras\PYZus{}cuerpo} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{ggplot}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{,} \PY{n+nf}{aes}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{new\PYZus{}word\PYZus{}body}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{n+nf}{geom\PYZus{}histogram}\PY{p}{(}\PY{n+nf}{aes}\PY{p}{(}\PY{n}{y}\PY{o}{=}\PY{n}{..density..}\PY{p}{)}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{n}{.}\PY{l+m}{3}\PY{p}{,} \PY{n}{fill}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{cyan\PYZdq{}}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m}{80}\PY{p}{)} \PY{o}{+} \PY{n+nf}{geom\PYZus{}density}\PY{p}{(} \PY{n}{colour}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{blue\PYZdq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{theme\PYZus{}classic}\PY{p}{(}\PY{p}{)} \PY{o}{+} \PY{n+nf}{scale\PYZus{}x\PYZus{}continuous}\PY{p}{(}\PY{n}{labels} \PY{o}{=} \PY{n}{comma}\PY{p}{)} \PY{o}{+} \PY{n+nf}{ggtitle}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Distribución del número de palabras en el cuerpo\PYZsq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{xlab}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Número actual de palabras del cuerpo\PYZsq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{ylab}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Densidad\PYZsq{}}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Generamos grafo para ver cuantas palabras se han quitado}
+\PY{n}{comparacion\PYZus{}abstract}\PY{o}{\PYZlt{}\PYZhy{}}\PY{n+nf}{ggplot}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{,} \PY{n+nf}{aes}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{abstract\PYZus{}comparative}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{n+nf}{geom\PYZus{}histogram}\PY{p}{(}\PY{n+nf}{aes}\PY{p}{(}\PY{n}{y}\PY{o}{=}\PY{n}{..density..}\PY{p}{)}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{n}{.}\PY{l+m}{3}\PY{p}{,} \PY{n}{fill}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{red\PYZdq{}}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m}{80}\PY{p}{)} \PY{o}{+} \PY{n+nf}{geom\PYZus{}density}\PY{p}{(} \PY{n}{colour}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{red\PYZdq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{theme\PYZus{}classic}\PY{p}{(}\PY{p}{)} \PY{o}{+} \PY{n+nf}{ggtitle}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Palabras eliminadas del resumen\PYZsq{}}\PY{p}{)} \PY{o}{+}  \PY{n+nf}{xlab}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Número de palabras retiradas del resumen\PYZsq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{ylab}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Densidad\PYZsq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{geom\PYZus{}vline}\PY{p}{(}\PY{n+nf}{aes}\PY{p}{(}\PY{n}{xintercept}\PY{o}{=} \PY{n+nf}{mean}\PY{p}{(}\PY{n}{abstract\PYZus{}comparative}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{linetype}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{dashed\PYZdq{}}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Misma operaciópn para el cuerpo del texto}
+\PY{n}{comparacion\PYZus{}cuerpo} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{ggplot}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{,} \PY{n+nf}{aes}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{body\PYZus{}comparative}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{n+nf}{geom\PYZus{}histogram}\PY{p}{(}\PY{n+nf}{aes}\PY{p}{(}\PY{n}{y}\PY{o}{=}\PY{n}{..density..}\PY{p}{)}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{n}{.}\PY{l+m}{3}\PY{p}{,} \PY{n}{fill}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{red\PYZdq{}}\PY{p}{,} \PY{n}{bins}\PY{o}{=}\PY{l+m}{80}\PY{p}{)} \PY{o}{+} \PY{n+nf}{geom\PYZus{}density}\PY{p}{(} \PY{n}{colour}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{red\PYZdq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{theme\PYZus{}classic}\PY{p}{(}\PY{p}{)} \PY{o}{+} \PY{n+nf}{scale\PYZus{}x\PYZus{}continuous}\PY{p}{(}\PY{n}{labels} \PY{o}{=} \PY{n}{comma}\PY{p}{)} \PY{o}{+} \PY{n+nf}{ggtitle}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Palabras eliminadas del resumen\PYZsq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{xlab}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Número de palabras retiradas del cuerpo\PYZsq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{ylab}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Densidad\PYZsq{}}\PY{p}{)} \PY{o}{+} \PY{n+nf}{geom\PYZus{}vline}\PY{p}{(}\PY{n+nf}{aes}\PY{p}{(}\PY{n}{xintercept}\PY{o}{=} \PY{n+nf}{mean}\PY{p}{(}\PY{n}{body\PYZus{}comparative}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{linetype}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{dashed\PYZdq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Mostramos los gráficos}
+\PY{n}{nuevas\PYZus{}palabras\PYZus{}abstract}
+\PY{n}{nuevas\PYZus{}palabras\PYZus{}cuerpo}
+\PY{n}{comparacion\PYZus{}abstract}
+\PY{n}{comparacion\PYZus{}cuerpo}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_39_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_39_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_39_2.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_39_3.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    
+%====================================================================================================================================================%
+
+\subsection{Tokenización}
+
+A continuación, recogeremos todas esas palabras restantes y las separaremos en cadenas individuales, es decir, en vez de tener un único dato de tipo String que contenga todas las palabras, tendremos una lista de todas las diferentes palabras. 
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{54}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Tokenizamos tanto abstracto como texto completo}
+\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{abstract\PYZus{}text\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{apply}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{abstract\PYZus{}text\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m}{2}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{n+nf}{word\PYZus{}tokenizer}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{n}{xptr} \PY{o}{=} \PY{k+kc}{TRUE}\PY{p}{,} \PY{n}{pos\PYZus{}keep} \PY{o}{=} \PY{n+nf}{character}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZhy{}\PYZsq{}}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{body\PYZus{}text\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{apply}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{body\PYZus{}text\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m}{2}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{n+nf}{word\PYZus{}tokenizer }\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{n}{xptr} \PY{o}{=} \PY{k+kc}{TRUE}\PY{p}{)}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Mostramos los primeros cinco términos de los resúmenes y el cuerpo}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{abstract\PYZus{}text}\PY{p}{[[}\PY{l+m}{1}\PY{p}{]]}\PY{p}{[}\PY{l+m}{1}\PY{o}{:}\PY{l+m}{10}\PY{p}{]}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text}\PY{p}{[[}\PY{l+m}{1}\PY{p}{]]}\PY{p}{[}\PY{l+m}{1}\PY{o}{:}\PY{l+m}{10}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{enumerate*}
+\item 'feline'
+\item 'infectious'
+\item 'peritonitis'
+\item 'virus'
+\item 'fipv'
+\item 'positive'
+\item 'cells'
+\item 'pyogranulomas'
+\item 'exudates'
+\item 'cats'
+\end{enumerate*}
+
+
+    
+    \begin{enumerate*}
+\item 'feline'
+\item 'infectious'
+\item 'peritonitis'
+\item 'fip'
+\item 'fatal'
+\item 'chronic'
+\item 'disease'
+\item 'cats'
+\item 'caused'
+\item 'coronavirus'
+\end{enumerate*}
+
+
+Como se puede apreciar, en efecto ahora tenemos una lista que contiene todas las diferentes palabras tanto del resumen como del cuerpo principal del texto en vez de un solo atributo con todo el contenido.
+
 
 %====================================================================================================================================================%
 
 \subsection{Lematización}
 
-El siguiente paso a seguir es la lematización de las palabras, que como se ha mencionado previamente es escogido por encima del proceso de stemming por su capacidad de mantener gran parte de su valor semántico. 
+El siguiente paso a seguir es la lematización de las palabras, que como se ha mencionado previamente es escogido por encima del proceso de stemming por su capacidad de mantener gran parte del valor semántico de las palabras. Para relizar esta tarea nos aprovecharemos del hecho de que trabajamos con una lista, a la que podemos aplicar la función \textit{lapply}, que sirve precisamente para, en vez de ir de forma secuencial, trabaja paralelamente con todos los elementos de la lista, agilizando el proceso. Es por este motivo que se ha realizado la tokenización antes que la lematización. 
+
+ \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{50}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Haciendo \PYZdq{}apply \PYZlt{}\PYZhy{} lapply\PYZdq{} conseguimos una paralelización del trabajo gracias a la lista que genera la tokenización de los textos}
+\PY{n+nf}{system.time}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{abstract\PYZus{}text\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{apply}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{abstract\PYZus{}text\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m}{2}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{n+nf}{lapply}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{t}\PY{p}{)} \PY{n+nf}{lemmatize\PYZus{}words}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n+nf}{system.time}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{body\PYZus{}text\PYZsq{}}\PY{p}{]} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{apply}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{body\PYZus{}text\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m}{2}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{n+nf}{lapply}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{n+nf}{function}\PY{p}{(}\PY{n}{t}\PY{p}{)} \PY{n+nf}{lemmatize\PYZus{}words}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+
+Comparando con el resultado mostrado previamente, podemos comprobar que también se ha realizado correctamente este proceso en que se han eliminado los plurales de las palabras y los tiempos verbales de palabras como "cats" y "caused"
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{52}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Mostramos los primeros cinco términos de los resúmenes y el cuerpo}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{abstract\PYZus{}text}\PY{p}{[[}\PY{l+m}{1}\PY{p}{]]}\PY{p}{[}\PY{l+m}{1}\PY{o}{:}\PY{l+m}{10}\PY{p}{]}
+\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text}\PY{p}{[[}\PY{l+m}{1}\PY{p}{]]}\PY{p}{[}\PY{l+m}{1}\PY{o}{:}\PY{l+m}{10}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{enumerate*}
+\item 'feline'
+\item 'infectious'
+\item 'peritonitis'
+\item 'virus'
+\item 'fipv'
+\item 'positive'
+\item 'cell'
+\item 'pyogranulomas'
+\item 'exudate'
+\item 'cat'
+\end{enumerate*}
+
+
+    
+    \begin{enumerate*}
+\item 'feline'
+\item 'infectious'
+\item 'peritonitis'
+\item 'fip'
+\item 'fatal'
+\item 'chronic'
+\item 'disease'
+\item 'cat'
+\item 'cause'
+\item 'coronavirus'
+\end{enumerate*}
+
+
+    
+Asimismo, podemos ver que la cantidad de palabras diferentes ha disminuido drásticamente gracias al procesamiento de los datos tal y como se puede ver en la siguiente tabla, donde se muestra la cantidad de palabras iniciales, totales y únicas de los primeros cinco artículos.
+
+ \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{iniciales} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{words\PYZus{}body}\PY{p}{[}\PY{l+m}{1}\PY{o}{:}\PY{l+m}{5}\PY{p}{]}
+\PY{c+c1}{\PYZsh{} Calculamos el total de palabras del cuerpo de los cinco primeros artículos...}
+\PY{n}{finales} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{c}\PY{p}{(}\PY{n+nf}{length}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text}\PY{p}{[[}\PY{l+m}{1}\PY{p}{]]}\PY{p}{)}\PY{p}{,} \PY{n+nf}{length}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text}\PY{p}{[[}\PY{l+m}{2}\PY{p}{]]}\PY{p}{)}\PY{p}{,} \PY{n+nf}{length}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text}\PY{p}{[[}\PY{l+m}{3}\PY{p}{]]}\PY{p}{)}\PY{p}{,} \PY{n+nf}{length}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text}\PY{p}{[[}\PY{l+m}{4}\PY{p}{]]}\PY{p}{)}\PY{p}{,} \PY{n+nf}{length}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text}\PY{p}{[[}\PY{l+m}{5}\PY{p}{]]}\PY{p}{)}\PY{p}{)}
+\PY{c+c1}{\PYZsh{}... y las palabras únicas de los mismos}
+\PY{n}{unicas} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{c}\PY{p}{(}\PY{n+nf}{length}\PY{p}{(}\PY{n+nf}{unique}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text}\PY{p}{[[}\PY{l+m}{1}\PY{p}{]]}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n+nf}{length}\PY{p}{(}\PY{n+nf}{unique}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text}\PY{p}{[[}\PY{l+m}{2}\PY{p}{]]}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n+nf}{length}\PY{p}{(}\PY{n+nf}{unique}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text}\PY{p}{[[}\PY{l+m}{3}\PY{p}{]]}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n+nf}{length}\PY{p}{(}\PY{n+nf}{unique}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text}\PY{p}{[[}\PY{l+m}{4}\PY{p}{]]}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n+nf}{length}\PY{p}{(}\PY{n+nf}{unique}\PY{p}{(}\PY{n}{covid\PYZus{}df}\PY{o}{\PYZdl{}}\PY{n}{body\PYZus{}text}\PY{p}{[[}\PY{l+m}{5}\PY{p}{]]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} Creamos una matriz para comparar los valores y damos nombre a filas y columnas}
+\PY{n}{comparacion} \PY{o}{\PYZlt{}\PYZhy{}} \PY{n+nf}{matrix}\PY{p}{(}\PY{n+nf}{c}\PY{p}{(}\PY{n}{iniciales}\PY{p}{,} \PY{n}{finales}\PY{p}{,} \PY{n}{unicas}\PY{p}{)}\PY{p}{,} \PY{n}{nrow} \PY{o}{=} \PY{l+m}{3}\PY{p}{,} \PY{n}{byrow} \PY{o}{=} \PY{n+nb+bp}{T}\PY{p}{)}
+\PY{n+nf}{dimnames}\PY{p}{(}\PY{n}{comparacion}\PY{p}{)}\PY{o}{\PYZlt{}\PYZhy{}}\PY{n+nf}{list}\PY{p}{(}\PY{n+nf}{c}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Iniciales\PYZdq{}}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{Finales\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{Unicas\PYZdq{}}\PY{p}{)}\PY{p}{,} \PY{n+nf}{c}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Artículo 1\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{Artículo 2\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{Artículo 3\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{Artículo 4\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{Artículo 5\PYZdq{}}\PY{p}{)}\PY{p}{)}
+\PY{n}{comparacion}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{tabular}{r|lllll}
+  & Artículo 1 & Artículo 2 & Artículo 3 & Artículo 4 & Artículo 5\\
+\hline
+	Iniciales & 2120 & 2024 & 977 & 3331 & 2968\\
+	Finales & 1089 & 1135 & 474 & 1838 & 1700\\
+	Unicas &  417 &  496 & 260 &  486 &  631\\
+\end{tabular}
+
+
+Con este paso realizado podemos dar casi por concluido el apartado de preparación de los datos utilizando NLP, puesto que a continuación se utilizará el método de Selección de Características \textit{TF-IDF} visto en la sección \ref{subsubsec:Selección de Características}, que es una parte que tienen en común tanto el procesamiento de lenguaje natural como la clusterización
+
+
+%====================================================================================================================================================%
+                                              %============================================================%
+%====================================================================================================================================================%
+
+
+\section{Reducción de dimensionalidad}
+
+Como se ha mencionado a lo largo del documento, el volumen de datos con el que se trabaja en la clusterización de documentos es muy amplio y trabajar con dichos datos de forma cruda, sin tratar o minimizar tardaría exponencialmente más tiempo del que ya conlleva. De esta manera, utilizaremos una tecnia de reducción de dimensionalidad basada en la selección de caracteristicas, donde se escoge un subconjunto de los atributos originales como forma de representar al objeto. En este caso, se escogerán las palabras más relevantes del texto en función a su frecuencia inversa de aparición en el documento mediante la fórmula vista con anterioridad en la sección referente a este método en \ref{subsubsec:Selección de Características}. 
+
+Este es uno de los métodos más populares debido no solo a su eficacia y utilidad, sino porque también sirve en gran medida para eliminar todas aquellas palanbras vacías que hayan podido escaparse durante el pre-procesamiento de los datos. Para aplicar esta técnica utilizaremos el paquete Text2Vec que parte de la DTM para generar la matriz de pesos TF-IDF, por lo que el primer paso será obtener el DTM de cada artículo, de esta forma obtendremos una normalización más completa.
+
+
+
+
+
 
 %====================================================================================================================================================%
                                               %============================================================%
