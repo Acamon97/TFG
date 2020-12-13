@@ -24,6 +24,7 @@ install.packages('text2vec')
 install.packages('rlist')
 install.packages('wordcloud')
 install.packages('dbscan')
+install.packages('Clustering')
 ```
 
 
@@ -31,7 +32,7 @@ install.packages('dbscan')
 
 ```{r}
 # Cargamos los paquetes pertinenter
-library(rjson); library(tidyverse); library(quanteda); library(feather); library(cld2); library(ggplot2); library(plotly); library(scales); library(cowplot); library(tau); library(stopwords); library(tm); library(textstem); library(pbapply); library(text2vec); library(rlist); library(wordcloud); library(dbscan)
+library(rjson); library(tidyverse); library(quanteda); library(feather); library(cld2); library(ggplot2); library(plotly); library(scales); library(cowplot); library(tau); library(stopwords); library(tm); library(textstem); library(pbapply); library(text2vec); library(rlist); library(wordcloud); library(dbscan); library(colorspace)
 
 
 ```
@@ -540,6 +541,8 @@ Listas de lemas cargarlas en sus columnas
 
 ```{r}
 # Cargar listas lemas
+covid_df <- read_feather("D:/COVID/covid_df_feather_pretokenizacion.csv")
+
 covid_df$abstract_text <- list.load("D:/COVID/lemas_abs.RData")
 covid_df$body_text <- list.load("D:/COVID/lemas_body.RData")
 ```
@@ -548,66 +551,109 @@ covid_df$body_text <- list.load("D:/COVID/lemas_body.RData")
 ¡MATRIZ DTM!
 
 ```{r}
-covid <- head(covid_df, 1000)
+covid <- head(covid_df, 10000)
 ```
 
+Esto es con TEX2VEC
 ```{r}
-it <- itoken(covid$body_text, ids = covid$paper_id)
+it <- itoken(covid$body_text, ids = covid$title_text)
 vocab <- create_vocabulary(it)
-vocab <- prune_vocabulary(vocab, vocab_term_max = 2^12)
+vocab <- prune_vocabulary(vocab, vocab_term_max = 2^10)
 vect <- vocab_vectorizer(vocab) 
 dtm <- create_dtm(it, vect)
 
 tfidf = TfIdf$new()
-tfidf <- as.matrix(fit_transform(dtm, tfidf))
+tfidf <- fit_transform(dtm, tfidf)
+tfidf.matrix <- as.matrix(tfidf)
 
-#tfidf = sim2(x = dtm, method = "cosine", norm = "l2")
-
-#tfidf = as.DocumentTermMatrix(dtm, weighting = weightTfIdf)
-
+#dist.matrix = sim2(x = tfidf, method = "cosine", norm = "l2")
+system.time(dist.matrix <- proxy::dist(tfidf.matrix, method = "cosine")) 
 
 ```
 
-
+Esto es con TM
 ```{r}
-tst = round(ncol(tfidf)/1000)
-a = rep(tst, 999)
-b = cumsum(a);rm(a)
-b = c(0,b,ncol(tfidf))
+#c <- data.frame(doc_id = covid$paper_id, text = covid_df$body_text)
+#c <- DataframeSource(c)
+#corpus <- VCorpus(c)
+corpus <- tm::Corpus(tm::VectorSource(covid$body_text))
+tdm <- tm::DocumentTermMatrix(corpus) 
 
-ss.col = c(NULL)
-for (i in 1:(length(b)-1)) {
-  tempdtm = tfidf[,(b[i]+1):(b[i+1])]
-  s = colSums(as.matrix(tempdtm))
-  ss.col = c(ss.col,s)
+tdm.tfidf2 <- tm::weightTfIdf(tdm)
+tfidf.matrix2 <- as.matrix(tdm.tfidf2) 
+
+system.time(dist.matrix2 <- proxy::dist(tfidf.matrix2, method = "cosine")) 
+
+```
+
+Clusterización
+```{r}
+clustering.kmeans <- kmeans(tfidf.matrix, 10) 
+clustering.hierarchical <- hclust(dist.matrix, method = "ward.D2") 
+clustering.dbscan <- dbscan::hdbscan(dist.matrix, minPts = 10) 
+```
+
+Mierdas raras
+```{r}
+master.cluster <- clustering.kmeans$cluster 
+slave.hierarchical <- cutree(clustering.hierarchical, k = 10) 
+slave.dbscan <- clustering.dbscan$cluster 
+stacked.clustering <- rep(NA, length(master.cluster))  
+names(stacked.clustering) <- 1:length(master.cluster) 
+
+for (cluster in unique(master.cluster)) { 
+  indexes = which(master.cluster == cluster, arr.ind = TRUE) 
+  slave1.votes <- table(slave.hierarchical[indexes]) 
+  slave1.maxcount <- names(slave1.votes)[which.max(slave1.votes)]   
+  slave1.indexes = which(slave.hierarchical == slave1.maxcount, arr.ind = TRUE) 
+  slave2.votes <- table(slave.dbscan[indexes]) 
+  slave2.maxcount <- names(slave2.votes)[which.max(slave2.votes)]   
+  stacked.clustering[indexes] <- slave2.maxcount 
 }
-
-tsum = ss.col
-
-tsum = tsum[order(tsum, decreasing = T)]       #terms in decreasing order of freq
-head(tsum)
-
-
-tail(tsum)
 ```
+
+Mostramos
+```{r}
+system.time(points <- cmdscale(dist.matrix, k = 2)) 
+palette <- colorspace::diverge_hcl(10) # Creating a color palette 
+previous.par <- par(mfrow=c(2,2), mar = rep(1.5, 4)) 
+ 
+plot(points, main = 'K-Means clustering', col = as.factor(master.cluster), 
+     mai = c(0, 0, 0, 0), mar = c(0, 0, 0, 0), 
+     xaxt = 'n', yaxt = 'n', xlab = '', ylab = '') 
+
+plot(points, main = 'Hierarchical clustering', col = as.factor(slave.hierarchical), 
+     mai = c(0, 0, 0, 0), mar = c(0, 0, 0, 0),  
+     xaxt = 'n', yaxt = 'n', xlab = '', ylab = '') 
+
+plot(points, main = 'Density-based clustering', col = as.factor(slave.dbscan), 
+     mai = c(0, 0, 0, 0), mar = c(0, 0, 0, 0), 
+     xaxt = 'n', yaxt = 'n', xlab = '', ylab = '') 
+
+plot(points, main = 'Stacked clustering', col = as.factor(stacked.clustering), 
+     mai = c(0, 0, 0, 0), mar = c(0, 0, 0, 0), 
+     xaxt = 'n', yaxt = 'n', xlab = '', ylab = '') 
+
+par(previous.par) # recovering the original plot space parameters 
+```
+
+
 
 ```{r}
-wordcloud(names(tsum), tsum, scale=c(4,0.5),1, max.words=50,colors=brewer.pal(8, "Dark2")) # Plot results in a word cloud 
-title(sub = "Term Frequency Inverse Document Frequency - Wordcloud")
+hc1 <- as.dendrogram(clustering.hierarchical)
+par(mar = c(2, 0, 0, 0))
+nodePar <- list(lab.cex=0.6, pch=c(NA, 19), cex=0.7, col="blue")
+plot(hc1, nodePar=nodePar, edgePar=list(col=2:3, lwd=2:1))
+  
 ```
+
 
 
 ```{r}
-dbscan_1 <- dbscan(tfidf, minPts = 5, eps = 5)
-summary(dbscan_1)
+system.time(points <- cmdscale(dist.matrix, k = 2)) 
+palette <- colorspace::diverge_hcl(10) # Creating a color palette 
+plot(points)
 ```
-
-
-```{r}
-plot(dbscan_1$cluster, tfidf)
-
-```
-
 
 
 
